@@ -1,0 +1,327 @@
+#branded {
+    background-image: none !important;
+    background-color: white;
+}
+
+.grid_8 {
+    width: 367px;
+    float: right;
+}
+#content {
+    padding-bottom: 0;
+}
+.container_24 .grid_24 {
+    width: 100% !important;
+    padding: 0px !important;
+
+}
+
+/* Loop */
+%grid {
+    margin: 0 !important;
+}
+
+@for $i from 1 through 24 {
+    .grid_#{$i} {
+        @extend %grid;
+    }
+}
+/* End loop */
+
+#branded {
+    .header { 
+        margin: auto;
+        background: #f5f7f7 !important;
+        border-bottom: 0 none;
+    }
+
+    .wrapper {
+        background: none !important;
+
+        .area {
+            width: 100%;
+            background: #F5F5F7 !important;
+        }
+    }
+}
+
+.jj #branded.pt_brandstorefront .area {
+    background: #F5F5F7 !important;
+}
+
+/* Top carousel */
+
+#top-carousel-wrapper {
+    width: 100%;
+    background: url("../img/core/top-carousel-bg.jpg") left bottom repeat-x !important;
+    padding-top: 27px;
+    padding-bottom: 70px;
+
+    .slideshow {
+        width: 1007px;
+        display: block;
+        margin: auto;
+    }
+}
+
+#branded {
+    #top-carousel {
+        margin-bottom: 0px;
+    }
+
+    #content {
+        width: 100%;
+    }
+
+    .grid_24:first-child {
+        background: #F5F7F7 url("../img/core/area-1.jpg") 30px 0 no-repeat;
+    }
+}
+
+/* SEPARATOR */
+
+#branded .separator .caption {
+    text-align: center;
+    margin-top: 12px;
+    padding: 0 22px;
+    font-size: 50px;
+    font-family:"Avenir LT W01 55 Roman";
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+#branded .caption strong {
+    font-family:"Avenir LT W02 85 Heavy";
+}
+
+
+
+/* Footer */
+#content  {
+    background: #F5F7F7 url("../img/core/footer-bg.jpg") bottom repeat-x !important;
+
+    .storefront10 {
+        text-align: center;
+        background: transparent url("../img/core/area-5.jpg") bottom left no-repeat;
+
+        .grid_24:last-child {
+            /* ..mmmother of CSS.. */
+            /* Ermagerd! SCSS! */
+            width: 1007px !important;
+            float: none;
+            display: inline-block;
+            min-height: 729px;
+            margin: auto !important;
+        }
+    }
+}
+
+#branded .grid_24 .grid_6 {
+    width: 251px;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 0;
+    margin-top: 10px !important;
+    float: left;
+
+    .col_1 {
+        line-height: 20px;
+
+        ul li {
+            margin-bottom: 6px;
+            list-style: none;
+
+            a {
+                font-family:"Futura W01 Book";
+                font-weight: normal;
+                font-size: 15px;
+                color: black !important;
+                text-decoration: none;
+            }
+        }
+
+        .main_category {
+            margin-top: 13px;
+            margin-bottom: 7px;
+            text-transform: uppercase;
+            padding: 5px 30px;
+            display: inline-block;
+
+            a {
+                font-family:"Futura T W01 Demi";
+                font-weight: bold;
+                font-size: 16px;
+                text-transform: uppercase;
+                display: inline-block;
+                padding: 5px 30px;
+            }
+        }
+    }
+}
+
+#contentwrapper {
+    margin-bottom: 0;
+}
+#content {
+    margin-bottom: 0;
+}
+#branded .grid_24 .grid_6 .col_1 a {
+    color: black !important;
+    transition: all .3s;
+    text-transform: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+/* OPLÆG */
+
+#branded {
+    .outer-oplaeg-wrapper {
+        background: white url("../img/core/area-2.jpg") top right no-repeat;
+    }
+
+    .oplaeg {
+        height: 1222px;
+        background: transparent url("../img/core/grid24-bg.jpg") bottom left repeat-x;
+
+        .content {
+            position: absolute;
+            width: 530px;
+            background: white;
+            left: 50%;
+            margin-left: -135px;
+            z-index: 20;
+            padding-bottom: 50px;
+        }
+
+        h1 {
+            margin-top: 0;
+            display: inline-block;
+            font-size: 60px;
+            width: 408px;
+            line-height: 51px;
+            padding-top: 120px;
+            padding-bottom: 29px;
+            font-family:"Futura T W01 Demi";
+            font-weight: normal;
+        }
+
+        p {
+            width: 408px;
+            display: block;
+            margin: auto;
+            font-family:"Futura W01 Book";
+            font-size: 14px;
+            line-height: 26px;
+            padding-bottom: 30px;
+            text-align: left;
+        }
+
+        a {
+            text-decoration: underline;
+            font-family:"Futura T W01 Demi";
+            font-size: 16px;
+            color: black !important;
+            transition: all .3s;
+
+            &:hover {
+                color: #666 !important;
+                transition: all .3s;
+            }
+        }
+
+        img {
+            position: absolute;
+            left: 50%;
+        }
+    }
+
+    .popup{
+        position:absolute;
+        text-align:center;
+        color:black;
+        z-index: 50;
+        display:none;
+        background: white;
+
+        h1{
+            text-transform: uppercase;
+            font-size: 12px !important;
+            margin-top: 8px;
+            padding: 0 8px;
+            font-family: "Gill Sans W01 Medium" !important;
+            line-height: 15px;
+            width: auto;
+        }
+
+        p {
+            width: auto;
+            margin: 0 0 6px !important;
+            padding: 0 !important;
+            font-weight: normal;
+            font-size: 12px !important;
+            column-count:1 !important;
+            text-align: center;
+        }
+    }
+}
+
+@media only screen and (device-width: 768px) {
+    #branded .grid_24:first-child {
+        background: #F5F7F7;
+    }
+
+    #content .storefront10 {
+        background: transparent;
+    }
+
+    #branded .outer-oplaeg-wrapper {
+        background: white;
+    }
+
+
+    #branded .wp-wrapper-inner-area3 {
+        background-image: none;
+    }
+
+
+    #tumblr-wrapper {
+        background: white;
+    }
+}
+
+
+
+
+/* Tumblr */
+
+#tumblr-wrapper {
+    width: 100%;
+    background: white url("../img/core/area-4.jpg") top right no-repeat;
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+
+#tumblr-content {
+    height: 1063px;
+    width: 1007px;
+    margin: auto;
+    position: relative;
+
+    .thumb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 380px;
+        height: auto;
+        visibility: hidden;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+}
+
+#tumblr-view-more {
+    display: none;
+}
