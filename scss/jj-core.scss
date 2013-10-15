@@ -1,0 +1,324 @@
+/* Imported from jj-5lines */
+
+@import 'jj-5lines';
+
+/* End imported from jj-5lines */
+
+/* GENERAL STUFF */
+
+#branded {
+    &.pt_brandstorefront {
+        .container_24 {
+            background: white;
+        }
+
+        .storefront8 .grid_24 {
+            padding: 0px;
+            margin-top: 0px;
+            width: 1007px;
+            margin-left: 0;
+        }
+    }
+
+    .header {
+        background: #f5f7f7 !important;
+        border-bottom: 1px solid #CCC;
+
+        .logo {
+            width: 147px !important;
+            height: 52px;
+            background: url("../img/core/logo-c.jpg") no-repeat 100% !important;
+            position: absolute;
+            top: 44px;
+            left: 6px;
+
+            a {
+                width: 147px !important;
+                height: 52px;
+            }
+        }
+
+        .simple_search input {
+            outline: 1px solid black;   
+            font-family:"Gill Sans W01 Bold" !important;
+            font-size: 12px;
+            color: black;
+            font-weight: normal;
+        }
+    }
+
+    .simple_search {
+        top: 29px;
+    }
+
+    .wrapper {
+        background: url("../img/core/wrapper-bg.jpg") repeat-x !important;
+    }
+}
+
+/* SUBBRAND TABS */
+
+.tabscontainer .tabs .core {
+    background:url('../img/subbrand-tabs/c-active.png') no-repeat center center transparent;
+    background-color:  white;
+    opacity: 1 !important;
+    filter: alpha(opacity = 100) !important;
+}
+
+/* MENU FLYOUT */
+
+#branded #category_menu {
+    top: 24px;
+    left: -28px !important;
+
+    ul.categories li.level0item {
+        background: url("../img/premium/menu-triangle.jpg") no-repeat 96% center;
+
+        ul.items {
+            a {
+                font-family:"Futura T W01 Demi";
+                font-size: 15px;
+                font-weight: normal;
+            }
+
+            li a {
+                font-family:"Futura W01 Book" !important;
+                font-weight: normal !important;
+                font-size: 12px !important;
+            }
+        }
+    }
+
+    > div > ul > li > a {
+        font-size: 16px;
+        font-family:"Futura T W01 Demi";
+        font-weight: normal;
+
+        &.active {
+            padding: 9px 13px 9px !important;
+        }
+    }
+
+    .sub_category {
+        top: 38px;
+    }
+}
+
+.ie8 #branded #category_menu .sub_category {
+    top: 37px;
+}
+
+@-moz-document url-prefix() { 
+    #branded #category_menu .sub_category {
+        top: 35px;
+    }
+    #branded #category_menu > div > ul > li > a.active {
+        padding: 9px 13px 6px !important;
+    }
+}
+
+/* SLIDESHOW */
+
+#branded .slideshow {
+    min-height: 500px;
+
+    .bubble {
+        background: url("../img/core/bubble.png");
+        width: 13px;
+        height: 13px;
+        background-position: 0 -13px;
+        margin-right: 4px;
+    }
+
+    .prev-btn, 
+    .next-btn {
+        background: url("../img/core/prev-next.png");
+        width: 30px;
+        height: 41px;
+        top: 45%;
+    }
+ 
+    .next-btn {
+        background-position: 0 -41px;
+    }
+
+    .controls {
+       margin-top: -23px;
+    }
+}
+
+#branded #top-carousel {
+    margin-bottom: 10px;
+}
+
+/* WORDPRESS */
+
+#branded {
+    .wp-wrapper-outer {
+        background: #F5F7F7 url("../img/core/top-carousel-bg.jpg") left bottom repeat-x !important;
+        min-height: 1206px;
+    }
+
+    .wp-wrapper-inner {
+        background: url("../img/core/wordpress-bg.jpg") left top repeat-x !important;
+    }
+
+    .wp-wrapper-inner-area3 {
+        overflow: auto;
+        background: url("../img/core/area-3.jpg") 30px 53px no-repeat;
+
+        img.logo {
+            margin: 40px auto;
+        }
+    }
+
+    #wp-container {
+        width: 1009px;
+        margin: auto;
+        position: relative;
+        overflow: auto;
+    }
+
+    .wp-sidebar {
+        width: 250px;
+        margin: 5px 0 0 5px;
+        position: absolute;
+        right: 61px;
+        top: 470px;
+
+        .wp-sidebar-top {
+            text-align: center;
+            padding: 64px 0 20px 18px;
+            font-family:"Futura W01 Book";
+            font-size: 26px;
+            text-transform: uppercase;
+            text-align: left;
+        }
+
+        .wp-title {
+            margin:  0;
+            padding: 0 0 2px 2px;
+            font-size: 14px;
+            text-align: center;
+            background-position: bottom;
+            background-repeat: repeat-x;
+
+            .title {
+                font-family:"Futura T W01 Demi";
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+
+            .theme {
+                text-transform: uppercase;
+                font-family:"Futura W01 Book";
+                font-size: 12px; 
+            }
+
+            .wp-clickable {
+                transition: all .2s;
+                padding: 10px 9px 10px 9px;
+                border: 2px solid #F2F2F2;
+            }
+        }
+    }
+
+    .wp-canvas {
+        width: 1009px;
+        float: left;
+        font-size: 18px;
+        min-height: 964px;
+        background-position: 0 515px;
+        margin-bottom: 50px;
+        margin-top: 13px;
+        position: relative;
+
+        .slideshow {
+            min-height: 450px;
+
+            img {
+                width: 1009px;
+            }
+        }
+
+        .wp-slide {
+            margin-bottom: 20px;
+
+            img{
+                width: 1009px;
+            }
+        }
+
+        .content {
+            padding-right: 271px;
+            padding-bottom: 10px;
+            padding-top: 63px;
+            width: 463px;
+            padding-left: 144px;
+
+            p {
+                padding: 10px 20px 0;
+                font-family:"Futura W01 Book";
+                font-size: 13px;
+                margin: 0;
+                line-height: 21px;
+                text-align: left;
+
+                strong {
+                    text-transform: uppercase;
+                }
+
+                a {
+                    color: black;
+                    text-decoration: underline;
+                    transition: all .3s;
+                    margin-left: -22px;
+                    font-weight: bold;
+
+                    &:hover {
+                        color: #666 !important;
+                        transition: all .3s;
+                    }
+                }
+            }
+        }
+
+        .heading {
+            margin: 20px 0 20px 15px;
+            position: absolute;
+            width: 434px;
+            background-color: #F5F7F7;
+            top: 385px;
+            left: 100px;
+            padding: 20px 40px;
+            line-height: 72px;
+            padding-bottom: 0;
+
+            h1 {
+                margin-bottom: 18px;
+                font-family:"Futura T W01 Demi";
+                font-weight: normal;
+                font-size: 60px;
+                text-align: center;
+                line-height: 49px;
+            }
+        }
+    }
+}
+
+/* CONTENT */
+
+.cat-banner-wrapper h1.catHeading {
+    font-size: 77px;
+    font-family:"Futura T W01 Demi";
+    text-transform: none;
+}
+.cat-banner-wrapper div.catLogo {
+    background: url("../img/core/catbannerLogo.png") left 0 no-repeat !important;
+    width: 1007px;
+    height: 52px;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    margin-left: -503px;
+}
