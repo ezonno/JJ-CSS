@@ -1,0 +1,85 @@
+#branded {
+    background-image: none !important;
+    background-color: white;
+
+    .header { 
+        border-bottom: 0 none;
+    }
+
+    .wrapper {
+        background: none !important;
+    }
+}
+
+.grid_8 {
+    width: 367px;
+    float: right;
+}
+
+#pdpMain .grid_8 {
+    float:left;
+}
+
+.container_24 .grid_24 {
+    width: 1007px !important;
+    padding: 0px !important;
+}
+
+/* Loop */
+%grid {
+    margin: 0 !important;
+}
+
+@for $i from 1 through 24 {
+    .grid_#{$i} {
+        @extend %grid;
+    }
+}
+/* End loop */
+
+/* Footer */
+
+#branded .grid_24 .grid_6 {
+    width: 251px;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 18px;
+
+    .col_1 {
+        line-height: 20px;
+
+        ul li {
+            list-style: none;
+
+            a {
+                font-family:"Gill Sans W01 Medium";
+                font-weight: normal;
+                font-size: 14px;
+                color: black !important;
+                text-decoration: none;
+                color: black !important;
+                transition: all .3s;
+
+                &:hover {
+                    color: #666 !important;
+                    transition: all .3s;
+                }
+            }
+        }
+
+        .main_category {
+            margin-top: 13px;
+            margin-bottom: 7px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+#contentwrapper {
+    margin-bottom: 70px;
+}
+
+#content {
+    padding-bottom: 73px;
+    background: white url("../img/originals/footer-wavy-bg.jpg") center bottom no-repeat !important;
+}
