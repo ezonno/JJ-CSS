@@ -1,0 +1,162 @@
+#branded {
+    background-image: none !important;
+    background-color: white;
+
+    .header { 
+        margin: auto;
+        border-bottom: 0 none;
+    }
+
+    .wrapper {
+        background: none !important;
+
+        .area {
+            width: 100%;
+        }
+    }
+}
+
+.grid_8 {
+    width: 367px;
+}
+#content {
+    padding-bottom: 0;
+}
+.container_24 .grid_24 {
+    width: 100% !important;
+    padding: 0px !important;
+
+}
+
+/* Loop */
+%grid {
+    margin: 0 !important;
+}
+
+@for $i from 1 through 24 {
+    .grid_#{$i} {
+        @extend %grid;
+    }
+}
+/* End loop */
+
+/* Top carousel */
+
+#top-carousel-wrapper {
+    width: 100%;
+    background: url("../img/tech/top-carousel-bg.jpg") left bottom repeat-x !important;
+
+    .slideshow {
+        width: 1007px;
+        display: block;
+        margin: auto;
+    }
+}
+
+#branded {
+    #top-carousel {
+        margin-bottom: 0px;
+    }
+
+    #content {
+        width: 100%;
+    }
+}
+
+/* Featured products */
+
+.container_24 .grid_18 {
+    width: 100%;
+}
+
+#featured {
+    background: #f0f3f5 url("../img/tech/featured-bg.jpg") center center no-repeat !important;
+    padding: 400px;
+}
+
+/* SEPARATOR */
+
+#branded {
+    .separator .caption {
+        text-align: center;
+        margin-top: 12px;
+        padding: 0 22px;
+        font-size: 35px;
+        font-family:"Avenir LT W01 55 Roman";
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    .caption strong {
+        font-family:"Avenir LT W02 85 Heavy";
+    }
+}
+
+/* Footer */
+
+#content {
+    margin-bottom: 25px;
+
+    .storefront6 {
+        text-align: center;
+
+        .grid_24 {
+            &:last-child,
+            &.last-child {
+                /* ..mmmother of CSS.. */
+                width: 753px !important;
+                float: none;
+                display: inline-block;
+                background: url("../img/tech/footer-bg.jpg") center repeat-y;
+            }
+        }
+    }
+}
+
+#branded .grid_24 .grid_8 {
+    width: 251px;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 0;
+    float: right;
+
+    .col_1 {
+        line-height: 20px;
+
+        ul li {
+            margin-bottom: 6px;
+            list-style: none;
+
+            a {
+                font-family:"Avenir LT W01 55 Roman";
+                font-weight: normal;
+                font-size: 14px;
+                color: black !important;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+        }
+
+        .main_category {
+            margin-top: 13px;
+            margin-bottom: 7px;
+            text-transform: uppercase;
+
+            a {
+                font-family:"Avenir LT W02 85 Heavy";
+                font-size: 17px;
+                text-decoration: none;
+            }
+        }
+
+        a {
+            color: black !important;
+            transition: all .3s;
+
+            &:hover {
+                color: #666 !important;
+                transition: all .3s;
+            }
+        }
+    }
+}
