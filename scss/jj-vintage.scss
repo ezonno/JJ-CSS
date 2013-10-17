@@ -1,0 +1,652 @@
+/* Import from jj-5lines */
+
+@import "jj-5lines";
+
+/* End import from jj-5lines */
+
+
+
+/* GENERAL STUFF */
+
+#branded {
+    background-image: url("../img/wrapper-bg.jpg") !important;
+    
+    .wrapper{
+        background: url("../img/vintage/header-bg.jpg") repeat-x !important;
+    }
+
+    &.pt_brandstorefront {
+        .container_24 {
+            background: #f8f6f3;
+        }
+
+        .storefront8 .grid_24 {
+            padding: 0px;
+            margin-top: 0px;
+            width: 1007px;
+            margin-left: 0;
+        }
+    }
+
+    .header {
+        height: 75px;
+        background: #f8f6f3 !important;
+        border-bottom: 1px solid #CCC;
+    }
+
+    .simple_search {
+        top: 22px;
+    }
+}
+
+/* SUBBRAND TABS */
+
+.tabscontainer .tabs .vintage {
+    background: url('../img/subbrand-tabs/v-active.png') no-repeat center center transparent;
+    background-color:  #F8F6F3;
+    opacity: 1 !important;
+    filter: alpha(opacity = 100) !important;
+}
+
+/* MENU FLYOUT */
+
+#branded {
+    #category_menu {
+        top: 19px;
+        left: -28px !important;
+
+        > div > ul > li > a {
+            font-size: 15px;
+            font-family:"Rockwell W02";
+            font-weight: normal;
+
+            &.active {
+                padding: 9px 13px 10px !important;
+            }
+        }
+
+        .sub_category {
+            top: 37px;
+        }
+    }
+
+    .header {
+        .logo {
+            width: 177px !important;
+            height: 45px;
+            background: url("../img/vintage/logo-v.jpg") no-repeat 100% !important;
+            position: absolute;
+            top: 64px;
+            left: 11px;
+
+            a {
+                width: 177px !important;
+                height: 45px;
+            }
+        }
+
+        .simple_search input {  
+            font-family: "CenturySchoolbookW01-Re" !important;
+            font-size: 12px;
+            color: black;
+            font-weight: normal;
+            outline: 2px solid black;
+            width: 132px;
+        }
+    }
+
+    .category_menu ul.categories li.level0item {
+        background: url("../img/premium/menu-triangle.jpg") no-repeat 96% center;
+
+        ul.items {
+            a {
+                font-family:"Rockwell W02";
+                font-size: 15px;
+            }
+
+            li a {
+                font-family:"Rockwell W02" !important;
+                font-weight: normal !important;
+                font-size: 12px !important;
+            }
+        }
+    }
+}
+
+@-moz-document url-prefix() { 
+    #branded #category_menu > div > ul > li > a.active {
+        padding: 9px 13px 6px !important;
+    }
+}
+
+/* SEPARATOR */
+
+#branded.pt_brandstorefront .storefront8 .separator {
+    width: 100%;
+    border-bottom: 1px solid black;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    border-top: 8px solid black;
+    min-height: 25px;
+
+    .caption {
+        display: inline-block;
+        margin-top: 6px;
+        background: #f8f6f3;
+        padding: 0 22px;
+        font-size: 24px;
+        font-family: "Rockwell W02";
+        letter-spacing: 0px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+
+    &.big .caption {
+        font-family:"Rockwell W02";
+        font-size: 60px;
+        text-transform: uppercase;
+    }
+}
+
+/* HERO */
+
+#branded.pt_brandstorefront .storefront8 .hero {
+    width: 619px;
+    margin-right: 14px;
+    float: left;
+    overflow: auto;
+
+    h1 {
+        padding: 0 20px;
+        text-align: center;
+        font-family:"ClassicalGaramondW01-Bo 1119390";
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    div.multi-column{
+        padding: 20px;
+        font-family:"Gill Sans W01 Medium";
+        font-size: 14px;
+    }
+
+    .column p{
+        padding-right: 40px;
+
+        &.last p{
+            padding-right: 0;
+        }
+    }
+
+    p a {
+        display: block;
+        margin-top: 10px;
+        text-decoration: underline;
+        color: black;
+    }
+}
+
+/* SHOULDER */
+
+#branded.pt_brandstorefront .storefront8 .shoulder {
+    width: 367px;
+    float: right;
+    background: #f7f5e9;
+
+    .container {
+        border: 1px solid black;
+        margin: 10px;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    h1 {
+        font-family:"Freeway Gothic";
+        font-size: 26px;
+        text-transform: uppercase;
+        font-weight: normal;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    h2 {
+        font-family:"Freeway Gothic";
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: normal;
+        margin-top: 0;
+        line-height: 12px;
+        text-align: center;
+    }
+
+    a {
+        &.image img{
+            width: auto;
+        }
+
+        &.pricetag{
+            text-align: center;
+            color: black;
+            font-family:"ClassicalGaramondW01-Bo 1119390";
+            font-size: 20px;
+            text-decoration: none !important;
+        }
+    }
+
+    .tip {
+        font-family:"Gill Sans W01 Medium";
+        font-size: 14px;
+        margin: 20px 40px;
+    }
+}
+
+/* SLIDESHOW */
+
+#branded .slideshow {
+    min-height: 520px;
+
+    .bubble {
+        background: url("../img/premium/bubble.jpg");
+        width: 7px;
+        height: 7px;
+        background-position: 0 -7px;
+        margin-right: 4px;
+    }
+
+    .prev-btn,
+    .next-btn {
+        background: url("../img/premium/prev-next.png");
+        width: 30px;
+        height: 41px;
+        top: 44%;
+    }
+
+    .next-btn {
+        background-position: 0 -41px;
+    }
+
+    #top-carousel {
+        margin-bottom: 10px;
+    }
+}
+
+/* FEATURED PRODUCTS */
+
+
+#branded .featured-products {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 12px;
+
+    .holder {
+        overflow: auto;
+        width: 10000px;
+    }
+
+    .arrow {
+        width: 170px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+
+        &.right {
+            right: 0;
+
+            .btn {
+                left: 0;
+                background-position: 0 0;
+            }
+        }
+
+        .btn {
+            position: absolute;
+            top: 45%;
+            height: 44px;
+            width: 27px;
+            background: url("../img/vintage/featured-products-arrow.png") no-repeat;
+            right: 0;
+            background-position: 0 -44px;
+            cursor: pointer;
+            visibility: hidden;
+        }
+    }
+
+    .slide {
+        overflow: hidden;
+        float: left;
+        margin: 0 30px;
+        height: 439px;
+        width: 374px;
+        visibility: hidden;
+        position: relative;
+
+        .content {
+            float: left;
+            margin-top: 46px;
+            width: 0px;
+            padding-left: 20px;
+            width: 220px;
+            position: absolute;
+            top: 0;
+            left: 374px;
+
+            .price {
+                font-family: "Rockwell W02";
+                font-size: 15px;
+                text-align: center;
+                display: block;
+                margin-top: 32px;
+                margin-bottom: 6px;
+            }
+        }
+
+        &.active {
+            width: 614px;
+        }
+
+        a {
+            &.featured-image {
+                float: left;
+            }
+
+            &.buy {
+                font-family: "Courier New", Courier, monospace;
+                font-size: 16px;
+                text-align: center;
+                text-decoration: normal;
+                display: block;
+                color: black;
+                letter-spacing: 1px;
+            }
+        }
+
+        h1 {
+            font-family:"Rockwell W02";
+            font-weight: normal;
+            font-size: 20px;
+            text-transform: uppercase;
+            line-height: 23px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: left;
+            font-family:"CenturySchoolbookW01-Re";
+            font-size: 14px;
+        }
+    }
+}
+
+/* OPLAEG */
+
+#branded .oplaeg {
+    padding: 5px 0;
+    margin: 5px 0 30px;
+    border-bottom: 1px solid black;
+    position: relative;
+    margin-top: 20px;
+
+    .content {
+        height: 650px;
+        position: relative;
+        width: 1007px;
+        overflow: hidden;
+        background-position: center center;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    img {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    h1 {
+        color: white;
+        font-family:"Rockwell W02";
+        font-size: 60px;
+        line-height: 71px;
+
+        small {
+            font-size: 25px;
+            line-height: 53px;
+        }
+    }
+
+    .popup {
+        position:absolute;
+        text-align:center;
+        color:black;
+        display:none;
+        background: white;
+
+        h1{
+            text-transform: uppercase;
+            font-size: 12px !important;
+            margin-top: 8px;
+            padding: 0 8px;
+            font-family: "Gill Sans W01 Medium" !important;
+            line-height: 15px;
+            color: black;
+        }
+
+        p {
+            margin: 0 0 6px !important;
+            padding: 0 !important;
+            font-weight: normal;
+            font-size: 12px !important;
+            column-count:1 !important;
+        }
+    }
+}
+
+/* WORDPRESS */
+
+#branded {
+    .storefront7 #wp-container {
+        overflow: auto;
+    }   
+
+    .storefront8 {
+        .wp-sidebar {
+            width: 250px;
+            margin: 5px 0 0 5px;
+            position: absolute;
+            right: 1px;
+            top: 498px;
+
+            .wp-sidebar-top {
+                text-align: center;
+                padding: 30px 0;
+                font-family:"Rockwell W02";
+                font-size: 18px;
+                text-transform: uppercase;
+            }
+
+            .wp-title {
+                margin: 10px 0 0;
+                padding: 0 30px 0 30px;
+                font-family:"CenturySchoolbookW01-Re";
+                font-size: 12px;
+                text-align: center;
+                background-position: bottom;
+                background-repeat: repeat-x;
+                font-style: italic;
+
+                .wp-clickable {
+                    border: 1px solid #f3f1ee;
+                    transition: all .2s;
+                    padding: 10px 0;
+                }
+
+                &:hover .wp-clickable, 
+                &.active .wp-clickable {
+                    border: 1px solid black;
+                    transition: all .2s;
+                    cursor: pointer;
+                }
+
+                .month {
+                    font-family:"CenturySchoolbookW01-Bo";
+                    text-transform: uppercase;
+                    font-style: normal;
+                    padding-bottom: 5px;
+                }
+
+                .band {
+                    text-transform: uppercase;
+                    font-style: normal;
+                }
+            }
+        }
+
+        .wp-canvas {
+            width: 1009px;
+            float: left;
+            font-size: 18px;
+            font-family:"ClassicalGaramondW01-Ro";
+            min-height: 870px;
+            background: url("../img/vintage/wordpress-bg.jpg") no-repeat;
+            background-position: 0 515px;
+            margin-bottom: 50px;
+            margin-top: 22px;
+
+            .slideshow img {
+                width: 1009px;
+            }
+
+            .wp-slide {
+                margin-bottom: 20px;
+
+                img {
+                    width: 1009px;
+                }
+            }
+
+            .player {
+                padding-bottom: 10px;
+                padding-left: 1px;
+                height: 500px;
+            }
+
+            .player-band, 
+            .player-song {
+                position: absolute;
+                top: 300px;
+                color: white;
+                width: 100%;
+                text-align: center;
+                text-transform: uppercase;
+                text-decoration: underline;
+                font-family:"Courier PS W01 Bold";
+                font-size: 40px;
+                cursor: pointer;
+                pointer-events: none;
+                display: none !important;
+            }
+
+            .player-song {
+                top: 347px;
+                font-family:"Rockwell W02";
+                font-size: 20px;
+                text-decoration: none;
+            }
+
+            .content {
+                padding-right: 251px;
+                padding-bottom: 10px;
+                padding-top: 10px;
+
+                .gallery {
+                    display: none;
+                    overflow: hidden;
+                    background: url("../img/vintage/wordpress-gallery-bg.jpg") repeat-x;
+                    height: 352px;
+                    position: relative;
+
+                    .container {
+                        width: 99999px;
+                        margin-top: 30px;
+                    }
+
+                    img {
+                        float: left;
+                        margin-right: 85px;
+                    }
+
+                    .arrow {
+                        position: absolute;
+                        top: 46%;
+                        left: 798px;
+                        background: url("../img/vintage/wordpress-gallery-arrow.png") no-repeat;
+                        width: 27px;
+                        height: 44px;
+                        cursor: pointer;
+
+                        &.left {
+                            background-position: 0 -44px;
+                            left: 224px;
+                        }
+                    }
+                }
+
+                .column p {
+                    padding: 10px 20px 0;
+                    font-family:"CenturySchoolbookW01-Re";
+                    font-size: 14px;
+                    margin: 0;
+
+                    strong {
+                        text-transform: uppercase;
+                    }
+
+                    a {
+                        color: black;
+                        text-decoration: underline;
+                        transition: all .3s;
+
+                        &:hover {
+                            color: #666 !important;
+                            transition: all .3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .wp-canvas .slideshow {
+        min-height: 500px;
+    }
+}
+
+/* category banner heading text */
+
+.cat-banner-wrapper {
+    h1.catHeading {
+        font-size: 70px;
+        font-family:"Rockwell";
+        text-transform: uppercase;
+        font-weight: bold;
+        background: url("../img/vintage/catbanner-h1-background.jpg") bottom center no-repeat !important;
+        padding-bottom: 34px;
+    }
+
+    div.catLogo {
+        background: url("../img/vintage/catbannerLogo.png") right 0 no-repeat !important;
+        width: 1007px;
+        height: 51px;
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        margin-left: -503px;
+    }
+}
