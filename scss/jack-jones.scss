@@ -1,0 +1,146 @@
+@import url("../../css/jack-jones.css");
+
+/* Import from jj-shared */
+
+@import 'jj-shared';
+
+/* End import from jj-shared */
+
+@import url("http://fast.fonts.com/t/1.css?apiType=css&projectid=8af1257f-2ad2-4b52-89b9-d6867932cc4b");
+
+@font-face{
+    font-family: "Avenir LT W01 55 Roman";
+        src: url("../fonts/2f5a6074-badc-4e08-83f1-ed67fe5c3d7c.eot?#iefix");
+        src: url("../fonts/2f5a6074-badc-4e08-83f1-ed67fe5c3d7c.eot?#iefix") format("eot"),
+             url("../fonts/b9ebb19d-88c1-4cbd-9baf-cf51972422ec.woff") format("woff"),
+             url("../fonts/5ed4f98e-9044-4810-88ff-74d412c1351f.ttf") format("truetype"),
+             url("../fonts/4cb16859-16ca-4342-b89c-292dc83266af.svg#4cb16859-16ca-4342-b89c-292dc83266af") format("svg");
+}
+@font-face{
+    font-family: "Avenir LT W02 85 Heavy";
+        src: url("../fonts/e9427e66-afa8-4ceb-bb31-7a970fb469ea.eot?#iefix");
+        src: url("../fonts/e9427e66-afa8-4ceb-bb31-7a970fb469ea.eot?#iefix") format("eot"),
+             url("../fonts/748da442-9dd9-4a4d-8da0-b114e16e5d7f.woff") format("woff"),
+             url("../fonts/6beeeb66-0b4e-4162-8788-8bf688b9829a.ttf") format("truetype"),
+             url("../fonts/8afe744b-89a2-4ae2-a88e-05c6882580f3.svg#8afe744b-89a2-4ae2-a88e-05c6882580f3") format("svg");
+}
+@font-face{
+    font-family: "Gill Sans W01 Medium";
+        src: url("../fonts/beab4258-af94-4971-a0db-b7bc2bef74bc.eot?#iefix");
+        src: url("../fonts/beab4258-af94-4971-a0db-b7bc2bef74bc.eot?#iefix") format("eot"),
+             url("../fonts/cd5a93fc-2bb1-48df-8982-11119cd6e270.woff") format("woff"),
+             url("../fonts/b6bdc93b-2720-4c92-b68d-48499456178e.ttf") format("truetype"),
+             url("../fonts/944cce8d-20bf-41c1-ae29-2bc8199859db.svg#944cce8d-20bf-41c1-ae29-2bc8199859db") format("svg");
+}
+
+/* HEADER */
+
+#branded .header {
+    width: 100%  !important;
+    left: 0;
+
+    .simple_search input {
+        color: white;
+        font-weight: normal;
+        outline: 1px solid #444;
+        font-family: "Gill Sans W01 Medium";
+        font-size: 10px;
+        color: gray;
+        font-weight: normal;
+    }
+
+    .logo {
+        width: 189px !important;
+        height: 17px;
+        position: absolute;
+        top: -22px;
+        left: -23px;
+        display: none;
+
+        a {
+            width: 177px !important;
+            height: 45px;
+        }
+    }
+}
+
+.header_wrapper  {
+    width: 999px;
+    margin: auto;
+    position: relative;
+}
+
+/* FLYOUT MENU */
+
+#lifestyles-styles-logo {
+    display: none;
+}
+
+#branded #category_menu {
+    top: 19px;
+    left: -11px !important;
+
+    ul.categories li.level0item ul.items {
+        margin: 3px 0px 0px 20px !important;
+
+        a {
+            font-family:"DIN Next W01 Regular";
+            font-size: 14x;
+            color: black !important;
+            font-weight: normal;
+        }
+
+        li a {
+            font-family:"Avenir LT W01 55 Roman" !important;
+            font-weight: normal !important;
+            font-size: 12px !important;
+        }
+    }
+
+    > div > ul > li {
+        > a {
+            padding: 10px 13px 9px !important;
+            font-size: 14px;
+            font-family:"DIN Next W01 Regular";
+
+            &.active {
+                padding: 9px 12px 10px !important;
+            }
+        }
+
+        > .active.no-flyout {
+            padding: 7px 16px 12px !important;
+        }
+    }
+
+    .sub_category .ul_wrapper {
+        padding-top: 20px;
+    }
+}
+
+@-moz-document url-prefix() { 
+    #branded #category_menu > div > ul > li > a.active {
+        padding: 10px 12px 10px !important;
+    }
+}
+
+#highlights_features_hotfix h2{
+    font-family: "UniversLTW01-57Condense 723821", Arial;
+}
+
+/* CONTENT */
+
+/* category banner heading text */
+.cat-banner-wrapper h1.catHeading {
+    display: block !important;
+    position: absolute;
+    top: 126px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-weight: normal;
+    font-size: 70px;
+    font-family: 'Univers_lt_cn', Helvetica, Arial, Verdana, sans-serif;
+    text-transform: uppercase;
+}
+

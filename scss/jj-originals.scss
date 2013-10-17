@@ -1,0 +1,438 @@
+/* Imported from jj-5lines */
+
+@import "jj-5lines";
+
+/* End import from jj-5lines /*
+
+
+/* GENERAL STUFF */
+ 
+#branded {
+    background-image: url("../img/wrapper-bg.jpg") !important;
+
+    .wrapper{
+        background: url("../img/originals/wrapper-bg.jpg") repeat-x !important;
+    }
+
+    &.pt_brandstorefront {
+        .container_24 {
+            background: white;
+        }
+         .storefront8 .grid_24 {
+            padding: 0px;
+            margin-top: 0px;
+            width: 1007px;
+            margin-left: 0;
+        }
+    }
+
+    .header {
+        height: 75px;
+    }
+
+    .simple_search {
+        top: 28px;
+    }
+}
+
+/* SUBBRAND TABS */
+
+.tabscontainer .tabs .originals {
+    background:url('../img/subbrand-tabs/o-active.png') no-repeat center center transparent;
+    background-color: white;
+    opacity: 1 !important;
+    filter: alpha(opacity = 100) !important;
+}
+
+/* MENU FLYOUT */
+
+#branded {
+    .header {
+        background:  white !important;
+        border-bottom: 1px solid #CCC;
+
+        .logo {
+            width: 177px !important;
+            height: 45px;
+            background: url("../img/originals/logo-o.jpg") no-repeat 100% !important;
+            position: absolute;
+            top: 85px;
+            left: -23px;
+
+            a {
+                width: 177px !important;
+                height: 45px;
+            }
+        }
+
+        .simple_search input { 
+            font-family:"Gill Sans W01 Bold" !important;
+            font-size: 12px;
+            color: black;
+            font-weight: normal;
+        }
+    }
+
+    #category_menu {
+        top: 26px;
+        left: -28px !important;
+
+        ul.categories li.level0item {
+            background: url("../img/premium/menu-triangle.jpg") no-repeat 96% center;
+
+            ul.items {
+                a {
+                    font-family:"Avenir LT W01 55 Roman";
+                    font-size: 15px;
+                }
+
+                li a {
+                    font-family:"Avenir LT W01 55 Roman" !important;
+                    font-weight: normal !important;
+                    font-size: 12px !important;
+                }
+            }
+        }
+
+        > div > ul > li > a {
+            font-size: 15px;
+            font-family:"Gill Sans W01 Medium";
+            font-weight: normal;
+
+            &.active {
+                padding: 9px 13px 11px !important;
+            }
+        }
+    }
+}
+
+@-moz-document url-prefix() { 
+    #branded #category_menu > div > ul > li > a.active {
+        padding: 9px 13px 10px !important;
+    }
+}
+
+/* SLIDESHOW */
+
+#branded {
+    .slideshow {
+        min-height: 520px;
+
+        .bubble {
+            background: url("../img/originals/bubble.jpg");
+            width: 7px;
+            height: 7px;
+            background-position: 0 -7px;
+            margin-right: 4px;
+        }
+
+        .prev-btn, 
+        .next-btn {
+            background: url("../img/originals/prev-next.png");
+            width: 30px;
+            height: 41px;
+            top: 44%;
+        }
+
+        .next-btn {
+            background-position: 0 -41px;
+        }
+    }
+
+    #top-carousel {
+        margin-bottom: -10px;
+    }
+}
+
+/* SEPARATOR */
+
+#branded {
+    .separator {
+        height: 20px;
+        width: 100%;
+        border-bottom: 1px solid black;
+        text-align: center;
+        margin-bottom: 43px;
+        margin-top: 21px;
+    }
+
+    .caption {
+        display: inline-block;
+        margin-top: 12px;
+        background: white;
+        padding: 0 22px;
+        font-size: 14px;
+        font-family:"Gill Sans W01 Medium";
+        letter-spacing: 3px;
+    }
+}
+
+/* HERO */
+
+#branded .hero {
+    width: 100%;
+    margin-right: 0px;
+    overflow: auto;
+
+    .slideshow {
+        min-height: 400px;
+        width: 629px;
+        float: left;
+    }
+
+    .content {
+        float: left;
+        width: 378px;
+        text-align: center;
+
+        h1 {
+            display: inline-block;
+            padding: 0 20px 12px;
+            background: url("../img/originals/wavy-bg.jpg") center bottom no-repeat;
+            text-align: center;
+            font-family:"Gill Sans W01 Medium";
+            font-size: 26px;
+            text-transform: uppercase;
+            font-weight: normal;
+            width: 200px;
+            margin-top: 57px;
+        }
+
+        div {
+            padding: 20px;
+            font-family:"Gill Sans W01 Medium";
+            font-size: 14px;
+        }
+
+        p {
+            width: 270px;
+            text-align: left;
+            display: inline-block;
+            font-size: 14px;
+            line-height: 20px;
+
+            a {
+                display: inline-block;
+                margin-top: 10px;
+                text-decoration: underline;
+                color: black;
+                line-height: 24px;
+            }
+        }
+    }
+}
+
+/* row 2 */
+
+.storefront9 .grid_8 {
+    width: 33%;
+    text-align: center;
+
+    h1 {
+        background: url("../img/originals/wavy-bg.jpg") center bottom no-repeat;
+        text-align: center;
+        display: inline-block;
+        font-family:"Gill Sans W01 Medium";
+        font-size: 26px;
+        width: 189px;
+        padding-bottom: 23px;
+        text-transform: uppercase;
+        font-weight: normal;
+        margin-top: 57px;
+    }
+
+    p {
+        width: 213px;
+        display: inline-block;
+        font-family:"Gill Sans W01 Medium";
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 19px;
+        text-align: left;
+    }
+
+     img.idleNoMore {
+        position: absolute;
+        opacity: 0;
+        filter: alpha(opacity = 0);
+        transition: all .2s;
+
+        &:hover {
+            opacity: 1;
+            filter: alpha(opacity = 100);
+            transition: all .2s;
+        }
+    }
+}
+
+/* WORDPRESS */
+
+#wp-container {
+    margin-top: -19px;  
+    overflow: auto;
+    min-height: 1300px;
+}
+
+#branded {
+    .wp-shoulder {
+        width: 237px;
+        float: left;
+        font-family:"Gill Sans W01 Medium";
+        font-size: 14px;
+        padding: 66px 13px 60px 13px;
+        text-align: left;
+        background: url("../img/originals/wavy-bg.jpg") center bottom no-repeat;
+        line-height: 20px;
+    }
+
+    .wp-sidebar {
+        width: 200px;
+        margin: 26px 0 0 24px;
+        float: left;
+
+        .wp-title {
+            cursor: pointer;
+            text-transform: uppercase;
+            padding: 20px 20px 14px;
+            margin: 0;
+            font-size: 16px;
+            font-family:"Gill Sans W01 Medium";
+            text-align: center;
+            background-position: bottom;
+            background-repeat: repeat-x;
+            transition: all .3s;
+
+            h3 { 
+                font-size: 17px;
+                margin: 0;
+                font-weight: normal;
+            }
+
+            h4 { 
+                font-size: 12px;
+                margin: 0;
+                font-weight: normal;
+            }
+
+            &:hover, 
+            &.active {
+                background-color: #fff577;
+                transition: all .3s;
+            }
+        }
+    }
+
+    .wp-canvas {
+        width: 693px;
+        float: right;
+        font-size: 18px;
+        font-family:"ClassicalGaramondW01-Ro";
+
+        .slideshow img {
+            width: 747px;
+        }
+
+        .content p {
+            width: 648px;
+            font-size: 14px;
+            font-weight: normal;
+            font-family:"Gill Sans W01 Medium";
+            padding-left: 20px;
+            line-height: 20px;
+
+            a {
+                color: black !important;
+                text-decoration: underline;
+                transition: all .3s;
+
+                &:hover {
+                    color: #666 !important;
+                    transition: all .3s;
+                }
+            }
+        }
+
+        .heading{
+            margin-left: 20px;
+            font-size: 22px;
+            text-align: center;
+            font-weight: normal;
+            font-family:"Gill Sans W01 Medium";
+            background: url("../img/originals/wavy-small-bg.jpg") center bottom no-repeat;
+            margin-top: 40px;
+            padding-bottom: 23px;
+            margin-bottom: 16px;
+        }
+    }
+
+    .wp-post-wrapper {
+        padding-top: 40px;  
+    }
+
+    .wp-header {
+        border-bottom: 1px solid black;
+        padding-bottom: 30px;
+    }
+}
+
+/* TUMBLR */
+
+#branded {
+    #tumblr-content {
+        margin-top: 5px;
+        min-height: 505px;
+    }
+
+    #tumblr-content, 
+    #tumblr-overflow {
+        width: 1013px;
+        margin-left: 10px;
+        background: url("../img/spinner.gif") no-repeat center center;
+
+        img{
+            margin: 0 22px 22px 0;
+            float: left;
+            height: 231px;
+            width: auto;
+            opacity: 0;
+            transition: all .3s;
+            filter: alpha(opacity = 0);
+        }
+    }
+}
+
+#tumblr-view-more {
+    text-align: center;
+
+    p {
+        display: inline-block;
+        font-family:"Gill Sans W01 Light";  
+        font-size: 14px;
+        text-transform: lowercase;
+        text-decoration: underline;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
+/* category banner heading text */
+
+.cat-banner-wrapper {
+    h1.catHeading {
+        font-size: 77px;
+        font-family:"Gill Sans W01 Light";
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: bold;
+    }
+
+    div.catLogo {
+        background: url("../img/originals/catbannerLogo.png") left 0 no-repeat !important;
+        width: 1007px;
+        height: 42px;
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        margin-left: -503px;
+    }
+}
