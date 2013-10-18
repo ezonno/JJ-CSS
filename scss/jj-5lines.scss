@@ -71,7 +71,7 @@
         margin: 3px 0px 0px 13px !important;
 
         a {
-            @include transition(all, .3s);
+            @include transition(all .3s);
         }
     }
 
