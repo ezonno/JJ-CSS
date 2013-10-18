@@ -1,3 +1,7 @@
+@import 'compass';
+@import 'vars';
+@import 'mixins';
+
 #branded {
     background-image: none !important;
     background-color: white;
@@ -167,7 +171,7 @@
 }
 #branded .grid_24 .grid_6 .col_1 a {
     color: black !important;
-    transition: all .3s;
+    @include transition(all .3s);
     text-transform: none;
 
     &:hover {
@@ -224,11 +228,11 @@
             font-family:"Futura T W01 Demi";
             font-size: 16px;
             color: black !important;
-            transition: all .3s;
+            @include transition(all .3s);
 
             &:hover {
                 color: #666 !important;
-                transition: all .3s;
+                @include transition(all .3s);
             }
         }
 
@@ -262,8 +266,8 @@
             padding: 0 !important;
             font-weight: normal;
             font-size: 12px !important;
-            column-count:1 !important;
             text-align: center;
+            @include column-count(1 !important);
         }
     }
 }
@@ -292,9 +296,6 @@
     }
 }
 
-
-
-
 /* Tumblr */
 
 #tumblr-wrapper {
@@ -317,8 +318,7 @@
         width: 380px;
         height: auto;
         visibility: hidden;
-        opacity: 0;
-        filter: alpha(opacity=0);
+        @include opacity(0);
     }
 }
 
