@@ -58,11 +58,11 @@
                 color: black !important;
                 text-decoration: none;
                 color: black !important;
-                transition: all .3s;
+                @include transition(all .3s);
 
                 &:hover {
                     color: #666 !important;
-                    transition: all .3s;
+                    @include transition(all .3s);
                 }
             }
         }
