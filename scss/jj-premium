@@ -1,3 +1,7 @@
+@import 'compass';
+@import 'vars';
+@import 'mixins';
+
 /* Imported from jj-5lines */
 
 @import "jj-5lines";
@@ -27,13 +31,13 @@
         .wp-clickable {
             padding: 30px 15px;
             cursor: pointer;
-            transition: all .2s;
+            @include transition(all .2s);
         }
 
         .wp-title.active .wp-clickable, 
         .wp-clickable:hover {
             background: #f7f5e9;
-            transition: all .2s;
+            @include transition(all .2s);
         }
     }
 }
@@ -72,8 +76,7 @@
 .tabscontainer .tabs .premium {
     background: url('../img/subbrand-tabs/p-active.png') no-repeat center center transparent;
     background-color: white;
-    opacity: 1 !important;
-    filter: alpha(opacity = 100) !important;
+    @include opacity(1, isImportant);
 }
 
 #branded #category_menu {
@@ -304,7 +307,6 @@
 
 @-moz-document url-prefix() { 
     #branded #category_menu > div > ul > li > a.active {
-        
         padding: 9px 8px 10px !important;
     }
 }
@@ -354,14 +356,13 @@
             float: left;
             width: 230px;
             height: auto;
-            opacity: 0;
-            transition: all .3s;
-            filter: alpha(opacity = 0);
-            -webkit-filter: grayscale(1); /* Google Chrome & Safari 6+ */
+            @include opacity(0);
+            @include transition(all .3s);
+            @include filter(grayscale(1));
 
             &:hover{
-                transition: all .3s;
-                filter: grayscale(0%);
+                @include transition(all .3s);
+                @include filter(grayscale(1));
             }
         }
     }
