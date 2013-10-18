@@ -1,3 +1,7 @@
+@import 'compass';
+@import 'vars';
+@import 'mixins';
+
 /* Imported from jj-5lines */
 
 @import 'jj-5lines';
@@ -59,10 +63,9 @@
 /* SUBBRAND TABS */
 
 .tabscontainer .tabs .core {
-    background:url('../img/subbrand-tabs/c-active.png') no-repeat center center transparent;
-    background-color:  white;
-    opacity: 1 !important;
-    filter: alpha(opacity = 100) !important;
+    background: url('../img/subbrand-tabs/c-active.png') no-repeat center center transparent;
+    background-color: white;
+    @include opacity(1, isImportant);
 }
 
 /* MENU FLYOUT */
@@ -216,9 +219,9 @@
             }
 
             .wp-clickable {
-                transition: all .2s;
                 padding: 10px 9px 10px 9px;
                 border: 2px solid #F2F2F2;
+                @include transition(all .2s);
             }
         }
     }
@@ -271,13 +274,13 @@
                 a {
                     color: black;
                     text-decoration: underline;
-                    transition: all .3s;
                     margin-left: -22px;
                     font-weight: bold;
+                    @include transition(all .3s);
 
                     &:hover {
                         color: #666 !important;
-                        transition: all .3s;
+                        @include transition(all .3s);
                     }
                 }
             }
