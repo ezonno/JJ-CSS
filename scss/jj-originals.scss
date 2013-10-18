@@ -1,3 +1,7 @@
+@import 'compass';
+@import 'vars';
+@import 'mixins';
+
 /* Imported from jj-5lines */
 
 @import "jj-5lines";
@@ -40,8 +44,7 @@
 .tabscontainer .tabs .originals {
     background:url('../img/subbrand-tabs/o-active.png') no-repeat center center transparent;
     background-color: white;
-    opacity: 1 !important;
-    filter: alpha(opacity = 100) !important;
+    @include opacity(1, isImportant);
 }
 
 /* MENU FLYOUT */
@@ -253,14 +256,13 @@
 
      img.idleNoMore {
         position: absolute;
-        opacity: 0;
-        filter: alpha(opacity = 0);
-        transition: all .2s;
+        @include opacity(0);
+        @include transition(all .2s);
 
         &:hover {
-            opacity: 1;
-            filter: alpha(opacity = 100);
-            transition: all .2s;
+            @include opacity(1);
+            @include transition(all .2s);
+
         }
     }
 }
@@ -300,7 +302,7 @@
             text-align: center;
             background-position: bottom;
             background-repeat: repeat-x;
-            transition: all .3s;
+            @include transition(all .3s);
 
             h3 { 
                 font-size: 17px;
@@ -317,7 +319,7 @@
             &:hover, 
             &.active {
                 background-color: #fff577;
-                transition: all .3s;
+                @include transition(all .3s);
             }
         }
     }
@@ -343,11 +345,11 @@
             a {
                 color: black !important;
                 text-decoration: underline;
-                transition: all .3s;
+                @include transition(all .3s);
 
                 &:hover {
                     color: #666 !important;
-                    transition: all .3s;
+                    @include transition(all .3s);
                 }
             }
         }
@@ -394,9 +396,8 @@
             float: left;
             height: 231px;
             width: auto;
-            opacity: 0;
-            transition: all .3s;
-            filter: alpha(opacity = 0);
+            @include transition(all .3s);
+            @include opacity(0);
         }
     }
 }
@@ -434,5 +435,4 @@
         top: 15px;
         left: 50%;
         margin-left: -503px;
-    }
-}
+    }}
