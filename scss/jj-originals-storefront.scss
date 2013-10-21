@@ -54,20 +54,20 @@
 
         ul li {
             list-style: none;
+        }
 
-            a {
-                font-family:"Gill Sans W01 Medium";
-                font-weight: normal;
-                font-size: 14px;
-                color: black !important;
-                text-decoration: none;
-                color: black !important;
+        a {
+            font-family:"Gill Sans W01 Medium";
+            font-weight: normal;
+            font-size: 14px;
+            color: black !important;
+            text-decoration: none;
+            color: black !important;
+            @include transition(all .3s);
+
+            &:hover {
+                color: #666 !important;
                 @include transition(all .3s);
-
-                &:hover {
-                    color: #666 !important;
-                    @include transition(all .3s);
-                }
             }
         }
 
@@ -75,6 +75,11 @@
             margin-top: 13px;
             margin-bottom: 7px;
             text-transform: uppercase;
+
+            a {
+                background: url("../img/originals/wavy-small-bg.jpg") center bottom no-repeat !important;
+                padding-bottom: 11px;
+            }
         }
     }
 }
