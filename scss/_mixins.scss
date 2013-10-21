@@ -1,0 +1,13 @@
+@mixin opacity($opacity, $important: no) {
+    @if $important == isImportant {
+        opacity: $opacity !important;
+        $opacity-ie: $opacity * 100;
+        filter: alpha(opacity=$opacity-ie) !important; //IE8
+    }
+    
+    @else {
+        opacity: $opacity;
+        $opacity-ie: $opacity * 100;
+        filter: alpha(opacity=$opacity-ie); //IE8
+    }
+}
