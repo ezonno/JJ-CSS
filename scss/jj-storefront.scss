@@ -67,10 +67,12 @@
 
         img {
             margin-top: -15px;
+            position: absolute;
 
-            .logo {
+            &.logo {
                 position: absolute;
                 margin-top: 0;
+                z-index: 100;
             }
         }
     }
@@ -194,7 +196,7 @@
         &.pinterest {
             background: url('../img/social_pinterest_off.png') no-repeat 15px center transparent;
 
-            :hover {
+            &:hover {
                 background: url('../img/social_pinterest_on.png') no-repeat 15px center #191919;
             }
         }
@@ -202,7 +204,7 @@
         &.google {
             background: url('../img/social_google_off.png') no-repeat 15px center transparent;
 
-            :hover {
+            &:hover {
                 background: url('../img/social_google_on.png') no-repeat 15px center #191919;
             }
         }
