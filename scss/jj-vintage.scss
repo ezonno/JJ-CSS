@@ -256,6 +256,10 @@
         height: 7px;
         background-position: 0 -7px;
         margin-right: 4px;
+
+        &.active {
+            background-position: 0 0;
+        }
     }
 
     .prev-btn,
