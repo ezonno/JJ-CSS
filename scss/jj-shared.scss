@@ -1,3 +1,7 @@
+@import 'compass';
+@import 'vars';
+@import 'mixins';
+
 /* HEADER */
 
 .top_header .header_top_wrapper a.brand_selector_link, 
@@ -49,11 +53,11 @@
 			text-transform: none;
 			background: none !important;
 			padding-left: 0 !important;
-			transition: all .3s;
+            @include transition(all .3s);
 
 			&:hover {
 				color: #666 !important;
-				transition: all .3s;
+                @include transition(all .3s);
 			}
 		}
 
@@ -79,12 +83,12 @@
 		a.active {
 			border: 1px solid black;
 			border-bottom: 0 none;
-			box-shadow: -1px -1px 2px 0px rgba(0, 0, 0, 0.1);
+            @include box-shadow(-1px -1px 2px 0px rgba(0, 0, 0, 0.1));
 		}
 
 		.active.no-flyout {
 			border: 0 none;
-			box-shadow: none;
+            @include box-shadow(none);
 		}
 	}
 
@@ -377,8 +381,9 @@
         background-position: 0 0;
         cursor: pointer;
         position: absolute;
+
         &:hover {
-            opacity: .8;
+            @include opacity(.8);
         }
     }
 
@@ -424,7 +429,7 @@
             padding: 0 !important;
             font-weight: normal;
             font-size: 12px !important;
-            column-count: 1 !important;
+            @include column-count(1 !important);
         }
     }
 }
@@ -455,8 +460,7 @@
         .grid_7.textleft img, 
         .grid_8.textcenter #trustpilot, 
         .grid_9.textright img {
-        	opacity: 1;
-        	filter: alpha(opacity = 100);
+            @include opacity(1);
         }
     }
 }		
