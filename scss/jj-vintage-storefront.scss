@@ -1,3 +1,7 @@
+@import 'compass';
+@import 'vars';
+@import 'mixins';
+
 #branded {
     background-image: none !important;
     background-color: #f8f6f3;
@@ -71,11 +75,11 @@ body {
 
         a {
             color: black !important;
-            transition: all .3s;
+            @include transition(all .3s);
 
             &:hover {
                 color: #666 !important;
-                transition: all .3s;
+                @include transition(all .3s);
             }
         }
     }
