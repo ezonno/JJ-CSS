@@ -117,8 +117,12 @@
         }
     }
 
-    .sub_category .ul_wrapper {
-        padding-top: 20px;
+    .sub_category {
+        top: 36px;
+
+        .ul_wrapper {
+            padding-top: 20px;
+        }
     }
 }
 
@@ -148,3 +152,6 @@
     text-transform: uppercase;
 }
 
+#branded.pt_category .container_24 .grid_24 {
+    margin-top: 95px;
+}
