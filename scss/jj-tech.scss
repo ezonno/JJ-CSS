@@ -4,7 +4,7 @@
 
 /* Import from jj-5lines */
 
-@import "jj-5lines.css";
+@import "jj-5lines";
 
 /* End import from jj-
 
@@ -16,7 +16,7 @@
     background-image: url("../img/wrapper-bg.jpg") !important;
     
     .wrapper {
-        background: url("../img/tech/wrapper-bg.jpg") repeat-x !important;
+        //background: url("../img/tech/wrapper-bg.jpg") repeat-x !important;
     }
 
     &.pt_brandstorefront {
