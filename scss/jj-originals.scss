@@ -2,6 +2,13 @@
 @import 'vars';
 @import 'mixins';
 
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/28d6de");
+  
+@font-face {font-family: 'RockwellStdTest';src: url('../fonts/28D6DE_0_0.eot');src: url('../fonts/28D6DE_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/28D6DE_0_0.woff') format('woff'),url('../fonts/28D6DE_0_0.ttf') format('truetype');}
+
 /* Imported from jj-5lines */
 
 @import "jj-5lines";
