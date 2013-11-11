@@ -17,11 +17,17 @@
     overflow: hidden;
     cursor: pointer;
     @include opacity(0);
+
+    // HOTFIX!
+    margin-top: -7px !important;
+    margin-bottom: 26px !important;
+    height: 365px !important;
 }
 
 @media only screen and (device-width: 768px) {
     .brand_slides .brand_slide {
-        @include opacity(1);
+        // HOTFIX
+        //@include opacity(1);
     }
 }
 
@@ -47,6 +53,9 @@
         letter-spacing: 1px;
         margin-bottom: 10px;
         text-transform: uppercase;
+
+        // HOTFIX!        
+        margin: 29px 0 18px !important;
     }
 
     .brand_disclaimer {
@@ -69,10 +78,25 @@
             margin-top: -15px;
             position: absolute;
 
+            // HOTFIX!
+            margin-top: 0 !important;
+
             &.logo {
                 position: absolute;
                 margin-top: 0;
                 z-index: 1;
+
+                // HOTFIX!
+                @include opacity(0);
+                @include transition(opacity .2s);
+                margin-top: 7px !important;
+                &:hover {
+                  @include opacity(1);
+                  @include transition(opacity .2s);
+                }
+                .touch &:hover {
+                  @include opacity(0);                    
+                }
             }
         }
     }
