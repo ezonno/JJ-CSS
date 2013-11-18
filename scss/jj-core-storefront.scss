@@ -82,22 +82,6 @@
     }
 }
 
-/* SEPARATOR */
-
-#branded .separator .caption {
-    text-align: center;
-    margin-top: 12px;
-    padding: 0 22px;
-    font-size: 50px;
-    font-family:"Avenir LT W01 55 Roman";
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-
-#branded .caption strong {
-    font-family:"Avenir LT W02 85 Heavy";
-}
-
 
 
 /* Footer */
@@ -136,7 +120,7 @@
             list-style: none;
 
             a {
-                font-family:"Futura W01 Book";
+                font-family:"FuturaBT-Book";
                 font-weight: normal;
                 font-size: 15px;
                 color: black !important;
@@ -152,7 +136,7 @@
             display: inline-block;
 
             a {
-                font-family:"Futura T W01 Demi";
+                font-family:"FuturaBT-Medium";
                 font-weight: bold;
                 font-size: 16px;
                 text-transform: uppercase;
@@ -205,18 +189,18 @@
             display: inline-block;
             font-size: 60px;
             width: 408px;
-            line-height: 51px;
+            line-height: 60px;
             padding-top: 120px;
             padding-bottom: 29px;
-            font-family:"Futura T W01 Demi";
-            font-weight: normal;
+            font-family:"FuturaBT-Medium";
+            font-weight: bold;
         }
 
         p {
             width: 408px;
             display: block;
             margin: auto;
-            font-family:"Futura W01 Book";
+            font-family:"FuturaBT-Book";
             font-size: 14px;
             line-height: 26px;
             padding-bottom: 30px;
@@ -225,8 +209,8 @@
 
         a {
             text-decoration: underline;
-            font-family:"Futura T W01 Demi";
-            font-size: 16px;
+            font-family:"FuturaBT-Medium";
+            font-size: 13px;
             color: black !important;
             @include transition(all .3s);
 
@@ -255,7 +239,7 @@
             font-size: 12px !important;
             margin-top: 8px;
             padding: 0 8px;
-            font-family: "Gill Sans W01 Medium" !important;
+            font-family: "GillSansMTStd-Medium" !important;
             line-height: 15px;
             width: auto;
         }

@@ -60,7 +60,7 @@
 
         > div > ul > li > a {
             font-size: 15px;
-            font-family:"Rockwell W02";
+            font-family:"RockwellStd";
             font-weight: normal;
 
             &.active {
@@ -89,7 +89,7 @@
         }
 
         .simple_search input {  
-            font-family: "CenturySchoolbookW01-Re" !important;
+            font-family: "CenturySchoolbookBT-Roman" !important;
             font-size: 12px;
             color: black;
             font-weight: normal;
@@ -103,12 +103,12 @@
 
         ul.items {
             a {
-                font-family:"Rockwell W02";
+                font-family:"RockwellStd";
                 font-size: 15px;
             }
 
             li a {
-                font-family:"Rockwell W02" !important;
+                font-family:"RockwellStd" !important;
                 font-weight: normal !important;
                 font-size: 12px !important;
             }
@@ -139,20 +139,20 @@
         background: #f8f6f3;
         padding: 0 22px;
         font-size: 24px;
-        font-family: "Rockwell W02";
+        font-family: "RockwellStd";
         letter-spacing: 0px;
         text-transform: uppercase;
         margin-bottom: 5px;
     }
 
     &.big .caption {
-        font-family:"Rockwell W02";
+        font-family:"RockwellStd";
         font-size: 60px;
         text-transform: uppercase;
     }
 }
 
-/* HERO */
+/* HERO ..maybe obsolete? */
 
 #branded.pt_brandstorefront .storefront8 .hero {
     width: 619px;
@@ -163,7 +163,6 @@
     h1 {
         padding: 0 20px;
         text-align: center;
-        font-family:"ClassicalGaramondW01-Bo 1119390";
         font-size: 20px;
         text-transform: uppercase;
         font-weight: bold;
@@ -171,7 +170,6 @@
 
     div.multi-column{
         padding: 20px;
-        font-family:"Gill Sans W01 Medium";
         font-size: 14px;
     }
 
@@ -191,7 +189,7 @@
     }
 }
 
-/* SHOULDER */
+/* SHOULDER ..maybe obsolete? */
 
 #branded.pt_brandstorefront .storefront8 .shoulder {
     width: 367px;
@@ -206,7 +204,6 @@
     }
 
     h1 {
-        font-family:"Freeway Gothic";
         font-size: 26px;
         text-transform: uppercase;
         font-weight: normal;
@@ -215,7 +212,6 @@
     }
 
     h2 {
-        font-family:"Freeway Gothic";
         font-size: 15px;
         text-transform: uppercase;
         font-weight: normal;
@@ -232,14 +228,12 @@
         &.pricetag{
             text-align: center;
             color: black;
-            font-family:"ClassicalGaramondW01-Bo 1119390";
             font-size: 20px;
             text-decoration: none !important;
         }
     }
 
     .tip {
-        font-family:"Gill Sans W01 Medium";
         font-size: 14px;
         margin: 20px 40px;
     }
@@ -340,7 +334,7 @@
             left: 374px;
 
             .price {
-                font-family: "Rockwell W02";
+                font-family: "RockwellStd";
                 font-size: 15px;
                 text-align: center;
                 display: block;
@@ -359,7 +353,7 @@
             }
 
             &.buy {
-                font-family: "Courier New", Courier, monospace;
+                font-family: "CourierLTCYR-Regular";
                 font-size: 16px;
                 text-align: center;
                 text-decoration: normal;
@@ -370,7 +364,7 @@
         }
 
         h1 {
-            font-family:"Rockwell W02";
+            font-family:"RockwellStd";
             font-weight: normal;
             font-size: 20px;
             text-transform: uppercase;
@@ -381,8 +375,9 @@
 
         p {
             text-align: left;
-            font-family:"CenturySchoolbookW01-Re";
+            font-family:"CenturySchoolbookBT-Roman";
             font-size: 14px;
+            line-height: 20px;
         }
     }
 }
@@ -418,7 +413,7 @@
 
     h1 {
         color: white;
-        font-family:"Rockwell W02";
+        font-family:"RockwellStd";
         font-size: 60px;
         line-height: 71px;
 
@@ -440,7 +435,7 @@
             font-size: 12px !important;
             margin-top: 8px;
             padding: 0 8px;
-            font-family: "Gill Sans W01 Medium" !important;
+            font-family: "GillSansMTStd-Medium" !important;
             line-height: 15px;
             color: black;
         }
@@ -473,7 +468,7 @@
             .wp-sidebar-top {
                 text-align: center;
                 padding: 30px 0;
-                font-family:"Rockwell W02";
+                font-family:"RockwellStd";
                 font-size: 18px;
                 text-transform: uppercase;
             }
@@ -481,7 +476,7 @@
             .wp-title {
                 margin: 10px 0 0;
                 padding: 0 30px 0 30px;
-                font-family:"CenturySchoolbookW01-Re";
+                font-family:"CenturySchoolbookBT-Roman";
                 font-size: 12px;
                 text-align: center;
                 background-position: bottom;
@@ -502,7 +497,8 @@
                 }
 
                 .month {
-                    font-family:"CenturySchoolbookW01-Bo";
+                    font-family:"CenturySchoolbookBT-Roman";
+                    font-weight: bold;
                     text-transform: uppercase;
                     font-style: normal;
                     padding-bottom: 5px;
@@ -519,7 +515,6 @@
             width: 1009px;
             float: left;
             font-size: 18px;
-            font-family:"ClassicalGaramondW01-Ro";
             min-height: 870px;
             background: url("../img/vintage/wordpress-bg.jpg") no-repeat;
             background-position: 0 515px;
@@ -553,7 +548,7 @@
                 text-align: center;
                 text-transform: uppercase;
                 text-decoration: underline;
-                font-family:"Courier PS W01 Bold";
+                font-family:"CourierLTCYR-Regular";
                 font-size: 40px;
                 cursor: pointer;
                 pointer-events: none;
@@ -562,7 +557,7 @@
 
             .player-song {
                 top: 347px;
-                font-family:"Rockwell W02";
+                font-family:"RockwellStd";
                 font-size: 20px;
                 text-decoration: none;
             }
@@ -607,7 +602,7 @@
 
                 .column p {
                     padding: 10px 20px 0;
-                    font-family:"CenturySchoolbookW01-Re";
+                    font-family:"CenturySchoolbookBT-Roman";
                     font-size: 14px;
                     margin: 0;
 
@@ -640,7 +635,7 @@
 .cat-banner-wrapper {
     h1.catHeading {
         font-size: 70px;
-        font-family:"Rockwell";
+        font-family:"RockwellStd";
         text-transform: uppercase;
         font-weight: bold;
         background: url("../img/vintage/catbanner-h1-background.jpg") bottom center no-repeat !important;

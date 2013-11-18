@@ -39,18 +39,23 @@
     .col_1 {
         line-height: 20px;
 
-        ul li {
-            margin-bottom: 3px;
-            list-style: none;
+        ul {
+            margin-top: 18px;
 
-            a {
-                font-family:"ClassicalGaramondW01-Ro";
-                font-weight: normal;
-                font-size: 16px;
-                color: black !important;
-                text-decoration: none;
+            li {
+                margin-bottom: 7px;
+                list-style: none;
+
+                a {
+                    font-family:"AGaramond-Regular";
+                    font-weight: normal;
+                    font-size: 16px;
+                    color: black !important;
+                    text-decoration: none;
+                }
             }
-        }
+
+        } 
 
         .main_category {
             margin-top: 13px;
@@ -58,7 +63,7 @@
             text-transform: uppercase;
 
             a {
-                font-family:"ClassicalGaramondW01-Bo 1119390";
+                font-family:"GillSansMTStd-Book";
                 letter-spacing: 2px;
                 font-weight: normal;
                 font-size: 15px;

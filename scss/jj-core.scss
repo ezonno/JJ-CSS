@@ -43,7 +43,7 @@
 
         .simple_search input {
             outline: 1px solid black;   
-            font-family:"Gill Sans W01 Bold" !important;
+            font-family:"GillSansMTStd-Book" !important;
             font-size: 12px;
             color: black;
             font-weight: normal;
@@ -78,13 +78,13 @@
 
         ul.items {
             a {
-                font-family:"Futura T W01 Demi";
-                font-size: 15px;
+                font-family:"FuturaBT-Medium";
+                font-size: 13px;
                 font-weight: normal;
             }
 
             li a {
-                font-family:"Futura W01 Book" !important;
+                font-family:"FuturaBT-Book" !important;
                 font-weight: normal !important;
                 font-size: 12px !important;
             }
@@ -92,8 +92,8 @@
     }
 
     > div > ul > li > a {
-        font-size: 16px;
-        font-family:"Futura T W01 Demi";
+        font-size: 15px;
+        font-family:"FuturaBT-Medium";
         font-weight: normal;
 
         &.active {
@@ -195,7 +195,7 @@
         .wp-sidebar-top {
             text-align: center;
             padding: 64px 0 20px 18px;
-            font-family:"Futura W01 Book";
+            font-family:"FuturaBT-Book";
             font-size: 26px;
             text-transform: uppercase;
             text-align: left;
@@ -210,7 +210,7 @@
             background-repeat: repeat-x;
 
             .title {
-                font-family:"Futura T W01 Demi";
+                font-family:"FuturaBT-Medium";
                 font-size: 16px;
                 margin-bottom: 5px;
             }
@@ -221,7 +221,7 @@
 
             .theme {
                 text-transform: uppercase;
-                font-family:"Futura W01 Book";
+                font-family:"FuturaBT-Book";
                 font-size: 12px; 
             }
 
@@ -273,7 +273,7 @@
 
             p {
                 padding: 10px 20px 0;
-                font-family:"Futura W01 Book";
+                font-family:"FuturaBT-Book";
                 font-size: 13px;
                 margin: 0;
                 line-height: 21px;
@@ -311,11 +311,11 @@
 
             h1 {
                 margin-bottom: 18px;
-                font-family:"Futura T W01 Demi";
-                font-weight: normal;
+                font-family:"FuturaBT-Medium";
+                font-weight: bold;
                 font-size: 60px;
                 text-align: center;
-                line-height: 49px;
+                line-height: 60px;
             }
         }
     }
@@ -325,7 +325,7 @@
 
 .cat-banner-wrapper h1.catHeading {
     font-size: 77px;
-    font-family:"Futura T W01 Demi";
+    font-family:"FuturaBT-Medium";
     text-transform: none;
 }
 .cat-banner-wrapper div.catLogo {

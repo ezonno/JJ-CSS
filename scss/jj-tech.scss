@@ -84,7 +84,7 @@
         }
 
         .simple_search input {  
-            font-family:"Gill Sans W01 Bold" !important;
+            font-family:"GillSansMTStd-Book" !important;
             font-size: 12px;
             color: black;
             font-weight: normal;
@@ -100,16 +100,16 @@
 
             ul.items {
                 font-size: 14px;
-                font-family:"Avenir LT W02 85 Heavy";
+                font-family:"AvenirLT-Heavy";
                 font-weight: normal;
                 
                 a {
-                    font-family:"Avenir LT W01 55 Roman";
-                    font-size: 15px;
+                    font-family:"AvenirLT-Light";
+                    font-size: 13px;
                 }
 
                 li a {
-                    font-family:"Avenir LT W01 55 Roman" !important;
+                    font-family:"AvenirLT-Light" !important;
                     font-weight: normal !important;
                     font-size: 12px !important;
                 }
@@ -193,7 +193,7 @@
         .wp-sidebar-top {
             text-align: center;
             padding: 20px 0 20px 18px;
-            font-family:"Avenir LT W01 55 Roman";
+            font-family:"AvenirLT-Light";
             font-size: 16px;
             text-transform: uppercase;
             background: url("../img/tech/dotted-h.jpg") 1px bottom repeat-x;
@@ -203,7 +203,7 @@
         .wp-title {
             margin:  0;
             padding: 0 0 2px 2px;
-            font-family:"Avenir LT W01 55 Roman";
+            font-family:"AvenirLT-Light";
             font-size: 14px;
             text-align: left;
             background-position: bottom;
@@ -211,7 +211,7 @@
             background: url("../img/tech/dotted-h.jpg") 1px bottom repeat-x;
 
             .title{
-                font-family:"Avenir LT W02 85 Heavy";
+                font-family:"AvenirLT-Heavy";
                 margin-bottom: 5px;
             }
 
@@ -230,7 +230,7 @@
             }
 
             .month {
-                font-family:"Rockwell W01 Bold";
+                font-family:"RockwellStd";
                 text-transform: uppercase;
                 font-style: normal;
                 padding-bottom: 5px;
@@ -247,7 +247,6 @@
         width: 1009px;
         float: left;
         font-size: 18px;
-        font-family:"ClassicalGaramondW01-Ro";
         min-height: 870px;
         background-position: 0 515px;
         margin-bottom: 50px;
@@ -275,28 +274,6 @@
             height: 500px;
         }
 
-        .player-band, 
-        .player-song {
-            position: absolute;
-            top: 300px;
-            color: white;
-            width: 100%;
-            text-align: center;
-            text-transform: uppercase;
-            text-decoration: underline;
-            font-family:"Courier PS W01 Bold";
-            font-size: 40px;
-            cursor: pointer;
-            pointer-events: none;
-        }
-
-        .player-song {
-            top: 347px;
-            font-family:"Rockwell W02";
-            font-size: 20px;
-            text-decoration: none;
-        }
-
         .content {
             padding-right: 271px;
             padding-bottom: 10px;
@@ -310,7 +287,7 @@
             .column {
                 p {
                     padding: 10px 20px 0;
-                    font-family:"Avenir LT W01 55 Roman";
+                    font-family:"AvenirLT-Light";
                     font-size: 14px;
                     text-indent:23px;
                     margin: 0;
@@ -389,8 +366,8 @@
             width: 700px;
 
             h1 {
-                margin-bottom: 18px;
-                font-family:"Avenir LT W01 55 Roman";
+                margin-bottom: 28px;
+                font-family:"AvenirLT-Light";
                 font-weight: normal;
                 font-size: 29px;
                 text-transform: uppercase;
@@ -399,11 +376,11 @@
 
             h2 {
                 position: absolute;
-                top: 25px;
+                top: 34px;
                 background: white;
                 left: 29px;
                 padding: 0 10px;
-                font-family:"Avenir LT W02 85 Heavy";
+                font-family:"AvenirLT-Heavy";
                 font-weight: bold;
                 font-size: 18px;
                 text-transform: uppercase;
@@ -438,6 +415,7 @@
 
     .contentasset .container_24 {
         background: transparent !important;
+        margin-top: 72px;
     }
 }
 
@@ -485,7 +463,7 @@
         margin-right: 35px;
 
         h1 {
-            font-family:"Avenir LT W01 55 Roman";
+            font-family:"AvenirLT-Heavy";
             font-size: 32px;
             text-transform: uppercase;
             color: #b8c5cc;
@@ -493,21 +471,21 @@
         }
 
         .price {
-            font-family:"Avenir LT W01 55 Roman";
+            font-family:"AvenirLT-Light";
             font-size: 22px;
             color: black;
             margin-bottom: 30px;
         }
 
         .description {
-            font-family:"Avenir LT W01 55 Roman";
+            font-family:"AvenirLT-Light";
             font-size: 14px;
             color: #1b2226;
             line-height: 21px;
         }
 
         .buyNow {
-            font-family:"Avenir LT W01 55 Roman";
+            font-family:"AvenirLT-Light";
             padding: 7px 10px;
             background: black;
             color: white;
@@ -537,7 +515,7 @@
 
             .price {
                 margin-top: -12px;
-                font-family:"Avenir LT W01 55 Roman";
+                font-family:"AvenirLT-Light";
                 font-size: 18px;
             }
         }
@@ -550,7 +528,7 @@
 .cat-banner-wrapper {
     h1.catHeading {
         font-size: 60px;
-        font-family:"Avenir LT W01 55 Roman";
+        font-family:"AvenirLT-Light";
         text-transform: uppercase;
     }
 

@@ -52,12 +52,17 @@
     .col_1 {
         line-height: 20px;
 
-        ul li {
-            list-style: none;
+        ul {
+            margin-top: 24px;
+
+            li {
+                list-style: none;
+                margin-top: 3px;
+            }
         }
 
         a {
-            font-family:"Gill Sans W01 Medium";
+            font-family:"GillSansMTStd-Medium";
             font-weight: normal;
             font-size: 14px;
             color: black !important;

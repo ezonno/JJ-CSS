@@ -98,7 +98,7 @@
         }
 
         .simple_search input {  
-            font-family:"Gill Sans W01 Bold" !important;
+            font-family:"GillSansMTStd-Book" !important;
             font-size: 12px;
             color: black;
             font-weight: normal;
@@ -111,12 +111,12 @@
 
             ul.items {
                 a {
-                    font-family:"Gill Sans W01 Medium" !important;
+                    font-family:"GillSansMTStd-Medium" !important;
                     font-size: 15px;
                 }
 
                 li a {
-                    font-family:"Gill Sans W01 Medium" !important;
+                    font-family:"GillSansMTStd-Medium" !important;
                     font-weight: normal !important;
                     font-size: 13px !important;
                 }
@@ -125,7 +125,6 @@
 
         > div > ul > li > a {
             font-size: 15px;
-            font-family:"Freeway Gothic";
             font-weight: normal;
             padding: 10px 9px 9px !important;
 
@@ -166,7 +165,8 @@
         background: white;
         padding: 0 22px;
         font-size: 15px;
-        font-family:"ClassicalGaramondW01-Bo 1119390";
+        font-family:"AGaramond-Regular";
+        font-weight: bold;
         letter-spacing: 3px;
     }
 }
@@ -184,7 +184,8 @@
         h1 {
             padding: 0 20px;
             text-align: center;
-            font-family:"ClassicalGaramondW01-Bo 1119390";
+            font-family:"AGaramond-Regular";
+            font-weight: bold;
             font-size: 15px;
             text-transform: uppercase;
             font-weight: bold;
@@ -193,7 +194,7 @@
 
         div.multi-column{
             padding: 20px;
-            font-family:"ClassicalGaramondW01-Ro";
+            font-family:"AGaramond-Regular";
             font-size: 14px;
             text-align: left;
 
@@ -280,7 +281,8 @@
             &.pricetag {
                 text-align: center;
                 color: black;
-                font-family:"ClassicalGaramondW01-Bo 1119390";
+                font-family:"AGaramond-Regular";
+                font-weight: bold;
                 text-decoration: none !important;
                 font-size: 16px;
                 display: block;
@@ -292,7 +294,7 @@
         }
 
         .tip {
-            font-family:"ClassicalGaramondW01-Ro";
+            font-family:"AGaramond-Regular";
             font-size: 14px;
             margin: 20px 40px;
             text-align: left;
@@ -385,7 +387,8 @@
 
     p {
         display: inline-block;
-        font-family:"ClassicalGaramondW01-Bo 1119390";  
+        font-family:"AGaramond-Regular";
+        font-weight: bold;  
         font-size: 16px;
         text-transform: uppercase;
         text-decoration: none;
@@ -413,7 +416,7 @@
         }
 
         .wp-sidebar-top {
-            font-family:"ClassicalGaramondW01-Ro";
+            font-family:"AGaramond-Regular";
             font-size: 26px;
             text-align: center;
             padding: 30px 0;
@@ -423,7 +426,7 @@
         .wp-title {
             margin: 10px 0 0;
             padding: 0 10px 10px;
-            font-family:"ClassicalGaramondW01-Ro";
+            font-family:"AGaramond-Regular";
             font-size: 14px;
             text-align: center;
             background-image: url("../img/premium/wp-sidebar-dotted.jpg");
@@ -436,7 +439,7 @@
         width: 747px;
         float: right;
         font-size: 18px;
-        font-family:"ClassicalGaramondW01-Ro";
+        font-family:"AGaramond-Regular";
 
         .slideshow {
             min-height: 301px;
@@ -468,7 +471,8 @@
 
             .label {
                 float: left;
-                font-family:"ClassicalGaramondW01-Bo 1119390";
+                font-family:"AGaramond-Regular";
+                font-weight: bold;
                 text-align: right;
                 padding-right: 20px;
                 width: 170px;
