@@ -1,3 +1,123 @@
 #branded {
-  background-image: none;
+  background: none;
+}
+
+#branded .area {
+  width: 100%;
+  background: url(../img/bg_noise.jpg) !important;
+}
+
+#branded .area .hero img {
+  width: 100%;
+  height: auto;
+}
+
+#branded .area .callout {
+  width: 1005px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#branded .area .callout span {
+  text-transform: uppercase;
+  font-size: 24px;
+  display: block;
+  margin: 2em 0 .5em;
+}
+
+#branded .area .callout p {
+  font-size: 13px;
+  width: 60%;
+  line-height: 18px;
+  margin: 0 auto;
+}
+
+#branded .area .brandslides {
+  width: 1005px;
+  margin: 0 auto;
+}
+
+#branded .area .brandslides .slide {
+  width: 192px;
+  height: 435px;
+  float: left;
+  margin: 0 11.25px 0 0;
+  background: #fff;
+  border: 1px solid #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(85%, #ffffff), color-stop(100%, #f9f9f9));
+  background-image: -webkit-linear-gradient(#ffffff, #ffffff 85%, #f9f9f9 100%);
+  background-image: -webkit-gradient(linear, top left, bottom left, from(#ffffff), color-stop(85%, #ffffff), to(#f9f9f9));
+  background-image: linear-gradient(#ffffff, #ffffff 85%, #f9f9f9 100%);
+}
+
+#branded .area .brandslides .slide:last-child {
+  margin: 0;
+}
+
+#branded .area .brandslides .slide .image {
+  width: 172px;
+  height: 362px;
+  background: url(http://placesheen.com/172/362) no-repeat center;
+  margin: 10px auto 0;
+  position: relative;
+}
+
+#branded .area .brandslides .slide .image .brandtagline {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  font-size: 11px;
+  bottom: 15px;
+}
+
+#branded .area .brandslides .slide .logo {
+  height: 61px;
+}
+
+#branded .area .brandslides .slide.corebox .logo {
+  background: url(../img/core.png) no-repeat center;
+}
+
+#branded .area .brandslides .slide.originalsbox .logo {
+  background: url(../img/originals.png) no-repeat center;
+}
+
+#branded .area .brandslides .slide.premiumbox .logo {
+  background: url(../img/premium.png) no-repeat center;
+}
+
+#branded .area .brandslides .slide.vintagebox .logo {
+  background: url(../img/vintage.png) no-repeat center;
+}
+
+#branded .area .brandslides .slide.techbox .logo {
+  background: url(../img/tech.png) no-repeat center;
+}
+
+#branded .area .sellingpoints {
+  clear: both;
+  width: 1005px;
+  margin: 10em auto;
+}
+
+#branded .area .sellingpoints .column {
+  width: 33%;
+  float: left;
+}
+
+#branded .area .sellingpoints .column span {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  text-transform: uppercase;
+  line-height: 23px;
+}
+
+#branded .area .sellingpoints .column span:first-child {
+  font-weight: bold;
 }

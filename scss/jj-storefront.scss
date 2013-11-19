@@ -3,5 +3,119 @@
 @import 'mixins';
 
 #branded {
-    background-image: none;
+    background: none;
+
+    .area {
+        width: 100%;
+        background: url(../img/bg_noise.jpg) !important;
+
+        .hero img {
+            width: 100%;
+            height: auto;
+        }
+
+        .callout {
+            width: 1005px;
+            margin: 0 auto;
+            text-align: center;
+
+            span {
+                text-transform: uppercase;
+                font-size: 24px;
+                display: block;
+                margin: 2em 0 .5em;
+            }
+
+            p {
+                font-size: 13px;
+                width: 60%;
+                line-height: 18px;
+                margin: 0 auto;
+            }
+        }
+
+        .brandslides {
+            width: 1005px;
+            margin: 0 auto;
+
+            .slide {
+                width: 192px;
+                height: 435px;
+                float: left;
+                margin: 0 11.25px 0 0;
+                background: #fff;
+                border: 1px solid #fff;
+                @include box-sizing(border-box);
+                @include box-shadow(0 0 3px rgba(0, 0, 0, .1));
+                @include background-image(linear-gradient(#fff, #fff 85%, #f9f9f9 100%));
+
+                &:last-child {
+                    margin: 0;
+                }
+
+                .image {
+                    width: 172px;
+                    height: 362px;
+                    background: url(http://placesheen.com/172/362) no-repeat center;
+                    margin: 10px auto 0;
+                    position: relative;
+
+                    .brandtagline {
+                        position: absolute;
+                        text-align: center;
+                        width: 100%;
+                        font-size: 11px;
+                        bottom: 15px;
+                    }
+                }
+
+                .logo {
+                    height: 61px;
+                }
+
+                &.corebox .logo {
+                    background: url(../img/core.png) no-repeat center;
+                }
+
+                &.originalsbox .logo {
+                    background: url(../img/originals.png) no-repeat center;
+                }
+
+                &.premiumbox .logo {
+                    background: url(../img/premium.png) no-repeat center;
+                }
+
+                &.vintagebox .logo {
+                    background: url(../img/vintage.png) no-repeat center;
+                }
+
+                &.techbox .logo {
+                    background: url(../img/tech.png) no-repeat center;
+                }
+            }
+        }
+
+        .sellingpoints {
+            clear: both;
+            width: 1005px;
+            margin: 10em auto;
+
+            .column {
+                width: 33%;
+                float: left;
+
+                span {
+                    display: block;
+                    text-align: center;
+                    font-size: 11px;
+                    text-transform: uppercase;
+                    line-height: 23px;
+
+                    &:first-child {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
 }
