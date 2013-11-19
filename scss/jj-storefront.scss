@@ -80,6 +80,7 @@
 
             // HOTFIX!
             margin-top: 0 !important;
+            -webkit-backface-visibility: hidden;
 
             &.logo {
                 position: absolute;
