@@ -1,3 +1,7 @@
+#branded .area .wide_wrapper {
+  padding-bottom: 1px;
+}
+
 #branded {
   background: none;
 }
@@ -14,7 +18,7 @@
 
 #branded .area .callout {
   width: 1005px;
-  margin: 0 auto;
+  margin: 5em auto 4em;
   text-align: center;
 }
 
@@ -22,7 +26,7 @@
   text-transform: uppercase;
   font-size: 24px;
   display: block;
-  margin: 2em 0 .5em;
+  margin: 0 0 .5em;
 }
 
 #branded .area .callout p {
@@ -102,12 +106,29 @@
 #branded .area .sellingpoints {
   clear: both;
   width: 1005px;
-  margin: 10em auto;
+  margin: 10em auto 5em;
+}
+
+#branded .area .sellingpoints .lightborder {
+  height: 1px;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(30%, #ffffff), color-stop(70%, #ffffff), color-stop(100%, rgba(255, 255, 255, 0)));
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 30%, #ffffff 70%, rgba(255, 255, 255, 0) 100%);
+  background-image: -webkit-gradient(linear, top left, top right, from(rgba(255, 255, 255, 0)), color-stop(30%, #ffffff), color-stop(70%, #ffffff), to(rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 30%, #ffffff 70%, rgba(255, 255, 255, 0) 100%);
+}
+
+#branded .area .sellingpoints .darkborder {
+  height: 1px;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(235, 235, 235, 0)), color-stop(30%, #ebebeb), color-stop(70%, #ebebeb), color-stop(100%, rgba(235, 200, 200, 0)));
+  background-image: -webkit-linear-gradient(left, rgba(235, 235, 235, 0) 0%, #ebebeb 30%, #ebebeb 70%, rgba(235, 200, 200, 0) 100%);
+  background-image: -webkit-gradient(linear, top left, top right, from(rgba(235, 235, 235, 0)), color-stop(30%, #ebebeb), color-stop(70%, #ebebeb), to(rgba(235, 200, 200, 0)));
+  background-image: linear-gradient(left, rgba(235, 235, 235, 0) 0%, #ebebeb 30%, #ebebeb 70%, rgba(235, 200, 200, 0) 100%);
 }
 
 #branded .area .sellingpoints .column {
   width: 33%;
   float: left;
+  margin: 2em 0;
 }
 
 #branded .area .sellingpoints .column span {
@@ -120,4 +141,126 @@
 
 #branded .area .sellingpoints .column span:first-child {
   font-weight: bold;
+}
+
+#branded .area .promos {
+  width: 1005px;
+  margin: 0 auto;
+}
+
+#branded .area .promos h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+  font-size: 17px;
+}
+
+#branded .area .promos .top {
+  height: 280px;
+  margin-bottom: 4px;
+  background: url(http://placesheen.com/1005/280) no-repeat center;
+}
+
+#branded .area .promos .bottom .one,
+#branded .area .promos .bottom .two {
+  width: 500px;
+  height: 260px;
+  background: url(http://placesheen.com/503/260) no-repeat center;
+}
+
+#branded .area .promos .bottom .one {
+  float: left;
+}
+
+#branded .area .promos .bottom .two {
+  float: right;
+}
+
+#branded .area .products {
+  width: 1005px;
+  margin: 7em auto;
+}
+
+#branded .area .products h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 17px;
+  margin-bottom: 1em;
+}
+
+#branded .area .products .box {
+  width: 332px;
+  height: 440px;
+  background: #fff;
+  float: left;
+  margin-bottom: 4px;
+  position: relative;
+}
+
+#branded .area .products .box.one,
+#branded .area .products .box.four,
+#branded .area .products .box.seven {
+  margin-right: 4px;
+}
+
+#branded .area .products .box.three,
+#branded .area .products .box.six,
+#branded .area .products .box.nine {
+  margin-left: 4px;
+}
+
+#branded .area .products .box a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #000;
+}
+
+#branded .area .products .box a:hover {
+  text-decoration: none;
+}
+
+#branded .area .products .box a span {
+  text-align: center;
+  display: block;
+  line-height: 2em;
+}
+
+#branded .area .products .box a .callout {
+  font-size: 11px;
+  padding-top: 365px;
+  z-index: 1;
+  position: relative;
+  margin: 0;
+  width: 100%;
+  text-decoration: none;
+}
+
+#branded .area .products .box a .link {
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+#branded .area .products .box.five h1 {
+  margin: 0 auto 2.5em;
+  font-size: 20px;
+  width: 75%;
+  text-transform: uppercase;
+}
+
+#branded .area .products .box.five p {
+  text-align: center;
+  font-size: 13px;
+  line-height: 22px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+#branded .area .products .box.five a {
+  margin: 2.5em auto 0;
+  width: 75%;
+  text-align: center;
+  font-size: 13px;
+  text-decoration: underline;
 }
