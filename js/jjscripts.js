@@ -17,9 +17,15 @@ var jjShizzle = (function (jQuery) {
 				boxFiveContent.css('paddingTop', actualNum);
 			},
 
-			hoverNizzle : function () {
+			brandImgHover : function () {
+				$('#branded .content .wide_wrapper .brandimages .brandimage').hover(function(){
+					$(this).find('.hover, .overlay').stop().fadeToggle('fast');
+				});
+			},
+
+			promoHover : function () {
 				$('#branded .content .wide_wrapper .promos .promo').hover(function(){
-					$(this).find('.hover').stop().fadeToggle('fast');
+					$(this).find('.overlay').stop().fadeToggle('fast');
 				});
 			}
 		// end custom functions
@@ -28,5 +34,6 @@ var jjShizzle = (function (jQuery) {
 
 jQuery(document).ready(function () {
 	jjShizzle.centerBoxFive();
-	jjShizzle.hoverNizzle();
+	jjShizzle.brandImgHover();
+	jjShizzle.promoHover();
 });

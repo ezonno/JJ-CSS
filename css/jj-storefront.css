@@ -38,13 +38,13 @@
   margin: 0 auto;
 }
 
-#branded .area .brandslides {
+#branded .area .brandimages {
   /* 1024px and default styles */
   width: 1005px;
   margin: 0 auto;
 }
 
-#branded .area .brandslides .slide {
+#branded .area .brandimages .brandimage {
   width: 192px;
   height: 435px;
   float: left;
@@ -63,11 +63,11 @@
   background-image: linear-gradient(#ffffff, #ffffff 85%, #f9f9f9 100%);
 }
 
-#branded .area .brandslides .slide:last-child {
+#branded .area .brandimages .brandimage:last-child {
   margin: 0;
 }
 
-#branded .area .brandslides .slide .image {
+#branded .area .brandimages .brandimage .image {
   width: 172px;
   height: 362px;
   -webkit-background-size: cover;
@@ -76,7 +76,23 @@
   position: relative;
 }
 
-#branded .area .brandslides .slide .image .brandtagline {
+#branded .area .brandimages .brandimage .image .hover {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 170px;
+  display: none;
+}
+
+#branded .area .brandimages .brandimage .image .hover span {
+  padding: 10px 20px;
+  background: #fff;
+  text-transform: uppercase;
+  color: #000;
+  font-size: 12px;
+}
+
+#branded .area .brandimages .brandimage .image .brandtagline {
   position: absolute;
   text-align: center;
   width: 100%;
@@ -85,15 +101,22 @@
   color: #fff;
 }
 
-#branded .area .brandslides .slide .image .brandtagline span {
+#branded .area .brandimages .brandimage .image .brandtagline span {
   max-width: 90%;
 }
 
-#branded .area .brandslides .slide .logo {
+#branded .area .brandimages .brandimage .image .overlay {
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#branded .area .brandimages .brandimage .logo {
   height: 61px;
 }
 
-#branded .area .brandslides .slide .logo:before {
+#branded .area .brandimages .brandimage .logo:before {
   content: '';
   width: 0;
   height: 0;
@@ -105,73 +128,73 @@
   bottom: 61px;
 }
 
-#branded .area .brandslides .slide.corebox .image {
+#branded .area .brandimages .brandimage.corebox .image {
   background: url(../img/core_slide.jpg) no-repeat center;
 }
 
-#branded .area .brandslides .slide.corebox .logo {
+#branded .area .brandimages .brandimage.corebox .logo {
   background: url(../img/core.png) no-repeat center;
 }
 
-#branded .area .brandslides .slide.originalsbox .image {
+#branded .area .brandimages .brandimage.originalsbox .image {
   background: url(../img/originals_slide.jpg) no-repeat center;
 }
 
-#branded .area .brandslides .slide.originalsbox .logo {
+#branded .area .brandimages .brandimage.originalsbox .logo {
   background: url(../img/originals.png) no-repeat center;
 }
 
-#branded .area .brandslides .slide.premiumbox .image {
+#branded .area .brandimages .brandimage.premiumbox .image {
   background: url(../img/premium_slide.jpg) no-repeat center;
 }
 
-#branded .area .brandslides .slide.premiumbox .logo {
+#branded .area .brandimages .brandimage.premiumbox .logo {
   background: url(../img/premium.png) no-repeat center;
 }
 
-#branded .area .brandslides .slide.vintagebox .image {
+#branded .area .brandimages .brandimage.vintagebox .image {
   background: url(../img/vintage_slide.jpg) no-repeat center;
 }
 
-#branded .area .brandslides .slide.vintagebox .logo {
+#branded .area .brandimages .brandimage.vintagebox .logo {
   background: url(../img/vintage.png) no-repeat center;
 }
 
-#branded .area .brandslides .slide.techbox .image {
+#branded .area .brandimages .brandimage.techbox .image {
   background: url(../img/tech_slide.jpg) no-repeat center;
 }
 
-#branded .area .brandslides .slide.techbox .logo {
+#branded .area .brandimages .brandimage.techbox .logo {
   background: url(../img/tech.png) no-repeat center;
 }
 
 @media screen and (min-width: 1280px) {
-  #branded .area .brandslides {
+  #branded .area .brandimages {
     width: 1200px;
   }
 
-  #branded .area .brandslides .slide {
+  #branded .area .brandimages .brandimage {
     width: 224px;
     height: 464px;
     margin: 0 20px 0 0;
   }
 
-  #branded .area .brandslides .slide:last-child {
+  #branded .area .brandimages .brandimage:last-child {
     margin: 0;
   }
 
-  #branded .area .brandslides .slide .image {
+  #branded .area .brandimages .brandimage .image {
     margin: 13px auto 0;
     width: 198px;
     height: 390px;
   }
 
-  #branded .area .brandslides .slide .image .brandtagline {
+  #branded .area .brandimages .brandimage .image .brandtagline {
     font-size: 12px;
     bottom: 18px;
   }
 
-  #branded .area .brandslides .slide .logo:before {
+  #branded .area .brandimages .brandimage .logo:before {
     bottom: 59px;
     left: 103px;
     border-left: 8px solid transparent;
@@ -181,21 +204,21 @@
 }
 
 @media screen and (min-width: 1440px) {
-  #branded .area .brandslides {
+  #branded .area .brandimages {
     width: 1280px;
   }
 
-  #branded .area .brandslides .slide {
+  #branded .area .brandimages .brandimage {
     width: 240px;
     height: 482px;
   }
 
-  #branded .area .brandslides .slide .image {
+  #branded .area .brandimages .brandimage .image {
     width: 214px;
     height: 408px;
   }
 
-  #branded .area .brandslides .slide .logo:before {
+  #branded .area .brandimages .brandimage .logo:before {
     left: 111px;
   }
 }
@@ -252,11 +275,25 @@
   font-size: 17px;
 }
 
+#branded .area .promos span.line1 {
+  text-align: center;
+  display: block;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
 #branded .area .promos .top {
   height: 280px;
   margin-bottom: 4px;
-  background: url(../img/promos/madefromcool.jpg) no-repeat center;
   position: relative;
+}
+
+#branded .area .promos .top span.line1 {
+  line-height: 280px;
 }
 
 #branded .area .promos .bottom .one,
@@ -266,14 +303,17 @@
   position: relative;
 }
 
+#branded .area .promos .bottom .one span.line1,
+#branded .area .promos .bottom .two span.line1 {
+  line-height: 260px;
+}
+
 #branded .area .promos .bottom .one {
   float: left;
-  background: url(../img/promos/customize.jpg) no-repeat center;
 }
 
 #branded .area .promos .bottom .two {
   float: right;
-  background: url(../img/promos/wardrobe.jpg) no-repeat center;
 }
 
 #branded .area .promos .hover {
@@ -281,7 +321,7 @@
   position: absolute;
   width: 100%;
   bottom: 45px;
-  display: none;
+  z-index: 10;
 }
 
 #branded .area .promos .hover span {
@@ -290,6 +330,13 @@
   font-size: 12px;
   padding: 10px 20px;
   color: #000;
+}
+
+#branded .area .promos .overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  display: none;
 }
 
 #branded .area .products {
