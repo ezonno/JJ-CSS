@@ -15,11 +15,18 @@ var jjShizzle = (function (jQuery) {
 				var actualNum = tempNum / 2;
 
 				boxFiveContent.css('paddingTop', actualNum);
+			},
+
+			hoverNizzle : function () {
+				$('#branded .content .wide_wrapper .promos .promo').hover(function(){
+					$(this).find('.hover').stop().fadeToggle('fast');
+				});
 			}
 		// end custom functions
-	}
+	};
 })(jQuery);
 
 jQuery(document).ready(function () {
 	jjShizzle.centerBoxFive();
+	jjShizzle.hoverNizzle();
 });
