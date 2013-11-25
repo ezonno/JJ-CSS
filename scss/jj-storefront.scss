@@ -2,8 +2,28 @@
 @import 'vars';
 @import 'mixins';
 
+$shadow: 0 1px 1px #fff;
+$regular: 'PFDinMono-Regular';
+$medium: 'PFDinMono-Medium';
+$bold: 'PFDinMono-Bold';
+
 #branded .area .wide_wrapper {
     padding-bottom: 1px;
+}
+
+#branded .headerfix {
+    width: 100%;
+}
+
+#branded .wrapper .area .content * {
+    font-family: $regular;
+}
+
+#branded .wrapper .area .content {
+    .promoMoveTop,
+    .promoMoveBottom {
+        display: none;
+    }
 }
 
 #branded {
@@ -28,6 +48,17 @@
                 font-size: 24px;
                 display: block;
                 margin: 0 0 .5em;
+                font-family: $medium !important;
+                color: #222526;
+                letter-spacing: 2px;
+                @include text-shadow($shadow);
+
+                b {
+                    font-family: $bold !important;
+                    letter-spacing: 2px;
+                    @include text-shadow($shadow);
+                }
+
             }
 
             p {
@@ -35,6 +66,8 @@
                 width: 60%;
                 line-height: 18px;
                 margin: 0 auto;
+                color: #17191a;
+                @include text-shadow($shadow);
             }
         }
 
@@ -71,7 +104,7 @@
                         text-align: center;
                         position: absolute;
                         width: 100%;
-                        top: 170px;
+                        top: 173px;
                         display: none;
 
                         span {
@@ -179,7 +212,7 @@
 
                 .brandimage {
                     width: 224px;
-                    height: 464px;
+                    height: 474px;
                     margin: 0 20px 0 0;
 
                     &:last-child {
@@ -195,14 +228,22 @@
                             font-size: 12px;
                             bottom: 18px;
                         }
+
+                        .hover {
+                            top: 193px;
+                        }
                     }
 
-                    .logo:before {
-                        bottom: 59px;
-                        left: 103px;
-                        border-left: 8px solid transparent;
-                        border-right: 8px solid transparent;
-                        border-bottom: 8px solid #fff;
+                    .logo {
+                        height: 71px;
+
+                        &:before {
+                            bottom: 69px;
+                            left: 103px;
+                            border-left: 8px solid transparent;
+                            border-right: 8px solid transparent;
+                            border-bottom: 8px solid #fff;
+                        }
                     }
                 }
             }
@@ -215,11 +256,15 @@
 
                 .brandimage {
                     width: 240px;
-                    height: 482px;
+                    height: 492px;
 
                     .image {
                         width: 214px;
                         height: 408px;
+
+                        .hover {
+                            top: 198px;
+                        }
                     }
 
                     .logo:before {
@@ -232,7 +277,7 @@
         .sellingpoints {
             clear: both;
             width: 1005px;
-            margin: 10em auto 5em;
+            margin: 50px auto;
 
             .lightborder {
                 height: 1px;
@@ -247,24 +292,28 @@
             .column {
                 width: 33%;
                 float: left;
-                margin: 2em 0;
+                margin: 40px 0;
 
                 span {
                     display: block;
                     text-align: center;
                     font-size: 11px;
                     text-transform: uppercase;
-                    line-height: 23px;
+                    line-height: 20px;
+                    color: #3d4142;
+                    font-family: $medium;
 
                     &:first-child {
-                        font-weight: bold;
+                        font-family: $bold;
+                        letter-spacing: 1px;
+                        color: #1e2021;
                     }
                 }
             }
         }
 
         .promos {
-            width: 1005px;
+            width: 1003px;
             margin: 0 auto;
 
             h1 {
@@ -272,6 +321,9 @@
                 text-transform: uppercase;
                 margin-bottom: 1em;
                 font-size: 17px;
+                color: #2d3233;
+                letter-spacing: 1px;
+                @include text-shadow($shadow);
             }
 
             span.line1 {
@@ -287,7 +339,7 @@
 
             .top {
                 height: 280px;
-                margin-bottom: 4px;
+                margin-bottom: 3px;
                 position: relative;
 
                 span.line1 {
@@ -321,13 +373,13 @@
                 position: absolute;
                 width: 100%;
                 bottom: 45px;
-                z-index: 10;
+                z-index: 1;
 
                 span {
                     text-transform: uppercase;
                     background: #fff;
                     font-size: 12px;
-                    padding: 10px 20px;
+                    padding: 10px 20px 8px;
                     color: #000;
                 }
             }
@@ -335,46 +387,51 @@
             .overlay {
                 width: 100%;
                 height: 100%;
-                background: rgba(255, 255, 255, .4);
+                background: rgba(255, 255, 255, .2);
                 display: none;
             }
         }
 
         .products {
-            width: 1005px;
-            margin: 7em auto;
+            width: 1002px;
+            margin: 92px auto 150px;
 
             h1 {
                 text-align: center;
                 text-transform: uppercase;
                 font-size: 17px;
-                margin-bottom: 1em;
+                margin-bottom: 29px;
+                margin-top: 0;
+                line-height: normal;
+                color: #2d3233;
+                letter-spacing: 1px;
+                @include text-shadow($shadow);
             }
 
             .box {
                 width: 332px;
                 height: 440px;
                 float: left;
-                margin-bottom: 4px;
+                margin-bottom: 3px;
                 position: relative;
 
                 &.one,
                 &.four,
                 &.seven {
-                    margin-right: 4px;
+                    margin-right: 3px;
                 }
 
                 &.three,
                 &.six,
                 &.nine {
-                    margin-left: 4px;
+                    margin-left: 3px;
                 }
 
                 a {
                     display: block;
                     width: 100%;
                     height: 100%;
-                    color: #000;
+                    color: #2e2f33;
 
                     &:hover {
                         text-decoration: none;
@@ -383,7 +440,7 @@
                     span {
                         text-align: center;
                         display: block;
-                        line-height: 2em;
+                        line-height: 16px;
                     }
 
                     .callout {
@@ -400,32 +457,48 @@
                         font-size: 12px;
                         text-transform: uppercase;
                         text-decoration: underline;
+                        z-index: 1;
                     }
                 }
 
                 &.five {
+                    background-color: #fcfcfc;
+                    color: #111;
+
                     h1 {
                         margin: 0 auto 2.5em;
                         font-size: 20px;
-                        width: 75%;
+                        width: 70%;
                         text-transform: uppercase;
+                        font-family: $bold;
+                        letter-spacing: 2px;
                     }
 
                     p {
                         text-align: center;
                         font-size: 13px;
                         line-height: 22px;
-                        width: 75%;
+                        width: 70%;
                         margin: 0 auto;
                     }
 
                     a {
                         margin: 2.5em auto 0;
-                        width: 75%;
+                        width: 70%;
                         text-align: center;
                         font-size: 13px;
                         text-decoration: underline;
+                        color: #111;
                     }
+                }
+
+                .overlay {
+                    display: none;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    background: rgba(247, 247, 247, .2);
                 }
             }
         }

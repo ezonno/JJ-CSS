@@ -26,13 +26,29 @@ var jjShizzle = (function (jQuery) {
 
 			brandImgHover : function () {
 				$('#branded .content .wide_wrapper .brandimages .brandimage').hover(function(){
-					$(this).find('.hover, .overlay').stop().fadeToggle('fast');
+					$(this).find('.hover, .overlay').stop().fadeIn('fast');
+				}, function(){
+					$(this).find('.hover, .overlay').stop().fadeOut('fast');
 				});
+			},
+
+			promoFade : function () {
+				$('#branded .content .wide_wrapper .promos').find('.promoMoveTop, .promoMoveBottom').fadeIn();
 			},
 
 			promoHover : function () {
 				$('#branded .content .wide_wrapper .promos .promo').hover(function(){
-					$(this).find('.overlay').stop().fadeToggle('fast');
+					$(this).find('.overlay').stop().fadeIn('fast');
+				}, function(){
+					$(this).find('.overlay').stop().fadeOut('fast');
+				});
+			},
+
+			productsHover : function () {
+				$('#branded .content .wide_wrapper .products .box').not('.five').hover(function(){
+					$(this).find('.overlay').stop().fadeIn('fast');
+				}, function(){
+					$(this).find('.overlay').stop().fadeOut('fast');
 				});
 			}
 		// end custom functions
@@ -43,5 +59,7 @@ jQuery(document).ready(function () {
 	jjShizzle.wrapPromos();
 	jjShizzle.centerBoxFive();
 	jjShizzle.brandImgHover();
+	jjShizzle.promoFade();
 	jjShizzle.promoHover();
+	jjShizzle.productsHover();
 });
