@@ -422,3 +422,14 @@
   top: 0;
   background: rgba(247, 247, 247, 0.2);
 }
+
+/* IE8 fixes */
+#branded .wrapper .area .content .brandimages .brandimage.techbox {
+  margin-right: 0;
+}
+#branded .wrapper .area .content .promos .bottom .promoMoveBottom {
+  float: right;
+}
+#branded .wrapper .area .content .promos .bottom .promoMoveBottom:first-child {
+  float: left;
+}

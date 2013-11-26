@@ -504,3 +504,18 @@ $bold: 'PFDinMono-Bold';
         }
     }
 }
+
+/* IE8 fixes */
+#branded .wrapper .area .content {
+    .brandimages .brandimage.techbox {
+        margin-right: 0;
+    }
+
+    .promos .bottom .promoMoveBottom {
+        float: right;
+
+        &:first-child {
+            float: left;
+        }
+    }
+}
