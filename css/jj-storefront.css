@@ -276,7 +276,8 @@
   letter-spacing: 1px;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
-#branded .area .promos span.line1 {
+#branded .area .promos span.line1,
+#branded .area .promos span.line2 {
   text-align: center;
   display: block;
   font-size: 17px;
@@ -292,7 +293,11 @@
   position: relative;
 }
 #branded .area .promos .top span.line1 {
-  line-height: 280px;
+  top: 115px;
+}
+#branded .area .promos .top span.line2 {
+  top: 145px;
+  font-size: 12px;
 }
 #branded .area .promos .bottom .one,
 #branded .area .promos .bottom .two {

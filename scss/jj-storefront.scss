@@ -326,7 +326,8 @@ $bold: 'PFDinMono-Bold';
                 @include text-shadow($shadow);
             }
 
-            span.line1 {
+            span.line1,
+            span.line2 {
                 text-align: center;
                 display: block;
                 font-size: 17px;
@@ -343,7 +344,12 @@ $bold: 'PFDinMono-Bold';
                 position: relative;
 
                 span.line1 {
-                    line-height: 280px;
+                    top: 115px;
+                }
+
+                span.line2 {
+                    top: 145px;
+                    font-size: 12px;
                 }
             }
 
