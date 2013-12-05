@@ -361,7 +361,12 @@ $bold: 'PFDinMono-Bold';
                     position: relative;
 
                     span.line1 {
-                        line-height: 260px;
+                        top: 100px;
+                    }
+
+                    span.line2 {
+                        top: 130px;
+                        font-size: 12px;
                     }
                 }
 
@@ -468,7 +473,8 @@ $bold: 'PFDinMono-Bold';
                 }
 
                 &.five {
-                    background-color: #fcfcfc;
+                    // background-color: #fcfcfc;
+                    background: #fff;
                     color: #111;
 
                     h1 {
