@@ -307,7 +307,12 @@
 }
 #branded .area .promos .bottom .one span.line1,
 #branded .area .promos .bottom .two span.line1 {
-  line-height: 260px;
+  top: 100px;
+}
+#branded .area .promos .bottom .one span.line2,
+#branded .area .promos .bottom .two span.line2 {
+  top: 130px;
+  font-size: 12px;
 }
 #branded .area .promos .bottom .one {
   float: left;
@@ -393,7 +398,7 @@
   z-index: 1;
 }
 #branded .area .products .box.five {
-  background-color: #fcfcfc;
+  background: #fff;
   color: #111;
 }
 #branded .area .products .box.five h1 {
