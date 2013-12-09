@@ -565,6 +565,7 @@ input[type="password"] {
 #branded .header {
   width: 100%  !important;
   left: 0;
+  z-index: 11;
 }
 
 #branded .header .simple_search input {
