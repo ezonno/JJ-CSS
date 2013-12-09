@@ -54,28 +54,10 @@ var jjShizzle = (function (jQuery) {
 
             tracking : function () {
                 // Brand boxes
-                $('#branded .content .wide_wrapper .brandimages .brandimage').click(function(){
-                    var brandID = $(this).attr('class');
+                $('#branded .content .wide_wrapper .brandimages .brandimage a').click(function(){
+                    var trackID = $(this).attr('track');
 
-                    switch (brandID) {
-                        case 'brandimage corebox':
-                            _gaq.push(['_trackEvent','jj-frontpage', 'brandimages', 'Core']);
-                            break;
-                        case 'brandimage originalsbox':
-                            _gaq.push(['_trackEvent','jj-frontpage', 'brandimages', 'Originals']);
-                            break;
-                        case 'brandimage premiumbox':
-                            _gaq.push(['_trackEvent','jj-frontpage', 'brandimages', 'Premium']);
-                            break;
-                        case 'brandimage vintagebox':
-                            _gaq.push(['_trackEvent','jj-frontpage', 'brandimages', 'Vintage']);
-                            break;
-                        case 'brandimage techbox':
-                            _gaq.push(['_trackEvent','jj-frontpage', 'brandimages', 'Tech']);
-                            break;
-                        default:
-                            break;
-                    }
+                    _gaq.push(['_trackEvent','jj-frontpage', 'brandimages',trackID]);
                 });
 
                 // Promos
