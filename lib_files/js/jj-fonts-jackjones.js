@@ -141,13 +141,13 @@ if (/(Macintosh|Android)/.test(navigator.userAgent) && webfontType != "svg#wf")
     suffix = "_unhinted";
 var fonts = [{
     "fontFamily": "PFDinMono-Medium",
-    "url": wfpath + "290640_0" + suffix + "_0." + webfontType
+    "url": wfpath + "294663_0" + suffix + "_0." + webfontType
 }, {
     "fontFamily": "PFDinMono-Regular",
-    "url": wfpath + "290640_1" + suffix + "_0." + webfontType
+    "url": wfpath + "294663_1" + suffix + "_0." + webfontType
 }, {
     "fontFamily": "PFDinMono-Bold",
-    "url": wfpath + "290640_2" + suffix + "_0." + webfontType
+    "url": wfpath + "294663_2" + suffix + "_0." + webfontType
 }];
 var len = fonts.length;
 var head = document.getElementsByTagName("head")[0];
