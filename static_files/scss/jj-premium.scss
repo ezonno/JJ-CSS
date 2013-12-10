@@ -364,7 +364,7 @@
 
             &:hover{
                 @include transition(all .3s);
-                @include filter(grayscale(1));
+                @include filter(grayscale(0));
             }
         }
     }

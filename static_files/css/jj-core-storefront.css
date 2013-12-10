@@ -1,6 +1,4 @@
 @charset "UTF-8";
-
-
 #branded {
   background-image: none !important;
   background-color: white;
@@ -21,46 +19,19 @@
 }
 
 /* Loop */
-
-.grid_1,
-.grid_2,
-.grid_3,
-.grid_4,
-.grid_5,
-.grid_6,
-.grid_7,
-.grid_8,
-.grid_9,
-.grid_10,
-.grid_11,
-.grid_12,
-.grid_13,
-.grid_14,
-.grid_15,
-.grid_16,
-.grid_17,
-.grid_18,
-.grid_19,
-.grid_20,
-.grid_21,
-.grid_22,
-.grid_23,
-.grid_24 {
+.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12, .grid_13, .grid_14, .grid_15, .grid_16, .grid_17, .grid_18, .grid_19, .grid_20, .grid_21, .grid_22, .grid_23, .grid_24 {
   margin: 0 !important;
 }
 
 /* End loop */
-
 #branded .header {
   background: #f5f7f7 !important;
   margin: auto;
   border-bottom: 0 none;
 }
-
 #branded .wrapper {
   background: none !important;
 }
-
 #branded .wrapper .area {
   width: 100%;
   background: #F5F5F7 !important;
@@ -71,14 +42,12 @@
 }
 
 /* Top carousel */
-
 #top-carousel-wrapper {
   width: 100%;
   background: url("../img/core/top-carousel-bg.jpg") left bottom repeat-x !important;
   padding-top: 27px;
   padding-bottom: 70px;
 }
-
 #top-carousel-wrapper .slideshow {
   width: 1007px;
   display: block;
@@ -88,26 +57,21 @@
 #branded #top-carousel {
   margin-bottom: 0px;
 }
-
 #branded #content {
   width: 100%;
 }
-
 #branded .grid_24:first-child {
   background: #f5f7f7 url("../img/core/area-1.jpg") 30px 0 no-repeat;
 }
 
 /* Footer */
-
 #content {
   background: #f5f7f7 url("../img/core/footer-bg.jpg") bottom repeat-x !important;
 }
-
 #content .storefront10 {
   text-align: center;
   background: transparent url("../img/core/area-5.jpg") bottom left no-repeat;
 }
-
 #content .storefront10 .grid_24:last-child {
   /* ..mmmother of CSS.. */
   /* Ermagerd! SCSS! */
@@ -126,16 +90,13 @@
   margin-top: 10px !important;
   float: left;
 }
-
 #branded .grid_24 .grid_6 .col_1 {
   line-height: 20px;
 }
-
 #branded .grid_24 .grid_6 .col_1 ul li {
   margin-bottom: 6px;
   list-style: none;
 }
-
 #branded .grid_24 .grid_6 .col_1 ul li a {
   font-family: "FuturaBT-Book";
   font-weight: normal;
@@ -143,7 +104,6 @@
   color: black !important;
   text-decoration: none;
 }
-
 #branded .grid_24 .grid_6 .col_1 .main_category {
   margin-top: 13px;
   margin-bottom: 7px;
@@ -151,7 +111,6 @@
   padding: 5px 30px;
   display: inline-block;
 }
-
 #branded .grid_24 .grid_6 .col_1 .main_category a {
   font-family: "FuturaBT-Medium";
   font-weight: bold;
@@ -172,25 +131,23 @@
 #branded .grid_24 .grid_6 .col_1 a {
   color: black !important;
   -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
   text-transform: none;
 }
-
 #branded .grid_24 .grid_6 .col_1 a:hover {
   text-decoration: none;
 }
 
 /* OPLÆG */
-
 #branded .outer-oplaeg-wrapper {
   background: white url("../img/core/area-2.jpg") top right no-repeat;
 }
-
 #branded .oplaeg {
   height: 1222px;
   background: transparent url("../img/core/grid24-bg.jpg") bottom left repeat-x;
 }
-
 #branded .oplaeg .content {
   position: absolute;
   width: 530px;
@@ -200,7 +157,6 @@
   z-index: 20;
   padding-bottom: 50px;
 }
-
 #branded .oplaeg h1 {
   margin-top: 0;
   display: inline-block;
@@ -212,7 +168,6 @@
   font-family: "FuturaBT-Medium";
   font-weight: bold;
 }
-
 #branded .oplaeg p {
   width: 408px;
   display: block;
@@ -223,27 +178,27 @@
   padding-bottom: 30px;
   text-align: left;
 }
-
 #branded .oplaeg a {
   text-decoration: underline;
   font-family: "FuturaBT-Medium";
   font-size: 13px;
   color: black !important;
   -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 #branded .oplaeg a:hover {
   color: #666 !important;
   -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 #branded .oplaeg img {
   position: absolute;
   left: 50%;
 }
-
 #branded .popup {
   position: absolute;
   text-align: center;
@@ -252,7 +207,6 @@
   display: none;
   background: white;
 }
-
 #branded .popup h1 {
   text-transform: uppercase;
   font-size: 12px !important;
@@ -262,7 +216,6 @@
   line-height: 15px;
   width: auto;
 }
-
 #branded .popup p {
   width: auto;
   margin: 0 0 6px !important;
@@ -298,9 +251,7 @@
     background: white;
   }
 }
-
 /* Tumblr */
-
 #tumblr-wrapper {
   width: 100%;
   background: white url("../img/core/area-4.jpg") top right no-repeat;
@@ -314,7 +265,6 @@
   margin: auto;
   position: relative;
 }
-
 #tumblr-content .thumb {
   position: absolute;
   top: 0;
@@ -328,4 +278,9 @@
 
 #tumblr-view-more {
   display: none;
+}
+
+/* Quickview fix */
+#QuickViewDialog .quick_view .grid_8 {
+  float: left;
 }
