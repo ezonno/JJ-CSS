@@ -140,3 +140,8 @@
 #footer_global .contentasset .container_24 {
     width: 1007px;
 }
+
+/* Temp fix for search field ES */
+body.countryES #branded .header .simple_search input {
+    width: 85px;
+}

@@ -596,6 +596,11 @@ input[type="password"] {
   width: 1007px;
 }
 
+/* Temp fix for search field ES */
+body.countryES #branded .header .simple_search input {
+  width: 85px;
+}
+
 /* End import from jj-5lines */
 /* WORDPRESS */
 #branded .storefront7 #wp-container {
