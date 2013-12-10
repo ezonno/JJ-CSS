@@ -48,7 +48,7 @@ var jjShizzle = (function (jQuery) {
                 $('#branded .content .wide_wrapper .products .box').not('.five').hover(function(){
                     $(this).find('.overlay').stop().fadeIn('fast');
                 }, function(){
-                    $(this).find('.overlay').stop().fadeOut('fast');
+                    $(this).find('.overlay').stop().stop().fadeOut('fast');
                 });
             },
 
