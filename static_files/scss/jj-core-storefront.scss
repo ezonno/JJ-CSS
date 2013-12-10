@@ -309,3 +309,8 @@
 #tumblr-view-more {
     display: none;
 }
+
+/* Quickview fix */
+#QuickViewDialog .quick_view .grid_8 {
+    float: left;
+}
