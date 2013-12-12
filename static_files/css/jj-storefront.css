@@ -515,3 +515,8 @@
 #branded .wrapper .area .content .promos .bottom .promoMoveBottom:first-child {
   float: left;
 }
+
+/* Temp fix for search field ES */
+body.countryES #branded .header .simple_search input {
+  width: 60px;
+}

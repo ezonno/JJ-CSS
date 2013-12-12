@@ -625,3 +625,8 @@ $bold: 'PFDinMono-Bold';
         }
     }
 }
+
+/* Temp fix for search field ES */
+body.countryES #branded .header .simple_search input {
+    width: 60px;
+}
