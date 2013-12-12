@@ -130,6 +130,8 @@ $bold: 'PFDinMono-Bold';
                             color: #fff;
                             line-height: 16px;
                             @include text-shadow(0 0 3px rgba(0, 0, 0, 0.33));
+                            max-width: 81%;
+                            margin: auto;
                         }
                     }
 

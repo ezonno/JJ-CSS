@@ -121,6 +121,8 @@
   color: #fff;
   line-height: 16px;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.33);
+  max-width: 81%;
+  margin: auto;
 }
 #branded .area .brandimages .brandimage .brandimagecontainer .overlay {
   display: none;
