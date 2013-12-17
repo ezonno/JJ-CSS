@@ -15,7 +15,7 @@ $bold: 'PFDinMono-Bold';
     width: 100%;
 }
 
-#branded .wrapper .area .content * {
+#branded .area .content * {
     font-family: $regular;
 }
 
@@ -411,6 +411,8 @@ $bold: 'PFDinMono-Bold';
         .promos {
             width: 1003px;
             margin: 0 auto;
+            letter-spacing: 1px;
+            font-family: $medium;
 
             h1 {
                 text-align: center;
@@ -496,6 +498,11 @@ $bold: 'PFDinMono-Bold';
                 height: 100%;
                 background: rgba(255, 255, 255, .2);
                 display: none;
+            }
+
+            .promo span {
+                font-weight: normal;
+                font-family: $medium;
             }
         }
 
