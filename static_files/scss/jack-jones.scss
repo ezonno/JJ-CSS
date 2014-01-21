@@ -11,105 +11,68 @@
 /* End import from jj-shared */
 
 
-/* HEADER */
-
-#branded .header {
-    width: 100%  !important;
-    left: 0;
-    z-index: 11;
-
-    .simple_search input {
-        color: white;
-        font-weight: normal;
-        outline: 1px solid #444;
-        font-family: "GillSansMTStd-Medium";
-        font-size: 10px;
-        color: gray;
-        font-weight: normal;
-    }
-
-    .logo {
-        width: 189px !important;
-        height: 17px;
-        position: absolute;
-        top: -22px;
-        left: -23px;
-        display: none;
-
-        a {
-            width: 177px !important;
-            height: 45px;
-        }
-    }
+#highlights_features_hotfix h2{
+    font-family: "PFDinMono-Regular","UniversLTW01-57Condense 723821", Arial;
 }
 
-.header_wrapper  {
-    width: 999px;
-    margin: auto;
-    position: relative;
-}
+/* Flyouts */
 
-/* FLYOUT MENU */
+#branded {
+    #category_menu {
+        .sub_category {
+            margin-left: 10px;
 
-#lifestyles-styles-logo {
-    display: none;
-}
+            .background {
+                border-top: 2px solid #000;
+            }
 
-#branded #category_menu {
-    top: 19px;
-    left: -11px !important;
-
-    ul.categories li.level0item ul.items {
-        margin: 3px 0px 0px 20px !important;
-
-        a {
-            font-family:"PFDinMono-Regular";
-            font-size: 12px;
-            color: black !important;
-            font-weight: normal;
-        }
-
-        li a {
-            font-family:"PFDinMono-Regular" !important;
-            font-weight: normal !important;
-            font-size: 12px !important;
-        }
-    }
-
-    > div > ul > li {
-        > a {
-            padding: 10px 13px 9px !important;
-            font-size: 14px;
-            font-family:"PFDinMono-Regular";
-            line-height: 17px;
-
-            &.active {
-                padding: 9px 12px 10px !important;
+            dl {
+                display: block;
+                margin-bottom: 0;
+                padding-bottom: 0;
             }
         }
 
-        > .active.no-flyout {
-            padding: 7px 16px 12px !important;
+        .flyout {
+            .hoverArrow {
+                margin: 0 0 3px 0;
+                width: 0;
+                height: 0;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                border-top: 4px solid #000;
+                top: -5px;
+                position: relative;
+            }
         }
     }
 
-    .sub_category {
-        top: 36px;
+    .category_menu .menu ul li .sub_category {
+        overflow: visible;
+    }
 
-        .ul_wrapper {
-            padding-top: 20px;
+    .header {
+        z-index: 11;
+    }
+
+    .content .flyoutOverlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(100, 100, 100, .3);
+        z-index: -1;
+        @include opacity(0);
+        @include transition(opacity .3s);
+
+        &.awesome {
+            z-index: 10;
+            @include opacity(1);
+            
+            
         }
     }
-}
-
-@-moz-document url-prefix() { 
-    #branded #category_menu > div > ul > li > a.active {
-        padding: 10px 12px 10px !important;
-    }
-}
-
-#highlights_features_hotfix h2{
-    font-family: "PFDinMono-Regular","UniversLTW01-57Condense 723821", Arial;
 }
 
 /* CONTENT */

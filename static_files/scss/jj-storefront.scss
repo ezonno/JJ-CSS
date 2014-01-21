@@ -7,16 +7,24 @@ $regular: 'PFDinMono-Regular';
 $medium: 'PFDinMono-Medium';
 $bold: 'PFDinMono-Bold';
 
-#branded .area .wide_wrapper {
-    padding-bottom: 1px;
-}
+#branded {
+    .area {
+        .wide_wrapper {
+            padding-bottom: 1px;
+        }
 
-#branded .headerfix {
-    width: 100%;
-}
+        .content * {
+            font-family: $regular;
+        }
+    }
 
-#branded .area .content * {
-    font-family: $regular;
+    #content .wide_wrapper {
+        width: 100%;
+    }
+
+    .headerfix {
+        width: 100%;
+    }
 }
 
 #branded .wrapper .area .content {
