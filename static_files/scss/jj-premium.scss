@@ -8,6 +8,37 @@
 
 /* End import from jj-5lines */
 
+/* Flyout fonts */
+#branded {
+    #category_menu {
+        > div > ul > li > a {
+            font-family: $premiumFontRegular;
+        }
+    }
+
+    .category_menu .menu {
+        ul {
+            &.categories li {
+                &.level0item {
+                    ul.items {
+                        a {
+                            font-family: $premiumFontRegular;
+                            font-weight: bold;
+                        }
+
+                        li.level2item {
+
+                            a {
+                                font-family: $premiumFontRegular;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 /* WORDPRESS */
 
 #branded .storefront7 {
@@ -78,7 +109,7 @@
         background: white;
         padding: 0 22px;
         font-size: 15px;
-        font-family:"AGaramond-Regular";
+        font-family:$premiumFontRegular;
         font-weight: bold;
         letter-spacing: 3px;
     }
@@ -97,7 +128,7 @@
         h1 {
             padding: 0 20px;
             text-align: center;
-            font-family:"AGaramond-Regular";
+            font-family:$premiumFontRegular;
             font-weight: bold;
             font-size: 15px;
             text-transform: uppercase;
@@ -107,7 +138,7 @@
 
         div.multi-column{
             padding: 20px;
-            font-family:"AGaramond-Regular";
+            font-family:$premiumFontRegular;
             font-size: 14px;
             text-align: left;
 
@@ -166,7 +197,7 @@
         }
 
         h1 {
-            font-family:"Freeway Gothic";
+            font-family:$premiumFontFreeway;
             font-size: 26px;
             text-transform: none;
             font-weight: normal;
@@ -177,7 +208,7 @@
         }
 
         h2 {
-            font-family:"Freeway Gothic";
+            font-family:$premiumFontFreeway;
             font-size: 15px;
             text-transform: uppercase;
             font-weight: normal;
@@ -194,7 +225,7 @@
             &.pricetag {
                 text-align: center;
                 color: black;
-                font-family:"AGaramond-Regular";
+                font-family:$premiumFontRegular;
                 font-weight: bold;
                 text-decoration: none !important;
                 font-size: 16px;
@@ -207,7 +238,7 @@
         }
 
         .tip {
-            font-family:"AGaramond-Regular";
+            font-family:$premiumFontRegular;
             font-size: 14px;
             margin: 20px 40px;
             text-align: left;
@@ -293,7 +324,7 @@
 
     p {
         display: inline-block;
-        font-family:"AGaramond-Regular";
+        font-family:$premiumFontRegular;
         font-weight: bold;  
         font-size: 16px;
         text-transform: uppercase;
@@ -322,7 +353,7 @@
         }
 
         .wp-sidebar-top {
-            font-family:"AGaramond-Regular";
+            font-family:$premiumFontRegular;
             font-size: 26px;
             text-align: center;
             padding: 30px 0;
@@ -332,7 +363,7 @@
         .wp-title {
             margin: 10px 0 0;
             padding: 0 10px 10px;
-            font-family:"AGaramond-Regular";
+            font-family:$premiumFontRegular;
             font-size: 14px;
             text-align: center;
             background-image: url("../img/premium/wp-sidebar-dotted.jpg");
@@ -345,7 +376,7 @@
         width: 747px;
         float: right;
         font-size: 18px;
-        font-family:"AGaramond-Regular";
+        font-family:$premiumFontRegular;
 
         .slideshow {
             min-height: 301px;
@@ -377,7 +408,7 @@
 
             .label {
                 float: left;
-                font-family:"AGaramond-Regular";
+                font-family:$premiumFontRegular;
                 font-weight: bold;
                 text-align: right;
                 padding-right: 20px;
@@ -413,7 +444,7 @@
 .cat-banner-wrapper {
     h1.catHeading {
         font-size: 58px;
-        font-family:"Freeway Gothic";
+        font-family:$premiumFontFreeway;
         text-transform: uppercase;
         background: url("../img/premium/catbanner-h1-background.jpg") bottom center no-repeat !important;
         padding-bottom: 34px;

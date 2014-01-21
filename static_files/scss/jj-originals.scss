@@ -8,6 +8,36 @@
 
 /* End import from jj-5lines /*
 
+/* Flyout fonts */
+#branded {
+    #category_menu {
+        > div > ul > li > a {
+            font-family: $originalsFontMedium;
+        }
+    }
+
+    .category_menu .menu {
+        ul {
+            &.categories li {
+                &.level0item {
+                    ul.items {
+                        a {
+                            font-family: $originalsFontMedium;
+                            font-weight: bold;
+                        }
+
+                        li.level2item {
+
+                            a {
+                                font-family: $originalsFontMedium;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 /* GENERAL STUFF */
  
@@ -85,7 +115,7 @@
         background: white;
         padding: 0 22px;
         font-size: 14px;
-        font-family:"GillSansMTStd-Medium";
+        font-family:$originalsFontMedium;
         letter-spacing: 3px;
     }
 }
@@ -113,7 +143,7 @@
             padding: 0 20px 12px;
             background: url("../img/originals/wavy-bg.jpg") center bottom no-repeat;
             text-align: center;
-            font-family:"GillSansMTStd-Medium";
+            font-family:$originalsFontMedium;
             font-size: 26px;
             text-transform: uppercase;
             font-weight: normal;
@@ -123,7 +153,7 @@
 
         div {
             padding: 20px;
-            font-family:"GillSansMTStd-Medium";
+            font-family:$originalsFontMedium;
             font-size: 14px;
         }
 
@@ -155,7 +185,7 @@
         background: url("../img/originals/wavy-bg.jpg") center bottom no-repeat;
         text-align: center;
         display: inline-block;
-        font-family:"GillSansMTStd-Medium";
+        font-family:$originalsFontMedium;
         font-size: 26px;
         width: 189px;
         padding-bottom: 23px;
@@ -167,7 +197,7 @@
     p {
         width: 213px;
         display: inline-block;
-        font-family:"GillSansMTStd-Medium";
+        font-family:$originalsFontMedium;
         font-size: 14px;
         line-height: 20px;
         margin-top: 19px;
@@ -199,7 +229,7 @@
     .wp-shoulder {
         width: 237px;
         float: left;
-        font-family:"GillSansMTStd-Medium";
+        font-family:$originalsFontMedium;
         font-size: 14px;
         padding: 66px 13px 60px 13px;
         text-align: left;
@@ -218,7 +248,7 @@
             padding: 20px 20px 14px;
             margin: 0;
             font-size: 16px;
-            font-family:"GillSansMTStd-Medium";
+            font-family:$originalsFontMedium;
             text-align: center;
             background-position: bottom;
             background-repeat: repeat-x;
@@ -257,7 +287,7 @@
             width: 648px;
             font-size: 14px;
             font-weight: normal;
-            font-family:"GillSansMTStd-Medium";
+            font-family:$originalsFontMedium;
             padding-left: 20px;
             line-height: 20px;
 
@@ -278,7 +308,7 @@
             font-size: 22px;
             text-align: center;
             font-weight: normal;
-            font-family:"GillSansMTStd-Medium";
+            font-family:$originalsFontMedium;
             background: url("../img/originals/wavy-small-bg.jpg") center bottom no-repeat;
             margin-top: 40px;
             padding-bottom: 23px;
@@ -326,7 +356,7 @@
 
     p {
         display: inline-block;
-        font-family:"GillSansMTStd-Medium";  
+        font-family:$originalsFontMedium;  
         font-size: 14px;
         text-transform: lowercase;
         text-decoration: underline;
@@ -340,7 +370,7 @@
 .cat-banner-wrapper {
     h1.catHeading {
         font-size: 77px;
-        font-family:"GillSansMTStd-Medium";
+        font-family:$originalsFontMedium;
         text-transform: uppercase;
         letter-spacing: 3px;
         font-weight: bold;

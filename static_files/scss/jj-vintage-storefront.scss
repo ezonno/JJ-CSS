@@ -47,7 +47,7 @@ body {
             list-style: none;
 
             a {
-                font-family:"CenturySchoolbookBT-Roman";
+                font-family:$vintageFontSchoolbook;
                 font-weight: normal;
                 font-size: 14px;
                 color: black !important;
@@ -62,7 +62,7 @@ body {
             text-transform: uppercase;
 
             a {
-                font-family:"CenturySchoolbookBT-Roman";
+                font-family:$vintageFontSchoolbook;
                 font-weight: bold;
                 font-size: 18px;
                 text-decoration: none;

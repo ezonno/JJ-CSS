@@ -42,7 +42,7 @@
                 list-style: none;
 
                 a {
-                    font-family:"AGaramond-Regular";
+                    font-family:$premiumFontRegular;
                     font-weight: normal;
                     font-size: 16px;
                     color: black !important;
@@ -58,7 +58,7 @@
             text-transform: uppercase;
 
             a {
-                font-family:"GillSansMTStd-Book";
+                font-family:$premiumFontGill;
                 letter-spacing: 2px;
                 font-weight: normal;
                 font-size: 15px;

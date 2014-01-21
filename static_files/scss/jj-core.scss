@@ -8,6 +8,37 @@
 
 /* End imported from jj-5lines */
 
+/* Flyout fonts */
+#branded {
+    #category_menu {
+        > div > ul > li > a {
+            font-family: $coreFontRegular;
+        }
+    }
+
+    .category_menu .menu {
+        ul {
+            &.categories li {
+                &.level0item {
+                    ul.items {
+                        a {
+                            font-family: $coreFontMedium;
+                            font-weight: bold;
+                        }
+
+                        li.level2item {
+
+                            a {
+                                font-family: $coreFontRegular;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 /* GENERAL STUFF */
 
 #branded {
@@ -101,7 +132,7 @@
         .wp-sidebar-top {
             text-align: center;
             padding: 64px 0 20px 18px;
-            font-family:"FuturaBT-Book";
+            font-family:$coreFontRegular;
             font-size: 26px;
             text-transform: uppercase;
             text-align: left;
@@ -116,7 +147,7 @@
             background-repeat: repeat-x;
 
             .title {
-                font-family:"FuturaBT-Medium";
+                font-family:$coreFontMedium;
                 font-size: 16px;
                 margin-bottom: 5px;
             }
@@ -127,7 +158,7 @@
 
             .theme {
                 text-transform: uppercase;
-                font-family:"FuturaBT-Book";
+                font-family:$coreFontRegular;
                 font-size: 12px; 
             }
 
@@ -179,7 +210,7 @@
 
             p {
                 padding: 10px 20px 0;
-                font-family:"FuturaBT-Book";
+                font-family:$coreFontRegular;
                 font-size: 13px;
                 margin: 0;
                 line-height: 21px;
@@ -217,7 +248,7 @@
 
             h1 {
                 margin-bottom: 18px;
-                font-family:"FuturaBT-Medium";
+                font-family:$coreFontMedium;
                 font-weight: bold;
                 font-size: 60px;
                 text-align: center;
@@ -231,7 +262,7 @@
 
 .cat-banner-wrapper h1.catHeading {
     font-size: 77px;
-    font-family:"FuturaBT-Medium";
+    font-family:$coreFontMedium;
     text-transform: none;
 }
 .cat-banner-wrapper div.catLogo {

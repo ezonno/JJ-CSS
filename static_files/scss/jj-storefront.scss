@@ -2,11 +2,6 @@
 @import 'vars';
 @import 'mixins';
 
-$shadow: 0 1px 1px #fff;
-$regular: 'PFDinMono-Regular';
-$medium: 'PFDinMono-Medium';
-$bold: 'PFDinMono-Bold';
-
 #branded {
     .area {
         .wide_wrapper {
@@ -217,9 +212,9 @@ $bold: 'PFDinMono-Bold';
                         background: url(../img/core.png) no-repeat center;
                     }
 
-                    .overlay {
-                        background: rgba(167, 174, 181, 0.5);
-                    }
+                    // .overlay {
+                    //     background: rgba(167, 174, 181, 0.5);
+                    // }
                 }
 
                 &.originalsbox {
@@ -231,9 +226,9 @@ $bold: 'PFDinMono-Bold';
                         background: url(../img/originals.png) no-repeat center;
                     }
 
-                    .overlay {
-                        background: rgba(162, 162, 161, 0.5);
-                    }
+                    // .overlay {
+                    //     background: rgba(162, 162, 161, 0.5);
+                    // }
                 }
 
                 &.premiumbox {
@@ -245,9 +240,9 @@ $bold: 'PFDinMono-Bold';
                         background: url(../img/premium.png) no-repeat center;
                     }
 
-                    .overlay {
-                        background: rgba(214, 199, 170, 0.5);
-                    }
+                    // .overlay {
+                    //     background: rgba(214, 199, 170, 0.5);
+                    // }
                 }
 
                 &.vintagebox {
@@ -259,9 +254,9 @@ $bold: 'PFDinMono-Bold';
                         background: url(../img/vintage.png) no-repeat center;
                     }
 
-                    .overlay {
-                        background: rgba(74, 74, 76, 0.5);
-                    }
+                    // .overlay {
+                    //     background: rgba(74, 74, 76, 0.5);
+                    // }
                 }
 
                 &.techbox {
@@ -273,9 +268,9 @@ $bold: 'PFDinMono-Bold';
                         background: url(../img/tech.png) no-repeat center;
                     }
 
-                    .overlay {
-                        background: rgba(211, 214, 216, 0.5);
-                    }
+                    // .overlay {
+                    //     background: rgba(211, 214, 216, 0.5);
+                    // }
                 }
             }
         }

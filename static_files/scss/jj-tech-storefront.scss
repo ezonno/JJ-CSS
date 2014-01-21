@@ -83,13 +83,13 @@
         margin-top: 12px;
         padding: 0 22px;
         font-size: 35px;
-        font-family:"AvenirLT-Light";
+        font-family:$techFontRegular;
         text-transform: uppercase;
         letter-spacing: 3px;
     }
 
     .caption strong {
-        font-family:"AvenirLT-Heavy";
+        font-family:$techFontBold;
     }
 }
 
@@ -129,7 +129,7 @@
             list-style: none;
 
             a {
-                font-family:"AvenirLT-Light";
+                font-family:$techFontRegular;
                 font-weight: normal;
                 font-size: 14px;
                 color: black !important;
@@ -144,7 +144,7 @@
             text-transform: uppercase;
 
             a {
-                font-family:"AvenirLT-Heavy";
+                font-family:$techFontBold;
                 font-size: 17px;
                 text-decoration: none;
             }

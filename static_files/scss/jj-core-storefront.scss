@@ -115,7 +115,7 @@
             list-style: none;
 
             a {
-                font-family:"FuturaBT-Book";
+                font-family:$coreFontRegular;
                 font-weight: normal;
                 font-size: 15px;
                 color: black !important;
@@ -131,7 +131,7 @@
             display: inline-block;
 
             a {
-                font-family:"FuturaBT-Medium";
+                font-family:$coreFontMedium;
                 font-weight: bold;
                 font-size: 16px;
                 text-transform: uppercase;
@@ -187,7 +187,7 @@
             line-height: 60px;
             padding-top: 120px;
             padding-bottom: 29px;
-            font-family:"FuturaBT-Medium";
+            font-family:$coreFontMedium;
             font-weight: bold;
         }
 
@@ -195,7 +195,7 @@
             width: 408px;
             display: block;
             margin: auto;
-            font-family:"FuturaBT-Book";
+            font-family:$coreFontRegular;
             font-size: 14px;
             line-height: 26px;
             padding-bottom: 30px;
@@ -204,7 +204,7 @@
 
         a {
             text-decoration: underline;
-            font-family:"FuturaBT-Medium";
+            font-family:$coreFontMedium;
             font-size: 13px;
             color: black !important;
             @include transition(all .3s);
@@ -234,7 +234,6 @@
             font-size: 12px !important;
             margin-top: 8px;
             padding: 0 8px;
-            font-family: "GillSansMTStd-Medium" !important;
             line-height: 15px;
             width: auto;
         }

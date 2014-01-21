@@ -8,7 +8,36 @@
 
 /* End import from jj-5lines */
 
+/* Flyout fonts */
+#branded {
+    #category_menu {
+        > div > ul > li > a {
+            font-family: $vintageFontRockwell;
+        }
+    }
 
+    .category_menu .menu {
+        ul {
+            &.categories li {
+                &.level0item {
+                    ul.items {
+                        a {
+                            font-family: $vintageFontRockwell;
+                            font-weight: bold;
+                        }
+
+                        li.level2item {
+
+                            a {
+                                font-family: $vintageFontRockwell;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 /* GENERAL STUFF */
 
@@ -50,14 +79,14 @@
         background: #f8f6f3;
         padding: 0 22px;
         font-size: 24px;
-        font-family: "RockwellStd";
+        font-family: $vintageFontRockwell;
         letter-spacing: 0px;
         text-transform: uppercase;
         margin-bottom: 5px;
     }
 
     &.big .caption {
-        font-family:"RockwellStd";
+        font-family:$vintageFontRockwell;
         font-size: 60px;
         text-transform: uppercase;
     }
@@ -245,7 +274,7 @@
             left: 374px;
 
             .price {
-                font-family: "RockwellStd";
+                font-family: $vintageFontRockwell;
                 font-size: 15px;
                 text-align: center;
                 display: block;
@@ -264,7 +293,7 @@
             }
 
             &.buy {
-                font-family: "RockwellStd";
+                font-family: $vintageFontRockwell;
                 font-size: 14px;
                 text-align: center;
                 text-decoration: normal;
@@ -275,7 +304,7 @@
         }
 
         h1 {
-            font-family:"RockwellStd";
+            font-family:$vintageFontRockwell;
             font-weight: normal;
             font-size: 20px;
             text-transform: uppercase;
@@ -286,7 +315,7 @@
 
         p {
             text-align: left;
-            font-family:"CenturySchoolbookBT-Roman";
+            font-family:$vintageFontSchoolbook;
             font-size: 14px;
             line-height: 20px;
         }
@@ -324,7 +353,7 @@
 
     h1 {
         color: white;
-        font-family:"RockwellStd";
+        font-family:$vintageFontRockwell;
         font-size: 60px;
         line-height: 71px;
 
@@ -346,7 +375,7 @@
             font-size: 12px !important;
             margin-top: 8px;
             padding: 0 8px;
-            font-family: "GillSansMTStd-Medium" !important;
+            font-family: $vintageFontGill !important;
             line-height: 15px;
             color: black;
         }
@@ -379,7 +408,7 @@
             .wp-sidebar-top {
                 text-align: center;
                 padding: 30px 0;
-                font-family:"RockwellStd";
+                font-family:$vintageFontRockwell;
                 font-size: 18px;
                 text-transform: uppercase;
             }
@@ -387,7 +416,7 @@
             .wp-title {
                 margin: 10px 0 0;
                 padding: 0 30px 0 30px;
-                font-family:"CenturySchoolbookBT-Roman";
+                font-family:$vintageFontSchoolbook;
                 font-size: 12px;
                 text-align: center;
                 background-position: bottom;
@@ -408,7 +437,7 @@
                 }
 
                 .month {
-                    font-family:"CenturySchoolbookBT-Roman";
+                    font-family:$vintageFontSchoolbook;
                     font-weight: bold;
                     text-transform: uppercase;
                     font-style: normal;
@@ -459,7 +488,7 @@
                 text-align: center;
                 text-transform: uppercase;
                 text-decoration: underline;
-                font-family:"CourierLTCYR-Regular";
+                font-family:$vintageFontCourier;
                 font-size: 40px;
                 cursor: pointer;
                 pointer-events: none;
@@ -468,7 +497,7 @@
 
             .player-song {
                 top: 347px;
-                font-family:"RockwellStd";
+                font-family:$vintageFontRockwell;
                 font-size: 20px;
                 text-decoration: none;
             }
@@ -513,7 +542,7 @@
 
                 .column p {
                     padding: 10px 20px 0;
-                    font-family:"CenturySchoolbookBT-Roman";
+                    font-family:$vintageFontSchoolbook;
                     font-size: 14px;
                     margin: 0;
 
@@ -546,7 +575,7 @@
 .cat-banner-wrapper {
     h1.catHeading {
         font-size: 70px;
-        font-family:"RockwellStd";
+        font-family:$vintageFontRockwell;
         text-transform: uppercase;
         font-weight: bold;
         background: url("../img/vintage/catbanner-h1-background.jpg") bottom center no-repeat !important;
