@@ -38,3 +38,23 @@
 #branded.pt_productdetails #content.container_24 {
     margin-top: 0px;
 }
+
+/* Outfit PDP */
+#branded.pt_productdetails .product_set {
+    .grid_16,
+    .productsetdetail {
+        background: none;
+    }
+}
+
+#branded.pt_productdetails .productset {
+    #subProduct2Div, 
+    #subProduct4Div, 
+    #subProduct6Div, 
+    #subProduct8Div, 
+    #subProduct10Div {
+        div.productsetdetail {
+            background: none;
+        }
+    }
+}
