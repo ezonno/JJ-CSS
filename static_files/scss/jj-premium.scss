@@ -77,7 +77,7 @@
 /* GENERAL STUFF */
 
 #branded {
-    background-image: url("../img/wrapper-bg.jpg") !important;
+    background: #fff;
 
     &.pt_brandstorefront {
         .container_24 {
@@ -90,6 +90,10 @@
             width: 1007px;
             margin-left: 0;
         }
+    }
+
+    .wrapper {
+        background: none;
     }
 }
 
