@@ -470,3 +470,8 @@ input[type="password"] {
         }
     }
 }
+
+/* Bestseller header */
+#header_global .header_top .customer_info #spanGigyaHeaderLogin {
+    @include filter(grayscale(1));
+}
