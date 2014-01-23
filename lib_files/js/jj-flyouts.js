@@ -16,17 +16,19 @@ var jjFlyouts = (function (jQuery) {
             },
 
             flyoutHoverOverlay : function () {
-                $('#branded #contentwrapper').append('<div class="flyoutOverlay"></div>');
-                var $overlay = $('#branded #contentwrapper .flyoutOverlay');
-                var $hoverSelector = $('#branded .header .category_menu .menu .categories li.level0item');
+                var overlayHTML = '<div class="flyoutOverlay"></div>',
+                    hoverSelector = $('#branded .header .category_menu .menu .categories li.level0item'),
+                    overlay;
+
+                $('#branded').append(overlayHTML);
+                overlay = $('#branded .flyoutOverlay');
                 
-                $hoverSelector.hover(function(){
-                    //$overlay.show();
+                hoverSelector.hover(function(){
                     if (!$(this).find('a').hasClass('no-flyout')) {
-                        $overlay.addClass('awesome');
+                        overlay.addClass('awesome');
                     };
                 }, function(){
-                    $overlay.removeClass('awesome');
+                    overlay.removeClass('awesome');
                 });
             },
         // end custom functions
