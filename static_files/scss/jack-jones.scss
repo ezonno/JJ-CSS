@@ -39,6 +39,11 @@
     margin-top: 0px;
 }
 
+/* Outfit PLP */
+#branded.pt_category .productlisting .product_set .quickviewbutton {
+    display: none !important;
+}
+
 /* Outfit PDP */
 #branded.pt_productdetails .product_set {
     .grid_16,
