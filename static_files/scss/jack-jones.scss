@@ -11,12 +11,49 @@
 /* End import from jj-shared */
 
 
+/* HEADER */
+
+#branded .header {
+    width: 100%  !important;
+    left: 0;
+    z-index: 11;
+
+    .simple_search input {
+        color: white;
+        font-weight: normal;
+        outline: 1px solid #444;
+        font-family: "GillSansMTStd-Medium";
+        font-size: 10px;
+        color: gray;
+        font-weight: normal;
+    }
+
+    .logo {
+        width: 189px !important;
+        height: 17px;
+        position: absolute;
+        top: -22px;
+        left: -23px;
+        display: none;
+
+        a {
+            width: 177px !important;
+            height: 45px;
+        }
+    }
+}
+
+.header_wrapper  {
+    width: 999px;
+    margin: auto;
+    position: relative;
+}
+
 #highlights_features_hotfix h2{
     font-family: "PFDinMono-Regular","UniversLTW01-57Condense 723821", Arial;
 }
 
 /* CONTENT */
-
 /* category banner heading text */
 .cat-banner-wrapper h1.catHeading {
     display: block !important;
@@ -31,8 +68,44 @@
     text-transform: uppercase;
 }
 
-#branded.pt_category .container_24 .grid_24 {
-    margin-top: 95px;
+.cat-banner-top-wrapper {
+    text-align: center;
+    min-width:700px;
+    max-width: 1200px;
+    margin: 20px auto;
+
+    h1 {
+        font-family: "PFDinMono-Regular",'Univers_lt_cn', Helvetica, Arial, Verdana, sans-serif;
+        color: #000;
+        text-align: center;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 1.1em;
+        text-transform: uppercase;
+        display: block !important;
+        margin: 0.5em 0;
+}
+    p {
+        font-family:"PFDinMono-Regular";
+        font-size: 12px;
+        font-weight: normal;
+        color: #666;
+        margin: 0.5em 0;
+    }
+    a {
+        font-family:"PFDinMono-Regular";
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: normal;
+        text-transform: uppercase;
+        color: #000;
+        display: block;
+        margin: 1em 0;
+    }
+}
+.category-text-wrapper {
+    width:970px;
+    margin: 20px auto;
 }
 
 #branded.pt_productdetails #content.container_24 {

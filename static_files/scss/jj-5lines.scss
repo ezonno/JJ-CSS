@@ -18,9 +18,13 @@
 *::-moz-selection {
     background: #a8d1ff !important;
 }
-
 .soft-intro {
     visibility: hidden;
+}
+.header_wrapper  {
+    width: 999px;
+    margin: auto;
+    position: relative;
 }
 
 /* CONTENT */
@@ -51,7 +55,6 @@
 }
 
 /* FOOTER */
-
 #footer_global .contentasset .container_24 {
     width: 1007px;
 }

@@ -40,7 +40,6 @@
 }
 
 /* WORDPRESS */
-
 #branded .storefront7 {
     #wp-container {
         overflow: auto;
@@ -75,20 +74,12 @@
 
 
 /* GENERAL STUFF */
-
 #branded {
     background: #fff;
 
     &.pt_brandstorefront {
         .container_24 {
             background: #fff;
-        }
-
-        .storefront7 .grid_24 {
-            padding: 0px;
-            margin-top: 0px;
-            width: 1007px;
-            margin-left: 0;
         }
     }
 
@@ -97,8 +88,15 @@
     }
 }
 
-/* SEPARATOR */
+/* SIDE MENU */
+#branded .side-menu .side-menu-categories .category_menu { 
+    ul.categories li.level0item > a {
+        font-family:"GillSansMTStd-Medium" !important;
+        font-size: 15px;
+    }
+}
 
+/* SEPARATOR */
 #branded.pt_brandstorefront .storefront7 .separator {
     height: 20px;
     width: 100%;
@@ -120,7 +118,6 @@
 }
 
 /* HERO */
-
 #branded {
     &.pt_brandstorefront .storefront7 .hero {
         width: 619px;
@@ -187,7 +184,6 @@
 }
 
 /* SHOULDER */
-
 #branded.pt_brandstorefront .storefront7 {
     .shoulder {
         width: 367px;

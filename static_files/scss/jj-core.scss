@@ -8,6 +8,14 @@
 
 /* End imported from jj-5lines */
 
+/* SIDE MENU */
+#branded .side-menu .side-menu-categories .category_menu { 
+    ul.categories li.level0item > a {
+        font-family:"FuturaBT-Medium";
+        font-size: 14px;
+	}
+}
+
 /* Flyout fonts */
 #branded {
     #category_menu {
@@ -57,7 +65,6 @@
 }
 
 /* SLIDESHOW */
-
 #branded .slideshow {
     min-height: 500px;
 
@@ -95,7 +102,6 @@
 }
 
 /* WORDPRESS */
-
 #branded {
     .wp-wrapper-outer {
         background: #F5F7F7 url("../img/core/top-carousel-bg.jpg") left bottom repeat-x !important;
@@ -259,7 +265,6 @@
 }
 
 /* CONTENT */
-
 .cat-banner-wrapper h1.catHeading {
     font-size: 77px;
     font-family:$coreFontMedium;

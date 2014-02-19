@@ -40,7 +40,6 @@
 }
 
 /* GENERAL STUFF */
-
 #branded {
     background: white !important;
     
@@ -60,10 +59,34 @@
             margin-left: 0;
         }
     }
+
+    .simple_search input {  
+        font-family: "CenturySchoolbookBT-Roman" !important;
+        font-size: 12px;
+        color: black;
+        font-weight: normal;
+        outline: 2px solid black;
+        width: 132px;
+    }
+
+    &.pt_brandstorefront {
+        .container_24 {
+            background: #f8f6f3;
+        }
+    }
 }
 
-/* SEPARATOR */
+/* SIDE MENU */
+#branded .side-menu .side-menu-categories .category_menu { 
+    ul.categories li.level0item > a {
+            font-size: 15px;
+            font-family:"RockwellStd";
+            font-weight: normal;
+    }
+}
 
+
+/* SEPARATOR */
 #branded.pt_brandstorefront .storefront8 .separator {
     width: 100%;
     border-bottom: 1px solid black;
@@ -93,7 +116,6 @@
 }
 
 /* HERO ..maybe obsolete? */
-
 #branded.pt_brandstorefront .storefront8 .hero {
     width: 619px;
     margin-right: 14px;

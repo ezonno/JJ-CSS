@@ -1,0 +1,193 @@
+@import 'compass';
+@import 'vars';
+@import 'mixins';
+
+#branded.pt_category {
+    .container_24 {
+		.grid_24 {
+			width: 100%;
+			margin-top: 0px!important;
+			margin: 0 auto;
+			display: block;
+			float: none;
+
+			&.breadcrumb-line {
+				text-align: center;
+				.breadcrumbs {
+					width: 100%;
+					padding: 10px 0;
+					span.refinementname {
+						display: none;
+					}
+				}
+			}
+			&.refinement-line {
+				position: relative;
+				width: 100%;
+				margin: 0;
+				left: 0;
+			}
+			&.refinement-line.fixed {
+				position: fixed;
+				width: 100%;
+				top:35px;
+				left:0;
+				z-index: 1;
+				margin: 0;
+			}
+			&.product-line {
+				margin-top: 20px!important;
+			}
+			&.resultinformation-line {
+				margin-top: 20px!important;
+				text-align: center;
+				text-transform: uppercase;
+			}
+		}
+		
+		.productresultarea {
+
+			@include productlisting(240px,5px);
+
+			@media (min-width: 1281px) {
+				@include productlisting(280px,20px);
+			}
+			@media (min-width: 1441px) {
+				@include productlisting(320px,25px);
+			}
+			@media (min-width: 1681px)  {
+				@include productlisting(350px,50px);
+			}
+			@media (min-width: 1920px) {
+				@include productlisting(370px,60px);
+			}
+		}
+    }
+}
+
+#branded .refinement-line .searchrefine {
+	border-top:1px solid #ebebeb;
+	border-bottom:1px solid #ebebeb;
+	background-color: #fcfcfc;
+	height: 55px;
+	margin-left: 0;
+
+	.searchrefinements {
+		width: 90%;			
+		min-width: 790px;
+		max-width: 1200px;
+		margin: 0 auto;	
+
+		h2.refinement-intro {
+			display:block;
+			float: left;
+			width: 16%;
+			border: 0 none;
+			margin: 21px 0px 0 0;
+			padding: 0;
+            font-family:"PFDinMono-Bold";
+            font-weight: normal;
+            font-size: 12px;
+		}
+	}
+	.searchrefinements .refinement-wrapper {
+		position: relative;
+		float: left;
+		margin: 0;
+		width: 21%;
+
+		&.refinement-wrapper-colorFamily,
+		&.refinement-wrapper-size {
+			margin:0;
+		}
+
+		h3 {
+			position: relative;
+			background: transparent none;
+            font-family:"PFDinMono-Regular";
+            font-weight: normal;
+            font-size: 12px;
+			color: #000;
+			text-transform: uppercase;
+			border: 0px none;
+			margin: 5px 0 0 0;
+			z-index: 2;
+			white-space: nowrap;
+
+			span {
+				border: 0px solid #fcfcfc;
+				margin: 1px;
+				display: inline-block;
+				padding: 10px 20px;
+			}
+			&.expand span:first-child {
+				margin: 0;
+				border: 1px solid #ebebeb;
+				border-bottom: 1px solid #fff; 
+				background-color: #fff;
+			}
+
+			span.selectedrefinements,
+			span.selected-sorting-option {
+				display: inline-block;
+				padding:10px 25px 10px 0;
+	            font-family:"PFDinMono-Regular";
+	            font-weight: normal;
+	            font-size: 10px;
+				text-transform: none;
+			}
+			span.selected-sorting-option {
+				padding-right: 10px;
+			}
+		}
+		.refinement {
+			position: absolute;
+			border:1px solid #ebebeb;
+			background-color: #fff;
+			min-width:150px;
+			z-index:1;
+			margin: -7px 0 0 0;
+		}
+		.refinement.jsCollapsed {
+			display: none;
+		}
+		a.refinedclear {
+			z-index: 2;
+			top:0;
+			line-height: 50px;
+			right:10px;
+			margin: 5px 0 0 0;
+			font-size: 10px;
+		}
+	}
+	.searchrefinements .refinement-wrapper.sorting-wrapper {
+		float:right;
+		z-index:1;
+
+		.refineattributes {
+			position: absolute;
+			border:1px solid #ebebeb;
+			background-color: #fff;
+			min-width:150px;
+			z-index:1;
+			padding: 15px;
+			margin: -7px 0 0 0;
+
+			ul li {
+	            font-weight: normal;
+				font-size: 11px;
+				height: 17px;				
+			}			
+		}
+	}
+}
+#branded .refinement-line.fixed .searchrefine  {
+	margin-left: 275px;
+}
+#branded .refinement-line.fixed.no-categories .searchrefine  {
+	margin-left: 85px;
+}
+
+#branded.pt_category .searchresultsfooter .sorthitscontainer .sortby {
+	display: none;
+}

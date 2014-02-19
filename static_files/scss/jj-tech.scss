@@ -8,7 +8,9 @@
 
 /* End import from jj-
 
-/* Flyout fonts */
+
+
+/* GENERAL STUFF */
 #branded {
     #category_menu {
         > div > ul > li > a {
@@ -26,6 +28,7 @@
                         }
 
                         li.level2item {
+                            background-image: url("../img/wrapper-bg.jpg") !important;
 
                             a {
                                 font-family: $techFontRegular;
@@ -42,6 +45,13 @@
 
 #branded {
     background-image: url("../img/wrapper-bg.jpg") !important;
+
+    .simple_search input {  
+        font-family:"GillSansMTStd-Book" !important;
+        font-size: 12px;
+        color: black;
+        font-weight: normal;
+    }
     
     .wrapper {
         //background: url("../img/tech/wrapper-bg.jpg") repeat-x !important;
@@ -61,8 +71,16 @@
     }
 }
 
-/* SLIDESHOW */
+/* SIDE MENU */
+#branded .side-menu .side-menu-categories .category_menu { 
+    ul.categories li.level0item > a {
+        font-size: 14px;
+        font-family:"AvenirLT-Heavy";
+        font-weight: normal;
+    }
+}
 
+/* SLIDESHOW */
 #branded {
     .slideshow {
         min-height: 500px;
@@ -101,7 +119,6 @@
 }
 
 /* WORDPRESS */
-
 #branded {
     #wp-container {
         width: 1009px;
@@ -139,7 +156,7 @@
             background-repeat: repeat-x;
             background: url("../img/tech/dotted-h.jpg") 1px bottom repeat-x;
 
-            .title{
+            .title {
                 font-family:$techFontBold;
                 margin-bottom: 5px;
             }
@@ -192,7 +209,7 @@
         .wp-slide {
             margin-bottom: 20px;
 
-            img{
+            img {
                 width: 1009px;
             }
         }

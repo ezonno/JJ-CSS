@@ -8,36 +8,26 @@
 
 /* End import from jj-5lines /*
 
-/* Flyout fonts */
+
+/* GENERAL STUFF */
 #branded {
-    #category_menu {
-        > div > ul > li > a {
-            font-family: $originalsFontMedium;
-        }
-    }
+    background-image: url("../img/wrapper-bg.jpg") !important;
 
-    .category_menu .menu {
-        ul {
-            &.categories li {
-                &.level0item {
-                    ul.items {
-                        a {
-                            font-family: $originalsFontMedium;
-                            font-weight: bold;
-                        }
-
-                        li.level2item {
-
-                            a {
-                                font-family: $originalsFontMedium;
-                            }
-                        }
-                    }
-                }
-            }
+    &.pt_brandstorefront {
+        .container_24 {
+            background: white;
         }
     }
 }
+
+
+/* SIDE MENU */
+#branded .side-menu .side-menu-categories .category_menu { 
+    ul.categories li.level0item > a {
+        font-family:"GillSansMTStd-Medium";
+        font-size: 15px;
+    }
+        }
 
 /* GENERAL STUFF */
  
@@ -62,7 +52,6 @@
 }
 
 /* SLIDESHOW */
-
 #branded {
     .slideshow {
         min-height: 520px;
@@ -98,7 +87,6 @@
 }
 
 /* SEPARATOR */
-
 #branded {
     .separator {
         height: 20px;
@@ -121,7 +109,6 @@
 }
 
 /* HERO */
-
 #branded .hero {
     width: 100%;
     margin-right: 0px;
@@ -177,7 +164,6 @@
 }
 
 /* row 2 */
-
 .storefront9 .grid_8 {
     width: 33%;
     text-align: center;
@@ -219,7 +205,6 @@
 }
 
 /* WORDPRESS */
-
 #wp-container {
     margin-top: -19px;  
     overflow: auto;
@@ -304,12 +289,12 @@
             }
         }
 
-        .heading{
+        .heading {
             margin-left: 20px;
             font-size: 22px;
             text-align: center;
             font-weight: normal;
-            font-family:$originalsFontMedium;
+            font-family: $originalsFontMedium;
             background: url("../img/originals/wavy-small-bg.jpg") center bottom no-repeat;
             margin-top: 40px;
             padding-bottom: 23px;
@@ -328,7 +313,6 @@
 }
 
 /* TUMBLR */
-
 #branded {
     #tumblr-content {
         margin-top: 5px;
@@ -367,7 +351,6 @@
 }
 
 /* category banner heading text */
-
 .cat-banner-wrapper {
     h1.catHeading {
         font-size: 77px;
@@ -385,4 +368,5 @@
         top: 15px;
         left: 50%;
         margin-left: -503px;
-    }}
+    }
+}
