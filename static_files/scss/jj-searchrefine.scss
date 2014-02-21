@@ -68,7 +68,7 @@
 #branded .refinement-line .searchrefine {
 	border-top:1px solid #ebebeb;
 	border-bottom:1px solid #ebebeb;
-	background-color: #fcfcfc;
+	background-color: #ffffff;
 	height: 55px;
 	margin-left: 0;
 
@@ -85,7 +85,7 @@
 			border: 0 none;
 			margin: 21px 0px 0 0;
 			padding: 0;
-            font-family:"PFDinMono-Bold";
+            font-family:"PFDinMono-Regular";
             font-weight: normal;
             font-size: 12px;
 		}
@@ -104,10 +104,10 @@
 		h3 {
 			position: relative;
 			background: transparent none;
-            font-family:"PFDinMono-Regular";
+            font-family:"PFDinMono-Bold";
             font-weight: normal;
             font-size: 12px;
-			color: #000;
+			color: #545454;
 			text-transform: uppercase;
 			border: 0px none;
 			margin: 5px 0 0 0;
@@ -119,6 +119,9 @@
 				margin: 1px;
 				display: inline-block;
 				padding: 10px 20px;
+			}
+			span:first-child {
+				background: url(../img/search-refinement-arrow.png) no-repeat 92% center;
 			}
 			&.expand span:first-child {
 				margin: 0;
