@@ -64,6 +64,7 @@ var jjStorefront = (function (jQuery) {
 
             gridifyInit : function () {
                 gridContainer.isotope({
+                    itemSelector: '.box',
                     layoutMode: 'masonry',
                     masonry: {
                         columnWidth: 270
@@ -113,6 +114,16 @@ var jjStorefront = (function (jQuery) {
                         jjStorefront.gridifySmall();
                     }
                 });
+            },
+
+            initQuickview : function () {
+            var quickViewOptions = {
+                    buttonSelector:null,
+                    imageSelector:null,
+                    buttonLinkSelector:  '.quickview'
+                };
+                
+                app.quickView.bindEvents(quickViewOptions);
             }
         // end custom functions
     };
@@ -124,6 +135,7 @@ jQuery(document).ready(function () {
     jjStorefront.brandHover();
     jjStorefront.categoryHover();
     jjStorefront.controls();
+    jjStorefront.initQuickview();
 });
 
 jQuery(window).load(function(){
