@@ -60,10 +60,12 @@
 
         .cat_description {
             background-color: white;
-            font: 10px Verdana, Geneva, sans-serif!important;
+            font: 11px $regular, Verdana, Geneva, sans-serif!important;
             color: #7a7a7a!important;
             padding: 2px 22px 0;
             line-height: 16px !important;
+            text-align: center;
+            width: 610px;
         }
 
         .breadcrumbs {
