@@ -14,15 +14,15 @@ var jjStorefront = (function (jQuery) {
             },
 
             initHero : function () {
-                $('#branded .content .hero').owlCarousel({
-                    singleItem: true,
-                    autoPlay: true,
-                    stopOnHover: true,
-                    navigation: true,
-                    navigationText: false,
-                    pagination: false,
-                    theme: 'jj-theme',
-                    transitionStyle: 'fade'
+                $('#branded .content .hero').swiper({
+                    mode: 'horizontal',
+                    loop: 'true',
+                    calculateHeight: 'true',
+                    autoplay: '5000',
+                    updateOnImagesReady: true,
+                    onFirstInit: function(){
+                        $('#branded .content .hero.swiper-container').css('display', 'block');
+                    }
                 });
             },
 
@@ -52,12 +52,23 @@ var jjStorefront = (function (jQuery) {
                     $(this).hover(function(){
                         TweenMax.to($(this).find('.text'), 0.6, {bottom: 0, backgroundColor: 'rgba(250, 250, 250, 0.8)'});
                         TweenMax.to($(this).find('.overlay'), 0.6, {opacity: 1});
-                        TweenMax.staggerTo($(this).find('.slidein > *'), 0.6, {opacity: 1}, 0.08);
+                        if (gridContainer.hasClass('mixed') && $(this).parent().hasClass('small')) {
+                            TweenMax.to($(this).find('.slidein > *'), 0.6, {opacity: 1});
+                        } else if (gridContainer.hasClass('small')) {
+                            TweenMax.to($(this).find('.slidein > *'), 0.6, {opacity: 1});
+                        } else {
+                            TweenMax.staggerTo($(this).find('.slidein > *'), 0.6, {opacity: 1}, 0.08);
+                        }
                     }, function(){
-                        TweenMax.to($(this).find('.text'), 0.4, {bottom: -80, backgroundColor: 'rgba(250, 250, 250, 0.0)',});
+                        TweenMax.to($(this).find('.text'), 0.4, {bottom: -50, backgroundColor: 'rgba(250, 250, 250, 0.0)',});
                         TweenMax.to($(this).find('.overlay'), 0.4, {opacity: 0});
-                        TweenMax.staggerTo($(this).find('.slidein > *').get().reverse(), 0.3, {opacity: 0}, 0.08);
-
+                        if (gridContainer.hasClass('mixed') && $(this).parent().hasClass('small')) {
+                            TweenMax.to($(this).find('.slidein > *'), 0.3, {opacity: 0});
+                        } else if (gridContainer.hasClass('small')) {
+                            TweenMax.to($(this).find('.slidein > *'), 0.3, {opacity: 0});
+                        } else {
+                            TweenMax.staggerTo($(this).find('.slidein > *').get().reverse(), 0.3, {opacity: 0}, 0.08);
+                        }
                     });
                 });
             },

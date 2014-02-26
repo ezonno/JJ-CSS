@@ -406,52 +406,54 @@ a {
                         border: 1px solid #ebebeb;
                         overflow: hidden;
                         position: relative;
+                        @include background-size(cover);
                         //cursor: pointer;
+
+                        span {
+                            text-transform: uppercase;
+                            text-align: center;
+                            display: block;
+
+                            &.title {
+                                //font-size: 26px;
+                                letter-spacing: 1px;
+                                //margin-top: 50px;
+                            }
+
+                            &.price {
+                                //font-size: 12px;
+                                font-family: $medium;
+                                //margin-top: 10px;
+                            }
+                        }
+
+                        .bar {
+                            //width: 20px;
+                            //height: 3px;
+                            background: #000;
+                            margin: 0 auto;
+                            //margin-top: 25px;
+                        }
 
                         .text {
                             position: absolute;
                             width: 100%;
-                            bottom: -90px;
+                            //bottom: -80px;
                             background: rgba(250, 250, 250, 0.0);
-                            padding-top: 35px;
-
-                            span {
-                                text-transform: uppercase;
-                                text-align: center;
-                                display: block;
-
-                                &.title {
-                                    font-size: 20px;
-                                    letter-spacing: 1px;
-                                }
-
-                                &.price {
-                                    font-size: 13px;
-                                    font-family: $medium;
-                                    margin-top: 10px;
-                                }
-                            }
+                            z-index: 2;
 
                             .slidein {
                                 text-align: center;
-                                margin-top: 15px;
-                                padding-bottom: 35px;
+                                margin-top: 25px;
+                                padding-bottom: 25px;
                                 //@include opacity(0);
 
                                 a {
                                     display: block;
                                     font-family: $bold;
                                     text-transform: uppercase;
-                                    font-size: 13px;
-                                    line-height: 30px;
-                                    @include opacity(0);
-                                }
-
-                                .bar {
-                                    width: 10px;
-                                    height: 2px;
-                                    background: #000;
-                                    margin: 0 auto 8px;
+                                    font-size: 11px;
+                                    line-height: 22px;
                                     @include opacity(0);
                                 }
                             }
@@ -461,6 +463,8 @@ a {
                             width: 100%;
                             height: 100%;
                             background: rgba(250, 250, 250, 0.15);
+                            position: absolute;
+                            top: 0;
                             @include opacity(0);
                         }
                     }
@@ -469,12 +473,18 @@ a {
                 /* Mixed grid */
                 &.mixed {
                     .box {
-                        width: 270px;
-                        height: 345px;
+                        &.small {
+                            width: 270px;
+                            height: 345px;
 
+                            @include smallboxes;
+                        }
+                        
                         &.large {
                             width: 540px;
                             height: 690px;
+
+                            @include largeboxes;
                         }
                     }
                 }
@@ -484,6 +494,8 @@ a {
                     .box {
                         width: 540px;
                         height: 690px;
+
+                        @include largeboxes();
                     }
                 }
 
@@ -493,6 +505,8 @@ a {
                     .box {
                         width: 270px;
                         height: 345px;
+
+                        @include smallboxes();
                     }
                 }
             }

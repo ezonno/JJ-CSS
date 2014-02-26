@@ -53,5 +53,78 @@
             }
         }
     }
+}
 
+@mixin largeboxes {
+    .content {
+        span {
+            &.title {
+                font-size: 26px;
+                margin-top: 50px;
+            }
+
+            &.price {
+                font-size: 12px;
+                margin-top: 10px;
+            }
+        }
+
+        .bar {
+            margin-top: 25px;
+            width: 20px;
+            height: 3px;
+        }
+
+        .text {
+            bottom: -80px;
+        }
+    }
+}
+
+@mixin smallboxes {
+    .content {
+        span {
+            &.title {
+                font-size: 16px;
+                margin-top: 30px;
+            }
+
+            &.price {
+                font-size: 11px;
+            }
+        }
+
+        .bar {
+            margin-top: 15px;
+            width: 15px;
+            height: 2px;
+        }
+
+        .text {
+            bottom: -50px;
+
+            .slidein {
+                padding-bottom: 40px;
+
+                a {
+                    display: inline-block;
+                    width: 50%;
+                    float: left;
+                    line-height: 10px;
+                    font-size: 10px;
+
+                    &.one {
+                        border-right: 1px solid #000;
+                        padding-right: 11px;
+                        text-align: right;
+                    }
+
+                    &.two {
+                        padding-left: 10px;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
 }
