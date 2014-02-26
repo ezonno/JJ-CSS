@@ -87,7 +87,7 @@ var jjStorefront = (function (jQuery) {
                     },
                     getSortData: {
                         grid : function ($elem) {
-                            return parseInt($elem.data('pos-grid'), 10);
+                            return parseInt($elem.data('pos-mixed'), 10);
                         }
                     } 
                 });
@@ -96,19 +96,19 @@ var jjStorefront = (function (jQuery) {
             gridifyMixed : function () {
                 gridContainer.removeClass('large small').addClass('mixed');
                 gridContainer.isotope('reLayout');
-                gridContainer.isotope({sortBy: 'orginal-order'});
+                gridContainer.isotope({sortBy: 'grid'});
             },
 
             gridifyLarge : function () {
                 gridContainer.removeClass('mixed small').addClass('large');
                 gridContainer.isotope('reLayout');
-                gridContainer.isotope({sortBy: 'grid'});
+                gridContainer.isotope({sortBy: 'original-order'});
             },
 
             gridifySmall : function () {
                 gridContainer.removeClass('mixed large').addClass('small');
                 gridContainer.isotope('reLayout');
-                gridContainer.isotope({sortBy: 'grid'});
+                gridContainer.isotope({sortBy: 'original-order'});
             },
 
             controls : function () {
