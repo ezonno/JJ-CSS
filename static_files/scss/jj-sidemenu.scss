@@ -19,28 +19,52 @@
 		left: 0px;
 		border:1px solid #d9d9d9;
 		background-color: #fcfcfc;
+
 		width: 146px;
 		height: 30px;
 		margin:0 0 0 20px;
 
-		input{
+		input {
 			color: #666;
 			width: 130px;
-			height: 28px;
+			height: 24px;
 			line-height: 28px;
 			padding: 0 0 0 10px;
 			margin:0;
 			background: transparent;
+			background: transparent url(../../images/header_search_btn.png) 24px 6px no-repeat;
 			text-transform: none;
 			box-shadow: none;
 			outline: 0 none;
 			border:0 none;
 			font-size: 10px;
+			text-indent: 40px;
 		}
 		button{
 			border:0 none;
+			margin-top: 3px;
+			background: transparent none;
 		}
 	}
+
+	.simple_search.focus {
+	    
+	    input {
+			background: transparent none;
+	        text-indent: 0px;
+	        width:110px;
+	    }
+		button {
+			border:0 none;
+			margin-top: 3px;
+			background: transparent url(../../images/header_search_btn.png) 4px 3px no-repeat;
+			&:hover{
+				margin-top: 6px;
+				background-position: 4px -18px;
+			}
+		}
+	}
+
 	.side-menu-categories {
 		position: absolute;
 		left: 85px;
