@@ -325,7 +325,7 @@ a {
 
         /* Misc */
         .storefront-misc {
-            background: #fafafa;
+            background: #fcfcfc;
             text-align: center;
             padding-top: 65px;
             margin-top: 85px;
@@ -350,7 +350,7 @@ a {
             }
 
             .controls {
-                background: #fafafa;
+                background: #fcfcfc;
                 width: 100px;
                 margin: -11px auto 0;
 
@@ -358,7 +358,7 @@ a {
                     display: inline-block;
                     width: 21px;
                     height: 21px;
-                    background: url(../img/controls_sprite.png) no-repeat top left #fafafa;
+                    background: url(../img/controls_sprite.png) no-repeat top left #fcfcfc;
                     padding: 5px;
 
                     &.mixed {
@@ -391,7 +391,7 @@ a {
         /* Categories */
         .storefront-categories {
             width: 100%;
-            background: #fafafa;
+            background: #fcfcfc;
 
             .gridify {
                 width: 1080px;
@@ -439,7 +439,7 @@ a {
                             position: absolute;
                             width: 100%;
                             //bottom: -80px;
-                            background: rgba(250, 250, 250, 0.0);
+                            background: rgba(252, 252, 252, 0.0);
                             z-index: 2;
 
                             .slidein {
@@ -462,7 +462,7 @@ a {
                         .overlay {
                             width: 100%;
                             height: 100%;
-                            background: rgba(250, 250, 250, 0.15);
+                            background: rgba(252, 252, 252, 0.15);
                             position: absolute;
                             top: 0;
                             @include opacity(0);

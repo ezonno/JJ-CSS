@@ -50,7 +50,7 @@ var jjStorefront = (function (jQuery) {
             categoryHover : function () {
                 $('#branded .content .storefront-categories .gridify .box .content').each(function(){
                     $(this).hover(function(){
-                        TweenMax.to($(this).find('.text'), 0.6, {bottom: 0, backgroundColor: 'rgba(250, 250, 250, 0.8)'});
+                        TweenMax.to($(this).find('.text'), 0.6, {bottom: 0, backgroundColor: 'rgba(252, 252, 252, 0.8)'});
                         TweenMax.to($(this).find('.overlay'), 0.6, {opacity: 1});
                         if (gridContainer.hasClass('mixed') && $(this).parent().hasClass('small')) {
                             TweenMax.to($(this).find('.slidein > *'), 0.6, {opacity: 1});
@@ -60,7 +60,7 @@ var jjStorefront = (function (jQuery) {
                             TweenMax.staggerTo($(this).find('.slidein > *'), 0.6, {opacity: 1}, 0.08);
                         }
                     }, function(){
-                        TweenMax.to($(this).find('.text'), 0.4, {bottom: -50, backgroundColor: 'rgba(250, 250, 250, 0.0)',});
+                        TweenMax.to($(this).find('.text'), 0.4, {bottom: -50, backgroundColor: 'rgba(252, 252, 252, 0.0)',});
                         TweenMax.to($(this).find('.overlay'), 0.4, {opacity: 0});
                         if (gridContainer.hasClass('mixed') && $(this).parent().hasClass('small')) {
                             TweenMax.to($(this).find('.slidein > *'), 0.3, {opacity: 0});
