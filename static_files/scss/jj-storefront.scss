@@ -3,7 +3,7 @@
 @import 'mixins';
 
 a {
-    color: #000;
+    color: #2a2a2a;
 
     &:hover {
         color: inherit;
@@ -48,6 +48,7 @@ a {
         *,
         *:after,
         *:before {
+            color: #2a2a2a;
             @include box-sizing(border-box);
         }
         /* Grid */
@@ -155,7 +156,7 @@ a {
 
         /* Brands */
         .storefront-brands {
-            margin-top: 20px;
+            margin-top: 70px;
             width: 1110px;
 
             .brand {
@@ -224,7 +225,7 @@ a {
                     font-size: 11px;
                     line-height: 20px;
                     text-decoration: underline;
-                    color: #969899;
+                    color: #2a2a2a;
 
                     &:hover {
                         color: #000;
@@ -232,9 +233,9 @@ a {
                 }
 
                 .logo {
-                    height: 35px;
+                    height: 34px;
                     width: 100px;
-                    margin: 15px auto 10px;
+                    margin: 20px auto 19px;
                     background: url(../img/logo_sprite.png) no-repeat center;
                 }
 
@@ -246,54 +247,57 @@ a {
 
                 &.originals {
                     .logo {
-                        background-position: center -35px;
+                        background-position: center -34px;
                     }
                 }
 
                 &.premium {
                     .logo {
-                        background-position: center -70px;
+                        background-position: center -68px;
                     }
                 }
 
                 &.vintage {
                     .logo {
-                        background-position: center -105px;
+                        background-position: center -102px;
                     }
                 }
 
                 &.tech {
                     .logo {
-                        background-position: center -140px;
+                        background-position: center -136px;
                     }
                 }
 
                 &.callout {
                     border: none;
+                    margin-bottom: 87px;
 
                     span {
                         width: 100%;
-                        font-size: 32px;
+                        font-size: 21px;
                         margin: 0 auto;
                         line-height: 32px;
+                        letter-spacing: 1px;
                         font-family: $regular;
 
                         &:first-child {
                             font-family: $bold;
-                            margin-top: 50px;
+                            margin-top: 84px;
+                            font-size: 24px;
                         }
                     }
 
                     p {
                         margin: 35px auto 0;
-                        font-size: 12px;
+                        font-size: 11px;
                         width: 70%;
                     }
 
                     a {
-                        color: #000;
+                        color: #2a2a2a;
                         text-transform: uppercase;
-                        margin: 25px auto 50px;
+                        margin: 25px auto;
                         font-size: 12px;
                         font-family: $medium;
                     }
@@ -327,9 +331,9 @@ a {
         .storefront-misc {
             background: #fcfcfc;
             text-align: center;
-            padding-top: 65px;
+            padding-top: 56px;
             margin-top: 85px;
-            padding-bottom: 100px;
+            padding-bottom: 35px;
 
             h1 {
                 text-transform: uppercase;
@@ -337,6 +341,7 @@ a {
                 font-family: $regular;
                 font-weight: normal;
                 letter-spacing: 1px;
+                color: #2a2a2a;
 
                 &:after {
                     content: '';
@@ -422,7 +427,7 @@ a {
 
                             &.price {
                                 //font-size: 12px;
-                                font-family: $medium;
+                                //font-family: $medium;
                                 //margin-top: 10px;
                             }
                         }
@@ -438,8 +443,8 @@ a {
                         .text {
                             position: absolute;
                             width: 100%;
-                            //bottom: -80px;
-                            background: rgba(252, 252, 252, 0.0);
+                            bottom: 0;
+                            //background: rgba(252, 252, 252, 0.0);
                             z-index: 2;
 
                             .slidein {
@@ -450,11 +455,11 @@ a {
 
                                 a {
                                     display: block;
-                                    font-family: $bold;
+                                    font-family: Arial;
                                     text-transform: uppercase;
                                     font-size: 11px;
                                     line-height: 22px;
-                                    @include opacity(0);
+                                    //@include opacity(0);
                                 }
                             }
                         }
@@ -477,14 +482,14 @@ a {
                             width: 270px;
                             height: 345px;
 
-                            @include smallboxes;
+                            @include smallboxes();
                         }
                         
                         &.large {
                             width: 540px;
                             height: 690px;
 
-                            @include largeboxes;
+                            @include largeboxes();
                         }
                     }
                 }
@@ -518,11 +523,11 @@ a {
 .isotope,
 .isotope .isotope-item {
   /* change duration value to whatever you like */
-  -webkit-transition-duration: 0.3s;
-     -moz-transition-duration: 0.3s;
-      -ms-transition-duration: 0.3s;
-       -o-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  -webkit-transition-duration: 0.6s;
+     -moz-transition-duration: 0.6s;
+      -ms-transition-duration: 0.6s;
+       -o-transition-duration: 0.6s;
+          transition-duration: 0.6s;
 }
 
 .isotope {

@@ -1,3 +1,5 @@
+@import 'vars';
+
 @mixin opacity($opacity, $important: no) {
     @if $important == isImportant {
         opacity: $opacity !important;
@@ -74,10 +76,6 @@
             width: 20px;
             height: 3px;
         }
-
-        .text {
-            bottom: -80px;
-        }
     }
 }
 
@@ -91,6 +89,7 @@
 
             &.price {
                 font-size: 11px;
+                font-family: $medium;
             }
         }
 
@@ -101,27 +100,27 @@
         }
 
         .text {
-            bottom: -50px;
 
             .slidein {
-                padding-bottom: 40px;
+                padding-bottom: 30px;
 
                 a {
                     display: inline-block;
-                    width: 50%;
-                    float: left;
+                    //width: 50%;
+                    //float: left;
                     line-height: 10px;
                     font-size: 10px;
+                    font-family: Arial;
 
                     &.one {
                         border-right: 1px solid #000;
                         padding-right: 11px;
-                        text-align: right;
+                        //text-align: right;
                     }
 
                     &.two {
                         padding-left: 10px;
-                        text-align: left;
+                        //text-align: left;
                     }
                 }
             }
