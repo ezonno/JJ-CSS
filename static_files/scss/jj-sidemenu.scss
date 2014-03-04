@@ -27,12 +27,11 @@
 		input {
 			color: #666;
 			width: 130px;
-			height: 24px;
-			line-height: 28px;
+			height: 30px;
+			line-height: 16px;
 			padding: 0 0 0 10px;
 			margin:0;
-			background: transparent;
-			background: transparent url(../../images/header_search_btn.png) 24px 6px no-repeat;
+			background: none;
 			text-transform: none;
 			box-shadow: none;
 			outline: 0 none;
@@ -43,7 +42,6 @@
 		button{
 			border:0 none;
 			margin-top: 3px;
-			background: transparent none;
 		}
 	}
 
