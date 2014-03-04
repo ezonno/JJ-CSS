@@ -339,7 +339,7 @@ a {
             h1 {
                 text-transform: uppercase;
                 font-size: 22px;
-                font-family: $regular;
+                font-family: $light;
                 font-weight: normal;
                 letter-spacing: 1px;
                 color: #2a2a2a;
@@ -423,6 +423,7 @@ a {
                             &.title {
                                 //font-size: 26px;
                                 letter-spacing: 1px;
+                                font-family: $light;
                                 //margin-top: 50px;
                             }
 
@@ -456,7 +457,7 @@ a {
 
                                 a {
                                     display: block;
-                                    font-family: Arial;
+                                    font-family: $light;
                                     text-transform: uppercase;
                                     font-size: 11px;
                                     line-height: 22px;
