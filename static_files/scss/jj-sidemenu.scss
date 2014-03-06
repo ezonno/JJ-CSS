@@ -182,8 +182,9 @@
 			width: 85px;
 			height:50px;
 			margin:0;
-			background: url('../img/sidebar.png') no-repeat 0 -50px transparent;
+			background: url('../img/sidebar.png') no-repeat 0 -35px transparent;
 			cursor: pointer;
+			padding-top: 15px;
 		}
 
 		.tabs {
@@ -195,58 +196,59 @@
 			.tab {
 				height: 50px;
 				background: url('../img/sidebar.png') no-repeat 0 0 transparent;
-				@include opacity(0.5);
 
 				a {
 					background: url('../img/sidebar.png') no-repeat 0 0 transparent;
 					display: block;
 					height: 100%;
 					width: 100%;
+					@include opacity(0.5);
 				}
 			}
 			.tab.active {
 				background-color: #fff;
-				@include opacity(1);
+				
+				a {
+					@include opacity(1);
+				}
 			}
 
 			.jackjones {
 				background-position:0 -100px;
 				margin-bottom: 50px;
-				a {
-					background-image:none;
-				}
+				background-image:none;
 			}
-			.jackjones.active {
+			.jackjones.active a {
 				background-position:0 -450px;
 			}
-			.core {
+			.core a {
 				background-position:0 -150px;
 			}
-			.core.active {
+			.core.active a {
 				background-position:0 -500px;
 			}
-			.originals {
+			.originals a {
 				background-position:0 -200px;
 			}
-			.originals.active {
+			.originals.active a {
 				background-position:0 -550px;
 			}
-			.premium {
+			.premium a {
 				background-position:0 -250px;
 			}
-			.premium.active {
+			.premium.active a {
 				background-position:0 -600px;
 			}
-			.vintage {
+			.vintage a {
 				background-position:0 -300px;
 			}
-			.vintage.active {
+			.vintage.active a {
 				background-position:0 -650px;
 			}
-			.tech {
+			.tech a {
 				background-position:0 -350px;
 			}
-			.tech.active {
+			.tech.active a {
 				background-position:0 -700px;
 			}
 		}
