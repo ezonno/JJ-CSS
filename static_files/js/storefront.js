@@ -14,16 +14,31 @@ var jjStorefront = (function (jQuery) {
             },
 
             initHero : function () {
-                $('#branded .content .hero').swiper({
-                    mode: 'horizontal',
-                    loop: 'true',
-                    calculateHeight: 'true',
-                    autoplay: '5000',
-                    updateOnImagesReady: true,
-                    onFirstInit: function(){
-                        $('#branded .content .hero.swiper-container').css('display', 'block');
-                    }
+                jjStorefront.jjSwiper = $('#branded .content .hero').swiper({
+                        mode: 'horizontal',
+                        loop: 'true',
+                        calculateHeight: 'true',
+                        autoplay: '5000',
+                        updateOnImagesReady: true,
+                        resizeReInit: true,
+                        onFirstInit: function(){
+                            $('#branded .content .hero.swiper-container').css('display', 'block');
+                        }
+                    });
+
+                $('#branded .content .hero .swiper-prev').on('click', function(e){
+                    e.preventDefault();
+                    jjSwiper.swipePrev();
                 });
+
+                $('#branded .content .hero .swiper-next').on('click', function(e){
+                    e.preventDefault();
+                    jjSwiper.swipeNext();
+                });
+            },
+
+            resizeHero : function () {
+                jjStorefront.jjSwiper.resizeFix();
             },
 
             brandHover : function () {
@@ -41,7 +56,7 @@ var jjStorefront = (function (jQuery) {
                             TweenMax.to($(this).find('.text'), 0.4, {delay: 0.2, opacity: 1, bottom: 15, right: 15});
                         }, function(){
                             TweenMax.to($(this).find('.overlay'), 0.3, {opacity: 0});
-                            TweenMax.to($(this).find('.image'), 0.3, {backgroundSize: newWidth + 'px ' + newHeight + 'px'});    
+                            TweenMax.to($(this).find('.image'), 0.3, {backgroundSize: newWidth + 'px ' + newHeight + 'px'});
                             TweenMax.to($(this).find('.text'), 0.3, {opacity: 0, bottom: 10, right: 10, overwrite: true});
                         });
                 });
@@ -89,7 +104,7 @@ var jjStorefront = (function (jQuery) {
                         grid : function ($elem) {
                             return parseInt($elem.data('pos-mixed'), 10);
                         }
-                    } 
+                    }
                 });
             },
 
