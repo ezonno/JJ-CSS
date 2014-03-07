@@ -147,7 +147,8 @@ a {
 
         /* Hero */
         .hero {
-            width : 100%;
+            width    : 100%;
+            position : relative;
 
             img {
                 width : 100%;
@@ -155,10 +156,24 @@ a {
 
             .swiper-prev,
             .swiper-next {
-                position : absolute;
-                z-index  : 10;
-                width    : 60px;
-                height   : 60px;
+                position   : absolute;
+                z-index    : 10;
+                width      : 60px;
+                height     : 60px;
+                top        : 50%;
+                margin-top : -30px;
+                cursor     : pointer;
+                background : url(../img/sprite_hero_controls.png) no-repeat;
+            }
+
+            .swiper-prev {
+                background-position : left center;
+                left                : 10px;
+            }
+
+            .swiper-next {
+                background-position : right center;
+                right               : 10px;
             }
         }
 

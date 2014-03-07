@@ -13,27 +13,34 @@ var jjStorefront = (function (jQuery) {
                 window.gridContainer = $('#branded .content .storefront-categories .gridify');
             },
 
+            checkHero : function () {
+                if ($('#branded .content .hero').find('.swiper-slide')) {
+                    jjStorefront.initHero();
+                }
+            },
+
             initHero : function () {
                 jjStorefront.jjSwiper = $('#branded .content .hero').swiper({
                         mode: 'horizontal',
-                        loop: 'true',
-                        calculateHeight: 'true',
-                        autoplay: '5000',
+                        loop: true,
+                        calculateHeight: true,
+                        autoplay: 6000,
+                        speed: 800,
                         updateOnImagesReady: true,
                         resizeReInit: true,
-                        onFirstInit: function(){
-                            $('#branded .content .hero.swiper-container').css('display', 'block');
+                        onSwiperCreated: function(){
+                            $('#branded .content .hero.swiper-container').slideDown();
                         }
                     });
 
                 $('#branded .content .hero .swiper-prev').on('click', function(e){
                     e.preventDefault();
-                    jjSwiper.swipePrev();
+                    jjStorefront.jjSwiper.swipePrev();
                 });
 
                 $('#branded .content .hero .swiper-next').on('click', function(e){
                     e.preventDefault();
-                    jjSwiper.swipeNext();
+                    jjStorefront.jjSwiper.swipeNext();
                 });
             },
 
@@ -157,7 +164,7 @@ var jjStorefront = (function (jQuery) {
 
 jQuery(document).ready(function () {
     jjStorefront.assignGlobalVars();
-    jjStorefront.initHero();
+    jjStorefront.checkHero();
     jjStorefront.brandHover();
     //jjStorefront.categoryHover();
     jjStorefront.controls();
