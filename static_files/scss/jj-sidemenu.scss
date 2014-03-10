@@ -137,7 +137,12 @@
 				        	display : none;
 				        }
 				    }
+
+				    &.jj-home {
+				    	display: none;
+				    }
 				}
+
 				li.level0item.active {
 					background-color : #fcfcfc;
 
