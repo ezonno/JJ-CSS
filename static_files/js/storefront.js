@@ -16,6 +16,12 @@ var jjStorefront = (function (jQuery) {
             checkHero : function () {
                 if ($('#branded .content .hero').find('.swiper-slide')) {
                     jjStorefront.initHero();
+
+                    $(document).on('showSideMenuComplete hideSideMenuComplete', function(){
+                        jjStorefront.resizeHero();
+                    });
+                    //$(document).on('showSideMenuComplete', jjStorefront.resizeHero());
+                    //$(document).on('hideSideMenuComplete', jjStorefront.resizeHero());
                 }
             },
 
@@ -46,6 +52,7 @@ var jjStorefront = (function (jQuery) {
 
             resizeHero : function () {
                 jjStorefront.jjSwiper.resizeFix();
+                console.log('Hero fixed');
             },
 
             brandHover : function () {

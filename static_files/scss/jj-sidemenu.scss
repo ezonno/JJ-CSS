@@ -15,14 +15,14 @@
 		display : none;
 	}
 	.simple_search {
-		top              : 25px;
-		left             : 0px;
+		position         : relative;
+		top              : 0;
+		left             : 0;
 		border           : 1px solid #d9d9d9;
 		background-color : #fcfcfc;
-
-		width  : 146px;
-		height : 30px;
-		margin : 0 0 0 20px;
+		width            : 146px;
+		height           : 30px;
+		margin           : 27px auto 0;
 
 		input {
 			color          : #666;
@@ -66,14 +66,15 @@
 
 	.side-menu-categories {
 		position         : absolute;
-		left             : 85px;
+		left             : 86px;
 		top              : 0px;
-		width            : 190px;
+		width            : 186px;
 		height           : 100%;
 		border-right     : 1px solid #f0f0f0;
 		background-color : #fff;
 		z-index          : 1;
 		overflow         : auto;
+		padding-left     : 2px;
 
 		.category_menu { 
 			width : 100%;
