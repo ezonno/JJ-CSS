@@ -73,10 +73,11 @@
 		z-index          : 1;
 		overflow         : auto;
 		padding-left     : 2px;
+		overflow         : hidden;
 
 		.category_menu { 
-			width : 100%;
-			position: static;
+			width    : 100%;
+			position : static;
 			
 			ul.categories{
 				li {
@@ -269,5 +270,100 @@
 			}
 		}
 	}
+}
 
+/* Scrollbar styles */
+.ps-container {
+    .ps-scrollbar-x-rail,
+    .ps-scrollbar-y-rail {
+        position : absolute; /* please don't change 'position' */
+        //@include opacity(0);
+        //@include border-radius(2px);
+        //@include transition(background-color .2s linear);
+        //@include transition(opacity .2s linear);
+
+        &.hover,
+        &:hover {
+            //background-color : #999;
+            //@include opacity(0.9);
+
+            .ps-scrollbar-x,
+            .ps-scrollbar-y {
+				//width            : 4px;
+				//background-color : #404040;
+            }               
+        }
+
+        &.in-scrolling {
+        	//background-color: #404040;
+            //@include opacity(0.9);
+        }
+    }
+
+    .ps-scrollbar-x-rail {
+        bottom : 0px;
+        height : 2px;
+    }
+
+    .ps-scrollbar-y-rail {
+        right : 0px;
+        width : 2px;
+        //@include transition(width .2s linear);
+    }
+
+    &.hover,
+    &:hover {
+        .ps-scrollbar-x-rail,
+        .ps-scrollbar-y-rail {
+			width : 4px;
+            //@include opacity(0.6);
+        }
+
+        .ps-scrollbar-x,
+        .ps-scrollbar-y {
+			width : 4px;
+			background-color: #404040;
+        }
+    }
+
+    .ps-scrollbar-x,
+    .ps-scrollbar-y {
+        position         : absolute; /* please don't change 'position' */
+        background-color : #e5e5e5;
+        @include border-radius(2px);
+        @include transition(all .2s linear);
+        //@include transition(width .2s linear);
+    }
+
+    .ps-scrollbar-x {
+        bottom : 0;
+        height : 2px;
+    }
+
+    .ps-scrollbar-y {
+        right : 0;
+        width : 2px;
+    }
+
+    &.ie6 {
+        .ps-scrollbar-x,
+        .ps-scrollbar-y {
+            font-size : 0; /* fixed scrollbar height in xp sp3 ie6 */
+        }
+    }
+
+    &.ie {
+        .ps-scrollbar-x,
+        .ps-scrollbar-y {
+            visibility : hidden;
+        }
+
+        &:hover,
+        &.hover {
+            .ps-scrollbar-x,
+            .ps-scrollbar-y {
+                visibility: visible;
+            }
+        }
+    }
 }
