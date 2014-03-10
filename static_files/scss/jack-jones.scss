@@ -20,61 +20,7 @@
 }
 
 /* CONTENT */
-/* category banner heading text */
-.cat-banner-wrapper h1.catHeading {
-    display: block !important;
-    position: absolute;
-    top: 126px;
-    width: 100%;
-    color: white;
-    text-align: center;
-    font-weight: normal;
-    font-size: 70px;
-    font-family: "PFDinMono-Regular",'Univers_lt_cn', Helvetica, Arial, Verdana, sans-serif;
-    text-transform: uppercase;
-}
 
-.cat-banner-top-wrapper {
-    text-align: center;
-    margin: 20px auto;
-
-    h1 {
-        font-family: "PFDinMono-Regular",'Univers_lt_cn', Helvetica, Arial, Verdana, sans-serif;
-        color: #000;
-        text-align: center;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 1.1em;
-        text-transform: uppercase;
-        display: block !important;
-        margin: 0.5em 0;
-}
-    p {
-        font-family:"PFDinMono-Regular";
-        font-size: 12px;
-        font-weight: normal;
-        color: #666;
-        margin: 0.5em 0;
-    }
-    a {
-        font-family:"PFDinMono-Regular";
-        font-size: 12px;
-        line-height: 18px;
-        font-weight: normal;
-        text-transform: uppercase;
-        color: #000;
-        display: block;
-        margin: 1em 0;
-    }
-}
-.category-text-wrapper {
-    width:970px;
-    margin: 20px auto;
-}
-
-#branded.pt_productdetails #content.container_24 {
-    margin-top: 0px;
-}
 
 /* Outfit PLP */
 #branded.pt_category .productlisting .product_set .quickviewbutton {

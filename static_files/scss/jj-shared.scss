@@ -7,107 +7,107 @@
 
 /* GENERAL */
 #branded .area {
-    width: auto !important;
-    margin: 0 0 0 275px;
+    width  : auto !important;
+    margin : 0 0 0 275px;
     
     #content.container_24 {
-        margin: 0 auto;
-        width: 1007px;
+        margin : 0 auto;
+        width  : 1007px;
     }
 }
 #branded.pt_category .area #content.container_24 {
-    margin: 0;
-    width: 100%;
+    margin : 0;
+    width  : 100%;
 }
 .searchresultsheader {
-	height: auto;
+    height : auto;
 }
 .brand_slides .brand_disclaimer {
-    padding: 0 !important;
-    background: none !important;
-    overflow: auto !important;
+    padding    : 0 !important;
+    background : none !important;
+    overflow   : auto !important;
 
     div {
-    	display: block;
-    	padding: 15px 0 12px;
+        display : block;
+        padding : 15px 0 12px;
     }
     img {
-        margin: -14px 12px -4px 0;
+        margin : -14px 12px -4px 0;
     }
 }
 #branded .wrapper {
-	background: white !important;
+    background : white !important;
 }
 #branded.pt_productdetails, 
 #branded.pt_productdetails .wrapper {
-	background: white;
+    background : white;
 }
 #branded{
     &.pt_category, &.pt_productsearchresult {
         .container_24 {
             .grid_24 {
-        	   margin-top: 156px;
+               margin-top : 156px;
             }
 
             .grid_20 {
-                width: 800px;
+                width : 800px;
             }
 
             .grid_4 {
-                margin-top: 0;
+                margin-top : 0;
             }
         }
 
         .cat_description {
-            background-color: white;
-            font: 11px $regular, Verdana, Geneva, sans-serif!important;
-            color: #7a7a7a!important;
-            padding: 2px 22px 0;
-            line-height: 16px !important;
-            text-align: center;
-            width: 610px;
+            background-color : white;
+            font             : 11px $regular, Verdana, Geneva, sans-serif!important;
+            color            : #7a7a7a!important;
+            padding          : 2px 22px 0;
+            line-height      : 16px !important;
+            text-align       : center;
+            width            : 610px;
         }
 
         .breadcrumbs {
-            width: 985px;
-            margin-left: 0;
-            background-color: white;
-            padding-left: 23px;
+            width            : 985px;
+            margin-left      : 0;
+            background-color : white;
+            padding-left     : 23px;
         }
 
         .sorthitscontainer {
-            background-color: white;        
+            background-color : white;        
 
             .sortby {
-                position: absolute;
-                top: -34px;
-                right: 0;
+                position : absolute;
+                top      : -34px;
+                right    : 0;
 
                 form {
-                    text-align: right;
+                    text-align : right;
                 }
             }
 
             select {
-                text-transform: uppercase;
+                text-transform : uppercase;
             }
         }
         #refinement-colorFamily .refineattributes .swatches li a {
-           background-image: url(../img/refinement_color.png);
+           background-image : url(../img/refinement_color.png);
         }
-        }
+    }
 
     &.pt_productdetails {
         .breadcrumbs {
-            background: white;
+            background : white;
         }
     }
 }
 
 .countryDE .sorthitscontainer .tuv_price_shipping_wrapper {
-	text-transform: none;
-	font: 10px Verdana, Geneva, sans-serif!important;
-	color: #7a7a7a!important;
+    text-transform : none;
+    font           : 10px Verdana, Geneva, sans-serif !important;
+    color          : #7a7a7a !important;
 }
 
 #branded.pt_productdetails {
@@ -117,49 +117,49 @@
     .product_images .thumbnail_carousel, 
     .social_widget, 
     .maywerecommend { 
-	   background: white;
+       background : white;
     }
 }
 
 .jj .to_top {
-	background: none;
+    background : none;
 }
 
 /* SLIDESHOW */
 #branded .slideshow {
-	width: 100%;
-	overflow: hidden;
-	position: relative;
+    width    : 100%;
+    overflow : hidden;
+    position : relative;
 
     .container {
-        width: 99999px;
-        overflow: auto;
+        width    : 99999px;
+        overflow : auto;
 
         img {
-            float: left;
+            float : left;
         }
     }
 
     .controls {
-        text-align: center;
-        margin-top: 7px;
+        text-align : center;
+        margin-top : 7px;
     }
 
     .bubble {
-        display: inline-block;
+        display : inline-block;
 
         &.active {
             .active {
-                background-position: 0 0;
+                background-position : 0 0;
             }
         }
     }
 
     .prev-btn, 
     .next-btn {
-        background-position: 0 0;
-        cursor: pointer;
-        position: absolute;
+        background-position : 0 0;
+        cursor              : pointer;
+        position            : absolute;
 
         &:hover {
             @include opacity(.8);
@@ -167,47 +167,47 @@
     }
 
     .next-btn {
-        right: 0px;
+        right : 0px;
     }
 
     .prev-btn {
-        left: 0px;
+        left : 0px;
     }
 
     map {
-        display: block;
+        display : block;
     }
 
     .imgMapperHotFix {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
+        width    : 100%;
+        height   : 100%;
+        position : absolute;
+        top      : 0;
+        left     : 0;
     }
 
     .popup {
-        position:absolute;
-        text-align:center;
-        color:black;
-        display:none;
-        background: white;
-        max-width: 165px;
+        position   : absolute;
+        text-align : center;
+        color      : black;
+        display    : none;
+        background : white;
+        max-width  : 165px;
 
         h1 {
-            text-transform: uppercase;
-            font-size: 12px !important;
-            margin-top: 8px;
-            padding: 0 8px;
-            font-family: "GillSansMTStd-Medium" !important;
-            line-height: 15px;
+            text-transform : uppercase;
+            font-size      : 12px !important;
+            margin-top     : 8px;
+            padding        : 0 8px;
+            font-family    : "GillSansMTStd-Medium" !important;
+            line-height    : 15px;
         }
 
         p {
-            margin: 0 0 6px !important;
-            padding: 0 !important;
-            font-weight: normal;
-            font-size: 12px !important;
+            margin      : 0 0 6px !important;
+            padding     : 0 !important;
+            font-weight : normal;
+            font-size   : 12px !important;
             @include column-count(1 !important);
         }
     }
@@ -216,25 +216,26 @@
 /* FOOTER */
 
 #footer_global {
-    background: #f1f1f1 url('../img/footer-bg.jpg') bottom left repeat-x;
+    background : #f1f1f1 url('../img/footer-bg.jpg') bottom left repeat-x;
+
     & > .contentasset {
-        margin: 0 0 0 275px;
+        margin : 0 0 0 275px;
     }
 
     h4 {
-        color: #060607;
-        font-family:"PFDinMono-Regular";
-        font-size: 14px;
+        color       : #060607;
+        font-family : $regular;
+        font-size   : 14px;
     }
 
     a {
-        color: #848486;
-        font-family:"PFDinMono-Regular";
-        font-size: 12px;
-        text-transform: uppercase;
+        color          : #848486;
+        font-family    : $regular;
+        font-size      : 12px;
+        text-transform : uppercase;
 
         &:hover {
-            color: #060607;
+            color : #060607;
         }
     }
 
@@ -250,15 +251,15 @@
 #footer_global fieldset input, 
 input[type="text"], 
 input[type="password"] {
-	font-family:"PFDinMono-Regular";
-	font-size: 12px;
-	font-weight: normal;
+    font-family : $regular;
+    font-size   : 12px;
+    font-weight : normal;
 }
 
 #footer_global fieldset button {
-	border-right: 1px solid #CCC;
-	border-top: 1px solid #CCC;
-	border-bottom: 1px solid #CCC;
+    border-right  : 1px solid #CCC;
+    border-top    : 1px solid #CCC;
+    border-bottom : 1px solid #CCC;
 }
 
 #footer_global fieldset {
@@ -270,7 +271,7 @@ input[type="password"] {
     a.button:focus, 
     button.positive:focus, 
     button.negative:focus {
-	   background-position: 0 3px;
+       background-position : 0 3px;
     }
 }
 
@@ -278,55 +279,111 @@ input[type="password"] {
 /* NO RESULTS */
 
 #search .no-results-slot {
-	display: inline-block;
-	height: 183px;
-	width: 246px;
-	margin-right: 8px;
-	margin-bottom: 8px;
+    display       : inline-block;
+    height        : 183px;
+    width         : 246px;
+    margin-right  : 8px;
+    margin-bottom : 8px;
 
     &:hover {
-        text-decoration: none;
+        text-decoration : none;
     }
 
     &.col1 {
-        margin-left: 21px
+        margin-left : 21px
     }
 
     &.col3 {
-        margin-right: 0;
+        margin-right : 0;
     }
 
     &.large {
-        width: 758px;
-        height: 113px;
-        margin-bottom: 19px;
+        width         : 758px;
+        height        : 113px;
+        margin-bottom : 19px;
 
         h2 {
-            padding-top: 35px;
-            color: black;
+            padding-top : 35px;
+            color       : black;
         }
     }
 
     h2 {
-        padding-top: 114px;
-        text-align: center;
-        color: white;
-        text-transform: uppercase;
-        font-size: 16px;
+        padding-top    : 114px;
+        text-align     : center;
+        color          : white;
+        text-transform : uppercase;
+        font-size      : 16px;
     }
 
     h3 {
-        padding-top: 0px;
-        margin-top: 0;
-        text-align: center;
-        color: white;
-        text-transform: uppercase;
-        font-size: 14px;
-        font-weight: normal;
+        padding-top    : 0px;
+        margin-top     : 0;
+        text-align     : center;
+        color          : white;
+        text-transform : uppercase;
+        font-size      : 14px;
+        font-weight    : normal;
     }
 }
 
 /* Bestseller header */
 #header_global .header_top .customer_info #spanGigyaHeaderLogin {
     @include filter(grayscale(1));
+}
+
+/* category banner heading text */
+.cat-banner-wrapper h1.catHeading {
+    display        : block !important;
+    position       : absolute;
+    top            : 126px;
+    width          : 100%;
+    color          : white;
+    text-align     : center;
+    font-weight    : normal;
+    font-size      : 70px;
+    font-family    : "PFDinMono-Regular",'Univers_lt_cn', Helvetica, Arial, Verdana, sans-serif;
+    text-transform : uppercase;
+}
+
+.cat-banner-top-wrapper {
+    text-align : center;
+    margin     : 20px auto;
+
+    h1 {
+        font-family    : "PFDinMono-Regular",'Univers_lt_cn', Helvetica, Arial, Verdana, sans-serif;
+        color          : #000;
+        text-align     : center;
+        font-weight    : normal;
+        font-size      : 24px;
+        line-height    : 1.1em;
+        text-transform : uppercase;
+        display        : block !important;
+        margin         : 0.5em 0;
+}
+    p {
+        font-family :"PFDinMono-Regular";
+        font-size   : 12px;
+        font-weight : normal;
+        color       : #666;
+        margin      : 0.5em 0;
+    }
+    a {
+        font-family    :"PFDinMono-Regular";
+        font-size      : 12px;
+        line-height    : 18px;
+        font-weight    : normal;
+        text-transform : uppercase;
+        color          : #000;
+        display        : block;
+        margin         : 1em 0;
+    }
+}
+.category-text-wrapper {
+    width  : 970px;
+    margin : 20px auto;
+}
+
+#branded.pt_productdetails #content.container_24 {
+    margin-top : 0px;
 }

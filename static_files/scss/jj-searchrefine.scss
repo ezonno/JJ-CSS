@@ -5,43 +5,45 @@
 #branded.pt_category {
     .container_24 {
 		.grid_24 {
-			width: 100%;
-			margin-top: 0px!important;
-			margin: 0 auto;
-			display: block;
-			float: none;
+			width      : 100%;
+			margin-top : 0px!important;
+			margin     : 0 auto;
+			display    : block;
+			float      : none;
 
 			&.breadcrumb-line {
-				text-align: center;
+				text-align : center;
+
 				.breadcrumbs {
-					width: 100%;
-					padding: 10px 0;
+					width   : 100%;
+					padding : 10px 0;
+
 					span.refinementname {
-						display: none;
+						display : none;
 					}
 				}
 			}
 			&.refinement-line {
-				position: relative;
-				width: 100%;
-				margin: 0;
-				left: 0;
+				position : relative;
+				width    : 100%;
+				margin   : 0;
+				left     : 0;
 			}
 			&.refinement-line.fixed {
-				position: fixed;
-				width: 100%;
-				top:35px;
-				left:0;
-				z-index: 1;
-				margin: 0;
+				position : fixed;
+				width    : 100%;
+				top      : 35px;
+				left     : 0;
+				z-index  : 1;
+				margin   : 0;
 			}
 			&.product-line {
-				margin-top: 20px!important;
+				margin-top : 20px !important;
 			}
 			&.resultinformation-line {
-				margin-top: 20px!important;
-				text-align: center;
-				text-transform: uppercase;
+				margin-top     : 20px !important;
+				text-align     : center;
+				text-transform : uppercase;
 			}
 		}
 		
@@ -66,138 +68,148 @@
 }
 
 #branded .refinement-line .searchrefine {
-	border-top:1px solid #ebebeb;
-	border-bottom:1px solid #ebebeb;
-	background-color: #ffffff;
-	height: 55px;
-	margin-left: 0;
-	visibility: hidden; /* will be displayed by script*/
+	border-top       : 1px solid #ebebeb;
+	border-bottom    : 1px solid #ebebeb;
+	background-color : #ffffff;
+	height           : 55px;
+	margin-left      : 0;
+	visibility       : hidden; /* will be displayed by script*/
 
 	.searchrefinements {
-		width: 90%;			
-		min-width: 790px;
-		max-width: 1200px;
-		margin: 0 auto;	
+		width      : 90%;
+		min-width  : 790px;
+		max-width  : 1200px;
+		margin     : 0 auto;
+		text-align : center;
 
 		h2.refinement-intro {
-			display:block;
-			float: left;
-			width: 16%;
-			border: 0 none;
-			margin: 21px 0px 0 0;
-			padding: 0;
-            font-family: $regular;
-            font-weight: normal;
-            font-size: 12px;
+			display     : none;
+			float       : left;
+			width       : 16%;
+			border      : 0 none;
+			margin      : 21px 0px 0 0;
+			padding     : 0;
+			font-family : $regular;
+			font-weight : normal;
+			font-size   : 12px;
 		}
 	}
 	.searchrefinements .refinement-wrapper {
-		position: relative;
-		float: left;
-		margin: 0;
-		width: 21%;
+		position : relative;
+		display  : inline-block;
+		margin   : 0;
+		width    : auto;
 
 		&.refinement-wrapper-colorFamily,
 		&.refinement-wrapper-size {
-			margin:0;
+			margin : 0;
 		}
 
 		h3 {
-			position: relative;
-			background: transparent none;
-            font-family: $bold;
-            font-weight: normal;
-            font-size: 12px;
-			color: #545454;
-			text-transform: uppercase;
-			border: 0px none;
-			margin: 5px 0 0 0;
-			z-index: 2;
-			white-space: nowrap;
+			position       : relative;
+			background     : transparent none;
+			font-family    : $bold;
+			font-weight    : normal;
+			font-size      : 11px;
+			color          : #545454;
+			text-transform : uppercase;
+			border         : 0px none;
+			margin         : 5px 0 0 0;
+			z-index        : 2;
+			white-space    : nowrap;
 
 			span {
-				border: 0px solid #fcfcfc;
-				margin: 1px;
-				display: inline-block;
-				padding: 10px 20px;
+				border  : 0px solid #fcfcfc;
+				margin  : 1px;
+				display : inline-block;
+				padding : 10px 20px;
+				float   : left;
 			}
 			span:first-child {
-				background: url(../img/search-refinement-arrow.png) no-repeat 92% center;
+				background : url(../img/search-refinement-arrow.png) no-repeat 92% center;
 			}
 			&.expand span:first-child {
-				margin: 0;
-				border: 1px solid #ebebeb;
-				border-bottom: 1px solid #fff; 
-				background-color: #fff;
+				margin           : 0;
+				border           : 1px solid #ebebeb;
+				border-bottom    : 1px solid #fff; 
+				background-color : #fff;
 			}
 
 			span.selectedrefinements,
 			span.selected-sorting-option {
-				display: inline-block;
-				padding:10px 25px 10px 0;
-	            font-family:"PFDinMono-Regular";
-	            font-weight: normal;
-	            font-size: 10px;
-				text-transform: none;
+				display        : inline-block;
+				padding        : 10px 25px 10px 0 !important;
+				font-family    : $regular;
+				font-weight    : normal;
+				font-size      : 10px;
+				text-transform : none;
+				width          : auto;
 			}
 			span.selected-sorting-option {
-				padding-right: 10px;
+				padding-right : 10px;
 			}
 		}
 		.refinement {
-			position: absolute;
-			border:1px solid #ebebeb;
-			background-color: #fff;
-			min-width:150px;
-			z-index:1;
-			margin: -7px 0 0 0;
+			position         : absolute;
+			border           : 1px solid #ebebeb;
+			background-color : #fff;
+			min-width        : 150px;
+			z-index          : 1;
+			margin           : 30px 0 0 0;
 		}
 		/*
 		.refinement,
 		.refineattributes {
-			display: none;
+			display : none;
 		}
 		*/
 		.refinement.jsCollapsed {
-			display: none;
+			display : none;
 		}
 		a.refinedclear {
-			z-index: 2;
-			top:0;
-			line-height: 50px;
-			right:10px;
-			margin: 5px 0 0 0;
-			font-size: 10px;
+			z-index     : 2;
+			top         : 0;
+			line-height : 55px;
+			right       : 10px;
+			margin      : 0;
+			font-size   : 10px;
+			text-indent : -9999px;
+			width       : 16px;
+			background  : transparent url(../img/icon_clear.png) center 55% no-repeat;
 		}
 	}
 	.searchrefinements .refinement-wrapper.sorting-wrapper {
-		float:right;
-		z-index:1;
+		display : inline-block;
+		z-index : 1;
 
 		.refineattributes {
-			position: absolute;
-			border:1px solid #ebebeb;
-			background-color: #fff;
-			min-width:150px;
-			z-index:1;
-			padding: 15px;
-			margin: -7px 0 0 0;
+			position         : absolute;
+			border           : 1px solid #ebebeb;
+			background-color : #fff;
+			min-width        : 150px;
+			z-index          : 1;
+			padding          : 15px;
+			margin           : 30px 0 0 0;
 
 			ul li {
-	            font-weight: normal;
-				font-size: 11px;
-				height: 17px;				
+				font-weight : normal;
+				font-size   : 11px;
+				height      : 17px;				
 			}			
 		}
 	}
 }
 #branded .refinement-line.fixed .searchrefine  {
-	margin-left: 275px;
+	margin-left : 275px;
 }
 #branded .refinement-line.fixed.no-categories .searchrefine  {
-	margin-left: 85px;
+	margin-left : 85px;
 }
 
 #branded.pt_category .searchresultsfooter .sorthitscontainer .sortby {
-	display: none;
+	display : none;
+}
+
+#branded .navgroup .refineattributes .swatches li a {
+	background: transparent url(../img/sprite_refinement_background.png) 0 0 no-repeat;
 }
