@@ -19,10 +19,8 @@
 		top              : 0;
 		left             : 0;
 		border           : 1px solid #d9d9d9;
-		background-color : #fcfcfc;
-		width            : 146px;
 		height           : 30px;
-		margin           : 27px auto 0;
+		margin           : 27px 18px 25px;
 
 		input {
 			color          : #666;
@@ -78,9 +76,7 @@
 
 		.category_menu { 
 			width : 100%;
-			left  : 0;
-			top   : 70px;
-			right : auto;
+			position: static;
 			
 			ul.categories{
 				li {
@@ -106,16 +102,20 @@
 						text-transform : uppercase;
 						letter-spacing : 0.1em;
 						color          : #000;
-						padding        : 15px 0;
+						padding        : 10px 0 21px;
 					}
 
 					img.categorythumbnail {
-						margin : 2px 0 0 0;
+						margin : 16px 0 0 0;
 						cursor : pointer;
 					}
 
 				    ul.items {
 				        margin : 0 0 8px 0;
+
+				        &:last-child {
+				        	margin-bottom: 23px;
+				        }
 
 				        a {
 				            font-family : $medium;
@@ -126,10 +126,11 @@
 
 				        li {
 					        a {
-					            font-family : $regular;
-					            font-weight : normal;
-					            font-size   : 12px;
-					            color       : #444;
+								font-family : $light;
+								font-weight : normal;
+								font-size   : 11px;
+								line-height : 21px;
+								color       : #444;
 					        }
 				        }
 				        
@@ -139,7 +140,11 @@
 				    }
 
 				    &.jj-home {
-				    	display: none;
+						display : none;
+				    }
+
+				    &.jj-j-shop-highlights > a {
+						padding-top: 30px;
 				    }
 				}
 
@@ -147,20 +152,21 @@
 					background-color : #fcfcfc;
 
 					.lhn-subcategories {
-						padding : 0 0 15px 0;
+						padding : 0 0 1px 0;
 					}
 
 					ul.active { 
-						margin-bottom : 15px; 
+						margin-bottom : 18px; 
 
 						> a {
 							text-decoration : underline;
 							margin-bottom   : 10px;
 						}
+
 						li.level2item {
-				        	display    : block;
-				        	margin-top : 3px;
+							display : block;
 				        }
+
 						li.level2item.active > a {
 							text-decoration : underline;
 				        }
