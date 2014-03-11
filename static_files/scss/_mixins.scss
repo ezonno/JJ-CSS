@@ -2,15 +2,15 @@
 
 @mixin opacity($opacity, $important: no) {
     @if $important == isImportant {
-        opacity: $opacity !important;
-        $opacity-ie: $opacity * 100;
-        filter: alpha(opacity=$opacity-ie) !important; //IE8
+        opacity     : $opacity !important;
+        $opacity-ie : $opacity * 100;
+        filter      : alpha(opacity=$opacity-ie) !important; //IE8
     }
     
     @else {
-        opacity: $opacity;
-        $opacity-ie: $opacity * 100;
-        filter: alpha(opacity=$opacity-ie); //IE8
+        opacity     : $opacity;
+        $opacity-ie : $opacity * 100;
+        filter      : alpha(opacity=$opacity-ie); //IE8
     }
 }
 
@@ -19,37 +19,37 @@
     $listwidth: ($imagewidth * 3) + ($spacing * 2);
 
     .productlisting {
-        margin:0 auto;
-        width:$listwidth;
+        margin : 0 auto;
+        width  : $listwidth;
     
         .grid_5 { 
-            margin:0;
-            width:$imagewidth;
-            margin: 0 $spacing;
-            height:auto;
-            overflow: hidden;
+            margin   : 0;
+            width    : $imagewidth;
+            margin   : 0 $spacing;
+            height   : auto;
+            overflow : hidden;
 
             &.alpha,
             &.omega {
-                margin: 0;
+                margin : 0;
             }
             
             .producttile {
-                background-color: transparent;
-                height: auto;
+                background-color : transparent;
+                height           : auto;
 
                 .image {
-                    border:0 none;
-                    margin: 0;
+                    border : 0 none;
+                    margin : 0;
 
                     .thumbnail {
-                        width: 100%;
-                        height: auto;
+                        width  : 100%;
+                        height : auto;
                     }
                     img.product_thumbnail {
-                        border:0 none;
-                        width: $imagewidth;
-                        height: auto;
+                        border : 0 none;
+                        width  : $imagewidth;
+                        height : auto;
                     }
                 }                
             }
@@ -61,20 +61,20 @@
     .content {
         span {
             &.title {
-                font-size: 26px;
-                margin-top: 50px;
+                font-size  : 26px;
+                margin-top : 50px;
             }
 
             &.price {
-                font-size: 12px;
-                margin-top: 10px;
+                font-size  : 12px;
+                margin-top : 10px;
             }
         }
 
         .bar {
-            margin-top: 25px;
-            width: 20px;
-            height: 3px;
+            margin-top : 25px;
+            width      : 20px;
+            height     : 3px;
         }
     }
 }
@@ -83,20 +83,20 @@
     .content {
         span {
             &.title {
-                margin-top: 20px;
+                margin-top : 20px;
             }
 
             &.price {
-                margin-top: 5px;
+                margin-top : 5px;
             }
         }
 
         .bar {
-            margin-top: 15px;
+            margin-top : 15px;
         }
 
         .text .slidein {
-            padding-bottom: 15px;
+            padding-bottom : 15px;
         }
     }
 }
@@ -105,18 +105,18 @@
     .content {
         span {
             &.title {
-                margin-top: 15px;
+                margin-top : 15px;
             }
         }
 
         .bar {
-            margin-top: 10px;
+            margin-top : 10px;
         }
 
         .text {
 
             .slidein {
-                padding-bottom: 10px;
+                padding-bottom : 10px;
             }
         }
     }
@@ -126,16 +126,16 @@
     .content {
         span {
             &.title {
-                margin-top: 35px;
+                margin-top : 35px;
             }
         }
 
         .bar {
-            margin-top: 20px;
+            margin-top : 20px;
         }
 
         .text .slidein {
-            padding-bottom: 20px;
+            padding-bottom : 20px;
         }
     }
 }
@@ -144,18 +144,18 @@
     .content {
         span {
             &.title {
-                margin-top: 15px;
+                margin-top : 15px;
             }
         }
 
         .bar {
-            margin-top: 15px;
+            margin-top : 15px;
         }
 
         .text {
 
             .slidein {
-                padding-bottom: 20px;
+                padding-bottom : 20px;
             }
         }
     }
@@ -165,44 +165,44 @@
     .content {
         span {
             &.title {
-                font-size: 16px;
-                margin-top: 30px;
+                font-size  : 16px;
+                margin-top : 30px;
             }
 
             &.price {
-                font-size: 11px;
-                font-family: $medium;
+                font-size   : 11px;
+                font-family : $medium;
             }
         }
 
         .bar {
-            margin-top: 15px;
-            width: 15px;
-            height: 2px;
+            margin-top : 15px;
+            width      : 15px;
+            height     : 2px;
         }
 
         .text {
 
             .slidein {
-                padding-bottom: 30px;
+                padding-bottom : 30px;
 
                 a {
-                    display: inline-block;
-                    //width: 50%;
-                    //float: left;
-                    line-height: 10px;
-                    font-size: 10px;
-                    font-family: $light;
+                    display     : inline-block;
+                    //width     : 50%;
+                    //float     : left;
+                    line-height : 10px;
+                    font-size   : 10px;
+                    font-family : $light;
 
                     &.one {
-                        border-right: 1px solid #000;
-                        padding-right: 11px;
-                        //text-align: right;
+                        border-right  : 1px solid #000;
+                        padding-right : 11px;
+                        //text-align  : right;
                     }
 
                     &.two {
-                        padding-left: 10px;
-                        //text-align: left;
+                        padding-left : 10px;
+                        //text-align : left;
                     }
                 }
             }
