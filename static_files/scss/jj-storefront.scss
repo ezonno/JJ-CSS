@@ -13,7 +13,6 @@ a {
 #branded {
     .area {
         width     : 100%;
-        min-width : 939px;
 
         .wide_wrapper {
             padding-bottom : 1px;
@@ -183,7 +182,7 @@ a {
             width      : 1110px;
 
             .brand {
-                width      : 350px;
+                width      : 100%;
                 border     : 1px solid #ebebeb;
                 text-align : center;
                 margin     : 0 0 20px;
@@ -192,7 +191,7 @@ a {
                 .image {
                     width           : 308px;
                     height          : 407px;
-                    margin          : 20px 20px 0;
+                    margin          : 20px auto 0;
                     position        : relative;
                     background-size : 308px 407px;
 
@@ -537,6 +536,213 @@ a {
                         height : 345px;
 
                         @include smallboxes();
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Breakpoints */
+
+// 1200 - 1400 px
+@media only screen 
+and (max-width : 1400px) {
+    #branded {
+        .content {
+            .grid {
+                [class*='col-'] {
+                    padding : 0 10px
+                }
+            }
+
+            .storefront-brands {
+                width : 900px;
+            }
+
+            .storefront-promos {
+                .promo-container {
+                    width : 900px;
+                }
+            }
+
+            .storefront-brands {
+                .brand {
+                    margin : 0 0 20px;
+
+                    .image {
+                        width  : 240px;
+                        height : 317px;
+                    }
+
+                    &.callout {
+                        margin-bottom : 68px;
+
+                        span:first-child {
+                            margin-top : 65px;
+                        }
+                    }
+                }
+            }
+
+            .storefront-misc {
+                padding-top : 30px;
+                margin-top  : 50px;
+
+                h1:after {
+                    width: 900px;
+                }
+            }
+
+            .storefront-categories {
+                .gridify {
+                    width: 900px;
+
+                    /* Mixed grid */
+                    &.mixed {
+                        .box {
+                            &.small {
+                                width  : 225px;
+                                height : 288px;
+
+                                @include smallboxes-BreakMedium();
+                            }
+                            
+                            &.large {
+                                width  : 450px;
+                                height : 575px;
+
+                                @include largeboxes-BreakMedium();
+                            }
+                        }
+                    }
+
+                    /* Large grid */
+                    &.large {
+                        .box {
+                            width  : 450px;
+                            height : 575px;
+
+                            @include largeboxes-BreakMedium();
+                        }
+                    }
+
+
+                    /* Small grid */
+                    &.small {
+                        .box {
+                            width  : 225px;
+                            height : 288px;
+
+                            @include smallboxes-BreakMedium();
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// < 1200px
+@media only screen 
+and (max-width : 1200px) {
+    #branded {
+        .content {
+            .grid {
+                [class*='col-'] {
+                    padding : 0 5px;
+                }
+            }
+
+            .storefront-brands {
+                width : 720px;
+            }
+
+            .storefront-promos {
+                .promo-container {
+                    width : 720px;
+                }
+            }
+
+            .storefront-brands {
+                .brand {
+                    margin : 0 0 10px;
+
+                    .image {
+                        width  : 210px;
+                        height : 278px;
+                        margin : 10px auto 0;
+                    }
+
+                    &.callout {
+                        margin-bottom : 48px;
+
+                        span:first-child {
+                            margin-top : 45px;
+                        }
+
+                        p {
+                            width: 80%;
+                        }
+                    }
+
+                    .logo {
+                        margin: 15px auto;
+                    }
+                }
+            }
+
+            .storefront-misc {
+                padding-top : 20px;
+                margin-top  : 30px;
+
+                h1:after {
+                    width : 720px;
+                }
+            }
+
+            .storefront-categories {
+                .gridify {
+                    width : 720px;
+
+                    /* Mixed grid */
+                    &.mixed {
+                        .box {
+                            &.small {
+                                width  : 180px;
+                                height : 230px;
+
+                                @include smallboxes-BreakSmall();
+                            }
+                            
+                            &.large {
+                                width  : 360px;
+                                height : 460px;
+
+                                @include largeboxes-BreakSmall();
+                            }
+                        }
+                    }
+
+                    /* Large grid */
+                    &.large {
+                        .box {
+                            width  : 360px;
+                            height : 460px;
+
+                            @include largeboxes-BreakSmall();
+                        }
+                    }
+
+
+                    /* Small grid */
+                    &.small {
+                        .box {
+                            width  : 180px;
+                            height : 230px;
+
+                            @include smallboxes-BreakSmall();
+                        }
                     }
                 }
             }

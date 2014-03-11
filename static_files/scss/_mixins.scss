@@ -79,6 +79,88 @@
     }
 }
 
+@mixin largeboxes-BreakSmall {
+    .content {
+        span {
+            &.title {
+                margin-top: 20px;
+            }
+
+            &.price {
+                margin-top: 5px;
+            }
+        }
+
+        .bar {
+            margin-top: 15px;
+        }
+
+        .text .slidein {
+            padding-bottom: 15px;
+        }
+    }
+}
+
+@mixin smallboxes-BreakSmall {
+    .content {
+        span {
+            &.title {
+                margin-top: 15px;
+            }
+        }
+
+        .bar {
+            margin-top: 10px;
+        }
+
+        .text {
+
+            .slidein {
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+@mixin largeboxes-BreakMedium {
+    .content {
+        span {
+            &.title {
+                margin-top: 35px;
+            }
+        }
+
+        .bar {
+            margin-top: 20px;
+        }
+
+        .text .slidein {
+            padding-bottom: 20px;
+        }
+    }
+}
+
+@mixin smallboxes-BreakMedium {
+    .content {
+        span {
+            &.title {
+                margin-top: 15px;
+            }
+        }
+
+        .bar {
+            margin-top: 15px;
+        }
+
+        .text {
+
+            .slidein {
+                padding-bottom: 20px;
+            }
+        }
+    }
+}
+
 @mixin smallboxes {
     .content {
         span {

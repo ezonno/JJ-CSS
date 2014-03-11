@@ -102,12 +102,28 @@ var jjStorefront = (function (jQuery) {
                 });
             },
 
-            gridifyInit : function () {
+            detectGrid : function () {
+                var width = $(window).width();
+                
+                if (width >= 1400) {
+                    jjStorefront.gridifyInit(270);
+                    console.log('Big screen - yaay!');
+                } else if (width >= 1200) {
+                    jjStorefront.gridifyInit(225);
+                    console.log('Medium screen - Okay :(');
+                } else if (width < 1200) {
+                    jjStorefront.gridifyInit(180);
+                    console.log('Small screen - buy new!');
+                }
+            },
+
+            gridifyInit : function (colWidth) {
                 gridContainer.isotope({
                     itemSelector: '.box',
                     layoutMode: 'masonry',
                     masonry: {
-                        columnWidth: 270
+                        //columnWidth: 270
+                        columnWidth: colWidth
                     },
                     animationEngine: 'best-available',
                     animationOptions: {
@@ -179,5 +195,10 @@ jQuery(document).ready(function () {
 });
 
 jQuery(window).load(function(){
-    jjStorefront.gridifyInit();
+    jjStorefront.detectGrid();
+});
+
+jQuery(window).resize(function(){
+    clearTimeout(this.id);
+    this.id = setTimeout(jjStorefront.detectGrid, 500);
 });
