@@ -10,18 +10,19 @@ var jjStorefront = (function (jQuery) {
 
         // custom functions here
             assignGlobalVars : function () {
+                // Needed to pass through several functions
                 window.gridContainer = $('#branded .content .storefront-categories .gridify');
             },
 
             checkHero : function () {
+                // If stuff in the hero is a slider -> init
                 if ($('#branded .content .hero').find('.swiper-slide')) {
                     jjStorefront.initHero();
 
+                    // On callbacks from the sidemenu, resize the hero
                     $(document).on('showSideMenuComplete hideSideMenuComplete', function(){
                         jjStorefront.resizeHero();
                     });
-                    //$(document).on('showSideMenuComplete', jjStorefront.resizeHero());
-                    //$(document).on('hideSideMenuComplete', jjStorefront.resizeHero());
                 }
             },
 
@@ -57,6 +58,9 @@ var jjStorefront = (function (jQuery) {
 
             brandHover : function () {
                 $('#branded .content .storefront-brands .brand').each(function(){
+                    // Avoid multiple instances of the hover event
+                    $(this).off('hover');
+
                     var width = $(this).find('.image').width(),
                         height = $(this).find('.image').height(),
                         newWidth = width + 10,
@@ -76,7 +80,7 @@ var jjStorefront = (function (jQuery) {
                 });
             },
 
-            categoryHover : function () {
+            categoryHover : function () { // Disabled, but might be enabled later
                 $('#branded .content .storefront-categories .gridify .box .content').each(function(){
                     $(this).hover(function(){
                         TweenMax.to($(this).find('.text'), 0.6, {bottom: 0, backgroundColor: 'rgba(252, 252, 252, 0.8)'});
@@ -105,25 +109,24 @@ var jjStorefront = (function (jQuery) {
             detectGrid : function () {
                 var width = $(window).width();
                 
+                // Boom. JS media queries
                 if (width >= 1400) {
                     jjStorefront.gridifyInit(270);
-                    console.log('Big screen - yaay!');
                 } else if (width >= 1200) {
                     jjStorefront.gridifyInit(225);
-                    console.log('Medium screen - Okay :(');
                 } else if (width < 1200) {
                     jjStorefront.gridifyInit(180);
-                    console.log('Small screen - buy new!');
                 }
+
+                jjStorefront.brandHover();
             },
 
             gridifyInit : function (colWidth) {
                 gridContainer.isotope({
-                    itemSelector: '.box',
+                    itemSelector: '.box', // Don't change
                     layoutMode: 'masonry',
                     masonry: {
-                        //columnWidth: 270
-                        columnWidth: colWidth
+                        columnWidth: colWidth // Value passed from detectGrid();
                     },
                     animationEngine: 'best-available',
                     animationOptions: {
@@ -199,6 +202,7 @@ jQuery(window).load(function(){
 });
 
 jQuery(window).resize(function(){
+    // Timeout added to avoid mem overload when resizing
     clearTimeout(this.id);
     this.id = setTimeout(jjStorefront.detectGrid, 500);
 });
