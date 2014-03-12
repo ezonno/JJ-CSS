@@ -163,6 +163,7 @@ a {
                 margin-top : -30px;
                 cursor     : pointer;
                 background : url(../img/sprite_hero_controls.png) no-repeat;
+                display    : none;
             }
 
             .swiper-prev {
@@ -173,6 +174,10 @@ a {
             .swiper-next {
                 background-position : right center;
                 right               : 10px;
+            }
+
+            &.swiper-container {
+                height : 0;
             }
         }
 

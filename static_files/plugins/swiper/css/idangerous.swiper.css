@@ -86,7 +86,7 @@ sizes, pagination, etc.
 
 	width: 100%;
 	height: auto;
-	display: none;
+	/* display: none; */
 }
 .swiper-slide {
 	/* Specify Slides's Size: */
