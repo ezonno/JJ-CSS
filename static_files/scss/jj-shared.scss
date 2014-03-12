@@ -278,7 +278,7 @@ input[type="password"] {
 
 /* NO RESULTS */
 
-#search .no-results-slot {
+#branded .content .no-results-slot {
     display       : inline-block;
     height        : 183px;
     width         : 246px;
@@ -290,7 +290,7 @@ input[type="password"] {
     }
 
     &.col1 {
-        margin-left : 21px
+        // margin-left : 21px;
     }
 
     &.col3 {
