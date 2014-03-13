@@ -21,18 +21,21 @@
 /* CONTENT */
 
 /* category banner heading text */
-.cat-banner-wrapper h1.catHeading {
-    display: block !important;
-    position: absolute;
-    top: 126px;
+#branded.pt_category .cat-banner-wrapper {
     width: 100%;
-    color: white;
-    text-align: center;
-    font-weight: normal;
-    font-size: 70px;
-    font-family: "PFDinMono-Regular",'Univers_lt_cn', Helvetica, Arial, Verdana, sans-serif;
-    text-transform: uppercase;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: -1px;
+    z-index: 0;
+
+    a {
+        display: block;
+    }
+
 }
+
 
 #branded.pt_category .container_24 .grid_24 {
     margin-top: 95px;
