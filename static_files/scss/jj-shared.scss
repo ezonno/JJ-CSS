@@ -465,6 +465,23 @@
     text-transform : uppercase;
 }
 
+/* img based category banner text */
+#branded.pt_category .cat-banner-wrapper {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: -1px;
+    z-index: 0;
+
+    a {
+        display: block;
+    }
+
+}
+
+
 .cat-banner-top-wrapper {
     text-align : center;
     margin     : 20px auto;
