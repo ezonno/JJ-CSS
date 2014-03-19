@@ -17,7 +17,6 @@ var jjStorefront = (function (jQuery) {
             checkHero : function () {
                 // Count number of slides
                 var slides = $('#branded .content .hero .swiper-slide').length;
-                console.log('Slides: ' + slides);
 
                 // If stuff in the hero is a slider -> init
                 if ($('#branded .content .hero').find('.swiper-slide') && slides > 1) {
@@ -47,7 +46,6 @@ var jjStorefront = (function (jQuery) {
                         onSwiperCreated: function(){
                             $('#branded .content .hero .swiper-prev, #branded .content .hero .swiper-next').css('display' , 'block');
                             jjStorefront.displayHero();
-                            // $('#branded .content .hero.swiper-container').slideDown();
                         }
                     });
 
@@ -64,9 +62,7 @@ var jjStorefront = (function (jQuery) {
 
             displayHero : function () {
                 var heroHeight = $('#branded .content .hero.swiper-container .swiper-slide img').height();
-                console.log('heroHeight ' + heroHeight);
 
-                //$('#branded .content .hero .swiper-prev, #branded .content .hero .swiper-next').css('display' , 'block');
                 if (jjStorefront.heroIsSlider) {
                     TweenMax.to($('#branded .content .hero.swiper-container'), 0.6, {height: heroHeight, ease:Quad.Power4});
                 } else {
@@ -76,7 +72,6 @@ var jjStorefront = (function (jQuery) {
 
             resizeHero : function () {
                 jjStorefront.jjSwiper.resizeFix();
-                console.log('Hero fixed');
             },
 
             brandHover : function () {

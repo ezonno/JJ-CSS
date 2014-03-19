@@ -216,65 +216,184 @@
 /* FOOTER */
 
 #footer_global {
-    background : #f1f1f1 url('../img/footer-bg.jpg') bottom left repeat-x;
+    background  : #fff;
+    margin-left : 275px;
+    border-top  : 1px solid #f7f7f7;
+    color       : #252525;
 
-    & > .contentasset {
-        margin : 0 0 0 275px;
+    * {
+        @include box-sizing(border-box);
     }
 
-    h4 {
-        color       : #060607;
-        font-family : $regular;
-        font-size   : 14px;
-    }
+    .connect {
+        height        : 147px;
+        border-bottom : 1px solid #f7f7f7;
 
-    a {
-        color          : #848486;
-        font-family    : $regular;
-        font-size      : 12px;
-        text-transform : uppercase;
+        .social,
+        .newsletter {
+            width : 50%;
+            height: 100%;
+            float : left;
+        }
 
-        &:hover {
-            color : #060607;
+        .social {
+            border-right : 1px solid #f7f7f7;
+            text-align   : center;
+            padding-top  : 57px;
+
+            span {
+                font-size      : 12px;
+                font-family    : $bold;
+                line-height    : 28px;
+                vertical-align : top;
+                margin-right   : 10px;
+                text-transform : uppercase;
+            }
+
+            a {
+                width      : 29px;
+                height     : 28px;
+                background : transparent url(../img/sprite_footer_social.png);
+                display    : inline-block;
+                margin     : 0 6px;
+
+                &.facebook {
+                    background-position : 0px 0px;
+
+                    &:hover {
+                        background-position : 0px 28px;
+                    }
+                }
+
+                &.twitter {
+                    background-position : -29px 0px;
+
+                    &:hover {
+                        background-position : -29px 28px;
+                    }
+                }
+
+                &.instagram {
+                    background-position : -58px 0px;
+
+                    &:hover {
+                        background-position : -58px 28px;
+                    }
+                }
+
+                &.pinterest {
+                    background-position : -87px 0px;
+
+                    &:hover {
+                        background-position : -87px 28px;
+                    }
+                }
+
+                &.googleplus {
+                    background-position : -116px 0px;
+
+                    &:hover {
+                        background-position : -116px 28px;
+                    }
+                }
+
+                &.youtube {
+                    background-position : -145px 0px;
+
+                    &:hover {
+                        background-position : -145px 28px;
+                    }
+                }
+            }
+        }
+
+        .newsletter {
+            text-align  : center;
+            padding-top : 53px;
+
+            span {
+                font-size      : 12px;
+                font-family    : $bold;
+                line-height    : 40px;
+                vertical-align : top;
+                margin-right   : 10px;
+                text-transform : uppercase;
+            }
+
+            .contentasset {
+                display : inline-block;
+
+                #footer-newsletter-signup {
+                    margin-top : 0;
+
+                    fieldset {
+                        padding : 0;
+
+                        input {
+                            line-height  : 38px;
+                            padding      : 0;
+                            height       : auto;
+                            border       : 1px solid #e5e5e5;
+                            border-right : 0;
+                            font-family  : $regular;
+                            font-weight  : normal;
+                            font-size    : 10px;
+                            width        : 200px;
+                            padding-left : 15px;
+                            color        : #252525;
+                        }
+
+                        button {
+                            height      : 40px;
+                            width       : 30px;
+                            border      : 1px solid #e5e5e5;
+                            border-left : 0;
+                            background  : transparent url(../img/footer_newsletter_arrow.png) center no-repeat;
+                        }
+                    }
+                }
+            }
         }
     }
 
-    .lower.container_24 {
-        .grid_7.textleft img, 
-        .grid_8.textcenter #trustpilot, 
-        .grid_9.textright img {
-            @include opacity(1);
+    .links {
+
+        .col {
+            width      : 33%;
+            float      : left;
+            text-align : center;
+
+            &.center {
+                border-left  : 1px solid #f7f7f7;
+                border-right : 1px solid #f7f7f7;
+            }
+        }
+
+        h3 {
+            font-family    : $medium;
+            font-size      : 13px;
+            text-transform : uppercase;
+            font-weight    : normal;
+            line-height    : 27px;
+        }
+
+        a {
+            text-transform : none;
+            font-size      : 12px;
+            line-height    : 27px;
+            color          : #252525;
+
+            &:hover {
+                text-decoration : underline;
+                color           : inherit;
+            }
         }
     }
-}		
 
-#footer_global fieldset input, 
-input[type="text"], 
-input[type="password"] {
-    font-family : $regular;
-    font-size   : 12px;
-    font-weight : normal;
-}
-
-#footer_global fieldset button {
-    border-right  : 1px solid #CCC;
-    border-top    : 1px solid #CCC;
-    border-bottom : 1px solid #CCC;
-}
-
-#footer_global fieldset {
-    button:hover, 
-    a.button:hover, 
-    button.positive:hover, 
-    button.negative:hover, 
-    button:focus, 
-    a.button:focus, 
-    button.positive:focus, 
-    button.negative:focus {
-       background-position : 0 3px;
+    .logo {
+        border-top : 1px solid #f7f7f7;
     }
 }
-
 
 /* NO RESULTS */
 
