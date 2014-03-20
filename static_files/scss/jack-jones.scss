@@ -11,11 +11,11 @@
 /* End import from jj-shared */
 
 #branded .header {
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom : 1px solid #f1f1f1;
 }
 
 #highlights_features_hotfix h2{
-    font-family: "PFDinMono-Regular","UniversLTW01-57Condense 723821", Arial;
+    font-family : $regular, "UniversLTW01-57Condense 723821", Arial;
 }
 
 /* CONTENT */
@@ -23,31 +23,32 @@
 
 
 #branded.pt_category .container_24 .grid_24 {
-    margin-top: 95px;
+    margin-top : 95px;
 }
 
 #branded.pt_productdetails #content.container_24 {
-    margin-top: 0px;
+    margin-top : 0px;
+    width      : 860px;
 }
 
 /* Outfit PLP */
 #branded.pt_category .productlisting .product_set .quickviewbutton {
-    display: none !important;
+    display : none !important;
 }
 
 /* Outfit PDP */
 #branded.pt_productdetails .product_set {
     .grid_16,
     .productsetdetail {
-        background: none;
+        background : none;
     }
 
         
 
     div.productsetdetail {
         .grid_10 {
-            width: 258px;
-            background-image: none;
+            width            : 258px;
+            background-image : none;
         }
     }
 
@@ -60,7 +61,7 @@
     #subProduct8Div, 
     #subProduct10Div {
         div.productsetdetail {
-            background: none;
+            background : none;
         }
     }
 }
