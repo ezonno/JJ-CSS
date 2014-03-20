@@ -247,7 +247,6 @@
                 line-height    : 28px;
                 vertical-align : top;
                 margin-right   : 10px;
-                text-transform : uppercase;
             }
 
             a {
@@ -317,7 +316,6 @@
                 line-height    : 40px;
                 vertical-align : top;
                 margin-right   : 10px;
-                text-transform : uppercase;
             }
 
             .contentasset {
@@ -391,7 +389,241 @@
     }
 
     .logo {
-        border-top : 1px solid #f7f7f7;
+        height: 140px;
+        background: transparent url(../img/logo_footer.png) center no-repeat;
+        border-top    : 1px solid #f7f7f7;
+        border-bottom : 1px solid #f7f7f7;
+    }
+
+    .lower {
+
+        * {
+            @include filter(grayscale(100%));
+            @include opacity(1, isImportant);
+        }
+
+        &.container_24 {
+            padding: 20px 0;
+        }
+    }
+
+    .tuv_price_shipping_wrapper {
+        text-align : center;
+        position   : relative;
+    }
+}
+
+/* Switzerland */
+.jj.countryCH #footer_global {
+    .lower {
+        .grid_7,
+        .grid_8,
+        .grid_9 {
+            width  : 333px;
+            margin : 0;
+        }
+
+        .grid_7 {
+            float       : left;
+            line-height : 46px;
+
+            img {
+                vertical-align : middle;
+            }
+        }
+
+        .grid_8 {
+            text-align : center;
+
+            .contentasset {
+                display : inline-block;
+
+                #trustpilot {
+                    margin-left : 0;
+                }
+            }
+        }
+
+        .grid_9 {
+            float       : right;
+            line-height : 46px;
+
+            img {
+                vertical-align : middle;
+            }
+        }
+    }
+
+    .tuv_price_shipping_wrapper {
+        width  : 333px;
+        margin : 0 auto;
+        top    : -30px;
+    }
+}
+
+/* Germany */
+.jj.countryDE #footer_global {
+    .lower.container_24 {
+        padding : 20px 0;
+
+        .grid_9 {
+            display : none;
+        }
+
+        .grid_7 {
+            line-height : 46px;
+
+            img {
+                vertical-align : middle;
+            }
+        }
+    }
+
+    .tuv_price_shipping_wrapper {
+        width  : 333px;
+        margin : 0 auto;
+        top    : -30px;
+    }
+}
+
+/* Denmark, Netherlands, Norway, Sweden */
+.jj.countryDK #footer_global,
+.jj.countryNL #footer_global,
+.jj.countryNO #footer_global,
+.jj.countrySE #footer_global {
+    .lower {
+        .grid_7,
+        .grid_8,
+        .grid_9 {
+            width  : 333px;
+            margin : 0;
+        }
+
+        .grid_7 {
+            float       : left;
+            line-height : 46px;
+
+            img {
+                vertical-align : middle;
+            }
+        }
+
+        .grid_8 {
+            text-align : center;
+
+            .contentasset {
+                display : inline-block;
+
+                #trustpilot {
+                    margin-left : 0;
+                }
+            }
+        }
+
+        .grid_9 {
+            float       : right;
+            line-height : 46px;
+
+            img {
+                vertical-align : middle;
+            }
+        }
+    }
+}
+
+/* ROE */
+.jj.countryBE #footer_global,
+.jj.countryES #footer_global,
+.jj.countryIE #footer_global,
+.jj.countryIT #footer_global,
+.jj.countryGB #footer_global {
+    .lower.container_24 {
+        padding : 20px 0;
+
+        .grid_9 {
+            width : 333px !important;
+            float : right;
+
+            span {
+                margin-top : 13px;
+            }
+        }
+
+        .grid_7 {
+            width : 333px;
+        }
+
+        .grid_8 {
+            display: none;
+        }
+    }
+}
+
+/* Austria, Finland */
+.jj.countryAT #footer_global,
+.jj.countryFI #footer_global {
+    .lower.container_24 {
+        padding : 20px 0;
+
+        .grid_9 {
+            width : 333px !important;
+            float : right;
+
+            span {
+                margin-top : 13px;
+            }
+        }
+
+        .grid_7 {
+            width : 333px;
+        }
+    }
+
+    .tuv_price_shipping_wrapper {
+        width  : 333px;
+        margin : 0 auto;
+        top    : -30px;
+    }
+}
+
+/* France */
+.jj.countryFR #footer_global {
+    .lower {
+        .grid_7,
+        .grid_8,
+        .grid_9 {
+            width  : 333px;
+            margin : 0;
+        }
+
+        .grid_7 {
+            float       : left;
+            line-height : 46px;
+
+            img {
+                vertical-align : middle;
+            }
+        }
+
+        .grid_8 {
+            text-align : center;
+
+            .contentasset {
+                display : inline-block;
+
+                #trustpilot {
+                    margin-left : 0;
+                }
+            }
+        }
+
+        .grid_9 {
+            float : right;
+
+            span {
+                margin-top : 13px;
+            }
+        }
     }
 }
 
