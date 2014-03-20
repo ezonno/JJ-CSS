@@ -184,7 +184,7 @@
 					}
 
 					ul.active { 
-						margin-bottom : 18px; 
+						//margin-bottom : 18px;
 
 						> a {
 							text-decoration : underline;
@@ -192,7 +192,11 @@
 						}
 
 						li.level2item {
-							display : block;
+							display    : block;
+
+							&:first-child {
+								margin-top : 18px;
+							}
 				        }
 
 						li.level2item.active > a {
