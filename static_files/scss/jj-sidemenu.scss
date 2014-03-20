@@ -229,13 +229,13 @@
 		.home {
 			width      : 100%;
 			height     : 55px;
-			background : transparent url(../img/sidebar.png) center -797px no-repeat;
+			background : transparent url(../img/sidebar.png) center -755px no-repeat;
 			margin-top : 10px;
-			@include opacity(0.8);
+			@include opacity(0.23);
 			@include transition(opacity .3s linear);
 
 			&:hover {
-				@include opacity(1);
+				@include opacity(.4);
 			}
 
 			a {
