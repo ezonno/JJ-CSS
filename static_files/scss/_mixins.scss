@@ -45,7 +45,14 @@
                     .thumbnail {
                         width  : 100%;
                         height : auto;
+
+                        .badgeimage.promobadge,
+                        .badgeimage.oosbadge {
+                            margin   : -30px auto 0;
+                            position : relative;
+                        }
                     }
+
                     img.product_thumbnail {
                         border : 0 none;
                         width  : $imagewidth;
