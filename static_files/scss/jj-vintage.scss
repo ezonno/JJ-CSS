@@ -8,37 +8,6 @@
 
 /* End import from jj-5lines */
 
-/* Flyout fonts */
-#branded {
-    #category_menu {
-        > div > ul > li > a {
-            font-family: $vintageFontRockwell;
-        }
-    }
-
-    .category_menu .menu {
-        ul {
-            &.categories li {
-                &.level0item {
-                    ul.items {
-                        a {
-                            font-family: $vintageFontRockwell;
-                            font-weight: bold;
-                        }
-
-                        li.level2item {
-
-                            a {
-                                font-family: $vintageFontRockwell;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
 /* GENERAL STUFF */
 #branded {
     background: white !important;
@@ -75,16 +44,6 @@
         }
     }
 }
-
-/* SIDE MENU */
-#branded .side-menu .side-menu-categories .category_menu { 
-    ul.categories li.level0item > a {
-            font-size: 15px;
-            font-family:"RockwellStd";
-            font-weight: normal;
-    }
-}
-
 
 /* SEPARATOR */
 #branded.pt_brandstorefront .storefront8 .separator {

@@ -8,39 +8,6 @@
 
 /* End import from jj-
 
-
-
-/* GENERAL STUFF */
-#branded {
-    #category_menu {
-        > div > ul > li > a {
-            font-family: $techFontRegular;
-        }
-    }
-
-    .category_menu .menu {
-        ul {
-            &.categories li {
-                &.level0item {
-                    ul.items {
-                        a {
-                            font-family: $techFontBold;
-                        }
-
-                        li.level2item {
-                            background-image: url("../img/wrapper-bg.jpg") !important;
-
-                            a {
-                                font-family: $techFontRegular;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
 /* GENERAL STUFF */
 
 #branded {
@@ -68,15 +35,6 @@
             width: 1007px;
             margin-left: 0;
         }
-    }
-}
-
-/* SIDE MENU */
-#branded .side-menu .side-menu-categories .category_menu { 
-    ul.categories li.level0item > a {
-        font-size: 14px;
-        font-family:"AvenirLT-Heavy";
-        font-weight: normal;
     }
 }
 
