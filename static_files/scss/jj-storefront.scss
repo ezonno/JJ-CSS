@@ -356,10 +356,8 @@ a {
 
         /* Misc */
         .storefront-misc {
-            background     : #fcfcfc;
             text-align     : center;
             padding-top    : 56px;
-            margin-top     : 85px;
             padding-bottom : 35px;
 
             h1 {
@@ -382,7 +380,7 @@ a {
             }
 
             .controls {
-                background : #fcfcfc;
+                background : #fff;
                 width      : 100px;
                 margin     : -11px auto 0;
 
@@ -390,7 +388,7 @@ a {
                     display    : inline-block;
                     width      : 21px;
                     height     : 21px;
-                    background : url(../img/controls_sprite.png) no-repeat top left #fcfcfc;
+                    background : transparent url(../img/controls_sprite.png) top left no-repeat;
                     padding    : 5px;
 
                     &.mixed {
@@ -422,8 +420,7 @@ a {
 
         /* Categories */
         .storefront-categories {
-            width      : 100%;
-            background : #fcfcfc;
+            width : 100%;
 
             .gridify {
                 width  : 1080px;
