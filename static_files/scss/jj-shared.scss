@@ -220,6 +220,7 @@
     margin-left : 275px;
     border-top  : 1px solid #f7f7f7;
     color       : #252525;
+    margin-top  : 50px;
 
     * {
         @include box-sizing(border-box);
@@ -681,6 +682,10 @@
 /* Bestseller header */
 #header_global .header_top .customer_info #spanGigyaHeaderLogin {
     @include filter(grayscale(1));
+}
+
+#servicebar .brand {
+    background-color : transparent;
 }
 
 /* category banner heading text */
