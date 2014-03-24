@@ -194,14 +194,28 @@ a {
                 @include box-sizing(border-box);
 
                 .image {
-                    width           : 308px;
-                    height          : 407px;
-                    margin          : 20px auto 0;
-                    position        : relative;
+                    width    : 308px;
+                    height   : 407px;
+                    margin   : 20px auto 0;
+                    position : relative;
 
                     img {
                         width  : 100%;
                         height : auto;
+                    }
+
+                    &:before {
+                        content       : '';
+                        display       : inline-block;
+                        width         : 0;
+                        height        : 0;
+                        border-left   : 7px solid transparent;
+                        border-right  : 7px solid transparent;
+                        border-bottom : 7px solid #fff;
+                        margin        : 0 auto;
+                        position      : absolute;
+                        bottom        : 0;
+                        z-index       : 1;
                     }
 
                     .text {
@@ -295,60 +309,105 @@ a {
                     }
                 }
 
-                &.callout {
-                    border        : none;
-                    margin-bottom : 87px;
-
-                    span {
-                        width          : 100%;
-                        font-size      : 21px;
-                        margin         : 0 auto;
-                        line-height    : 32px;
-                        letter-spacing : 1px;
-                        font-family    : $regular;
-
-                        &:first-child {
-                            font-family : $medium;
-                            margin-top  : 84px;
-                            font-size   : 24px;
-                        }
-                    }
-
-                    p {
-                        margin      : 22px auto 0;
-                        font-size   : 11px;
-                        width       : 60%;
-                        line-height : 20px;
-                    }
-
-                    a {
-                        color          : #2a2a2a;
-                        text-transform : uppercase;
-                        margin         : 25px auto;
-                        font-size      : 12px;
-                        font-family    : $medium;
-                    }
-                }
-
                 &.sellingpoints {
                     border : none;
 
-                    .one {
-                        margin-top : 50px;
+                    .one,
+                    .two {
+                        border : 1px solid #ebebeb;
                     }
 
-                    span {
-                        font-size      : 12px;
-                        line-height    : 18px;
-                        margin         : 0 auto;
-                        width          : 100%;
-                        text-transform : none;
-                        font-family    : $regular;
+                    .one {
+                        height : 335px;
 
-                        &:first-child {
-                            margin-top     : 30px;
-                            text-transform : uppercase;
+                        .content {
+                            position : relative;
+
+                            span {
+                                font-size      : 12px;
+                                line-height    : 20px;
+                                margin         : 0 auto;
+                                width          : 100%;
+                                text-transform : none;
+                                font-family    : $regular;
+
+                                &.heading {
+                                    font-family    : $medium;
+                                    text-transform : uppercase;
+                                }
+                            }
+
+                            .icon {
+                                width      : 33px;
+                                height     : 32px;
+                                margin     : 0 auto 20px;
+                                background : transparent url(../img/sprite_callout_icons.png) center top no-repeat;
+
+                                &.last {
+                                    margin-top : 45px;
+                                }
+
+                                &.shipping {
+                                    background-position : center top;
+                                }
+
+                                &.returns {
+                                    background-position : center 100%;
+                                }
+                            }
                         }
+                    }
+
+                    .two {
+                        height     : 147px;
+                        margin-top : 20px;
+
+                        span.customerclub {
+                            width      : 100%;
+                            margin-top : 30px;
+                        }
+
+                        form fieldset label {
+                            display : none;
+                        }
+
+                        #footer-newsletter-signup {
+                            margin-top : 0;
+
+                            fieldset {
+                                padding : 0;
+
+                                input {
+                                    line-height  : 38px;
+                                    padding      : 0;
+                                    height       : auto;
+                                    border       : 1px solid #e5e5e5;
+                                    border-right : 0;
+                                    font-family  : $regular;
+                                    font-weight  : normal;
+                                    font-size    : 10px;
+                                    width        : 200px;
+                                    padding-left : 15px;
+                                    color        : #252525;
+                                    float        : left;
+                                }
+
+                                button {
+                                    height      : 40px;
+                                    width       : 30px;
+                                    border      : 1px solid #e5e5e5;
+                                    border-left : 0;
+                                    background  : transparent url(../img/footer_newsletter_arrow.png) center no-repeat;
+                                    float       : right;
+                                }
+                            }
+
+                            .fields {
+                                width  : 230px;
+                                margin : 0 auto;
+                            }
+                        }
+
                     }
                 }
             }
@@ -576,11 +635,26 @@ and (max-width : 1400px) {
                         height : 317px;
                     }
 
-                    &.callout {
-                        margin-bottom : 68px;
+                    &.sellingpoints {
+                        .one {
+                            height : 268px;
 
-                        span:first-child {
-                            margin-top : 65px;
+                            .icon {
+                                margin : 0 auto 15px !important;
+
+                                &.last {
+                                    margin-top : 30px !important;
+                                }
+                            }
+                        }
+
+                        .two {
+                            height : 124px;
+
+                            span.customerclub {
+                                margin-top    : 21px;
+                                margin-bottom : 15px;
+                            }
                         }
                     }
                 }
@@ -675,15 +749,39 @@ and (max-width : 1200px) {
                         margin : 10px auto 0;
                     }
 
-                    &.callout {
-                        margin-bottom : 48px;
+                    &.sellingpoints {
+                        .one {
+                            height : 220px;
 
-                        span:first-child {
-                            margin-top : 45px;
+                            .icon {
+                                margin : 0 auto 10px !important;
+
+                                &.last {
+                                    margin-top : 20px !important;
+                                }
+                            }
                         }
 
-                        p {
-                            width : 80%;
+                        .two {
+                            height     : 124px;
+                            margin-top : 10px;
+
+                            span.customerclub {
+                                margin-top    : 21px;
+                                margin-bottom : 15px;
+                            }
+
+                            #footer-newsletter-signup {
+                                fieldset {
+                                    input {
+                                        width : 160px;
+                                    }
+                                }
+
+                                .fields {
+                                    width : 190px;
+                                }
+                            }
                         }
                     }
 
