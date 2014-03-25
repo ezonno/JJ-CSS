@@ -150,7 +150,7 @@ a {
             position : relative;
 
             img {
-                width : 100%;
+                width  : 100%;
             }
 
             .swiper-prev,
@@ -178,6 +178,10 @@ a {
 
             &.swiper-container {
                 height : 0;
+
+                a img {
+                    @include transition(height .6s linear);
+                }
             }
         }
 

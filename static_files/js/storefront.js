@@ -24,13 +24,13 @@ var jjStorefront = (function (jQuery) {
                     jjStorefront.initHero();
 
                     // On callbacks from the sidemenu, resize the hero
-                    $(document).on('showSideMenuComplete hideSideMenuComplete', function(){
+                    $(document).on('hideSideMenuComplete showSideMenuComplete', function(){
                         jjStorefront.resizeHero();
                     });
+
                 } else if (slides === 1) {
                     jjStorefront.heroIsSlider = false;
                     jjStorefront.displayHero();
-                    // $('#branded .content .hero.swiper-container').css('height', 'auto');
                 }
             },
 
@@ -42,7 +42,6 @@ var jjStorefront = (function (jQuery) {
                         speed: 800,
                         calculateHeight: true,
                         updateOnImagesReady: true,
-                        resizeReInit: true,
                         onSwiperCreated: function(){
                             $('#branded .content .hero .swiper-prev, #branded .content .hero .swiper-next').css('display' , 'block');
                             jjStorefront.displayHero();
@@ -72,6 +71,8 @@ var jjStorefront = (function (jQuery) {
 
             resizeHero : function () {
                 jjStorefront.jjSwiper.resizeFix();
+                var heroHeight = $('.swiper-slide a img').height();
+                TweenMax.set($('#branded .content .hero.swiper-container'), {height: heroHeight});
             },
 
             centerCallouts : function () {
@@ -139,15 +140,12 @@ var jjStorefront = (function (jQuery) {
                 if (width >= 1400) {
                     jjStorefront.gridifyInit(270);
                     jjStorefront.centerCallouts();
-                    console.log('Large grid detected');
                 } else if (width >= 1200) {
                     jjStorefront.gridifyInit(225);
                     jjStorefront.centerCallouts();
-                    console.log('Medium grid detected');
                 } else if (width < 1200) {
                     jjStorefront.gridifyInit(180);
                     jjStorefront.centerCallouts();
-                    console.log('Small grid detected');
                 }
 
                 if (jjStorefront.heroIsSlider) {
