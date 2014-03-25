@@ -74,6 +74,14 @@ var jjStorefront = (function (jQuery) {
                 jjStorefront.jjSwiper.resizeFix();
             },
 
+            centerCallouts : function () {
+                var containerHeight = $('#branded .content .storefront-brands .brand.sellingpoints .one').height();
+                var contentHeight = $('#branded .content .storefront-brands .brand.sellingpoints .one .content').height();
+                var offset = (containerHeight - contentHeight) / 2;
+
+                $('#branded .content .storefront-brands .brand.sellingpoints .content').css('top', offset);
+            },
+
             brandHover : function () {
                 $('#branded .content .storefront-brands .brand').each(function(){
                     // Avoid multiple instances of the hover event
@@ -130,10 +138,13 @@ var jjStorefront = (function (jQuery) {
                 // Boom. JS media queries
                 if (width >= 1400) {
                     jjStorefront.gridifyInit(270);
+                    jjStorefront.centerCallouts();
                 } else if (width >= 1200) {
                     jjStorefront.gridifyInit(225);
+                    jjStorefront.centerCallouts();
                 } else if (width < 1200) {
                     jjStorefront.gridifyInit(180);
+                    jjStorefront.centerCallouts();
                 }
 
                 if (jjStorefront.heroIsSlider) {
@@ -189,10 +200,13 @@ var jjStorefront = (function (jQuery) {
 
                     if ($(this).hasClass('mixed')) {
                         jjStorefront.gridifyMixed();
+                        jjStorefront.trackingGridSwitch('Mixed grid');
                     } else if ($(this).hasClass('large')) {
                         jjStorefront.gridifyLarge();
+                        jjStorefront.trackingGridSwitch('Large grid');
                     } else if ($(this).hasClass('small')) {
                         jjStorefront.gridifySmall();
+                        jjStorefront.trackingGridSwitch('Small grid');
                     }
                 });
             },
@@ -205,6 +219,28 @@ var jjStorefront = (function (jQuery) {
                 };
                 
                 app.quickView.bindEvents(quickViewOptions);
+            },
+
+            trackingInit : function () {
+                jjStorefront.trackingBrands();
+            },
+
+            trackingBrands : function () {
+                $('#branded .content .storefront-brands .brand').not('.sellingpoints').each(function(){
+                    var brandID = $(this).data('brand');
+
+                    $(this).find('a').click(function(){
+                        if ($(this).hasClass('quickview')) {
+                            _gaq.push(['_trackEvent','jj-frontpage-test', 'brands', brandID + ', shopping']);
+                        } else {
+                            _gaq.push(['_trackEvent','jj-frontpage-test', 'brands', brandID + ', brandsite']);
+                        }
+                    });
+                });
+            },
+
+            trackingGridSwitch : function (gridSwitch) {
+                _gaq.push(['_trackEvent','jj-frontpage-test', 'controls', gridSwitch]);
             }
         // end custom functions
     };
@@ -217,9 +253,7 @@ jQuery(document).ready(function () {
     //jjStorefront.categoryHover();
     jjStorefront.controls();
     jjStorefront.initQuickview();
-});
-
-jQuery(window).load(function(){
+    jjStorefront.trackingInit();
     jjStorefront.detectGrid();
 });
 
