@@ -32,8 +32,30 @@
 }
 
 /* Outfit PLP */
-#branded.pt_category .productlisting .product_set .quickviewbutton {
-    display : none !important;
+#branded.pt_category .productlisting .product_set {
+    .quickviewbutton,
+    .pricing,
+    .swatches,
+    .name,
+    .subbrand {
+        display : none !important;
+    }
+
+    .producttile {
+            margin-bottom : 5px;
+        @media (min-width: 1281px) {
+            margin-bottom : 20px;
+        }
+        @media (min-width: 1441px) {
+            margin-bottom : 25px;
+        }
+        @media (min-width: 1681px)  {
+            margin-bottom : 50px;
+        }
+        @media (min-width: 1920px) {
+            margin-bottom : 60px;
+        }
+    }
 }
 
 /* Outfit PDP */
