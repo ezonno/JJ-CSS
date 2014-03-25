@@ -139,12 +139,15 @@ var jjStorefront = (function (jQuery) {
                 if (width >= 1400) {
                     jjStorefront.gridifyInit(270);
                     jjStorefront.centerCallouts();
+                    console.log('Large grid detected');
                 } else if (width >= 1200) {
                     jjStorefront.gridifyInit(225);
                     jjStorefront.centerCallouts();
+                    console.log('Medium grid detected');
                 } else if (width < 1200) {
                     jjStorefront.gridifyInit(180);
                     jjStorefront.centerCallouts();
+                    console.log('Small grid detected');
                 }
 
                 if (jjStorefront.heroIsSlider) {
@@ -260,5 +263,5 @@ jQuery(document).ready(function () {
 jQuery(window).resize(function(){
     // Timeout added to avoid mem overload when resizing
     clearTimeout(this.id);
-    this.id = setTimeout(jjStorefront.detectGrid, 250);
+    this.id = setTimeout(jjStorefront.detectGrid, 500);
 });
