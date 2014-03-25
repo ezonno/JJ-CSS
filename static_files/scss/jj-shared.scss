@@ -783,3 +783,12 @@
 #branded.pt_productdetails #content.container_24 {
     margin-top : 0px;
 }
+
+/* Quickview buttons */
+#branded .productresultarea .product .image .quickviewbutton a {
+    font-family    : $light;
+    font-size      : 14px;
+    padding-top    : 16px;
+    height         : 26px;
+    text-transform : inherit;
+}
