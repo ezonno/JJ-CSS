@@ -159,7 +159,17 @@
 			min-width        : 150px;
 			z-index          : 1;
 			margin           : 30px 0 0 0;
+			text-align       : left;
 		}
+
+		#refinement-subBrand.refinement {
+			min-width : 205px;
+
+			a {
+				text-transform : none;
+			}
+		}
+
 		/*
 		.refinement,
 		.refineattributes {
