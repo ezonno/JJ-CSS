@@ -14,6 +14,15 @@ var jjStorefront = (function (jQuery) {
                 window.gridContainer = $('#branded .content .storefront-categories .gridify');
             },
 
+            responsiveHero : function () {
+                $('#branded .content .hero.swiper-container .swiper-slide img').dataImg({
+                    sml: 1260,
+                    med: 1420,
+                    lrg: 1660,
+                    resize: false
+                });
+            },
+
             checkHero : function () {
                 // Count number of slides
                 var slides = $('#branded .content .hero .swiper-slide').length;
@@ -213,7 +222,7 @@ var jjStorefront = (function (jQuery) {
             },
 
             initQuickview : function () {
-            var quickViewOptions = {
+                var quickViewOptions = {
                     buttonSelector:null,
                     imageSelector:null,
                     buttonLinkSelector:  '.quickview'
@@ -249,13 +258,17 @@ var jjStorefront = (function (jQuery) {
 
 jQuery(document).ready(function () {
     jjStorefront.assignGlobalVars();
-    jjStorefront.checkHero();
+    jjStorefront.responsiveHero();
     jjStorefront.brandHover();
     //jjStorefront.categoryHover();
     jjStorefront.controls();
     jjStorefront.initQuickview();
     jjStorefront.trackingInit();
     jjStorefront.detectGrid();
+});
+
+jQuery(window).load(function(){
+    jjStorefront.checkHero();
 });
 
 jQuery(window).resize(function(){
