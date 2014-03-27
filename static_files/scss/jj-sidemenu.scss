@@ -383,14 +383,14 @@
         .ps-scrollbar-x,
         .ps-scrollbar-y {
 			width : 4px;
-			background-color: #404040;
+			background-color: #4c4c4c;
         }
     }
 
     .ps-scrollbar-x,
     .ps-scrollbar-y {
         position         : absolute; /* please don't change 'position' */
-        background-color : #e5e5e5;
+        background-color : #4c4c4c;
         @include border-radius(2px);
         @include transition(all .1s linear);
     }
