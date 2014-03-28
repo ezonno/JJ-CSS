@@ -58,6 +58,11 @@
                         width  : $imagewidth;
                         height : auto;
                     }
+
+                    .quickviewbutton,
+                    .quickviewbutton a {
+                        @include box-sizing(content-box);
+                    }
                 }                
             }
         }

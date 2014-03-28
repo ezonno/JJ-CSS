@@ -356,11 +356,13 @@
     }
 
     .links {
+        display : table;
+        width   : 100%;
 
         .col {
             width      : 33%;
-            float      : left;
             text-align : center;
+            display    : table-cell;
 
             &.center {
                 border-left  : 1px solid #f7f7f7;
