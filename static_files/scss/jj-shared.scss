@@ -119,6 +119,17 @@
     .maywerecommend { 
        background : white;
     }
+
+    .maywerecommend .recommendations_maylike {
+        background : none !important;
+        height     : auto;
+
+        &:after {
+            content : '';
+            clear   : both;
+            display : block;
+        }
+    }
 }
 
 .jj .to_top {
