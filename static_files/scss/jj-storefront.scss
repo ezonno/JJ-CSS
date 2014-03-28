@@ -158,9 +158,8 @@ a {
                 position   : absolute;
                 z-index    : 10;
                 width      : 60px;
-                height     : 60px;
-                top        : 50%;
-                margin-top : -30px;
+                height     : 100%;
+                top        : 0;
                 cursor     : pointer;
                 background : url(../img/sprite_hero_controls.png) no-repeat;
                 display    : none;
