@@ -233,6 +233,7 @@ var jjStorefront = (function (jQuery) {
 
             trackingInit : function () {
                 jjStorefront.trackingBrands();
+                jjStorefront.trackingCategories();
             },
 
             trackingBrands : function () {
@@ -251,6 +252,26 @@ var jjStorefront = (function (jQuery) {
 
             trackingGridSwitch : function (gridSwitch) {
                 _gaq.push(['_trackEvent','jj-frontpage-test', 'controls', gridSwitch]);
+            },
+
+            trackingCategories : function () {
+                $('#branded .content .storefront-categories .gridify .box').each(function(){
+                    var box  = $(this).data('pos-grid'),
+                    week     = $(this).data('week'),
+                    product  = $(this).data('product'),
+                    category = $(this).data('category'),
+                    image    = $(this).data('image');
+
+                    $(this).find('a').click(function(){
+                        if ($(this).hasClass('one')) {
+                            _gaq.push(['_trackEvent','jj-frontpage-test', 'category boxes', 'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, product: ' + product]);
+                        } else if ($(this).hasClass('two')) {
+                            _gaq.push(['_trackEvent','jj-frontpage-test', 'category boxes', 'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, category: ' + category]);
+                        } else {
+                            _gaq.push(['_trackEvent','jj-frontpage-test', 'category boxes', 'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: image, category: ' + category]);
+                        }
+                    });
+                });
             }
         // end custom functions
     };
@@ -263,8 +284,8 @@ jQuery(document).ready(function () {
     //jjStorefront.categoryHover();
     jjStorefront.controls();
     jjStorefront.initQuickview();
-    jjStorefront.trackingInit();
     jjStorefront.detectGrid();
+    jjStorefront.trackingInit();
 });
 
 jQuery(window).load(function(){
