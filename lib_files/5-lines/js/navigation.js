@@ -10,7 +10,7 @@ var jjNavigation = (function (jQuery) {
 
         // custom functions here
             scrollbar : function () {
-                $('.side-menu-categories').perfectScrollbar({
+                $('#branded .side-menu-categories').perfectScrollbar({
                     suppressScrollX: true,
                     includePadding: true,
                     wheelSpeed: 30,
@@ -37,6 +37,11 @@ var jjNavigation = (function (jQuery) {
                 $('#branded .tabsplaceholder .tabscontainer .tabs .tab a').click(function(){
                     var brandID = $(this).parent().data('brand');
                     _gaq.push(['_trackEvent','jj-navigation', 'tabs', brandID]);
+                });
+
+                // Scrollbar
+                $('#branded .side-menu .ps-container .ps-scrollbar-y').mousedown(function(e){
+                    _gaq.push(['_trackEvent','jj-navigation', 'navigation', 'Scrollbar clicked']);
                 });
             }
         // end custom functions
