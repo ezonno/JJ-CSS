@@ -57,7 +57,7 @@ var jjStorefront = (function (jQuery) {
                         },
                         onSlideChangeEnd: function(){
                             if (jjStorefront.heroInView) {
-                                jjStorefront.trackingHero();
+                                jjStorefront.trackingHero('Viewed');
                             }
                         }
                     });
@@ -291,13 +291,19 @@ var jjStorefront = (function (jQuery) {
 
                 if (!jjStorefront.heroInView && heroViewportCheck) {
                     jjStorefront.heroInView = true;
-                    jjStorefront.trackingHero();
+                    jjStorefront.trackingHero('Viewed');
                 } else if (!heroViewportCheck) {
                     jjStorefront.heroInView = false;
                 }
             },
 
-            trackingHero : function () {
+            clickHero : function () {
+                $('#branded .content .hero .swiper-slide a').click(function(){
+                    jjStorefront.trackingHero('Clicked');
+                });
+            },
+
+            trackingHero : function (type) {
                 var slideIndex = jjStorefront.jjSwiper.activeLoopIndex,
                     humanIndex = slideIndex + 1,
                     activeSlide = $('#branded .content .hero .swiper-slide-active'),
@@ -305,7 +311,11 @@ var jjStorefront = (function (jQuery) {
                     image = activeSlide.data('image'),
                     url = activeSlide.data('url');
 
-                _gaq.push(['_trackEvent','jj-frontpage-test', 'Slide: ' + humanIndex + ', week: ' + week + ', image: ' + image + ', url: ' + url]);
+                _gaq.push(['_trackEvent','jj-frontpage-test', 'Slide: ' + humanIndex + ', week: ' + week + ', image: ' + image + ', url: ' + url + ', type: ' + type]);
+
+            },
+
+            trackingScroll : function () {
 
             }
         // end custom functions
@@ -326,6 +336,7 @@ jQuery(document).ready(function () {
 jQuery(window).load(function(){
     jjStorefront.checkHero();
     jjStorefront.viewportHero();
+    jjStorefront.clickHero();
     jjStorefront.pageIsLoaded = true;
 });
 
