@@ -54,6 +54,12 @@ var jjStorefront = (function (jQuery) {
                         onSwiperCreated: function(){
                             $('#branded .content .hero .swiper-prev, #branded .content .hero .swiper-next').css('display' , 'block');
                             jjStorefront.displayHero();
+                        },
+                        onSlideChangeEnd: function(){
+                            if (jjStorefront.heroInView) {
+                                console.log('Slide changed');
+                                jjStorefront.trackingHero();
+                            }
                         }
                     });
 
@@ -76,6 +82,8 @@ var jjStorefront = (function (jQuery) {
                 } else {
                     TweenMax.set($('#branded .content .hero.swiper-container'), {height: 'auto'});
                 }
+
+                jjStorefront.tolerance = heroHeight / 2;
             },
 
             resizeHero : function () {
@@ -162,6 +170,11 @@ var jjStorefront = (function (jQuery) {
                 }
                 
                 jjStorefront.brandHover();
+
+                if (jjStorefront.pageIsLoaded) {
+                    jjStorefront.tolerance = $('#branded .content .hero .swiper-slide').height() / 2;
+                    jjStorefront.viewportHero();
+                }
             },
 
             gridifyInit : function (colWidth) {
@@ -272,6 +285,38 @@ var jjStorefront = (function (jQuery) {
                         }
                     });
                 });
+            },
+
+            viewportHero : function () {
+                var heroViewportCheck = $('#branded .content .hero').isInViewport({'tolerance' : jjStorefront.tolerance});
+
+                if (!jjStorefront.heroInView && heroViewportCheck) {
+                    jjStorefront.heroInView = true;
+                    jjStorefront.trackingHero();
+                } else if (!heroViewportCheck) {
+                    jjStorefront.heroInView = false;
+                }
+            },
+
+            trackingHero : function () {
+                var slideIndex = jjStorefront.jjSwiper.activeLoopIndex,
+                    humanIndex = slideIndex + 1,
+                    activeSlide = $('#branded .content .hero .swiper-slide-active'),
+                    week = activeSlide.data('week'),
+                    image = activeSlide.data('image'),
+                    url = activeSlide.data('url');
+
+                console.log('trackingHero()');
+                console.log('slideIndex: ' + slideIndex);
+                console.log('humanIndex: ' + humanIndex);
+                console.log('week: ' + week);
+                console.log('image: ' + image);
+                console.log('url: ' + url);
+
+                console.log('gaq --> Slide #: ' + humanIndex + ', week: ' + week + ', image: ' + image + ', url: ' + url);
+
+                _gaq.push(['_trackEvent','jj-frontpage-test', 'Slide : ' + humanIndex + ', week: ' + week + ', image: ' + image + ', url: ' + url]);
+
             }
         // end custom functions
     };
@@ -290,10 +335,18 @@ jQuery(document).ready(function () {
 
 jQuery(window).load(function(){
     jjStorefront.checkHero();
+    jjStorefront.viewportHero();
+    jjStorefront.pageIsLoaded = true;
 });
 
 jQuery(window).resize(function(){
     // Timeout added to avoid mem overload when resizing
     clearTimeout(this.id);
     this.id = setTimeout(jjStorefront.detectGrid, 500);
+});
+
+jQuery(window).scroll(function(){
+    // Timeout added to avoid mem overload when resizing
+    clearTimeout(this.id);
+    this.id = setTimeout(jjStorefront.viewportHero, 500);
 });
