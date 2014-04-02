@@ -57,7 +57,6 @@ var jjStorefront = (function (jQuery) {
                         },
                         onSlideChangeEnd: function(){
                             if (jjStorefront.heroInView) {
-                                console.log('Slide changed');
                                 jjStorefront.trackingHero();
                             }
                         }
@@ -306,16 +305,7 @@ var jjStorefront = (function (jQuery) {
                     image = activeSlide.data('image'),
                     url = activeSlide.data('url');
 
-                console.log('trackingHero()');
-                console.log('slideIndex: ' + slideIndex);
-                console.log('humanIndex: ' + humanIndex);
-                console.log('week: ' + week);
-                console.log('image: ' + image);
-                console.log('url: ' + url);
-
-                console.log('gaq --> Slide #: ' + humanIndex + ', week: ' + week + ', image: ' + image + ', url: ' + url);
-
-                _gaq.push(['_trackEvent','jj-frontpage-test', 'Slide : ' + humanIndex + ', week: ' + week + ', image: ' + image + ', url: ' + url]);
+                _gaq.push(['_trackEvent','jj-frontpage-test', 'Slide: ' + humanIndex + ', week: ' + week + ', image: ' + image + ', url: ' + url]);
 
             }
         // end custom functions
