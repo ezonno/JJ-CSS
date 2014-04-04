@@ -12,6 +12,11 @@ var jjStorefront = (function (jQuery) {
             assignGlobalVars : function () {
                 // Needed to pass through several functions
                 window.gridContainer = $('#branded .content .storefront-categories .gridify');
+
+                // Vars for scrolling track - False should only be set once on load
+                jjStorefront.brandsReached = false;
+                jjStorefront.categoriesReached = false;
+                jjStorefront.footerReached = false;
             },
 
             responsiveHero : function () {
@@ -81,8 +86,6 @@ var jjStorefront = (function (jQuery) {
                 } else {
                     TweenMax.set($('#branded .content .hero.swiper-container'), {height: 'auto'});
                 }
-
-                jjStorefront.tolerance = heroHeight / 2;
             },
 
             resizeHero : function () {
@@ -171,8 +174,11 @@ var jjStorefront = (function (jQuery) {
                 jjStorefront.brandHover();
 
                 if (jjStorefront.pageIsLoaded) {
-                    jjStorefront.tolerance = $('#branded .content .hero .swiper-slide').height() / 2;
                     jjStorefront.viewportHero();
+                }
+
+                if (!jjStorefront.footerReached) {
+                    jjStorefront.trackingScroll();
                 }
             },
 
@@ -220,6 +226,8 @@ var jjStorefront = (function (jQuery) {
                     $('#branded .content .storefront-misc .controls a').removeClass('active');
                     $(this).addClass('active');
 
+                    console.log('Reached footer: ' + jjStorefront.footerReached);
+
                     if ($(this).hasClass('mixed')) {
                         jjStorefront.gridifyMixed();
                         jjStorefront.trackingGridSwitch('Mixed grid');
@@ -246,6 +254,7 @@ var jjStorefront = (function (jQuery) {
             trackingInit : function () {
                 jjStorefront.trackingBrands();
                 jjStorefront.trackingCategories();
+                //jjStorefront.trackingScroll();
             },
 
             trackingBrands : function () {
@@ -254,9 +263,9 @@ var jjStorefront = (function (jQuery) {
 
                     $(this).find('a').click(function(){
                         if ($(this).hasClass('quickview')) {
-                            _gaq.push(['_trackEvent','jj-frontpage-test', 'brands', brandID + ', shopping']);
+                            _gaq.push(['_trackEvent','jj-frontpage-test', 'brand boxes', brandID + ', shopping']);
                         } else {
-                            _gaq.push(['_trackEvent','jj-frontpage-test', 'brands', brandID + ', brandsite']);
+                            _gaq.push(['_trackEvent','jj-frontpage-test', 'brand boxes', brandID + ', brandsite']);
                         }
                     });
                 });
@@ -291,7 +300,7 @@ var jjStorefront = (function (jQuery) {
 
                 if (!jjStorefront.heroInView && heroViewportCheck) {
                     jjStorefront.heroInView = true;
-                    jjStorefront.trackingHero('Viewed');
+                    jjStorefront.trackingHero('viewed');
                 } else if (!heroViewportCheck) {
                     jjStorefront.heroInView = false;
                 }
@@ -299,7 +308,7 @@ var jjStorefront = (function (jQuery) {
 
             clickHero : function () {
                 $('#branded .content .hero .swiper-slide a').click(function(){
-                    jjStorefront.trackingHero('Clicked');
+                    jjStorefront.trackingHero('clicked');
                 });
             },
 
@@ -311,12 +320,33 @@ var jjStorefront = (function (jQuery) {
                     image = activeSlide.data('image'),
                     url = activeSlide.data('url');
 
-                _gaq.push(['_trackEvent','jj-frontpage-test', 'Slide: ' + humanIndex + ', week: ' + week + ', image: ' + image + ', url: ' + url + ', type: ' + type]);
-
+                _gaq.push(['_trackEvent','jj-frontpage-test', 'hero', 'Slide: ' + humanIndex + ', week: ' + week + ', image: ' + image + ', url: ' + url + ', type: ' + type]);
             },
 
             trackingScroll : function () {
+                var offsetBrands = $('#branded .content .storefront-brands').offset().top,
+                offsetCategories = $('#branded .content .storefront-categories').offset().top,
+                offsetFooter = $('#footer_global').offset().top;
 
+                console.log('offsetBrands: ' + offsetBrands);
+                console.log('offsetCategories: ' + offsetCategories);
+                console.log('offsetFooter: ' + offsetFooter);
+
+                $(window).scroll(function(){
+                    if ($(window).scrollTop() >= offsetBrands && !jjStorefront.brandsReached) {
+                        _gaq.push(['_trackEvent','jj-frontpage-test', 'scroll', 'Brand boxes reached']);
+                        console.log('Reached brands');
+                        jjStorefront.brandsReached = true;
+                    } else if ($(window).scrollTop() >= offsetCategories && !jjStorefront.categoriesReached) {
+                        _gaq.push(['_trackEvent','jj-frontpage-test', 'scroll', 'Category boxes reached']);
+                        console.log('Reached cats');
+                        jjStorefront.categoriesReached = true;
+                    } else if ($(window).scrollTop() >= offsetFooter && !jjStorefront.footerReached) {
+                        _gaq.push(['_trackEvent','jj-frontpage-test', 'scroll', 'Footer reached']);
+                        console.log('Reached footer');
+                        jjStorefront.footerReached = true;
+                    }
+                });
             }
         // end custom functions
     };
