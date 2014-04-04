@@ -51,7 +51,7 @@
 
 #top-carousel-wrapper {
     width: 100%;
-    background: url("../img/core/top-carousel-bg.jpg") left bottom repeat-x !important;
+    background: white;
     padding-top: 27px;
     padding-bottom: 70px;
 
@@ -73,7 +73,7 @@
     }
 
     .grid_24:first-child {
-        background: #F5F7F7 url("../img/core/area-1.jpg") 30px 0 no-repeat;
+        background: #F5F7F7;
     }
 }
 
@@ -85,7 +85,7 @@
 
     .storefront10 {
         text-align: center;
-        background: transparent url("../img/core/area-5.jpg") bottom left no-repeat;
+        background: #f6f8f7;
 
         .grid_24:last-child {
             /* ..mmmother of CSS.. */
@@ -162,7 +162,7 @@
 
 #branded {
     .outer-oplaeg-wrapper {
-        background: white url("../img/core/area-2.jpg") top right no-repeat;
+        background: white;
     }
 
     .oplaeg {
@@ -278,7 +278,7 @@
 
 #tumblr-wrapper {
     width: 100%;
-    background: white url("../img/core/area-4.jpg") top right no-repeat;
+    background: white;
     padding-top: 100px;
     padding-bottom: 30px;
 }
