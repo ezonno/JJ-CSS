@@ -210,7 +210,7 @@
             font-size      : 12px !important;
             margin-top     : 8px;
             padding        : 0 8px;
-            font-family    : "GillSansMTStd-Medium" !important;
+            font-family    : $originalsFontMedium !important;
             line-height    : 15px;
         }
 
@@ -734,7 +734,7 @@
     text-align     : center;
     font-weight    : normal;
     font-size      : 70px;
-    font-family    : "PFDinMono-Regular",'Univers_lt_cn', Helvetica, Arial, Verdana, sans-serif;
+    font-family    : $regular, 'Univers_lt_cn', Helvetica, Arial, Verdana, sans-serif;
     text-transform : uppercase;
 }
 
@@ -760,7 +760,7 @@
     margin     : 20px auto;
 
     h1 {
-        font-family    : "PFDinMono-Regular",'Univers_lt_cn', Helvetica, Arial, Verdana, sans-serif;
+        font-family    : $regular, 'Univers_lt_cn', Helvetica, Arial, Verdana, sans-serif;
         color          : #000;
         text-align     : center;
         font-weight    : normal;
@@ -769,16 +769,18 @@
         text-transform : uppercase;
         display        : block !important;
         margin         : 0.5em 0;
-}
+    }
+
     p {
-        font-family :"PFDinMono-Regular";
+        font-family : $regular;
         font-size   : 12px;
         font-weight : normal;
         color       : #666;
         margin      : 0.5em 0;
     }
+
     a {
-        font-family    :"PFDinMono-Regular";
+        font-family    : $regular;
         font-size      : 12px;
         line-height    : 18px;
         font-weight    : normal;
@@ -805,4 +807,3 @@
     height         : 26px;
     text-transform : inherit;
 }
-
