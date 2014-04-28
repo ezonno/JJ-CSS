@@ -56,6 +56,14 @@ var jjStorefront = (function (jQuery) {
                         speed: 800,
                         calculateHeight: true,
                         updateOnImagesReady: true,
+                        slideClass: 'swiper-slide',
+                        slideActiveClass: 'swiper-slide-active',
+                        slideVisibleClass: 'swiper-slide-visible',
+                        slideDuplicateClass: 'swiper-slide-duplicate',
+                        wrapperClass: 'swiper-wrapper',
+                        paginationElementClass: 'swiper-pagination-switch',
+                        paginationActiveClass: 'swiper-active-switch',
+                        paginationVisibleClass: 'swiper-visible-switch',
                         onSwiperCreated: function(){
                             $('#branded .content .hero .swiper-prev, #branded .content .hero .swiper-next').css('display' , 'block');
                             jjStorefront.displayHero();
