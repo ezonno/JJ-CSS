@@ -18,6 +18,7 @@ var jjNavigation = (function (jQuery) {
                 });
             },
 
+            /*
             tracking : function () {
                 // Home button
                 $('#branded .tabsplaceholder .tabscontainer .home a').click(function(){
@@ -44,11 +45,12 @@ var jjNavigation = (function (jQuery) {
                     _gaq.push(['_trackEvent','jj-navigation', 'navigation', 'Scrollbar clicked']);
                 });
             }
+            */
         // end custom functions
     };
 })(jQuery);
 
 jQuery(document).ready(function () {
     jjNavigation.scrollbar();
-    jjNavigation.tracking();
+    //jjNavigation.tracking();
 });

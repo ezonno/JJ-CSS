@@ -263,6 +263,7 @@ var jjStorefront = (function (jQuery) {
                 jjStorefront.trackingBrands();
                 jjStorefront.trackingCategories();
                 //jjStorefront.trackingScroll();
+                jjStorefront.trackingNavigation();
             },
 
             trackingBrands : function () {
@@ -354,6 +355,33 @@ var jjStorefront = (function (jQuery) {
                         console.log('Reached footer');
                         jjStorefront.footerReached = true;
                     }
+                });
+            },
+
+            trackingNavigation : function () {
+                // Home button
+                $('#branded .tabsplaceholder .tabscontainer .home a').click(function(){
+                    _gaq.push(['_trackEvent','jj-frontpage-test', 'navigation', 'Home toggled']);
+                });
+
+                // Toggle menu
+                $(document).on('hideSideMenuComplete', function(){
+                    _gaq.push(['_trackEvent','jj-frontpage-test', 'navigation', 'Menu hidden']);
+                });
+
+                $(document).on('showSideMenuComplete', function(){
+                    _gaq.push(['_trackEvent','jj-frontpage-test', 'navigation', 'Menu shown']);
+                });
+
+                // Subbrands
+                $('#branded .tabsplaceholder .tabscontainer .tabs .tab a').click(function(){
+                    var brandID = $(this).parent().data('brand');
+                    _gaq.push(['_trackEvent','jj-frontpage-test', 'tabs', brandID]);
+                });
+
+                // Scrollbar
+                $('#branded .side-menu .ps-container .ps-scrollbar-y').mousedown(function(e){
+                    _gaq.push(['_trackEvent','jj-frontpage-test', 'navigation', 'Scrollbar clicked']);
                 });
             }
         // end custom functions
