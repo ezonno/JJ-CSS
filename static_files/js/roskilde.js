@@ -13,8 +13,8 @@ var jjRoskilde = (function (jQuery) {
 		ScreamForMeRoskilde : function(email, name, surname, birthday, signupTC, signupCC) {
 
 			// variable to hold request
-			jjRoskilde.jjRoskilde.request;
-			jjRoskilde.jjRoskilde.request2;
+			jjRoskilde.request;
+			jjRoskilde.request2;
 
 		    $(".modal_form textarea[name=dwfrm_newsletter_answerFree__1]").val();
 		    $(".modal_form input[name=dwfrm_newsletter_email]").val(email);
