@@ -102,7 +102,7 @@ var jjRoskilde = (function (jQuery) {
 
 		        // callback handler that will be called regardless
 		        // if the jjRoskilde.request failed or succeeded
-		        request2.always(function () {
+		        jjRoskilde.request2.always(function () {
 		            // reenable the inputs
 		            $inputs2.prop("disabled", false);
 		        });
