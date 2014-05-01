@@ -128,6 +128,40 @@ var jjRoskilde = (function (jQuery) {
             injectContent : function () {
                 $('#branded.pt_category .container_24 .productresultarea .productlisting').first().after($('.roskilde-container'));
                 $('.roskilde-container').show();
+
+                jjRoskilde.initThaShizzle();
+            },
+
+            initThaShizzle : function() {
+                jjRoskilde.animIn();
+            },
+
+            animIn : function () {
+                var height = $('.roskilde-container .content').height() + 18;
+                console.log('Height: ' + height);
+
+                $('.roskilde-container .content h1').click(function(){
+                    TweenMax.to($('.roskilde-container'), 0.6, {
+                        height: height,
+                        ease:Cubic.easeOut
+                    });
+
+                    TweenMax.to($('.roskilde-container .content'), 0.6, {
+                        backgroundPosition: 'center 0px',
+                        ease:Cubic.easeOut
+                    });
+
+                    TweenMax.to($('.roskilde-container .content h1'), 0.6, {
+                        fontSize: 24,
+                        marginTop: 35,
+                        borderTopWidth: 0,
+                        borderRightWidth: 0,
+                        borderBottomWidth: 0,
+                        borderLeftWidth: 0,
+                        ease:Cubic.easeOut
+                    });
+                });
+
             }
         // end custom functions
     };

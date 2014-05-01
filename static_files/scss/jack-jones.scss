@@ -112,10 +112,33 @@
     display : none;
 }
 
+// Collapsed
+#branded .content .productresultarea {
+    .roskilde-container.collapsed {
+        height   : 120px;
+        overflow : hidden;
+
+        .content {
+            text-align          : center;
+            background-position : center -185px;
+
+            h1 {
+                font-size  : 12px;
+                border     : 1px solid #fff;
+                display    : inline-block;
+                padding    : 0 10px;
+                cursor     : pointer;
+                margin-top : 15px;
+            }
+        }
+    }
+}
+
 // Actual styling
 #branded .content .productresultarea {
     .roskilde-container {
-        width : 100%;
+        width  : 100%;
+        margin : 10px auto;
 
         .content {
             width          : 720px;
@@ -213,6 +236,7 @@
                 display     : -webkit-flex;
                 display     : flex;
                 margin-left : 21px;
+                text-align  : left;
 
                 &.terms-callout {
                     display    : block;
