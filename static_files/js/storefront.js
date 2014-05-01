@@ -383,7 +383,50 @@ var jjStorefront = (function (jQuery) {
                 $('#branded .side-menu .ps-container .ps-scrollbar-y').mousedown(function(e){
                     _gaq.push(['_trackEvent','jj-frontpage-test', 'navigation', 'Scrollbar clicked']);
                 });
+            },
+
+
+            // ROSKILDE CAMPAIGN
+            roskildeDetection : function() {
+                var gaffaUTM_name = "utmGaffa";
+                var gaffaUTM_val = "gaffa";
+                var newsletterUTM_name = "utmNewsletter";
+                var newsletterUTM_val = "newsletter";
+                fullQString = window.location.search.substring(1);
+                paramCount = 0;
+                queryStringComplete = "?";
+
+                if(fullQString.length > 0) {
+                   //Split Query String into separate parameters
+                   paramArray = fullQString.split("&");                   
+                   //Loop through params, check if parameter exists.  
+                   for (i=0;i<paramArray.length;i++) {
+                        currentParameter = paramArray[i].split("=");
+                        if(currentParameter[0] == gaffaUTM_name) { //Parameter already exists in current url
+                            if(currentParameter[1] == gaffaUTM_val) {
+                                document.cookie="RSK_gaffa=true; path=/";   // Hallo, Gaffa!
+                            }
+                        }
+                        if(currentParameter[0] == newsletterUTM_name) { //Parameter already exists in current url
+                            if(currentParameter[1] == newsletterUTM_val) {
+                                document.cookie="RSK_newsletter=true; path=/";   // Hallo, Gaffa!
+                            }
+                        }
+                    }
+                }
+            },
+            // use this to find out if we're dealing with a Gaffa user.. 
+            // if(jjStorefront.getCookie("RSK_gaffa"))
+            getCookie: function(cname) {
+                var name = cname + "=";
+                var ca = document.cookie.split(';');
+                for(var i=0; i<ca.length; i++) {
+                    var c = ca[i].trim();
+                    if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+                }
+                return "";
             }
+
         // end custom functions
     };
 })(jQuery);
@@ -397,6 +440,9 @@ jQuery(document).ready(function () {
     jjStorefront.initQuickview();
     jjStorefront.detectGrid();
     jjStorefront.trackingInit();
+
+    // ROSKILDE CAMPAIGN
+    jjStorefront.roskildeDetection();
 });
 
 jQuery(window).load(function(){
