@@ -42,7 +42,7 @@ var jjRoskilde = (function (jQuery) {
 
 		        // fire off the jjRoskilde.request to /form.php
 		        jjRoskilde.request = $.ajax({
-		            url: "$bsurl('Newsletter-ProcessSignup')$",
+		            url: newsletterProcessSignupURL,
 		            type: "post",
 		            data: serializedData
 		        });
@@ -87,7 +87,7 @@ var jjRoskilde = (function (jQuery) {
 
 		        // fire off the jjRoskilde.request to /form.php
 		        jjRoskilde.request2 = $.ajax({
-		            url: "$bsurl('CustomEmails-EmailForm')$",
+		            url: cusomEmailsFormURL,
 		            type: "post",
 		            data: serializedData2
 		        });
