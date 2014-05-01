@@ -404,12 +404,12 @@ var jjStorefront = (function (jQuery) {
                         currentParameter = paramArray[i].split("=");
                         if(currentParameter[0] == gaffaUTM_name) { //Parameter already exists in current url
                             if(currentParameter[1] == gaffaUTM_val) {
-                                document.cookie="RSK_gaffa=true";   // Hallo, Gaffa!
+                                document.cookie="RSK_gaffa=true; path=/";   // Hallo, Gaffa!
                             }
                         }
                         if(currentParameter[0] == newsletterUTM_name) { //Parameter already exists in current url
                             if(currentParameter[1] == newsletterUTM_val) {
-                                document.cookie="RSK_newsletter=true";   // Hallo, Gaffa!
+                                document.cookie="RSK_newsletter=true; path=/";   // Hallo, Gaffa!
                             }
                         }
                     }
