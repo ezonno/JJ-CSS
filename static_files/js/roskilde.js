@@ -9,11 +9,18 @@ var jjRoskilde = (function (jQuery) {
     return {
 
         // custom functions here
-            
+            evalProductClusters : function () {
+
+            },
+
+            injectContent : function () {
+                $('#branded.pt_category .container_24 .productresultarea .productlisting').first().after($('.roskilde-container'));
+                $('.roskilde-container').show();
+            }
         // end custom functions
     };
 })(jQuery);
 
 jQuery(document).ready(function () {
-
+    jjRoskilde.injectContent();
 });
