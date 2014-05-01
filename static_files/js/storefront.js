@@ -398,7 +398,7 @@ var jjStorefront = (function (jQuery) {
 
                 if(fullQString.length > 0) {
                    //Split Query String into separate parameters
-                   paramArray = fullQString.split("&");                   
+                   paramArray = fullQString.split("&");
                    //Loop through params, check if parameter exists.  
                    for (i=0;i<paramArray.length;i++) {
                         currentParameter = paramArray[i].split("=");
@@ -417,14 +417,38 @@ var jjStorefront = (function (jQuery) {
             },
             // use this to find out if we're dealing with a Gaffa user.. 
             // if(jjStorefront.getCookie("RSK_gaffa"))
-            getCookie: function(cname) {
+            getCookie : function(cname) {
                 var name = cname + "=";
                 var ca = document.cookie.split(';');
                 for(var i=0; i<ca.length; i++) {
                     var c = ca[i].trim();
-                    if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+                    if (c.indexOf(name) === 0) return c.substring(name.length,c.length);
                 }
                 return "";
+            },
+
+            centerPopup : function () {
+                var offset = $('.roskilde-overlay .content').height() / 2;
+
+                console.log('Roskilde content height: ' + $('.roskilde-overlay .content').height());
+                console.log('Roskilde offset: ' + offset);
+
+                TweenMax.set($('.roskilde-overlay .content'), {marginTop: '-' + offset});
+            },
+
+            displayPopup : function () {
+                $('.roskilde-overlay').show();
+                TweenMax.to($('.roskilde-overlay'), 0.6, {
+                    opacity: 1,
+                    ease:Cubic.easeOut
+                });
+            },
+
+            hidePopup : function () {
+                $('.hideThisShit').click(function(e){
+                    e.preventDefault();
+                    $('.roskilde-overlay').remove();
+                });
             }
 
         // end custom functions
@@ -443,6 +467,9 @@ jQuery(document).ready(function () {
 
     // ROSKILDE CAMPAIGN
     jjStorefront.roskildeDetection();
+    jjStorefront.centerPopup();
+    jjStorefront.displayPopup();
+    jjStorefront.hidePopup();
 });
 
 jQuery(window).load(function(){
