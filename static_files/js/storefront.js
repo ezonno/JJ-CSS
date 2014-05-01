@@ -409,7 +409,7 @@ var jjStorefront = (function (jQuery) {
                         }
                         if(currentParameter[0] == newsletterUTM_name) { //Parameter already exists in current url
                             if(currentParameter[1] == newsletterUTM_val) {
-                                document.cookie="RSK_newsletter=true; path=/";   // Hallo, Gaffa!
+                                document.cookie="RSK_newsletter=true; path=/";   // Hallo, Newsletter!
                             }
                         }
                     }
