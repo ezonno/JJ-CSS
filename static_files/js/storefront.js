@@ -387,9 +387,11 @@ var jjStorefront = (function (jQuery) {
 
 
             // ROSKILDE CAMPAIGN
-            detectGaffaBanners : function() {
+            roskildeDetection : function() {
                 var gaffaUTM_name = "utmGaffa";
                 var gaffaUTM_val = "gaffa";
+                var newsletterUTM_name = "utmNewsletter";
+                var newsletterUTM_val = "newsletter";
                 fullQString = window.location.search.substring(1);
                 paramCount = 0;
                 queryStringComplete = "?";
@@ -403,6 +405,11 @@ var jjStorefront = (function (jQuery) {
                         if(currentParameter[0] == gaffaUTM_name) { //Parameter already exists in current url
                             if(currentParameter[1] == gaffaUTM_val) {
                                 document.cookie="RSK_gaffa=true";   // Hallo, Gaffa!
+                            }
+                        }
+                        if(currentParameter[0] == newsletterUTM_name) { //Parameter already exists in current url
+                            if(currentParameter[1] == newsletterUTM_val) {
+                                document.cookie="RSK_newsletter=true";   // Hallo, Gaffa!
                             }
                         }
                     }
