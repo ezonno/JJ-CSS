@@ -416,7 +416,7 @@ var jjStorefront = (function (jQuery) {
                 }
             },
             // use this to find out if we're dealing with a Gaffa user.. 
-            // if(getCookie("RSK_gaffa"))
+            // if(jjStorefront.getCookie("RSK_gaffa"))
             getCookie: function(cname) {
                 var name = cname + "=";
                 var ca = document.cookie.split(';');
@@ -442,7 +442,7 @@ jQuery(document).ready(function () {
     jjStorefront.trackingInit();
 
     // ROSKILDE CAMPAIGN
-    jjStorefront.detectGaffaBanners();
+    jjStorefront.roskildeDetection();
 });
 
 jQuery(window).load(function(){
