@@ -122,11 +122,21 @@ var jjRoskilde = (function (jQuery) {
             },
    
             evalProductClusters : function () {
+                var contentInjected = false;
+                var productBlocks;
 
+                $(document).on('fillEndlessScrollChunk', function(){
+                    productBlocks = $('#branded.pt_category .container_24 .productresultarea .productlisting').length;
+
+                    if (!contentInjected && productBlocks >= 10) {
+                        jjRoskilde.injectContent();
+                        contentInjected = true;
+                    }
+                });
             },
 
             injectContent : function () {
-                $('#branded.pt_category .container_24 .productresultarea .productlisting').first().after($('.roskilde-container'));
+                $('#branded.pt_category .container_24 .productresultarea .productlisting').last().after($('.roskilde-container'));
                 $('.roskilde-container').show();
 
                 jjRoskilde.initThaShizzle();
@@ -140,10 +150,11 @@ var jjRoskilde = (function (jQuery) {
                 var height = $('.roskilde-container .content').height() + 18;
                 console.log('Height: ' + height);
 
-                $('.roskilde-container .content h1').click(function(){
+                $('.roskilde-container.collapsed .content').click(function(){
                     TweenMax.to($('.roskilde-container'), 0.6, {
                         height: height,
-                        ease:Cubic.easeOut
+                        ease:Cubic.easeOut,
+                        onComplete: jjRoskilde.roskildeRemoveCollapse
                     });
 
                     TweenMax.to($('.roskilde-container .content'), 0.6, {
@@ -162,11 +173,24 @@ var jjRoskilde = (function (jQuery) {
                     });
                 });
 
+            },
+
+            roskildeRemoveCollapse : function () {
+                $('.roskilde-container').removeClass('collapsed');
+            },
+
+            roskildeSubmit : function () {
+                $('.roskilde-container .content form input[type=text]').each(function() {
+                    if($(this).val() === null || $(this).val() === "") {
+                        $(this).addClass('fillOutThisShit');
+                    }
+                });
             }
         // end custom functions
     };
 })(jQuery);
 
 jQuery(document).ready(function () {
-    jjRoskilde.injectContent();
+    jjRoskilde.evalProductClusters();
+    //jjRoskilde.injectContent();
 });

@@ -415,6 +415,7 @@ var jjStorefront = (function (jQuery) {
                     }
                 }
             },
+
             // use this to find out if we're dealing with a Gaffa user.. 
             // if(jjStorefront.getCookie("RSK_gaffa"))
             getCookie : function(cname) {
@@ -428,10 +429,7 @@ var jjStorefront = (function (jQuery) {
             },
 
             centerPopup : function () {
-                var offset = $('.roskilde-overlay .content').height() / 2;
-
-                console.log('Roskilde content height: ' + $('.roskilde-overlay .content').height());
-                console.log('Roskilde offset: ' + offset);
+                var offset = $('.roskilde-overlay .content').outerHeight() / 2;
 
                 TweenMax.set($('.roskilde-overlay .content'), {marginTop: '-' + offset});
             },

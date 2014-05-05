@@ -116,11 +116,11 @@
 #branded .content .productresultarea {
     .roskilde-container.collapsed {
         height   : 120px;
-        overflow : hidden;
 
         .content {
             text-align          : center;
             background-position : center -185px;
+            cursor              : pointer;
 
             h1 {
                 font-size  : 12px;
@@ -137,8 +137,9 @@
 // Actual styling
 #branded .content .productresultarea {
     .roskilde-container {
-        width  : 100%;
-        margin : 10px auto;
+        width    : 100%;
+        margin   : 10px auto;
+        overflow : hidden;
 
         .content {
             width          : 720px;
@@ -220,6 +221,10 @@
                         font-weight  : normal;
                         padding-left : 10px;
                         @include box-sizing(border-box);
+
+                        &.fillOutThisShit {
+                            background: rgba(168, 0, 0, 0.7);
+                        }
                     }
 
 
