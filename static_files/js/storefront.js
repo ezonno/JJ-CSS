@@ -435,11 +435,13 @@ var jjStorefront = (function (jQuery) {
             },
 
             displayPopup : function () {
-                $('.roskilde-overlay').show();
-                TweenMax.to($('.roskilde-overlay'), 0.6, {
-                    opacity: 1,
-                    ease:Cubic.easeOut
-                });
+                if(jjStorefront.getCookie('RSK_gaffa') || jjStorefront.getCookie('RSK_newsletter')) {
+                    $('.roskilde-overlay').show();
+                    TweenMax.to($('.roskilde-overlay'), 0.6, {
+                        opacity: 1,
+                        ease:Cubic.easeOut
+                    });
+                }
             },
 
             hidePopup : function () {

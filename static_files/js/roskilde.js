@@ -139,11 +139,9 @@ var jjRoskilde = (function (jQuery) {
                 $('#branded.pt_category .container_24 .productresultarea .productlisting').last().after($('.roskilde-container'));
                 $('.roskilde-container').show();
 
-                jjRoskilde.initThaShizzle();
-            },
-
-            initThaShizzle : function() {
                 jjRoskilde.animIn();
+
+                jjRoskilde.trackScroll();
             },
 
             animIn : function () {
@@ -170,6 +168,8 @@ var jjRoskilde = (function (jQuery) {
                         borderLeftWidth: 0,
                         ease:Cubic.easeOut
                     });
+
+                    jjRoskilde.trackClicks();
                 });
 
             },
@@ -236,8 +236,46 @@ var jjRoskilde = (function (jQuery) {
                             true, // comp signup
                             jjRoskilde.club // club signup
                         );
+
+                        jjRoskilde.trackSignups();
                     }
                 });
+            },
+
+            trackScroll : function () {
+                var offsetY = $('.roskilde-container').offset().top;
+                var bannerViewed = false;
+
+                $(window).scroll(function(){
+                    if ($(window).scrollTop() >= offsetY && !bannerViewed) {
+                        jjRoskilde.trackViews();
+                        bannerViewed = true;
+                    }
+                });
+            },
+
+            trackViews : function () {
+                if(jjRoskilde.getCookie('RSK_gaffa')) {
+                    _gaq.push(['_trackEvent','jj-roskilde', 'Gaffa', 'Banner viewed']);
+                } else {
+                    _gaq.push(['_trackEvent','jj-roskilde', 'Generic', 'Banner viewed']);
+                }
+            },
+
+            trackClicks : function () {
+                if(jjRoskilde.getCookie('RSK_gaffa')) {
+                    _gaq.push(['_trackEvent','jj-roskilde', 'Gaffa', 'Banner clicked']);
+                } else {
+                    _gaq.push(['_trackEvent','jj-roskilde', 'Generic', 'Banner clicked']);
+                }
+            },
+
+            trackSignups : function () {
+                if(jjRoskilde.getCookie('RSK_gaffa')) {
+                    _gaq.push(['_trackEvent','jj-roskilde', 'Gaffa', 'Signed up']);
+                } else {
+                    _gaq.push(['_trackEvent','jj-roskilde', 'Generic', 'Signed up']);
+                }
             }
         // end custom functions
     };
@@ -246,5 +284,4 @@ var jjRoskilde = (function (jQuery) {
 jQuery(document).ready(function () {
     jjRoskilde.evalProductClusters();
     jjRoskilde.roskildeSubmit();
-    //jjRoskilde.injectContent();
 });
