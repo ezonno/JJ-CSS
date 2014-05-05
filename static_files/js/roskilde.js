@@ -147,7 +147,7 @@ var jjRoskilde = (function (jQuery) {
             animIn : function () {
                 var height = $('.roskilde-container .content').outerHeight() + 51;
 
-                $('.roskilde-container.collapsed .content').click(function(){
+                $('.roskilde-container .content').click(function(){
                     TweenMax.to($('.roskilde-container'), 0.6, {
                         height: height,
                         ease:Cubic.easeOut,
@@ -159,7 +159,7 @@ var jjRoskilde = (function (jQuery) {
                         ease:Cubic.easeOut
                     });
 
-                    TweenMax.to($('.roskilde-container .content h1'), 0.6, {
+                    TweenMax.to($('.roskilde-container .content .normal h1'), 0.6, {
                         fontSize: 24,
                         marginTop: 35,
                         borderTopWidth: 0,
@@ -170,6 +170,7 @@ var jjRoskilde = (function (jQuery) {
                     });
 
                     jjRoskilde.trackClicks();
+                    $('.roskilde-container .content').unbind('click');
                 });
 
             },
@@ -237,8 +238,27 @@ var jjRoskilde = (function (jQuery) {
                             jjRoskilde.club // club signup
                         );
 
+                        jjRoskilde.thankyou();
                         jjRoskilde.trackSignups();
                     }
+                });
+            },
+
+            thankyou : function () {
+                $('.roskilde-container').css('height', 'auto');
+                $('.roskilde-container .content .normal').slideUp(600);
+                $('.roskilde-container .content .thankyou').slideDown(600);
+
+                jjRoskilde.murderAndMayhem();
+            },
+
+            murderAndMayhem : function () {
+                $('.roskilde-container .content .thankyou a.removeThisShit').click(function(e){
+                    e.preventDefault();
+
+                    $('.roskilde-container').slideUp(600, function(){
+                        $(this).remove();
+                    });
                 });
             },
 
