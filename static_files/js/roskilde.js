@@ -147,8 +147,7 @@ var jjRoskilde = (function (jQuery) {
             },
 
             animIn : function () {
-                var height = $('.roskilde-container .content').height() + 18;
-                console.log('Height: ' + height);
+                var height = $('.roskilde-container .content').outerHeight() + 51;
 
                 $('.roskilde-container.collapsed .content').click(function(){
                     TweenMax.to($('.roskilde-container'), 0.6, {
@@ -180,9 +179,63 @@ var jjRoskilde = (function (jQuery) {
             },
 
             roskildeSubmit : function () {
-                $('.roskilde-container .content form input[type=text]').each(function() {
-                    if($(this).val() === null || $(this).val() === "") {
-                        $(this).addClass('fillOutThisShit');
+                $('.roskilde-container .content form .submitThisShit').click(function(e){
+                    e.preventDefault();
+
+                    var NAMEcheck, DOBcheck, boxCHECK;
+
+                    $('.roskilde-container .content .req').each(function() {
+                        if ($(this).hasClass('dob')) {
+                            var regDOB = /(\b\d{2}[-.]?\d{2}[-.]?\d{4})\b/.test($('.roskilde-container .content .req.dob').val());
+
+                            if (!regDOB) {
+                                $(this).addClass('fillOutThisShit');
+                                DOBcheck = false;
+                            } else {
+                                $(this).removeClass('fillOutThisShit');
+                                DOBcheck = true;
+                            }
+                        } else if ($(this).hasClass('chkbox')) {
+                            if (!$(this).attr('checked')) {
+                                $(this).addClass('fillOutThisShit');
+                                boxCHECK = false;
+                            } else {
+                                $(this).removeClass('fillOutThisShit');
+                                boxCHECK = true;
+                            }
+                        } else {
+                            if($(this).val() === null || $(this).val() === "") {
+                                $(this).addClass('fillOutThisShit');
+                                NAMEcheck = false;
+                            } else {
+                                ($(this).removeClass('fillOutThisShit'));
+                                NAMEcheck = true;
+                            }
+                        }
+                    });
+
+                    console.log(NAMEcheck, DOBcheck, boxCHECK);
+
+                    if (NAMEcheck && DOBcheck && boxCHECK) {
+                        console.log('Everything is true. Nothing is permitted. Har har.');
+
+                        var email = $('.roskilde-container .content .req.email').val();
+                        var firstName = $('.roskilde-container .content .req.firstname').val();
+                        var lastName = $('.roskilde-container .content .req.lastname').val();
+                        var dob = $('.roskilde-container .content .req.dob').val();
+
+                        if ($('.roskilde-container .content .req.club').attr('checked', 'checked')) {
+                           jjRoskilde.club = true;
+                        }
+
+                        jjRoskilde.ScreamForMeRoskilde(
+                            email, // email
+                            firstName, // first name
+                            lastName, // last name
+                            dob, // dob
+                            true, // comp signup
+                            jjRoskilde.club // club signup
+                        );
                     }
                 });
             }
@@ -192,5 +245,6 @@ var jjRoskilde = (function (jQuery) {
 
 jQuery(document).ready(function () {
     jjRoskilde.evalProductClusters();
+    jjRoskilde.roskildeSubmit();
     //jjRoskilde.injectContent();
 });
