@@ -198,10 +198,10 @@ var jjRoskilde = (function (jQuery) {
                             }
                         } else if ($(this).hasClass('chkbox')) {
                             if (!$(this).attr('checked')) {
-                                $(this).addClass('fillOutThisShit');
+                                $('.roskilde-container .content form .chkreq').addClass('checkThisShit');
                                 boxCHECK = false;
                             } else {
-                                $(this).removeClass('fillOutThisShit');
+                                $('.roskilde-container .content form .chkreq').removeClass('checkThisShit');
                                 boxCHECK = true;
                             }
                         } else {
@@ -224,18 +224,15 @@ var jjRoskilde = (function (jQuery) {
                         var firstName = $('.roskilde-container .content .req.firstname').val();
                         var lastName = $('.roskilde-container .content .req.lastname').val();
                         var dob = $('.roskilde-container .content .req.dob').val();
-
-                        if ($('.roskilde-container .content .req.club').attr('checked', 'checked')) {
-                           jjRoskilde.club = true;
-                        }
+                        var club = $('.roskilde-container .content form .club').prop('checked');
 
                         jjRoskilde.ScreamForMeRoskilde(
-                            email, // email
-                            firstName, // first name
-                            lastName, // last name
-                            dob, // dob
-                            true, // comp signup
-                            jjRoskilde.club // club signup
+                            email,      // email
+                            firstName,  // first name
+                            lastName,   // last name
+                            dob,        // dob
+                            true,       // comp signup
+                            club        // club signup
                         );
 
                         jjRoskilde.thankyou();
