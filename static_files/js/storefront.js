@@ -388,9 +388,9 @@ var jjStorefront = (function (jQuery) {
 
             // ROSKILDE CAMPAIGN
             roskildeDetection : function() {
-                var gaffaUTM_name = "utmGaffa";
+                var gaffaUTM_name = "utm_trig";
                 var gaffaUTM_val = "gaffa";
-                var newsletterUTM_name = "utmNewsletter";
+                var newsletterUTM_name = "utm_trig";
                 var newsletterUTM_val = "newsletter";
                 fullQString = window.location.search.substring(1);
                 paramCount = 0;
