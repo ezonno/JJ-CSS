@@ -191,9 +191,11 @@ var jjRoskilde = (function (jQuery) {
 
                             if (!regDOB) {
                                 $(this).addClass('fillOutThisShit');
+                                $('.roskilde-container .content form span.dobspan').addClass('fillOutThisShit');
                                 DOBcheck = false;
                             } else {
                                 $(this).removeClass('fillOutThisShit');
+                                $('.roskilde-container .content form span.dobspan').removeClass('fillOutThisShit');
                                 DOBcheck = true;
                             }
                         } else if ($(this).hasClass('chkbox')) {

@@ -196,6 +196,26 @@
 
                     &.last {
                         margin-bottom : 25px;
+                        position      : relative;
+
+                        span {
+                            position    : absolute;
+                            right       : 10px;
+                            line-height : 40px;
+                            top         : 0;
+                            z-index     : 0;
+                            @include opacity(0.8);
+
+                            &.fillOutThisShit {
+                                z-index : 1;
+                                @include opacity(1);
+                            }
+                        }
+
+                        input {
+                            position : relative;
+                            z-index  : 1;
+                        }
                     }
 
                     label {

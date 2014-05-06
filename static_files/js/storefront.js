@@ -385,7 +385,6 @@ var jjStorefront = (function (jQuery) {
                 });
             },
 
-
             // ROSKILDE CAMPAIGN
             roskildeDetection : function() {
                 var gaffaUTM_name = "utm_trig";
