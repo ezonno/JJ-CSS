@@ -391,6 +391,8 @@ var jjStorefront = (function (jQuery) {
                 var gaffaUTM_val = "gaffa";
                 var newsletterUTM_name = "utm_trig";
                 var newsletterUTM_val = "newsletter";
+                var socialUTM_name = "utm_trig";
+                var socialUTM_val = "social";
                 fullQString = window.location.search.substring(1);
                 paramCount = 0;
                 queryStringComplete = "?";
@@ -409,6 +411,11 @@ var jjStorefront = (function (jQuery) {
                         if(currentParameter[0] == newsletterUTM_name) { //Parameter already exists in current url
                             if(currentParameter[1] == newsletterUTM_val) {
                                 document.cookie="RSK_newsletter=true; path=/";   // Hallo, Newsletter!
+                            }
+                        }
+                        if(currentParameter[0] == socialUTM_name) { //Parameter already exists in current url
+                            if(currentParameter[1] == socialUTM_val) {
+                                document.cookie="RSK_social=true; path=/";   // Hallo, Social!
                             }
                         }
                     }
@@ -434,7 +441,7 @@ var jjStorefront = (function (jQuery) {
             },
 
             displayPopup : function () {
-                if(jjStorefront.getCookie('RSK_gaffa') || jjStorefront.getCookie('RSK_newsletter')) {
+                if(jjStorefront.getCookie('RSK_gaffa') || jjStorefront.getCookie('RSK_newsletter') || jjStorefront.getCookie('RSK_social')) {
                     $('.roskilde-overlay').show();
                     TweenMax.to($('.roskilde-overlay'), 0.6, {
                         opacity: 1,
