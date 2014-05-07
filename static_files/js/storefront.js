@@ -389,8 +389,8 @@ var jjStorefront = (function (jQuery) {
             roskildeDetection : function() {
                 var gaffaUTM_name = "utm_trig";
                 var gaffaUTM_val = "gaffa";
-                var newsletterUTM_name = "utm_trig";
-                var newsletterUTM_val = "newsletter";
+                var newsletterUTM_name = "utm_campaign";
+                var newsletterUTM_val = "club_jj_W19b2014_DK_Rock";
                 var socialUTM_name = "utm_trig";
                 var socialUTM_val = "social";
                 fullQString = window.location.search.substring(1);
