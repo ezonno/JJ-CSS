@@ -1,0 +1,158 @@
+// Customer Club Signup popup
+.customerclub-popup {
+    width      : 306px;
+    background : #fff;
+    border     : 1px solid #ccc;
+    position   : fixed;
+    bottom     : 60px;
+    right      : 7px;
+    z-index    : 100;
+    @include border-radius(2px);
+    @include box-shadow(1px 1px 2px 0px rgba(0, 0, 0, 0.15));
+
+    a {
+        &.close {
+            display: block;
+            float: right;
+            width: 20px;
+            height: 20px;
+            margin: 10px 10px 0 0;
+            background: pink;
+        }
+
+        &.existingmember {
+            float: left;
+            line-height: 20px;
+            margin: 10px 0 0 10px;
+        }
+    }
+
+    .content {
+        width      : 80%;
+        margin     : 0 auto;
+        text-align : center;
+
+        h2 {
+            font-family    : $medium;
+            font-size      : 16px;
+            font-weight    : normal;
+            text-transform : uppercase;
+            margin         : 15px auto 30px;
+            line-height    : normal;
+        }
+
+        div.angle {
+            width       : 16px;
+            height      : 16px;
+            border-top  : 1px solid #9e9e9f;
+            border-left : 1px solid #9e9e9f;
+            position    : absolute;
+        }
+
+        span {
+            font-size   : 13px;
+            line-height : 20px;
+            font-family : $regular;
+            font-weight : normal;
+            display     : block;
+            width       : 92%;
+            margin      : 0 auto;
+            padding-top : 9px;
+        }
+
+        form {
+            margin-top : 15px;
+
+            div {
+                margin-bottom : 7px;
+
+                &.lastnameContainer  {
+                    width : 48%;
+                    float : right;
+                }
+
+                &.firstnameContainer {
+                    width : 48%;
+                    float : left;
+                }
+
+                label {
+                    text-align  : left;
+                    width       : auto;
+                    margin      : 0 0 3px;
+                    display     : block;
+                    float       : none;
+                    font-family : $light;
+                }
+
+                input[type=text] {
+                    width       : 100%;
+                    line-height : 33px;
+                    height      : auto;
+                    padding     : 0;
+                    text-align  : center;
+                    font-family : $light;
+                    font-weight : normal;
+                    border      : 1px solid #9e9e9f;
+                }
+
+                &.tcs {
+                    height      : 100px;
+                    overflow-y  : scroll;
+                    overflow-x  : hidden;
+                    border      : 1px solid #9e9e9f;
+                    font-family : $light;
+                    padding     : 7px;
+                }
+
+                &.accept {
+                    text-align: left;
+
+                    span {
+                        display     : inline;
+                        font-size   : 10px;
+                        line-height : normal;
+                        margin-left : 5px;
+                        padding-top : 0;
+                    }
+                }
+
+            }
+
+            button {
+                width          : 100%;
+                background     : #222;
+                text-transform : uppercase;
+                padding        : 0;
+                line-height    : 33px;
+                font-size      : 12px;
+                font-family    : $light;
+                font-weight    : normal;
+                margin         : 15px auto 26px;
+                border         : 0;
+            }
+        }
+    }
+}
+
+.customerclub-trigger {
+    position   : fixed;
+    bottom     : 0;
+    right      : 7px;
+    z-index    : 100;
+    background : #fff;
+    @include border-radius(2px 2px 0 0);
+    @include box-shadow(1px 1px 2px 0px rgba(0, 0, 0, 0.15));
+
+    a {
+        font-family    : $medium;
+        font-size      : 12px;
+        padding        : 15px 22px;
+        border         : 1px solid #ccc;
+        border-bottom  : 0;
+        text-transform : uppercase;
+        letter-spacing : 1px;
+        font-weight    : normal;
+        display        : block;
+    }
+}
