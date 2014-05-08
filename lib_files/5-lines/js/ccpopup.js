@@ -75,6 +75,52 @@ var jjCCpopup = (function (jQuery) {
                 });
             },
 
+            ignore : function () {
+                // Temporary ignore
+                $('.customerclub-popup .close').click(function(e){
+                    e.preventDefault();
+                    jjCCpopup.animOut();
+                    $.cookie(
+                        'jjCCpopup_ignore_week', 'true', {expires: 7}, {path: '/'});
+                });
+
+                // Permanent ignore
+                $('.customerclub-popup .existingmember').click(function(e){
+                    e.preventDefault();
+                    jjCCpopup.animOut();
+                    $.cookie('jjCCpopup_igonore_forever', 'true', {expires: 365}, {path: '/'});
+                });
+            },
+
+            initThemCookies : function () {
+                // Eval if user has chosen to ignore popup
+                var ignore_week    = $.cookie('jjCCpopup_ignore_week');
+                var ignore_forever = $.cookie('jjCCpopup_ignore_forever');
+
+                if (!ignore_week && !ignore_forever) {
+                    jjCCpopup.mayTheCookieBeWithYou();
+                }
+            },
+
+            mayTheCookieBeWithYou : function () {
+                // Count the page views
+                if ($.cookie('jjCCpopup_count')) {
+                    var counter = $.cookie('jjCCpopup_count');
+                    counter     = parseInt(counter, 10);
+                    $.cookie('jjCCpopup_count', counter + 1, { expires: 7 }, {path: '/'});
+                } else {
+                    $.cookie('jjCCpopup_count', 1, { expires: 7 }, { path: '/' });
+                }
+
+                // If the count reaches 5, show the popup
+                if ($.cookie('jjCCpopup_count') === '5') {
+                    jjCCpopup.animIn();
+
+                    // Then reset the counter
+                    $.cookie('jjCCpopup_count', 1, { expires: 7 }, { path: '/' });
+                }
+            },
+
             animIn : function () {
                 TweenMax.set($('.customerclub-popup'), {display: 'block'});
                 TweenMax.to($('.customerclub-popup'), 0.6, {ease:Power2.EaseOut, bottom: 60});
@@ -191,6 +237,8 @@ var jjCCpopup = (function (jQuery) {
 
 jQuery(document).ready(function () {
     jjCCpopup.initThisBastard();
+    jjCCpopup.ignore();
+    jjCCpopup.initThemCookies();
     jjCCpopup.maskInput();
     jjCCpopup.submitIt();
 });
