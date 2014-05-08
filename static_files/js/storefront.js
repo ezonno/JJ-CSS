@@ -11,7 +11,7 @@ var jjStorefront = (function (jQuery) {
         // custom functions here
             assignGlobalVars : function () {
                 // Needed to pass through several functions
-                window.gridContainer = $('#branded .content .storefront-categories .gridify');
+                jjStorefront.gridContainer = $('#branded .content .storefront-categories .gridify');
 
                 // Vars for scrolling track - False should only be set once on load
                 jjStorefront.brandsReached = false;
@@ -139,9 +139,9 @@ var jjStorefront = (function (jQuery) {
                     $(this).hover(function(){
                         TweenMax.to($(this).find('.text'), 0.6, {bottom: 0, backgroundColor: 'rgba(252, 252, 252, 0.8)'});
                         TweenMax.to($(this).find('.overlay'), 0.6, {opacity: 1});
-                        if (gridContainer.hasClass('mixed') && $(this).parent().hasClass('small')) {
+                        if (jjStorefront.gridContainer.hasClass('mixed') && $(this).parent().hasClass('small')) {
                             TweenMax.to($(this).find('.slidein .linkcontainer > *'), 0.6, {opacity: 1});
-                        } else if (gridContainer.hasClass('small')) {
+                        } else if (jjStorefront.gridContainer.hasClass('small')) {
                             TweenMax.to($(this).find('.slidein .linkcontainer > *'), 0.6, {opacity: 1});
                         } else {
                             TweenMax.staggerTo($(this).find('.slidein .linkcontainer > *'), 0.6, {opacity: 1}, 0.08);
@@ -149,9 +149,9 @@ var jjStorefront = (function (jQuery) {
                     }, function(){
                         TweenMax.to($(this).find('.text'), 0.4, {bottom: -50, backgroundColor: 'rgba(252, 252, 252, 0.0)',});
                         TweenMax.to($(this).find('.overlay'), 0.4, {opacity: 0});
-                        if (gridContainer.hasClass('mixed') && $(this).parent().hasClass('small')) {
+                        if (jjStorefront.gridContainer.hasClass('mixed') && $(this).parent().hasClass('small')) {
                             TweenMax.to($(this).find('.slidein .linkcontainer > *'), 0.3, {opacity: 0});
-                        } else if (gridContainer.hasClass('small')) {
+                        } else if (jjStorefront.gridContainer.hasClass('small')) {
                             TweenMax.to($(this).find('.slidein .linkcontainer > *'), 0.3, {opacity: 0});
                         } else {
                             TweenMax.staggerTo($(this).find('.slidein .linkcontainer > *').get().reverse(), 0.3, {opacity: 0}, 0.08);
@@ -191,7 +191,7 @@ var jjStorefront = (function (jQuery) {
             },
 
             gridifyInit : function (colWidth) {
-                gridContainer.isotope({
+                jjStorefront.gridContainer.isotope({
                     itemSelector: '.box', // Don't change
                     layoutMode: 'masonry',
                     masonry: {
@@ -211,21 +211,21 @@ var jjStorefront = (function (jQuery) {
             },
 
             gridifyMixed : function () {
-                gridContainer.removeClass('large small').addClass('mixed');
-                gridContainer.isotope('reLayout');
-                gridContainer.isotope({sortBy: 'grid'});
+                jjStorefront.gridContainer.removeClass('large small').addClass('mixed');
+                jjStorefront.gridContainer.isotope('reLayout');
+                jjStorefront.gridContainer.isotope({sortBy: 'grid'});
             },
 
             gridifyLarge : function () {
-                gridContainer.removeClass('mixed small').addClass('large');
-                gridContainer.isotope('reLayout');
-                gridContainer.isotope({sortBy: 'original-order'});
+                jjStorefront.gridContainer.removeClass('mixed small').addClass('large');
+                jjStorefront.gridContainer.isotope('reLayout');
+                jjStorefront.gridContainer.isotope({sortBy: 'original-order'});
             },
 
             gridifySmall : function () {
-                gridContainer.removeClass('mixed large').addClass('small');
-                gridContainer.isotope('reLayout');
-                gridContainer.isotope({sortBy: 'original-order'});
+                jjStorefront.gridContainer.removeClass('mixed large').addClass('small');
+                jjStorefront.gridContainer.isotope('reLayout');
+                jjStorefront.gridContainer.isotope({sortBy: 'original-order'});
             },
 
             controls : function () {
