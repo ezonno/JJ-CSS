@@ -88,7 +88,7 @@ var jjCCpopup = (function (jQuery) {
                 $('.customerclub-popup .existingmember').click(function(e){
                     e.preventDefault();
                     jjCCpopup.animOut();
-                    $.cookie('jjCCpopup_igonore_forever', 'true', {expires: 365}, {path: '/'});
+                    $.cookie('jjCCpopup_ignore_forever', 'true', {expires: 365}, {path: '/'});
                 });
             },
 
@@ -217,12 +217,17 @@ var jjCCpopup = (function (jQuery) {
                                 club        // club signup
                             );
 
+                            // After you sign up we don't bother you for a year
+                            $.cookie('jjCCpopup_ignore_forever', 'true',  {expires: 365}, {path: '/'});
+                            
+                            // Also, thanks
                             jjCCpopup.thankyou();
                         }
                     }
                 });
             },
 
+            // Top secret. Look away! Aboslutely not an easter egg.
             iAmYourFather : function () {
                 TweenMax.set($('.vader'), {display: 'block'});
                 jjCCpopup.egged = true;
