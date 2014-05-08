@@ -7,6 +7,7 @@
     bottom     : 60px;
     right      : 7px;
     z-index    : 100;
+    display    : none;
     @include border-radius(2px);
     @include box-shadow(1px 1px 2px 0px rgba(0, 0, 0, 0.15));
 
@@ -94,6 +95,11 @@
                     font-family : $light;
                     font-weight : normal;
                     border      : 1px solid #9e9e9f;
+
+                    &.fillOutThisShit {
+                        background : #cd0000;
+                        color      : #fff;
+                    }
                 }
 
                 &.tcs {
@@ -114,6 +120,11 @@
                         line-height : normal;
                         margin-left : 5px;
                         padding-top : 0;
+
+                        &.checkThisShit {
+                            background : #cd0000;
+                            color      : #fff;
+                        }
                     }
                 }
 
@@ -155,4 +166,15 @@
         font-weight    : normal;
         display        : block;
     }
+}
+
+.vader {
+    background : transparent url(../img/vader.png) center no-repeat;
+    width      : 143px;
+    height     : 236px;
+    position   : fixed;
+    bottom     : 200px;
+    right      : 265px;
+    z-index    : 101;
+    display    : none;
 }

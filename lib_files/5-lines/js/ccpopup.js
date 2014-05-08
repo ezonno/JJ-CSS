@@ -76,12 +76,22 @@ var jjCCpopup = (function (jQuery) {
             },
 
             animIn : function () {
-                TweenMax.to($('.customerclub-popup'), 0.6, {ease:Quad.EaseInOut, bottom: 60});
+                TweenMax.set($('.customerclub-popup'), {display: 'block'});
+                TweenMax.to($('.customerclub-popup'), 0.6, {ease:Power2.EaseOut, bottom: 60});
                 jjCCpopup.popupActive = true;
+
+                if (jjCCpopup.egged) {
+                    TweenMax.to($('.vader'), 0.6, {ease:Power2.EaseOut, bottom: 200});
+                }
             },
 
             animOut : function () {
-                TweenMax.to($('.customerclub-popup'), 0.6, {ease:Quad.EaseInOut, bottom: '-' + jjCCpopup.popupHeight});
+                TweenMax.to($('.customerclub-popup'), 0.6, {ease:Power2.EaseOut, bottom: '-' + jjCCpopup.popupHeight});
+
+                if (jjCCpopup.egged) {
+                    TweenMax.to($('.vader'), 0.6, {ease:Power2.EaseOut, bottom: -jjCCpopup.popupHeight});
+                }
+
                 jjCCpopup.popupActive = false;
             },
 
@@ -93,7 +103,9 @@ var jjCCpopup = (function (jQuery) {
                 $('.customerclub-popup form .submitThisShit').click(function(e){
                     e.preventDefault();
 
-                    var NAMEcheck, DOBcheck, boxCHECK;
+                    var NAMEcheck, DOBcheck, boxCHECK, mailCHECK;
+                    var mailReg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 
                     $('.customerclub-popup form .req').each(function() {
                         if ($(this).hasClass('dob')) {
@@ -110,11 +122,19 @@ var jjCCpopup = (function (jQuery) {
                             }
                         } else if ($(this).hasClass('chkbox')) {
                             if (!$(this).attr('checked')) {
-                                $('.customerclub-popup form .chkreq').addClass('checkThisShit');
+                                $('.customerclub-popup form .spanchk').addClass('checkThisShit');
                                 boxCHECK = false;
                             } else {
-                                $('.customerclub-popup form .chkreq').removeClass('checkThisShit');
+                                $('.customerclub-popup form .spanchk').removeClass('checkThisShit');
                                 boxCHECK = true;
+                            }
+                        } else if ($(this).hasClass('email')) {
+                            if(!mailReg.test($(this).val())) {
+                                $(this).addClass('fillOutThisShit');
+                                mailCHECK = false;
+                            } else {
+                                ($(this).removeClass('fillOutThisShit'));
+                                mailCHECK = true;
                             }
                         } else {
                             if($(this).val() === null || $(this).val() === "") {
@@ -127,11 +147,10 @@ var jjCCpopup = (function (jQuery) {
                         }
                     });
 
-                    console.log(NAMEcheck, DOBcheck, boxCHECK);
+                    console.log(NAMEcheck, DOBcheck, mailCHECK, boxCHECK);
                     
 
-                    if (NAMEcheck && DOBcheck && boxCHECK) {
-                    //if (NAMEcheck && DOBcheck) {
+                    if (NAMEcheck && DOBcheck && mailCHECK && boxCHECK) {
 
                         var email = $('.customerclub-popup .req.email').val();
                         var firstName = $('.customerclub-popup .req.firstname').val();
@@ -141,17 +160,26 @@ var jjCCpopup = (function (jQuery) {
 
                         console.log(email, firstName, lastName, dob, club);
 
-                        jjCCpopup.bowToMeMinion(
-                            email,      // email
-                            firstName,  // first name
-                            lastName,   // last name
-                            dob,        // dob
-                            club        // club signup
-                        );
+                        if (firstName.toLowerCase() === "darth" && lastName.toLowerCase() === "vader") {
+                            jjCCpopup.iAmYourFather();
+                        } else {
+                            jjCCpopup.bowToMeMinion(
+                                email,      // email
+                                firstName,  // first name
+                                lastName,   // last name
+                                dob,        // dob
+                                club        // club signup
+                            );
 
-                        jjCCpopup.thankyou();
+                            jjCCpopup.thankyou();
+                        }
                     }
                 });
+            },
+
+            iAmYourFather : function () {
+                TweenMax.set($('.vader'), {display: 'block'});
+                jjCCpopup.egged = true;
             },
 
             thankyou : function () {
