@@ -62,10 +62,13 @@ var jjCCpopup = (function (jQuery) {
             },
 
             initThisBastard : function () {
+                // Set the height for animation
                 jjCCpopup.popupHeight = $('.customerclub-popup').height() + 10;
 
+                // Set init position
                 TweenMax.set($('.customerclub-popup'), {bottom: '-' + jjCCpopup.popupHeight});
 
+                // Handling of toggle logic
                 $('.customerclub-trigger a').click(function(){
                     if (!jjCCpopup.popupActive) {
                         jjCCpopup.animIn();
@@ -126,6 +129,7 @@ var jjCCpopup = (function (jQuery) {
                 TweenMax.to($('.customerclub-popup'), 0.6, {ease:Power2.EaseOut, bottom: 60});
                 jjCCpopup.popupActive = true;
 
+                // Top secret. Look away.
                 if (jjCCpopup.egged) {
                     TweenMax.to($('.vader'), 0.6, {ease:Power2.EaseOut, bottom: 200});
                 }
@@ -134,6 +138,7 @@ var jjCCpopup = (function (jQuery) {
             animOut : function () {
                 TweenMax.to($('.customerclub-popup'), 0.6, {ease:Power2.EaseOut, bottom: '-' + jjCCpopup.popupHeight});
 
+                // Also top secret. Look away again.
                 if (jjCCpopup.egged) {
                     TweenMax.to($('.vader'), 0.6, {ease:Power2.EaseOut, bottom: -jjCCpopup.popupHeight});
                 }
@@ -142,6 +147,7 @@ var jjCCpopup = (function (jQuery) {
             },
 
             maskInput : function () {
+                // Mask the DOB input
                 $('.customerclub-popup form .req.dob').mask("99-99-9999", {placeholder:"x"});
             },
             
@@ -149,11 +155,13 @@ var jjCCpopup = (function (jQuery) {
                 $('.customerclub-popup form .submitThisShit').click(function(e){
                     e.preventDefault();
 
+                    // vars for validation
                     var NAMEcheck, DOBcheck, boxCHECK, mailCHECK;
                     var mailReg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 
                     $('.customerclub-popup form .req').each(function() {
+                        // DOB check
                         if ($(this).hasClass('dob')) {
                             var regDOB = /(\b\d{2}[-.]?\d{2}[-.]?\d{4})\b/.test($('.customerclub-popup form .req.dob').val());
 
@@ -166,6 +174,7 @@ var jjCCpopup = (function (jQuery) {
                                 $('.custumerclub-popup form span.dobspan').removeClass('fillOutThisShit');
                                 DOBcheck = true;
                             }
+                        // Checkbox check
                         } else if ($(this).hasClass('chkbox')) {
                             if (!$(this).attr('checked')) {
                                 $('.customerclub-popup form .spanchk').addClass('checkThisShit');
@@ -174,6 +183,7 @@ var jjCCpopup = (function (jQuery) {
                                 $('.customerclub-popup form .spanchk').removeClass('checkThisShit');
                                 boxCHECK = true;
                             }
+                        // Email check
                         } else if ($(this).hasClass('email')) {
                             if(!mailReg.test($(this).val())) {
                                 $(this).addClass('fillOutThisShit');
@@ -182,6 +192,7 @@ var jjCCpopup = (function (jQuery) {
                                 ($(this).removeClass('fillOutThisShit'));
                                 mailCHECK = true;
                             }
+                        // Name check
                         } else {
                             if($(this).val() === null || $(this).val() === "") {
                                 $(this).addClass('fillOutThisShit');
@@ -192,10 +203,8 @@ var jjCCpopup = (function (jQuery) {
                             }
                         }
                     });
-
-                    console.log(NAMEcheck, DOBcheck, mailCHECK, boxCHECK);
                     
-
+                    // Only submit if all validations pass
                     if (NAMEcheck && DOBcheck && mailCHECK && boxCHECK) {
 
                         var email = $('.customerclub-popup .req.email').val();
@@ -204,11 +213,11 @@ var jjCCpopup = (function (jQuery) {
                         var dob = $('.customerclub-popup .req.dob').val();
                         var club = $('.customerclub-popup form .club').prop('checked');
 
-                        console.log(email, firstName, lastName, dob, club);
-
+                        // Top top secret. Look away. Definately not an easter egg. Har har.
                         if (firstName.toLowerCase() === "darth" && lastName.toLowerCase() === "vader") {
                             jjCCpopup.iAmYourFather();
                         } else {
+                            // Submit to CC database
                             jjCCpopup.bowToMeMinion(
                                 email,      // email
                                 firstName,  // first name
@@ -233,8 +242,16 @@ var jjCCpopup = (function (jQuery) {
                 jjCCpopup.egged = true;
             },
 
+            // Seriously. Thank you.
+            // For some reason, slideUp and slideDown didn't work. Pos-fixed maybe?
+            // In any case - animate the height, not the display
             thankyou : function () {
+                TweenMax.to($('.customerclub-popup .signup-content'), 0.6, {height: 0, ease:Power2.easeOut});
+                TweenMax.to($('.customerclub-popup .thankyou-content'), 0.6, {height: 135, ease:Power2.easeOut});
 
+                setTimeout(function() {
+                    jjCCpopup.animOut();
+                }, 6000);
             },
         // end custom functions
     };
