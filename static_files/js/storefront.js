@@ -471,11 +471,15 @@ jQuery(document).ready(function () {
     jjStorefront.detectGrid();
     jjStorefront.trackingInit();
 
+
+/*
     // ROSKILDE CAMPAIGN
     jjStorefront.roskildeDetection();
     jjStorefront.centerPopup();
     jjStorefront.displayPopup();
     jjStorefront.hidePopup();
+
+    */
 });
 
 jQuery(window).load(function(){
