@@ -45,7 +45,6 @@ a {
 /* Frontpage */
 #branded {
     .content {
-
         *,
         *:after,
         *:before {
@@ -147,41 +146,71 @@ a {
         }
 
         /* Hero */
-        .hero {
-            width    : 100%;
-            position : relative;
+        .storefront-hero {
+            width   : 1090px;
+            margin  : 30px auto 0;
+            padding : 20px;
+            border  : 1px solid #ebebeb;
+            display : none;
 
-            img {
-                width  : 100%;
-            }
+            .hero {
+                margin   : 0 auto;
+                position : relative;
 
-            .swiper-prev,
-            .swiper-next {
-                position   : absolute;
-                z-index    : 10;
-                width      : 60px;
-                height     : 100%;
-                top        : 0;
-                cursor     : pointer;
-                background : url(../img/sprite_hero_controls.png) no-repeat;
-                display    : none;
-            }
+                img {
+                    width  : 100%;
+                }
 
-            .swiper-prev {
-                background-position : left center;
-                left                : 10px;
-            }
+                .swiper-prev,
+                .swiper-next {
+                    position   : absolute;
+                    z-index    : 10;
+                    width      : 60px;
+                    height     : 100%;
+                    top        : 0;
+                    cursor     : pointer;
+                    background : url(../img/sprite_hero_controls.png) no-repeat;
+                    display    : none;
+                }
 
-            .swiper-next {
-                background-position : right center;
-                right               : 10px;
-            }
+                .swiper-prev {
+                    background-position : left center;
+                    left                : 10px;
+                }
 
-            &.swiper-container {
-                height : 0;
+                .swiper-next {
+                    background-position : right center;
+                    right               : 10px;
+                }
 
-                a img {
-                    @include transition(height .6s linear);
+                .swiper-pagination-container {
+                    position : absolute;
+                    left     : 50%;
+                    bottom   : 15px;
+
+                    .swiper-pagination {
+                        text-align : center;
+                        position   : relative;
+                        left       : -50%;
+
+                        span {
+                            display    : inline-block;
+                            width      : 10px;
+                            height     : 10px;
+                            background : rgba(255, 255, 255, .25);
+                            margin     : 0 4px;
+                            cursor     : pointer;
+                            @include border-radius(10px);
+
+                            &.swiper-active-switch {
+                                background : rgba(255, 255, 255, .85);
+                            }
+                        }
+                    }
+                }
+
+                &.swiper-container {
+                    height : 459px;
                 }
             }
         }
@@ -223,11 +252,10 @@ a {
                         z-index       : 1;
                     }
 
-                    .text {
+                    .buttons {
                         position : absolute;
-                        bottom   : 10px;
-                        right    : 10px;
                         z-index  : 10;
+                        top      : 150px;
                         @include opacity(0);
 
                         a {
@@ -235,13 +263,20 @@ a {
                             font-size       : 11px;
                             line-height     : 20px;
                             margin          : 0;
-                            text-align      : right;
+                            text-align      : center;
                             color           : #fff;
                             text-decoration : none;
                             text-transform  : uppercase;
+                            border          : 1px solid #fff;
+                            padding         : 15px 25px;
+                            display         : inline-block;
+                            
+                            &:first-child {
+                                margin-bottom : 20px;
+                            }
 
                             &:hover {
-                                text-decoration : underline;
+                                background: rgba(255, 255, 255, .3);
                             }
                         }
                     }
@@ -422,64 +457,36 @@ a {
         /* Misc */
         .storefront-misc {
             text-align     : center;
-            padding-top    : 56px;
-            padding-bottom : 35px;
+            padding-top    : 60px;
+            padding-bottom : 15px;
+            width          : 1090px;
+            position       : relative;
+            margin         : 0 auto;
 
             h1 {
                 text-transform : uppercase;
-                font-size      : 22px;
-                font-family    : $light;
+                font-size      : 12px;
+                font-family    : $regular;
                 font-weight    : normal;
                 letter-spacing : 1px;
                 color          : #2a2a2a;
-
-                &:after {
-                    content    : '';
-                    display    : block;
-                    margin     : 0 auto;
-                    width      : 1090px;
-                    height     : 1px;
-                    background : #ebebeb;
-                    margin-top : 15px;
-                }
+                line-height    : normal;
+                display        : inline-block;
+                background     : #fff;
+                position       : relative;
+                z-index        : 1;
+                margin         : 0 auto;
+                padding        : 0 25px;
             }
 
-            .controls {
-                background : #fff;
-                width      : 100px;
-                margin     : -11px auto 0;
-
-                a {
-                    display    : inline-block;
-                    width      : 21px;
-                    height     : 21px;
-                    background : transparent url(../img/controls_sprite.png) top left no-repeat;
-                    padding    : 5px;
-
-                    &.mixed {
-                        background-position : left top;
-
-                        &.active {
-                            background-position : right top;
-                        }
-                    }
-
-                    &.large {
-                        background-position : left center;
-
-                        &.active {
-                            background-position : right center;
-                        }
-                    }
-
-                    &.small {
-                        background-position : left bottom;
-
-                        &.active {
-                            background-position : right bottom;
-                        }
-                    }
-                }
+            .stroke {
+                width      : 100%;
+                height     : 1px;
+                background : #ebebeb;
+                margin     : 0 auto;
+                bottom     : 22px;
+                position   : absolute;
+                z-index    : 0;
             }
         }
 
@@ -488,11 +495,18 @@ a {
             width : 100%;
 
             .gridify {
-                width  : 1080px;
+                width  : 1090px;
                 margin : 0 auto;
 
                 .box {
-                    padding : 5px;
+                    margin-bottom : 20px;
+                    float         : left;
+                    width         : 350px;
+                    height        : 550px;
+
+                    &:nth-child(3n+3) {
+                        margin : auto 20px;
+                    }
 
                     .content {
                         width    : 100%;
@@ -500,55 +514,51 @@ a {
                         border   : 1px solid #ebebeb;
                         position : relative;
                         @include background-size(cover);
-                        //cursor: pointer;
 
                         span {
-                            text-transform : uppercase;
                             text-align     : center;
                             display        : block;
 
                             &.title {
-                                //font-size    : 26px;
                                 letter-spacing : 1px;
-                                font-family    : $light;
-                                //margin-top   : 50px;
+                                font-family    : $regular;
+                                font-size      : 26px;
+                                margin-top     : 50px;
                             }
 
                             &.price {
-                                //font-size   : 12px;
-                                //font-family : $medium;
-                                //margin-top  : 10px;
-                            }
-                        }
+                                font-size  : 12px;
+                                margin-top : 10px;
 
-                        .bar {
-                            //width      : 20px;
-                            //height     : 3px;
-                            background   : #000;
-                            margin       : 0 auto;
-                            //margin-top : 25px;
+                                b {
+                                    font-family : $medium;
+                                    font-weight : normal;
+                                }
+                            }
                         }
 
                         .text {
                             position     : absolute;
                             width        : 100%;
                             bottom       : 0;
-                            //background : rgba(252, 252, 252, 0.0);
                             z-index      : 2;
 
                             .slidein {
                                 text-align     : center;
                                 margin-top     : 25px;
                                 padding-bottom : 25px;
-                                //@include opacity(0);
 
                                 a {
-                                    display        : block;
-                                    font-family    : $light;
-                                    text-transform : uppercase;
-                                    font-size      : 11px;
-                                    line-height    : 22px;
-                                    //@include opacity(0);
+                                    display         : block;
+                                    font-family     : $light;
+                                    text-transform  : uppercase;
+                                    font-size       : 11px;
+                                    line-height     : 22px;
+                                    text-decoration : underline;
+
+                                    &:hover {
+                                        text-decoration : none;
+                                    }
                                 }
                             }
                         }
@@ -564,7 +574,8 @@ a {
                     }
                 }
 
-                /* Mixed grid */
+                // Mixed grid
+                /*
                 &.mixed {
                     .box {
                         &.small {
@@ -582,19 +593,19 @@ a {
                         }
                     }
                 }
-
-                /* Large grid */
+                
+                // Large grid
                 &.large {
                     .box {
-                        width  : 540px;
-                        height : 690px;
+                        width  : 350px;
+                        height : 550px;
 
                         @include largeboxes();
                     }
                 }
 
 
-                /* Small grid */
+                // Small grid
                 &.small {
                     .box {
                         width  : 270px;
@@ -603,12 +614,14 @@ a {
                         @include smallboxes();
                     }
                 }
+                */
+
             }
         }
     }
 }
 
-/* Breakpoints */
+// Breakpoints
 
 // 1200 - 1400 px
 @media only screen 
@@ -852,28 +865,6 @@ and (max-width : 1200px) {
             }
         }
     }
-}
-
-/* Isotope animation stuff */
-.isotope,
-.isotope .isotope-item {
-    @include transition-duration(0.6s);
-}
-
-.isotope {
-    @include transition-property(height, width);
-}
-
-.isotope .isotope-item {
-    @include transition-property(transform, opacity);
-}
-
-/**** disabling Isotope CSS3 transitions ****/
-
-.isotope.no-transition,
-.isotope.no-transition .isotope-item,
-.isotope .isotope-item.no-transition {
-    @include transition-duration(0s);
 }
 
 /*
