@@ -151,7 +151,6 @@ a {
             margin  : 30px auto 0;
             padding : 20px;
             border  : 1px solid #ebebeb;
-            display : none;
 
             .hero {
                 margin   : 0 auto;
@@ -209,15 +208,19 @@ a {
                     }
                 }
 
-                &.swiper-container {
-                    height : 459px;
+                &.swiper-container .swiper-slide {
+                    display : none;
+
+                    &.first-slide {
+                        display : block;
+                    }
                 }
             }
         }
 
         /* Brands */
         .storefront-brands {
-            margin-top : 70px;
+            margin-top : 20px;
             width      : 1110px;
 
             .brand {
@@ -573,49 +576,6 @@ a {
                         }
                     }
                 }
-
-                // Mixed grid
-                /*
-                &.mixed {
-                    .box {
-                        &.small {
-                            width  : 270px;
-                            height : 345px;
-
-                            @include smallboxes();
-                        }
-                        
-                        &.large {
-                            width  : 540px;
-                            height : 690px;
-
-                            @include largeboxes();
-                        }
-                    }
-                }
-                
-                // Large grid
-                &.large {
-                    .box {
-                        width  : 350px;
-                        height : 550px;
-
-                        @include largeboxes();
-                    }
-                }
-
-
-                // Small grid
-                &.small {
-                    .box {
-                        width  : 270px;
-                        height : 345px;
-
-                        @include smallboxes();
-                    }
-                }
-                */
-
             }
         }
     }
@@ -632,6 +592,10 @@ and (max-width : 1400px) {
                 [class*='col-'] {
                     padding : 0 10px
                 }
+            }
+
+            .storefront-hero {
+                width : 880px;
             }
 
             .storefront-brands {
@@ -651,6 +615,10 @@ and (max-width : 1400px) {
                     .image {
                         width  : 240px;
                         height : 317px;
+
+                        .buttons {
+                            top : 100px;
+                        }
                     }
 
                     &.sellingpoints {
@@ -681,53 +649,31 @@ and (max-width : 1400px) {
             .storefront-misc {
                 padding-top : 30px;
                 margin-top  : 50px;
-
-                h1:after {
-                    width: 900px;
-                }
+                width       : 880px;
             }
 
             .storefront-categories {
                 .gridify {
-                    width: 900px;
+                    width: 880px;
 
-                    /* Mixed grid */
-                    &.mixed {
-                        .box {
-                            &.small {
-                                width  : 225px;
-                                height : 288px;
+                    .box {
+                        width  : 280px;
+                        height : 440px;
 
-                                @include smallboxes-BreakMedium();
+                        .content {
+                            span {
+                                &.title {
+                                    margin-top : 35px;
+                                }
                             }
-                            
-                            &.large {
-                                width  : 450px;
-                                height : 575px;
 
-                                @include largeboxes-BreakMedium();
+                            .bar {
+                                margin-top : 20px;
                             }
-                        }
-                    }
 
-                    /* Large grid */
-                    &.large {
-                        .box {
-                            width  : 450px;
-                            height : 575px;
-
-                            @include largeboxes-BreakMedium();
-                        }
-                    }
-
-
-                    /* Small grid */
-                    &.small {
-                        .box {
-                            width  : 225px;
-                            height : 288px;
-
-                            @include smallboxes-BreakMedium();
+                            .text .slidein {
+                                padding-bottom : 20px;
+                            }
                         }
                     }
                 }
@@ -747,8 +693,14 @@ and (max-width : 1200px) {
                 }
             }
 
+            .storefront-hero {
+                width   : 720px;
+                padding : 10px;
+            }
+
             .storefront-brands {
-                width : 720px;
+                width      : 730px;
+                margin-top : 9px;
             }
 
             .storefront-promos {
@@ -759,7 +711,7 @@ and (max-width : 1200px) {
 
             .storefront-brands {
                 .brand {
-                    margin : 0 0 10px;
+                    margin : 0 0 9px;
 
                     .image {
                         width  : 210px;
@@ -812,53 +764,37 @@ and (max-width : 1200px) {
             .storefront-misc {
                 padding-top : 20px;
                 margin-top  : 30px;
-
-                h1:after {
-                    width : 720px;
-                }
+                width       : 720px;
             }
 
             .storefront-categories {
                 .gridify {
                     width : 720px;
 
-                    /* Mixed grid */
-                    &.mixed {
-                        .box {
-                            &.small {
-                                width  : 180px;
-                                height : 230px;
+                    .box {
+                        width         : 234px;
+                        height        : 378px;
+                        margin-bottom : 9px;
 
-                                @include smallboxes-BreakSmall();
-                            }
-                            
-                            &.large {
-                                width  : 360px;
-                                height : 460px;
 
-                                @include largeboxes-BreakSmall();
-                            }
+                        &:nth-child(3n+3) {
+                            margin : auto 9px;
                         }
-                    }
 
-                    /* Large grid */
-                    &.large {
-                        .box {
-                            width  : 360px;
-                            height : 460px;
+                        .content {
+                            span {
+                                &.title {
+                                    margin-top : 20px;
+                                }
 
-                            @include largeboxes-BreakSmall();
-                        }
-                    }
+                                &.price {
+                                    margin-top : 5px;
+                                }
+                            }
 
-
-                    /* Small grid */
-                    &.small {
-                        .box {
-                            width  : 180px;
-                            height : 230px;
-
-                            @include smallboxes-BreakSmall();
+                            .text .slidein {
+                                padding-bottom : 15px;
+                            }
                         }
                     }
                 }
