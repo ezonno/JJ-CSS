@@ -93,7 +93,7 @@ a {
             }
         }
         
-        /* Setting default shared stuff, making DMW my bitch */
+        // Setting default shared stuff, making DMW my bitch
 
         .storefront-brands,
         .storefront-categories {
@@ -101,7 +101,16 @@ a {
             margin : 0 auto;
         }
 
-        /* Promos */
+        // Storefront logo
+        .storefront-logo {
+            width      : 248px;
+            height     : 24px;
+            margin     : 40px auto 0;
+            background : #fff url(../img/storefront_logo.jpg) center no-repeat;
+        }
+
+        // Promos
+        /*
         .storefront-promos {
             width    : 100%;
             position : absolute;
@@ -144,6 +153,7 @@ a {
                 }
             }
         }
+        */
 
         /* Hero */
         .storefront-hero {
@@ -256,14 +266,15 @@ a {
                     }
 
                     .buttons {
-                        position : absolute;
-                        z-index  : 10;
-                        top      : 150px;
+                        position       : absolute;
+                        z-index        : 10;
+                        top            : 150px;
+                        pointer-events : none;
                         @include opacity(0);
 
                         a {
                             width           : auto;
-                            font-size       : 11px;
+                            font-size       : 12px;
                             line-height     : 20px;
                             margin          : 0;
                             text-align      : center;
@@ -273,6 +284,9 @@ a {
                             border          : 1px solid #fff;
                             padding         : 15px 25px;
                             display         : inline-block;
+                            letter-spacing  : 1px;
+                            font-family     : $medium;
+                            pointer-events  : auto;
                             
                             &:first-child {
                                 margin-bottom : 20px;
@@ -530,7 +544,7 @@ a {
                             }
 
                             &.price {
-                                font-size  : 12px;
+                                font-size  : 14px;
                                 margin-top : 10px;
 
                                 b {
@@ -553,7 +567,7 @@ a {
 
                                 a {
                                     display         : block;
-                                    font-family     : $light;
+                                    font-family     : $regular;
                                     text-transform  : uppercase;
                                     font-size       : 11px;
                                     line-height     : 22px;
