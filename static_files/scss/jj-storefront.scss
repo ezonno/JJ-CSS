@@ -631,7 +631,12 @@ and (max-width : 1400px) {
                         height : 317px;
 
                         .buttons {
-                            top : 100px;
+                            top : 110px;
+
+                            a {
+                                font-size : 11px;
+                                padding   : 10px 20px;
+                            }
                         }
                     }
 
@@ -733,7 +738,12 @@ and (max-width : 1200px) {
                         margin : 10px auto 0;
 
                         .buttons {
-                            top : 80px;
+                            top : 90px;
+
+                            a {
+                                font-size : 10px;
+                                padding   : 10px 15px;
+                            }
                         }
                     }
 
@@ -803,15 +813,22 @@ and (max-width : 1200px) {
                             span {
                                 &.title {
                                     margin-top : 20px;
+                                    font-size  : 20px;
                                 }
 
                                 &.price {
                                     margin-top : 5px;
+                                    font-size  : 12px;
                                 }
                             }
 
                             .text .slidein {
                                 padding-bottom : 15px;
+
+                                a {
+                                    font-size   : 10px;
+                                    line-height : 18px;
+                                }
                             }
                         }
                     }
