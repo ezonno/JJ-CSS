@@ -43,7 +43,6 @@ a {
 /* Frontpage */
 #branded {
     .content {
-
         *,
         *:after,
         *:before {
@@ -92,7 +91,7 @@ a {
             }
         }
         
-        /* Setting default shared stuff, making DMW my bitch */
+        // Setting default shared stuff, making DMW my bitch
 
         .storefront-brands,
         .storefront-categories {
@@ -100,93 +99,90 @@ a {
             margin : 0 auto;
         }
 
-        /* Promos */
-        .storefront-promos {
-            width    : 100%;
-            position : absolute;
-            z-index  : 10;
-            top      : 20px;
+        // Storefront logo
+        .storefront-logo {
+            width      : 248px;
+            height     : 24px;
+            margin     : 40px auto 0;
+            background : #fff url(../img/storefront_logo.jpg) center no-repeat;
+        }
 
-            .promo-container {
-                width  : 1090px;
-                margin : 0 auto;
+        // Hero
+        .storefront-hero {
+            width   : 1090px;
+            margin  : 30px auto 0;
+            padding : 20px;
+            border  : 1px solid #ebebeb;
 
-                div {
-                    width          : 30%;
-                    text-align     : center;
-                    background     : #eee;
-                    text-transform : uppercase;
-                    font-size      : 12px;
-                    float          : left;
-                    line-height    : 3em;
-                    border         : 1px solid #ccc;
-                    @include box-sizing(border-box);
+            .hero {
+                margin   : 0 auto;
+                position : relative;
 
-                    &:hover {
-                        border : 1px solid #000;
+                img {
+                    width  : 100%;
+                }
+
+                .swiper-prev,
+                .swiper-next {
+                    position   : absolute;
+                    z-index    : 10;
+                    width      : 60px;
+                    height     : 100%;
+                    top        : 0;
+                    cursor     : pointer;
+                    background : url(../img/sprite_hero_controls.png) no-repeat;
+                    display    : none;
+                }
+
+                .swiper-prev {
+                    background-position : left center;
+                    left                : 10px;
+                }
+
+                .swiper-next {
+                    background-position : right center;
+                    right               : 10px;
+                }
+
+                .swiper-pagination-container {
+                    position : absolute;
+                    left     : 50%;
+                    bottom   : 15px;
+
+                    .swiper-pagination {
+                        text-align : center;
+                        position   : relative;
+                        left       : -50%;
+
+                        span {
+                            display    : inline-block;
+                            width      : 10px;
+                            height     : 10px;
+                            background : rgba(255, 255, 255, .25);
+                            margin     : 0 4px;
+                            cursor     : pointer;
+                            @include border-radius(10px);
+
+                            &.swiper-active-switch {
+                                background : rgba(255, 255, 255, .85);
+                            }
+                        }
                     }
+                }
 
-                    &.jj-promo-1 {
-                        margin-right : 5%;
-                    }
+                &.swiper-container .swiper-slide {
+                    display : none;
 
-                    &.jj-promo-3 {
-                        margin-left : 5%;
-                    }
-
-                    a {
-                        display         : block;
-                        width           : 100%;
-                        height          : 100%;
-                        text-decoration : none;
+                    &.first-slide {
+                        display : block;
                     }
                 }
             }
         }
 
-        /* Hero */
-        .hero {
-            width    : 100%;
-            position : relative;
-
-            img {
-                width  : 100%;
-            }
-
-            .swiper-prev,
-            .swiper-next {
-                position   : absolute;
-                z-index    : 10;
-                width      : 60px;
-                height     : 100%;
-                top        : 0;
-                cursor     : pointer;
-                background : url(../img/sprite_hero_controls.png) no-repeat;
-                display    : none;
-            }
-
-            .swiper-prev {
-                background-position : left center;
-                left                : 10px;
-            }
-
-            .swiper-next {
-                background-position : right center;
-                right               : 10px;
-            }
-
-            &.swiper-container {
-                height : 0;
-
-                a img {
-                    @include transition(height .6s linear);
-                }
-            }
-        }
-
-        /* Brands */
+        // Brands
         .storefront-brands {
-            margin-top : 70px;
+            margin-top : 20px;
             width      : 1110px;
 
             .brand {
@@ -221,25 +217,35 @@ a {
                         z-index       : 1;
                     }
 
-                    .text {
-                        position : absolute;
-                        bottom   : 10px;
-                        right    : 10px;
-                        z-index  : 10;
+                    .buttons {
+                        position       : absolute;
+                        z-index        : 10;
+                        top            : 150px;
+                        pointer-events : none;
                         @include opacity(0);
 
                         a {
                             width           : auto;
-                            font-size       : 11px;
+                            font-size       : 12px;
                             line-height     : 20px;
                             margin          : 0;
-                            text-align      : right;
+                            text-align      : center;
                             color           : #fff;
                             text-decoration : none;
                             text-transform  : uppercase;
+                            border          : 1px solid #fff;
+                            padding         : 15px 25px;
+                            display         : inline-block;
+                            letter-spacing  : 1px;
+                            font-family     : $medium;
+                            pointer-events  : auto;
+                            
+                            &:first-child {
+                                margin-bottom : 20px;
+                            }
 
                             &:hover {
-                                text-decoration : underline;
+                                background: rgba(255, 255, 255, .3);
                             }
                         }
                     }
@@ -383,7 +389,7 @@ a {
                                 input {
                                     line-height    : 38px;
                                     padding        : 0;
-                                    height         : auto;
+                                    height         : 40px;
                                     border         : 1px solid #e5e5e5;
                                     border-right   : 0;
                                     font-family    : $regular;
@@ -403,6 +409,7 @@ a {
                                     border-left : 0;
                                     background  : transparent url(../img/footer_newsletter_arrow.png) center no-repeat;
                                     float       : right;
+                                    text-indent : -9999px;
                                 }
                             }
 
@@ -420,64 +427,36 @@ a {
         /* Misc */
         .storefront-misc {
             text-align     : center;
-            padding-top    : 56px;
-            padding-bottom : 35px;
+            padding-top    : 60px;
+            padding-bottom : 15px;
+            width          : 1090px;
+            position       : relative;
+            margin         : 0 auto;
 
             h1 {
                 text-transform : uppercase;
-                font-size      : 22px;
-                font-family    : $light;
+                font-size      : 12px;
+                font-family    : $regular;
                 font-weight    : normal;
                 letter-spacing : 1px;
                 color          : #2a2a2a;
-
-                &:after {
-                    content    : '';
-                    display    : block;
-                    margin     : 0 auto;
-                    width      : 1090px;
-                    height     : 1px;
-                    background : #ebebeb;
-                    margin-top : 15px;
-                }
+                line-height    : normal;
+                display        : inline-block;
+                background     : #fff;
+                position       : relative;
+                z-index        : 1;
+                margin         : 0 auto;
+                padding        : 0 25px;
             }
 
-            .controls {
-                background : #fff;
-                width      : 100px;
-                margin     : -11px auto 0;
-
-                a {
-                    display    : inline-block;
-                    width      : 21px;
-                    height     : 21px;
-                    background : transparent url(../img/controls_sprite.png) top left no-repeat;
-                    padding    : 5px;
-
-                    &.mixed {
-                        background-position : left top;
-
-                        &.active {
-                            background-position : right top;
-                        }
-                    }
-
-                    &.large {
-                        background-position : left center;
-
-                        &.active {
-                            background-position : right center;
-                        }
-                    }
-
-                    &.small {
-                        background-position : left bottom;
-
-                        &.active {
-                            background-position : right bottom;
-                        }
-                    }
-                }
+            .stroke {
+                width      : 100%;
+                height     : 1px;
+                background : #ebebeb;
+                margin     : 0 auto;
+                bottom     : 22px;
+                position   : absolute;
+                z-index    : 0;
             }
         }
 
@@ -486,11 +465,18 @@ a {
             width : 100%;
 
             .gridify {
-                width  : 1080px;
+                width  : 1090px;
                 margin : 0 auto;
 
                 .box {
-                    padding : 5px;
+                    margin-bottom : 20px;
+                    float         : left;
+                    width         : 350px;
+                    height        : 550px;
+
+                    &:nth-child(3n+3) {
+                        margin : auto 20px;
+                    }
 
                     .content {
                         width    : 100%;
@@ -498,55 +484,51 @@ a {
                         border   : 1px solid #ebebeb;
                         position : relative;
                         @include background-size(cover);
-                        //cursor: pointer;
 
                         span {
-                            text-transform : uppercase;
                             text-align     : center;
                             display        : block;
 
                             &.title {
-                                //font-size    : 26px;
                                 letter-spacing : 1px;
-                                font-family    : $light;
-                                //margin-top   : 50px;
+                                font-family    : $regular;
+                                font-size      : 26px;
+                                margin-top     : 50px;
                             }
 
                             &.price {
-                                //font-size   : 12px;
-                                //font-family : $medium;
-                                //margin-top  : 10px;
-                            }
-                        }
+                                font-size  : 14px;
+                                margin-top : 10px;
 
-                        .bar {
-                            //width      : 20px;
-                            //height     : 3px;
-                            background   : #000;
-                            margin       : 0 auto;
-                            //margin-top : 25px;
+                                b {
+                                    font-family : $medium;
+                                    font-weight : normal;
+                                }
+                            }
                         }
 
                         .text {
                             position     : absolute;
                             width        : 100%;
                             bottom       : 0;
-                            //background : rgba(252, 252, 252, 0.0);
                             z-index      : 2;
 
                             .slidein {
                                 text-align     : center;
                                 margin-top     : 25px;
                                 padding-bottom : 25px;
-                                //@include opacity(0);
 
                                 a {
-                                    display        : block;
-                                    font-family    : $light;
-                                    text-transform : uppercase;
-                                    font-size      : 11px;
-                                    line-height    : 22px;
-                                    //@include opacity(0);
+                                    display         : block;
+                                    font-family     : $regular;
+                                    text-transform  : uppercase;
+                                    font-size       : 11px;
+                                    line-height     : 22px;
+                                    text-decoration : underline;
+
+                                    &:hover {
+                                        text-decoration : none;
+                                    }
                                 }
                             }
                         }
@@ -561,52 +543,12 @@ a {
                         }
                     }
                 }
-
-                /* Mixed grid */
-                &.mixed {
-                    .box {
-                        &.small {
-                            width  : 270px;
-                            height : 345px;
-
-                            @include smallboxes();
-                        }
-                        
-                        &.large {
-                            width  : 540px;
-                            height : 690px;
-
-                            @include largeboxes();
-                        }
-                    }
-                }
-
-                /* Large grid */
-                &.large {
-                    .box {
-                        width  : 540px;
-                        height : 690px;
-
-                        @include largeboxes();
-                    }
-                }
-
-
-                /* Small grid */
-                &.small {
-                    .box {
-                        width  : 270px;
-                        height : 345px;
-
-                        @include smallboxes();
-                    }
-                }
             }
         }
     }
 }
 
-/* Breakpoints */
+// Breakpoints
 
 // 1200 - 1400 px
 @media only screen 
@@ -617,6 +559,10 @@ and (max-width : 1400px) {
                 [class*='col-'] {
                     padding : 0 10px
                 }
+            }
+
+            .storefront-hero {
+                width : 880px;
             }
 
             .storefront-brands {
@@ -636,6 +582,15 @@ and (max-width : 1400px) {
                     .image {
                         width  : 240px;
                         height : 317px;
+
+                        .buttons {
+                            top : 110px;
+
+                            a {
+                                font-size : 11px;
+                                padding   : 10px 20px;
+                            }
+                        }
                     }
 
                     &.sellingpoints {
@@ -666,53 +621,31 @@ and (max-width : 1400px) {
             .storefront-misc {
                 padding-top : 30px;
                 margin-top  : 50px;
-
-                h1:after {
-                    width: 900px;
-                }
+                width       : 880px;
             }
 
             .storefront-categories {
                 .gridify {
-                    width: 900px;
+                    width: 880px;
 
-                    /* Mixed grid */
-                    &.mixed {
-                        .box {
-                            &.small {
-                                width  : 225px;
-                                height : 288px;
+                    .box {
+                        width  : 280px;
+                        height : 440px;
 
-                                @include smallboxes-BreakMedium();
+                        .content {
+                            span {
+                                &.title {
+                                    margin-top : 35px;
+                                }
                             }
-                            
-                            &.large {
-                                width  : 450px;
-                                height : 575px;
 
-                                @include largeboxes-BreakMedium();
+                            .bar {
+                                margin-top : 20px;
                             }
-                        }
-                    }
 
-                    /* Large grid */
-                    &.large {
-                        .box {
-                            width  : 450px;
-                            height : 575px;
-
-                            @include largeboxes-BreakMedium();
-                        }
-                    }
-
-
-                    /* Small grid */
-                    &.small {
-                        .box {
-                            width  : 225px;
-                            height : 288px;
-
-                            @include smallboxes-BreakMedium();
+                            .text .slidein {
+                                padding-bottom : 20px;
+                            }
                         }
                     }
                 }
@@ -732,8 +665,14 @@ and (max-width : 1200px) {
                 }
             }
 
+            .storefront-hero {
+                width   : 720px;
+                padding : 10px;
+            }
+
             .storefront-brands {
-                width : 720px;
+                width      : 730px;
+                margin-top : 9px;
             }
 
             .storefront-promos {
@@ -744,12 +683,21 @@ and (max-width : 1200px) {
 
             .storefront-brands {
                 .brand {
-                    margin : 0 0 10px;
+                    margin : 0 0 9px;
 
                     .image {
                         width  : 210px;
                         height : 278px;
                         margin : 10px auto 0;
+
+                        .buttons {
+                            top : 90px;
+
+                            a {
+                                font-size : 10px;
+                                padding   : 10px 15px;
+                            }
+                        }
                     }
 
                     &.sellingpoints {
@@ -796,80 +744,49 @@ and (max-width : 1200px) {
 
             .storefront-misc {
                 padding-top : 20px;
-                margin-top  : 30px;
-
-                h1:after {
-                    width : 720px;
-                }
+                margin-top  : 15px;
+                width       : 720px;
             }
 
             .storefront-categories {
                 .gridify {
                     width : 720px;
 
-                    /* Mixed grid */
-                    &.mixed {
-                        .box {
-                            &.small {
-                                width  : 180px;
-                                height : 230px;
+                    .box {
+                        width         : 234px;
+                        height        : 378px;
+                        margin-bottom : 9px;
 
-                                @include smallboxes-BreakSmall();
-                            }
-                            
-                            &.large {
-                                width  : 360px;
-                                height : 460px;
 
-                                @include largeboxes-BreakSmall();
-                            }
+                        &:nth-child(3n+3) {
+                            margin : auto 9px;
                         }
-                    }
 
-                    /* Large grid */
-                    &.large {
-                        .box {
-                            width  : 360px;
-                            height : 460px;
+                        .content {
+                            span {
+                                &.title {
+                                    margin-top : 20px;
+                                    font-size  : 20px;
+                                }
 
-                            @include largeboxes-BreakSmall();
-                        }
-                    }
+                                &.price {
+                                    margin-top : 5px;
+                                    font-size  : 12px;
+                                }
+                            }
 
+                            .text .slidein {
+                                padding-bottom : 15px;
 
-                    /* Small grid */
-                    &.small {
-                        .box {
-                            width  : 180px;
-                            height : 230px;
-
-                            @include smallboxes-BreakSmall();
+                                a {
+                                    font-size   : 10px;
+                                    line-height : 18px;
+                                }
+                            }
                         }
                     }
                 }
             }
         }
     }
-}
-
-/* Isotope animation stuff */
-.isotope,
-.isotope .isotope-item {
-    @include transition-duration(0.6s);
-}
-
-.isotope {
-    @include transition-property(height, width);
-}
-
-.isotope .isotope-item {
-    @include transition-property(transform, opacity);
-}
-
-/**** disabling Isotope CSS3 transitions ****/
-
-.isotope.no-transition,
-.isotope.no-transition .isotope-item,
-.isotope .isotope-item.no-transition {
-    @include transition-duration(0s);
 }

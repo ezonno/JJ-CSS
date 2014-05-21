@@ -10,9 +10,6 @@ var jjStorefront = (function (jQuery) {
 
         // custom functions here
             assignGlobalVars : function () {
-                // Needed to pass through several functions
-                jjStorefront.gridContainer = $('#branded .content .storefront-categories .gridify');
-
                 // Vars for scrolling track - False should only be set once on load
                 jjStorefront.brandsReached = false;
                 jjStorefront.categoriesReached = false;
@@ -44,7 +41,7 @@ var jjStorefront = (function (jQuery) {
 
                 } else if (slides === 1) {
                     jjStorefront.heroIsSlider = false;
-                    jjStorefront.displayHero();
+                    //jjStorefront.displayHero();
                 }
             },
 
@@ -55,7 +52,6 @@ var jjStorefront = (function (jQuery) {
                         autoplay: 6000,
                         speed: 800,
                         calculateHeight: true,
-                        updateOnImagesReady: true,
                         slideClass: 'swiper-slide',
                         slideActiveClass: 'swiper-slide-active',
                         slideVisibleClass: 'swiper-slide-visible',
@@ -64,6 +60,9 @@ var jjStorefront = (function (jQuery) {
                         paginationElementClass: 'swiper-pagination-switch',
                         paginationActiveClass: 'swiper-active-switch',
                         paginationVisibleClass: 'swiper-visible-switch',
+                        createPagination: true,
+                        paginationClickable: true,
+                        pagination: '.swiper-pagination',
                         onSwiperCreated: function(){
                             $('#branded .content .hero .swiper-prev, #branded .content .hero .swiper-next').css('display' , 'block');
                             jjStorefront.displayHero();
@@ -87,13 +86,9 @@ var jjStorefront = (function (jQuery) {
             },
 
             displayHero : function () {
-                var heroHeight = $('#branded .content .hero.swiper-container .swiper-slide img').height();
-
-                if (jjStorefront.heroIsSlider) {
-                    TweenMax.to($('#branded .content .hero.swiper-container'), 0.6, {height: heroHeight, ease:Quad.Power4});
-                } else {
-                    TweenMax.set($('#branded .content .hero.swiper-container'), {height: 'auto'});
-                }
+                $('#branded .content .storefront-hero .swiper-container .swiper-slide').each(function(){
+                    $(this).show();
+                });
             },
 
             resizeHero : function () {
@@ -125,61 +120,19 @@ var jjStorefront = (function (jQuery) {
                         $(this).hover(function(){
                             TweenMax.to($(this).find('.overlay'), 0.4, {opacity: 1});
                             TweenMax.to($(this).find('.image'), 0.4, {backgroundSize:  width + 'px ' + height + 'px'});
-                            TweenMax.to($(this).find('.text'), 0.4, {delay: 0.2, opacity: 1, bottom: 15, right: 15});
+                            TweenMax.to($(this).find('.buttons'), 0.4, {delay: 0.2, opacity: 1});
                         }, function(){
                             TweenMax.to($(this).find('.overlay'), 0.3, {opacity: 0});
                             TweenMax.to($(this).find('.image'), 0.3, {backgroundSize: newWidth + 'px ' + newHeight + 'px'});
-                            TweenMax.to($(this).find('.text'), 0.3, {opacity: 0, bottom: 10, right: 10, overwrite: true});
+                            TweenMax.to($(this).find('.buttons'), 0.3, {opacity: 0, overwrite: true});
                         });
                 });
             },
 
-            categoryHover : function () { // Disabled, but might be enabled later
-                $('#branded .content .storefront-categories .gridify .box .content').each(function(){
-                    $(this).hover(function(){
-                        TweenMax.to($(this).find('.text'), 0.6, {bottom: 0, backgroundColor: 'rgba(252, 252, 252, 0.8)'});
-                        TweenMax.to($(this).find('.overlay'), 0.6, {opacity: 1});
-                        if (jjStorefront.gridContainer.hasClass('mixed') && $(this).parent().hasClass('small')) {
-                            TweenMax.to($(this).find('.slidein .linkcontainer > *'), 0.6, {opacity: 1});
-                        } else if (jjStorefront.gridContainer.hasClass('small')) {
-                            TweenMax.to($(this).find('.slidein .linkcontainer > *'), 0.6, {opacity: 1});
-                        } else {
-                            TweenMax.staggerTo($(this).find('.slidein .linkcontainer > *'), 0.6, {opacity: 1}, 0.08);
-                        }
-                    }, function(){
-                        TweenMax.to($(this).find('.text'), 0.4, {bottom: -50, backgroundColor: 'rgba(252, 252, 252, 0.0)',});
-                        TweenMax.to($(this).find('.overlay'), 0.4, {opacity: 0});
-                        if (jjStorefront.gridContainer.hasClass('mixed') && $(this).parent().hasClass('small')) {
-                            TweenMax.to($(this).find('.slidein .linkcontainer > *'), 0.3, {opacity: 0});
-                        } else if (jjStorefront.gridContainer.hasClass('small')) {
-                            TweenMax.to($(this).find('.slidein .linkcontainer > *'), 0.3, {opacity: 0});
-                        } else {
-                            TweenMax.staggerTo($(this).find('.slidein .linkcontainer > *').get().reverse(), 0.3, {opacity: 0}, 0.08);
-                        }
-                    });
-                });
-            },
-
             detectGrid : function () {
-                var width = $(window).width();
-                
-                // Boom. JS media queries
-                if (width >= 1400) {
-                    jjStorefront.gridifyInit(270);
-                    jjStorefront.centerCallouts();
-                } else if (width >= 1200) {
-                    jjStorefront.gridifyInit(225);
-                    jjStorefront.centerCallouts();
-                } else if (width < 1200) {
-                    jjStorefront.gridifyInit(180);
-                    jjStorefront.centerCallouts();
-                }
-
-                if (jjStorefront.heroIsSlider) {
-                    jjStorefront.displayHero();
-                }
-                
                 jjStorefront.brandHover();
+                jjStorefront.resizeHero();
+                jjStorefront.centerCallouts();
 
                 if (jjStorefront.pageIsLoaded) {
                     jjStorefront.viewportHero();
@@ -188,65 +141,6 @@ var jjStorefront = (function (jQuery) {
                 if (!jjStorefront.footerReached) {
                     jjStorefront.trackingScroll();
                 }
-            },
-
-            gridifyInit : function (colWidth) {
-                jjStorefront.gridContainer.isotope({
-                    itemSelector: '.box', // Don't change
-                    layoutMode: 'masonry',
-                    masonry: {
-                        columnWidth: colWidth // Value passed from detectGrid();
-                    },
-                    animationEngine: 'best-available',
-                    animationOptions: {
-                        duration: 600,
-                        ease: 'swing'
-                    },
-                    getSortData: {
-                        grid : function ($elem) {
-                            return parseInt($elem.data('pos-mixed'), 10);
-                        }
-                    }
-                });
-            },
-
-            gridifyMixed : function () {
-                jjStorefront.gridContainer.removeClass('large small').addClass('mixed');
-                jjStorefront.gridContainer.isotope('reLayout');
-                jjStorefront.gridContainer.isotope({sortBy: 'grid'});
-            },
-
-            gridifyLarge : function () {
-                jjStorefront.gridContainer.removeClass('mixed small').addClass('large');
-                jjStorefront.gridContainer.isotope('reLayout');
-                jjStorefront.gridContainer.isotope({sortBy: 'original-order'});
-            },
-
-            gridifySmall : function () {
-                jjStorefront.gridContainer.removeClass('mixed large').addClass('small');
-                jjStorefront.gridContainer.isotope('reLayout');
-                jjStorefront.gridContainer.isotope({sortBy: 'original-order'});
-            },
-
-            controls : function () {
-                $('#branded .content .storefront-misc .controls a').click(function(e){
-                    e.preventDefault();
-                    $('#branded .content .storefront-misc .controls a').removeClass('active');
-                    $(this).addClass('active');
-
-                    console.log('Reached footer: ' + jjStorefront.footerReached);
-
-                    if ($(this).hasClass('mixed')) {
-                        jjStorefront.gridifyMixed();
-                        jjStorefront.trackingGridSwitch('Mixed grid');
-                    } else if ($(this).hasClass('large')) {
-                        jjStorefront.gridifyLarge();
-                        jjStorefront.trackingGridSwitch('Large grid');
-                    } else if ($(this).hasClass('small')) {
-                        jjStorefront.gridifySmall();
-                        jjStorefront.trackingGridSwitch('Small grid');
-                    }
-                });
             },
 
             initQuickview : function () {
@@ -337,22 +231,15 @@ var jjStorefront = (function (jQuery) {
                 offsetCategories = $('#branded .content .storefront-categories').offset().top,
                 offsetFooter = $('#footer_global').offset().top;
 
-                console.log('offsetBrands: ' + offsetBrands);
-                console.log('offsetCategories: ' + offsetCategories);
-                console.log('offsetFooter: ' + offsetFooter);
-
                 $(window).scroll(function(){
                     if ($(window).scrollTop() >= offsetBrands && !jjStorefront.brandsReached) {
                         _gaq.push(['_trackEvent','jj-frontpage-test', 'scroll', 'Brand boxes reached']);
-                        console.log('Reached brands');
                         jjStorefront.brandsReached = true;
                     } else if ($(window).scrollTop() >= offsetCategories && !jjStorefront.categoriesReached) {
                         _gaq.push(['_trackEvent','jj-frontpage-test', 'scroll', 'Category boxes reached']);
-                        console.log('Reached cats');
                         jjStorefront.categoriesReached = true;
                     } else if ($(window).scrollTop() >= offsetFooter && !jjStorefront.footerReached) {
                         _gaq.push(['_trackEvent','jj-frontpage-test', 'scroll', 'Footer reached']);
-                        console.log('Reached footer');
                         jjStorefront.footerReached = true;
                     }
                 });
@@ -383,7 +270,8 @@ var jjStorefront = (function (jQuery) {
                 $('#branded .side-menu .ps-container .ps-scrollbar-y').mousedown(function(e){
                     _gaq.push(['_trackEvent','jj-frontpage-test', 'navigation', 'Scrollbar clicked']);
                 });
-            },
+            }
+
         // end custom functions
     };
 })(jQuery);
@@ -392,10 +280,8 @@ jQuery(document).ready(function () {
     jjStorefront.assignGlobalVars();
     jjStorefront.responsiveHero();
     jjStorefront.brandHover();
-    //jjStorefront.categoryHover();
-    jjStorefront.controls();
+    jjStorefront.centerCallouts();
     jjStorefront.initQuickview();
-    jjStorefront.detectGrid();
     jjStorefront.trackingInit();
 });
 
