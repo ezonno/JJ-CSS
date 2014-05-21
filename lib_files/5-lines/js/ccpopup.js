@@ -69,7 +69,9 @@ var jjCCpopup = (function (jQuery) {
                 TweenMax.set($('.customerclub-popup'), {bottom: '-' + jjCCpopup.popupHeight});
 
                 // Handling of toggle logic
-                $('.customerclub-trigger a').click(function(){
+                $('.customerclub-trigger a').click(function(e){
+                    e.preventDefault();
+
                     if (!jjCCpopup.popupActive) {
                         jjCCpopup.animIn();
                     } else if (jjCCpopup.popupActive) {
@@ -247,7 +249,7 @@ var jjCCpopup = (function (jQuery) {
             // In any case - animate the height, not the display
             thankyou : function () {
                 TweenMax.to($('.customerclub-popup .signup-content'), 0.6, {height: 0, ease:Power2.easeOut});
-                TweenMax.to($('.customerclub-popup .thankyou-content'), 0.6, {height: 135, ease:Power2.easeOut});
+                TweenMax.to($('.customerclub-popup .thankyou-content'), 0.6, {height: 100, ease:Power2.easeOut});
 
                 setTimeout(function() {
                     jjCCpopup.animOut();
