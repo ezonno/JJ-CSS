@@ -227,25 +227,27 @@ a {
                         a {
                             width           : auto;
                             font-size       : 12px;
-                            line-height     : 20px;
+                            line-height     : 1.5;
                             margin          : 0;
                             text-align      : center;
                             color           : #fff;
                             text-decoration : none;
                             text-transform  : uppercase;
                             border          : 1px solid #fff;
-                            padding         : 15px 25px;
+                            padding         : 12px 22px;
                             display         : inline-block;
                             letter-spacing  : 1px;
-                            font-family     : $medium;
+                            font-family     : $regular;
                             pointer-events  : auto;
+                            max-width       : 80%;
                             
                             &:first-child {
                                 margin-bottom : 20px;
                             }
 
                             &:hover {
-                                background: rgba(255, 255, 255, .3);
+                                background : #fff;
+                                color      : #2d3b4b;
                             }
                         }
                     }
@@ -493,12 +495,12 @@ a {
                                 letter-spacing : 1px;
                                 font-family    : $regular;
                                 font-size      : 26px;
-                                margin-top     : 50px;
+                                margin-top     : 32px;
                             }
 
                             &.price {
                                 font-size  : 14px;
-                                margin-top : 10px;
+                                margin-top : 8px;
 
                                 b {
                                     font-family : $medium;
@@ -515,8 +517,7 @@ a {
 
                             .slidein {
                                 text-align     : center;
-                                margin-top     : 25px;
-                                padding-bottom : 25px;
+                                padding-bottom : 29px;
 
                                 a {
                                     display         : block;

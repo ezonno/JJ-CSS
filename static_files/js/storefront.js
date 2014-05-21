@@ -164,18 +164,22 @@ var jjStorefront = (function (jQuery) {
                 $('#branded .content .storefront-brands .brand').not('.sellingpoints').each(function(){
                     var brandID = $(this).data('brand');
 
-                    $(this).find('a').click(function(){
-                        if ($(this).hasClass('quickview')) {
-                            _gaq.push(['_trackEvent','jj-frontpage-test', 'brand boxes', brandID + ', shopping']);
+                    $(this).find('.buttons a').click(function(){
+                        if ($(this).is(':first-child')) {
+                            _gaq.push(['_trackEvent','jj-frontpage-test', 'brand boxes', brandID + ', button - shopping']);
                         } else {
-                            _gaq.push(['_trackEvent','jj-frontpage-test', 'brand boxes', brandID + ', brandsite']);
+                            _gaq.push(['_trackEvent','jj-frontpage-test', 'brand boxes', brandID + ', button - brand site']);
                         }
                     });
-                });
-            },
 
-            trackingGridSwitch : function (gridSwitch) {
-                _gaq.push(['_trackEvent','jj-frontpage-test', 'controls', gridSwitch]);
+                    $(this).find('.overlay').parent('a').click(function(){
+                        _gaq.push(['_trackEvent','jj-frontpage-test', 'brand boxes', brandID + ', overlay - brand site']);
+                    });
+
+                    $(this).find('a.logo').click(function(){
+                        _gaq.push(['_trackEvent','jj-frontpage-test', 'brand boxes', brandID + ', logo - brand site']);
+                    });
+                });
             },
 
             trackingCategories : function () {
