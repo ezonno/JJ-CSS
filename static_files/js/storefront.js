@@ -270,78 +270,6 @@ var jjStorefront = (function (jQuery) {
                 $('#branded .side-menu .ps-container .ps-scrollbar-y').mousedown(function(e){
                     _gaq.push(['_trackEvent','jj-frontpage-test', 'navigation', 'Scrollbar clicked']);
                 });
-            },
-
-            // ROSKILDE CAMPAIGN
-            roskildeDetection : function() {
-                var gaffaUTM_name = "utm_trig";
-                var gaffaUTM_val = "gaffa";
-                var newsletterUTM_name = "utm_campaign";
-                var newsletterUTM_val = "club_jj_W19b2014_DK_Rock";
-                var socialUTM_name = "utm_trig";
-                var socialUTM_val = "social";
-                fullQString = window.location.search.substring(1);
-                paramCount = 0;
-                queryStringComplete = "?";
-
-                if(fullQString.length > 0) {
-                   //Split Query String into separate parameters
-                   paramArray = fullQString.split("&");
-                   //Loop through params, check if parameter exists.  
-                   for (i=0;i<paramArray.length;i++) {
-                        currentParameter = paramArray[i].split("=");
-                        if(currentParameter[0] == gaffaUTM_name) { //Parameter already exists in current url
-                            if(currentParameter[1] == gaffaUTM_val) {
-                                document.cookie="RSK_gaffa=true; path=/";   // Hallo, Gaffa!
-                            }
-                        }
-                        if(currentParameter[0] == newsletterUTM_name) { //Parameter already exists in current url
-                            if(currentParameter[1] == newsletterUTM_val) {
-                                document.cookie="RSK_newsletter=true; path=/";   // Hallo, Newsletter!
-                            }
-                        }
-                        if(currentParameter[0] == socialUTM_name) { //Parameter already exists in current url
-                            if(currentParameter[1] == socialUTM_val) {
-                                document.cookie="RSK_social=true; path=/";   // Hallo, Social!
-                            }
-                        }
-                    }
-                }
-            },
-
-            // use this to find out if we're dealing with a Gaffa user.. 
-            // if(jjStorefront.getCookie("RSK_gaffa"))
-            getCookie : function(cname) {
-                var name = cname + "=";
-                var ca = document.cookie.split(';');
-                for(var i=0; i<ca.length; i++) {
-                    var c = ca[i].trim();
-                    if (c.indexOf(name) === 0) return c.substring(name.length,c.length);
-                }
-                return "";
-            },
-
-            centerPopup : function () {
-                var offset = $('.roskilde-overlay .content').outerHeight() / 2;
-
-                TweenMax.set($('.roskilde-overlay .content'), {marginTop: '-' + offset});
-            },
-
-            displayPopup : function () {
-                if(jjStorefront.getCookie('RSK_gaffa') || jjStorefront.getCookie('RSK_newsletter') || jjStorefront.getCookie('RSK_social')) {
-                    $('.roskilde-overlay').show();
-                    TweenMax.to($('.roskilde-overlay'), 0.6, {
-                        opacity: 1,
-                        ease:Cubic.easeOut
-                    });
-                }
-            },
-
-            hidePopup : function () {
-                $('.hideThisShit').click(function(e){
-                    e.preventDefault();
-                    $('.roskilde-overlay').remove();
-                });
             }
 
         // end custom functions
@@ -355,12 +283,6 @@ jQuery(document).ready(function () {
     jjStorefront.centerCallouts();
     jjStorefront.initQuickview();
     jjStorefront.trackingInit();
-
-    // ROSKILDE CAMPAIGN
-    //jjStorefront.roskildeDetection();
-    //jjStorefront.centerPopup();
-    //jjStorefront.displayPopup();
-    //jjStorefront.hidePopup();
 });
 
 jQuery(window).load(function(){
