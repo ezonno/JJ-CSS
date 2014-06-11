@@ -2,6 +2,9 @@
 
 ## Where the magic happens
 
+### Rules
+When closing an issue, a gif must be attached. That is all.
+
 ### Copyright
 Not really. It's just a bunch of JS and CSS.
 
