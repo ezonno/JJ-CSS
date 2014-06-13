@@ -156,7 +156,7 @@ var jjStorefront = (function (jQuery) {
             trackingInit : function () {
                 jjStorefront.trackingBrands();
                 jjStorefront.trackingCategories();
-                //jjStorefront.trackingScroll();
+                jjStorefront.trackingScroll();
                 jjStorefront.trackingNavigation();
             },
 
@@ -234,6 +234,10 @@ var jjStorefront = (function (jQuery) {
                 var offsetBrands = $('#branded .content .storefront-brands').offset().top,
                 offsetCategories = $('#branded .content .storefront-categories').offset().top,
                 offsetFooter = $('#footer_global').offset().top;
+
+                console.log(offsetBrands);
+                console.log(offsetCategories);
+                console.log(offsetFooter);
 
                 $(window).scroll(function(){
                     if ($(window).scrollTop() >= offsetBrands && !jjStorefront.brandsReached) {
