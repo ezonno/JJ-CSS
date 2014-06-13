@@ -235,10 +235,6 @@ var jjStorefront = (function (jQuery) {
                 offsetCategories = $('#branded .content .storefront-categories').offset().top,
                 offsetFooter = $('#footer_global').offset().top;
 
-                console.log(offsetBrands);
-                console.log(offsetCategories);
-                console.log(offsetFooter);
-
                 $(window).scroll(function(){
                     if ($(window).scrollTop() >= offsetBrands && !jjStorefront.brandsReached) {
                         _gaq.push(['_trackEvent','jj-frontpage-test', 'scroll', 'Brand boxes reached']);
