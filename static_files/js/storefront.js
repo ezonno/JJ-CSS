@@ -156,7 +156,10 @@ var jjStorefront = (function (jQuery) {
             trackingInit : function () {
                 jjStorefront.trackingBrands();
                 jjStorefront.trackingCategories();
-                jjStorefront.trackingScroll();
+
+                // Scroll tracking disabled while brand teaser testing is going on
+                //jjStorefront.trackingScroll();
+                
                 jjStorefront.trackingNavigation();
             },
 
@@ -220,14 +223,27 @@ var jjStorefront = (function (jQuery) {
             },
 
             trackingHero : function (type) {
-                var slideIndex = jjStorefront.jjSwiper.activeLoopIndex,
-                    humanIndex = slideIndex + 1,
-                    activeSlide = $('#branded .content .hero .swiper-slide-active'),
-                    week = activeSlide.data('week'),
-                    image = activeSlide.data('image'),
-                    url = activeSlide.data('url');
+                if (jjStorefront.heroIsSlider) {
+                    var slideIndex  = jjStorefront.jjSwiper.activeLoopIndex,
+                    slideHumanIndex = slideIndex + 1,
+                    activeSlide     = $('#branded .content .hero .swiper-slide-active'),
+                    slideWeek       = activeSlide.data('week'),
+                    slideImage      = activeSlide.data('image'),
+                    slideUrl        = activeSlide.data('url');
 
-                _gaq.push(['_trackEvent','jj-frontpage-test', 'hero', 'Slide: ' + humanIndex + ', week: ' + week + ', image: ' + image + ', url: ' + url + ', type: ' + type]);
+                    _gaq.push(['_trackEvent','jj-frontpage-test', 'hero', 'Slide: ' + slideHumanIndex + ', week: ' + slideWeek + ', image: ' + slideImage + ', url: ' + slideUrl + ', type: ' + type]);
+                } else {
+                    var staticIndex = 0,
+                    staticHumanIndex     = staticIndex + 1,
+                    staticActiveSlide    = $('#branded .content .hero .swiper-slide'),
+                    staticWeek           = staticActiveSlide.data('week'),
+                    staticImage          = staticActiveSlide.data('image'),
+                    staticUrl            = staticActiveSlide.data('url');
+
+                    _gaq.push(['_trackEvent','jj-frontpage-test', 'hero', 'Slide: ' + staticHumanIndex + ', week: ' + staticWeek + ', image: ' + staticImage + ', url: ' + staticUrl + ', type: ' + type]);
+                }
+
+                
             },
 
             trackingScroll : function () {
