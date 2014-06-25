@@ -187,7 +187,7 @@
 .customerclub-trigger {
     position   : fixed;
     bottom     : 0;
-    right      : 7px;
+    right      : 61px;
     z-index    : 100;
     background : #fff;
     @include border-radius(2px 2px 0 0);
@@ -195,8 +195,8 @@
 
     a {
         font-family    : $light !important;
-        font-size      : 12px !important;
-        padding        : 15px 22px;
+        font-size      : 11px !important;
+        padding        : 5px 22px;
         border         : 1px solid #ccc;
         border-bottom  : 0;
         text-transform : uppercase;
@@ -204,6 +204,8 @@
         font-weight    : normal;
         display        : block;
         color          : #222;
+        line-height    : normal !important;
+        text-align     : center;
 
         &:hover {
             color           : inherit !important;

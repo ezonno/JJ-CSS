@@ -128,12 +128,12 @@ var jjCCpopup = (function (jQuery) {
 
             animIn : function () {
                 TweenMax.set($('.customerclub-popup'), {display: 'block'});
-                TweenMax.to($('.customerclub-popup'), 0.6, {ease:Power2.EaseOut, bottom: 60});
+                TweenMax.to($('.customerclub-popup'), 0.6, {ease:Power2.EaseOut, bottom: 46});
                 jjCCpopup.popupActive = true;
 
                 // Top secret. Look away.
                 if (jjCCpopup.egged) {
-                    TweenMax.to($('.vader'), 0.6, {ease:Power2.EaseOut, bottom: 200});
+                    TweenMax.to($('.vader'), 0.6, {ease:Power2.EaseOut, bottom: 186});
                 }
             },
 
@@ -238,7 +238,7 @@ var jjCCpopup = (function (jQuery) {
                 });
             },
 
-            // Top secret. Look away! Aboslutely not an easter egg.
+            // Top secret. Look away! Absolutely not an easter egg.
             iAmYourFather : function () {
                 TweenMax.set($('.vader'), {display: 'block'});
                 jjCCpopup.egged = true;

@@ -137,6 +137,16 @@
 
 .jj .to_top {
     background : none;
+    right      : 7px;
+
+    a {
+        width      : 45px;
+        height     : 37px;
+        background : #fff url(../img/totop.jpg) no-repeat center;
+        border     : 1px solid #ccc;
+        @include border-radius(2px 2px 0 0);
+        @include box-shadow(1px 1px 2px 0px rgba(0, 0, 0, 0.15));
+    }
 }
 
 /* SLIDESHOW */
