@@ -2,17 +2,15 @@
 .customerclub-popup {
     width      : 306px;
     background : #fff;
-    border     : 1px solid #ccc;
+    border     : 1px solid #f0f0f0;
     position   : fixed;
     bottom     : 60px;
-    right      : 7px;
+    right      : 25px;
     z-index    : 100;
     display    : none;
-    @include border-radius(2px);
-    @include box-shadow(1px 1px 2px 0px rgba(0, 0, 0, 0.15));
 
     .closebar {
-        border-bottom : 1px solid #ccc;
+        border-bottom : 1px solid #f0f0f0;
         margin-bottom : 15px;
 
         a {
@@ -109,7 +107,7 @@
                 input[type=text] {
                     width       : 100%;
                     line-height : 33px;
-                    height      : auto;
+                    height      : 33px;
                     padding     : 0;
                     text-align  : center;
                     font-family : $light;
@@ -129,6 +127,10 @@
                     border      : 1px solid #9b9b9b;
                     font-family : $light;
                     padding     : 7px;
+
+                    div.contentasset div {
+                        margin-left: 0 !important;
+                    }
                 }
 
                 &.accept {
@@ -187,17 +189,15 @@
 .customerclub-trigger {
     position   : fixed;
     bottom     : 0;
-    right      : 61px;
+    right      : 82px;
     z-index    : 100;
     background : #fff;
-    @include border-radius(2px 2px 0 0);
-    @include box-shadow(1px 1px 2px 0px rgba(0, 0, 0, 0.15));
 
     a {
-        font-family    : $light !important;
+        font-family    : $regular !important;
         font-size      : 11px !important;
         padding        : 5px 22px;
-        border         : 1px solid #ccc;
+        border         : 1px solid #f0f0f0;
         border-bottom  : 0;
         text-transform : uppercase;
         letter-spacing : 1px;
@@ -220,7 +220,7 @@
     height     : 236px;
     position   : fixed;
     bottom     : 200px;
-    right      : 265px;
+    right      : 283px;
     z-index    : 101;
     display    : none;
 }

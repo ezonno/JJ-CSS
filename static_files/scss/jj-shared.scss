@@ -137,15 +137,14 @@
 
 .jj .to_top {
     background : none;
-    right      : 7px;
+    right      : 25px;
 
     a {
-        width      : 45px;
-        height     : 37px;
-        background : #fff url(../img/totop.jpg) no-repeat center;
-        border     : 1px solid #ccc;
-        @include border-radius(2px 2px 0 0);
-        @include box-shadow(1px 1px 2px 0px rgba(0, 0, 0, 0.15));
+        width         : 45px;
+        height        : 38px;
+        background    : #fff url(../img/totop.jpg) no-repeat center;
+        border        : 1px solid #f0f0f0;
+        border-bottom : none;
     }
 }
 

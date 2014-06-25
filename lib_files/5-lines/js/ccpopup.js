@@ -87,6 +87,7 @@ var jjCCpopup = (function (jQuery) {
                     jjCCpopup.animOut();
                     $.cookie(
                         'jjCCpopup_ignore_week', 'true', {expires: 7}, {path: '/'});
+                    _gaq.push(['_trackEvent','jj-cc-popup', 'action', 'Hidden, week']);
                 });
 
                 // Permanent ignore
@@ -94,6 +95,7 @@ var jjCCpopup = (function (jQuery) {
                     e.preventDefault();
                     jjCCpopup.animOut();
                     $.cookie('jjCCpopup_ignore_forever', 'true', {expires: 365}, {path: '/'});
+                    _gaq.push(['_trackEvent','jj-cc-popup', 'action', 'Hidden, forever']);
                 });
             },
 
@@ -128,8 +130,10 @@ var jjCCpopup = (function (jQuery) {
 
             animIn : function () {
                 TweenMax.set($('.customerclub-popup'), {display: 'block'});
-                TweenMax.to($('.customerclub-popup'), 0.6, {ease:Power2.EaseOut, bottom: 46});
+                TweenMax.to($('.customerclub-popup'), 0.6, {ease:Power2.EaseOut, bottom: 49});
                 jjCCpopup.popupActive = true;
+
+                _gaq.push(['_trackEvent','jj-cc-popup', 'action', 'Popup shown']);
 
                 // Top secret. Look away.
                 if (jjCCpopup.egged) {
@@ -241,6 +245,7 @@ var jjCCpopup = (function (jQuery) {
             // Top secret. Look away! Absolutely not an easter egg.
             iAmYourFather : function () {
                 TweenMax.set($('.vader'), {display: 'block'});
+                _gaq.push(['_trackEvent','jj-cc-popup', 'action', 'Secret easter egg']);
                 jjCCpopup.egged = true;
             },
 
@@ -249,7 +254,9 @@ var jjCCpopup = (function (jQuery) {
             // In any case - animate the height, not the display
             thankyou : function () {
                 TweenMax.to($('.customerclub-popup .signup-content'), 0.6, {height: 0, ease:Power2.easeOut});
-                TweenMax.to($('.customerclub-popup .thankyou-content'), 0.6, {height: 100, ease:Power2.easeOut});
+                TweenMax.to($('.customerclub-popup .thankyou-content'), 0.6, {height: 150, ease:Power2.easeOut});
+
+                _gaq.push(['_trackEvent','jj-cc-popup', 'action', 'Signed up']);
 
                 setTimeout(function() {
                     jjCCpopup.animOut();
