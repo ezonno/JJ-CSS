@@ -15,20 +15,20 @@ var jjCCpopup = (function (jQuery) {
                 // variable to hold request
                 jjCCpopup.request;
 
-                $(".modal_form input[name=dwfrm_newsletter_email]").val(email);
-                $(".modal_form input[name=dwfrm_newsletter_firstName]").val(name);
-                $(".modal_form input[name=dwfrm_newsletter_lastName]").val(surname);
-                $(".modal_form input[name=dwfrm_newsletter_dateOfBirth]").val(birthday);
-                $(".accept-tc input").prop('checked', signupCC);
+                $("#footer_global .modal_form input[name=dwfrm_newsletter_email]").val(email);
+                $("#footer_global .modal_form input[name=dwfrm_newsletter_firstName]").val(name);
+                $("#footer_global .modal_form input[name=dwfrm_newsletter_lastName]").val(surname);
+                $("#footer_global .modal_form input[name=dwfrm_newsletter_dateOfBirth]").val(birthday);
+                $("#footer_global .accept-tc input").prop('checked', signupCC);
 
                 // check if user wants to become a member
-                if($(".accept-tc input").is(':checked')) {
+                if($("#footer_global .accept-tc input").is(':checked')) {
                     // abort any pending jjRoskilde.request
                     if (jjCCpopup.request) {
                         jjCCpopup.request.abort();
                     }
                     // setup some local variables
-                    var $form = $(".modal_form");
+                    var $form = $("#footer_global .modal_form");
                     // let's select and cache all the fields
                     var $inputs = $form.find("input, select, button, textarea");
                     // serialize the data in the form
