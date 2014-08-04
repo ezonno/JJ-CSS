@@ -49,7 +49,7 @@ var jjStorefront = (function (jQuery) {
                 jjStorefront.jjSwiper = $('#branded .content .hero').swiper({
                         mode: 'horizontal',
                         loop: true,
-                        autoplay: 6000,
+                        //autoplay: 6000,
                         speed: 800,
                         calculateHeight: true,
                         slideClass: 'swiper-slide',
