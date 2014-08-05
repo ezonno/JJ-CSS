@@ -506,6 +506,7 @@ body {
                                 font-family    : $regular;
                                 font-size      : 26px;
                                 margin-top     : 32px;
+                                text-transform : uppercase;
                             }
 
                             &.price {
@@ -533,7 +534,7 @@ body {
                                     display         : block;
                                     font-family     : $regular;
                                     text-transform  : uppercase;
-                                    font-size       : 11px;
+                                    font-size       : 12px;
                                     line-height     : 22px;
                                     text-decoration : underline;
 
