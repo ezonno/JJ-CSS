@@ -12,6 +12,7 @@ Not really. It's just a bunch of JS and CSS.
 
 | Version | Date | Notes |
 |:-------:|:----:|:------|
+| Brontosaurus | Aug. 2014 | Subbrand pages updated, old styling wiped from the face of the earth |
 | Marius (The Giraffe) | Mar. 2014 | Complete redesign. Potential shitstorm |
 | Puma | Dec. 2013 | Split repo into static and library files, began branch work |
 | Warthog | Oct. 2013 | SCSS transition, multi. dev setup, adding JS |
