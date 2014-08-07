@@ -21,38 +21,9 @@
 .soft-intro {
     visibility: hidden;
 }
-.header_wrapper  {
-    width: 999px;
-    margin: auto;
-    position: relative;
-}
 
 /* CONTENT */
 
 .jj #branded.pt_brandstorefront .area {
     background: none !important;
-}
-/* category banner heading text */
-.cat-banner-wrapper h1.catHeading {
-    display: block !important;
-    position: absolute;
-    top: 126px;
-    width: 100%;
-    color: white;
-    text-align: center;
-    font-weight: normal;
-    font-size: 70px;
-    font-family: "PFDinMono-Regular",'Univers_lt_cn', Helvetica, Arial, Verdana, sans-serif;
-    text-shadow: 1px 1px 3px rgba(12, 12, 12, .8);
-    text-transform: uppercase;
-}
-
-/* FOOTER */
-#footer_global .contentasset .container_24 {
-    width: 1007px;
-}
-
-/* Temp fix for search field ES */
-body.countryES #branded .header .simple_search input {
-    width: 85px;
 }

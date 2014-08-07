@@ -38,18 +38,6 @@ a {
     }
 }
 
-// Temp style for brand teaser testing
-body {
-    &.countrySE,
-    &.countryDK,
-    &.countryNO,
-    &.countryFI {
-        #branded .content .storefront-misc {
-            padding-top : 30px;
-        }
-    }
-}
-
 /* Frontpage */
 #branded {
     .content {
@@ -103,24 +91,84 @@ body {
         
         // Setting default shared stuff, making DMW my bitch
 
-        .storefront-brands,
+        .storefront-brands {
+            display : none;
+        }
+
         .storefront-categories {
             width  : 1090px;
             margin : 0 auto;
         }
 
+        // Storefront callout
+        .storefront-promos {
+            width    : 1090px;
+            margin   : 30px auto 0;
+
+            .storefront-callout {
+                border     : 1px solid #ebebeb;
+                width      : 100%;
+                text-align : center;
+                position   : relative;
+                overflow   : hidden;
+
+                span, a {
+                    display : block;
+                }
+
+                span {
+                    font-size      : 15px;
+                    text-transform : uppercase;
+                    font-family    : $regular;
+                    letter-spacing : 1px;
+                    margin         : 24px auto 13px
+                }
+
+                a {
+                    font-size       : 12px;
+                    font-family     : $bold;
+                    text-transform  : uppercase;
+                    text-decoration : underline;
+                    margin-bottom   : 24px;
+
+                    &:hover {
+                        text-decoration : none;
+                    }
+                }
+
+                button {
+                    width    : 26px;
+                    height   : 26px;
+                    border   : none;
+                    position : absolute;
+                    top      : 50%;
+                    padding  : 0;
+                    right    : 30px;
+                    @include transform(translateY(-50%));
+                    @include backface-visibility(hidden);
+                    @include transition(opacity 0.3s ease);
+                    @include opacity(0.2);
+                    background : transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMjgwMTE3NDA3MjA2ODExODA4M0Q0QTk2NTcyRDNFRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBRUNFRjczMTFFNEIxMUU0QTYwMkY1MEQ4RUM2NURFRSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBRUNFRjczMDFFNEIxMUU0QTYwMkY1MEQ4RUM2NURFRSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDY4M0NGN0MxNzIwNjgxMTgyMkFDMDdGRDlEODQxRDMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDI4MDExNzQwNzIwNjgxMTgwODNENEE5NjU3MkQzRUQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6xDfJTAAAAWklEQVR42mJgYGDYAcR2DMQBe6h6MOM1ERph6uzRBeyI1UBII04NuDQS1ICusYRYDTAA0vAfShMF7KA2lBIZqnANdkSGKoYGgtFhR2Q82RGrAatGktMeQIABAFiNIdHpHJVwAAAAAElFTkSuQmCC) no-repeat center;
+
+                    &:hover {
+                        @include opacity(1)
+                    }
+                }
+            }
+        }
+
         // Storefront logo
         .storefront-logo {
-            width      : 248px;
-            height     : 24px;
-            margin     : 40px auto 0;
-            background : #fff url(../img/storefront_logo.jpg) center no-repeat;
+            width      : 168px;
+            height     : 57px;
+            margin     : 37px auto 0;
+            background : transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKgAAAA5CAYAAACicWBSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMjgwMTE3NDA3MjA2ODExODA4M0Q0QTk2NTcyRDNFRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowNjkxMzA3MDFFNDcxMUU0QTM1NEQ5MEU0NzAxQ0QyNCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowNjkxMzA2RjFFNDcxMUU0QTM1NEQ5MEU0NzAxQ0QyNCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDY4M0NGN0MxNzIwNjgxMTgyMkFDMDdGRDlEODQxRDMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDI4MDExNzQwNzIwNjgxMTgwODNENEE5NjU3MkQzRUQiLz4gPC9yZGY6RGVzY3Jp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) center no-repeat;
         }
 
         // Hero
         .storefront-hero {
             width   : 1090px;
-            margin  : 30px auto 0;
+            margin  : 41px auto 0;
             padding : 20px;
             border  : 1px solid #ebebeb;
 
@@ -190,260 +238,13 @@ body {
             }
         }
 
-        // Brands
-        .storefront-brands {
-            margin-top : 20px;
-            width      : 1110px;
-
-            .brand {
-                width      : 100%;
-                border     : 1px solid #ebebeb;
-                text-align : center;
-                margin     : 0 0 20px;
-                @include box-sizing(border-box);
-
-                .image {
-                    width    : 308px;
-                    height   : 407px;
-                    margin   : 20px auto 0;
-                    position : relative;
-
-                    img {
-                        width  : 100%;
-                        height : auto;
-                    }
-
-                    &:before {
-                        content       : '';
-                        display       : inline-block;
-                        width         : 0;
-                        height        : 0;
-                        border-left   : 7px solid transparent;
-                        border-right  : 7px solid transparent;
-                        border-bottom : 7px solid #fff;
-                        margin        : 0 auto;
-                        position      : absolute;
-                        bottom        : 0;
-                        z-index       : 1;
-                    }
-
-                    .buttons {
-                        position       : absolute;
-                        z-index        : 10;
-                        top            : 150px;
-                        pointer-events : none;
-                        @include opacity(0);
-
-                        a {
-                            width           : auto;
-                            font-size       : 12px;
-                            line-height     : 1.5;
-                            margin          : 0;
-                            text-align      : center;
-                            color           : #fff;
-                            text-decoration : none;
-                            text-transform  : uppercase;
-                            border          : 1px solid #fff;
-                            padding         : 12px 22px;
-                            display         : inline-block;
-                            letter-spacing  : 1px;
-                            font-family     : $regular;
-                            pointer-events  : auto;
-                            max-width       : 80%;
-                            
-                            &:first-child {
-                                margin-bottom : 20px;
-                            }
-
-                            &:hover {
-                                background : #fff;
-                                color      : #2d3b4b;
-                            }
-                        }
-                    }
-
-                    .overlay {
-                        width    : 100%;
-                        height   : 100%;
-                        position : absolute;
-                        @include opacity(0);
-                    }
-                }
-
-                span {
-                    display        : block;
-                    font-family    : $medium;
-                    font-weight    : normal;
-                    width          : 50%;
-                    margin         : 40px auto 20px;
-                    font-size      : 12px;
-                    line-height    : 20px;
-                    text-transform : uppercase;
-                }
-
-                a {
-                    display         : block;
-                    font-size       : 11px;
-                    line-height     : 20px;
-                    text-decoration : underline;
-                    color           : #2a2a2a;
-
-                    &:hover {
-                        color : #000;
-                    }
-                }
-
-                .logo {
-                    height     : 34px;
-                    width      : 100px;
-                    margin     : 20px auto 19px;
-                    background : url(../img/logo_sprite.png) no-repeat center;
-                }
-
-                &.core {
-                    .logo {
-                        background-position : center 0;
-                    }
-                }
-
-                &.originals {
-                    .logo {
-                        background-position : center -34px;
-                    }
-                }
-
-                &.premium {
-                    .logo {
-                        background-position : center -68px;
-                    }
-                }
-
-                &.vintage {
-                    .logo {
-                        background-position : center -102px;
-                    }
-                }
-
-                &.tech {
-                    .logo {
-                        background-position : center -136px;
-                    }
-                }
-
-                &.sellingpoints {
-                    border : none;
-
-                    .one,
-                    .two {
-                        border : 1px solid #ebebeb;
-                    }
-
-                    .one {
-                        height : 335px;
-
-                        .content {
-                            position : relative;
-
-                            span {
-                                font-size      : 12px;
-                                line-height    : 20px;
-                                margin         : 0 auto;
-                                width          : 215px;
-                                text-transform : none;
-                                font-family    : $regular;
-
-                                &.heading {
-                                    font-family    : $medium;
-                                    text-transform : uppercase;
-                                }
-                            }
-
-                            .icon {
-                                width      : 33px;
-                                height     : 32px;
-                                margin     : 0 auto 17px;
-                                background : transparent url(../img/sprite_callout_icons.png) center top no-repeat;
-
-                                &.last {
-                                    margin-top : 45px;
-                                }
-
-                                &.shipping {
-                                    background-position : center top;
-                                }
-
-                                &.returns {
-                                    background-position : center 100%;
-                                }
-                            }
-                        }
-                    }
-
-                    .two {
-                        height     : 147px;
-                        margin-top : 20px;
-
-                        span.customerclub {
-                            width      : 100%;
-                            margin-top : 33px;
-                        }
-
-                        form fieldset label {
-                            display : none;
-                        }
-
-                        #footer-newsletter-signup {
-                            margin-top : 0;
-
-                            fieldset {
-                                padding : 0;
-
-                                input {
-                                    line-height    : 38px;
-                                    padding        : 0;
-                                    height         : 40px;
-                                    border         : 1px solid #e5e5e5;
-                                    border-right   : 0;
-                                    font-family    : $regular;
-                                    font-weight    : normal;
-                                    font-size      : 10px;
-                                    width          : 200px;
-                                    padding-left   : 15px;
-                                    color          : #252525;
-                                    float          : left;
-                                    text-transform : uppercase;
-                                }
-
-                                button {
-                                    height      : 40px;
-                                    width       : 30px;
-                                    border      : 1px solid #e5e5e5;
-                                    border-left : 0;
-                                    background  : transparent url(../img/footer_newsletter_arrow.png) center no-repeat;
-                                    float       : right;
-                                    text-indent : -9999px;
-                                }
-                            }
-
-                            .fields {
-                                width  : 230px;
-                                margin : 0 auto;
-                            }
-                        }
-
-                    }
-                }
-            }
-        }
-
         /* Misc */
         .storefront-misc {
             text-align     : center;
-            padding-top    : 60px;
             padding-bottom : 15px;
             width          : 1090px;
             position       : relative;
-            margin         : 0 auto;
+            margin         : 43px auto 0;
 
             h1 {
                 text-transform : uppercase;
@@ -580,73 +381,20 @@ and (max-width : 1400px) {
                     padding : 0 10px
                 }
             }
-
+        
+            .storefront-promos,
             .storefront-hero {
                 width : 880px;
             }
 
-            .storefront-brands {
-                width : 900px;
-            }
-
-            .storefront-promos {
-                .promo-container {
-                    width : 900px;
-                }
-            }
-
-            .storefront-brands {
-                .brand {
-                    margin : 0 0 20px;
-
-                    .image {
-                        width  : 240px;
-                        height : 317px;
-
-                        .buttons {
-                            top : 110px;
-
-                            a {
-                                font-size : 11px;
-                                padding   : 10px 20px;
-                            }
-                        }
-                    }
-
-                    &.sellingpoints {
-                        .one {
-                            height : 268px;
-
-                            .icon {
-                                margin : 0 auto 15px !important;
-
-                                &.last {
-                                    margin-top : 30px !important;
-                                }
-                            }
-                        }
-
-                        .two {
-                            height : 124px;
-
-                            span.customerclub {
-                                margin-top    : 21px;
-                                margin-bottom : 15px;
-                            }
-                        }
-                    }
-                }
-            }
-
             .storefront-misc {
-                padding-top : 30px;
-                margin-top  : 50px;
+                margin-top  : 43px;
                 width       : 880px;
             }
 
             .storefront-categories {
                 .gridify {
-                    width: 880px;
+                    width : 880px;
 
                     .box {
                         width  : 280px;
@@ -685,86 +433,17 @@ and (max-width : 1200px) {
                 }
             }
 
+            .storefront-promos {
+                width : 720px;
+            }
+
             .storefront-hero {
                 width   : 720px;
                 padding : 10px;
             }
 
-            .storefront-brands {
-                width      : 730px;
-                margin-top : 9px;
-            }
-
-            .storefront-promos {
-                .promo-container {
-                    width : 720px;
-                }
-            }
-
-            .storefront-brands {
-                .brand {
-                    margin : 0 0 9px;
-
-                    .image {
-                        width  : 210px;
-                        height : 278px;
-                        margin : 10px auto 0;
-
-                        .buttons {
-                            top : 90px;
-
-                            a {
-                                font-size : 10px;
-                                padding   : 10px 15px;
-                            }
-                        }
-                    }
-
-                    &.sellingpoints {
-                        .one {
-                            height : 220px;
-
-                            .icon {
-                                margin : 0 auto 10px !important;
-
-                                &.last {
-                                    margin-top : 20px !important;
-                                }
-                            }
-                        }
-
-                        .two {
-                            height     : 124px;
-                            margin-top : 10px;
-
-                            span.customerclub {
-                                margin-top    : 21px;
-                                margin-bottom : 15px;
-                            }
-
-                            #footer-newsletter-signup {
-                                fieldset {
-                                    input {
-                                        width : 160px;
-                                    }
-                                }
-
-                                .fields {
-                                    width : 190px;
-                                }
-                            }
-                        }
-                    }
-
-                    .logo {
-                        margin : 15px auto;
-                    }
-                }
-            }
-
             .storefront-misc {
-                padding-top : 20px;
-                margin-top  : 15px;
+                margin-top  : 30px;
                 width       : 720px;
             }
 
