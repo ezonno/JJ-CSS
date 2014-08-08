@@ -255,11 +255,11 @@
 			position   : relative;
 			top        : 10px;
 			background : transparent url(../img/sidebar.png) center -755px no-repeat;
-			@include opacity(0.23);
-			@include transition(opacity .3s linear);
+			@include opacity(0.5);
+			@include transition(opacity .3s ease);
 
 			&:hover {
-				@include opacity(.4);
+				@include opacity(.7);
 			}
 
 			a {
@@ -276,7 +276,13 @@
 			background  : transparent url(../img/sidebar.png) 0 -50px no-repeat;
 			cursor      : pointer;
 			position    : absolute;
-			bottom      : 45px
+			bottom      : 45px;
+			@include opacity(0.5);
+			@include transition(opacity .3s ease);
+
+			&:hover {
+				@include opacity(.7);
+			}
 		}
 
 		.tabs {
