@@ -7,23 +7,3 @@
 @import "jj-5lines";
 
 /* End import from jj-
-
-/* category banner heading text */
-
-.cat-banner-wrapper {
-    h1.catHeading {
-        font-size: 60px;
-        font-family:$techFontRegular;
-        text-transform: uppercase;
-    }
-
-    div.catLogo {
-        background: url("../img/tech/catbannerLogo.png") left 0 no-repeat !important;
-        width: 1007px;
-        height: 32px;
-        position: absolute;
-        top: 15px;
-        left: 50%;
-        margin-left: -503px;
-    }
-}
