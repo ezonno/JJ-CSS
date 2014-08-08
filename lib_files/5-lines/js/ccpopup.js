@@ -120,12 +120,14 @@ var jjCCpopup = (function (jQuery) {
                 }
 
                 // If the count reaches 5, show the popup
+                /*
                 if ($.cookie('jjCCpopup_count') === '5') {
                     jjCCpopup.animIn();
 
                     // Then reset the counter
                     $.cookie('jjCCpopup_count', 1, { expires: 7 }, { path: '/' });
                 }
+                */
             },
 
             animIn : function () {
