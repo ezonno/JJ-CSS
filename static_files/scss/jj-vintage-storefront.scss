@@ -288,16 +288,16 @@ a {
                     height        : 550px;
                     
                     // Production
-                    /*
                     &:nth-child(3n+2) {
                         margin : auto 20px;
                     }
-                    */
 
                     // Staging + sandbox
+                    /*
                     &:nth-child(3n+3) {
                         margin : auto 20px;
                     }
+                    */
 
                     .content {
                         width    : 100%;
