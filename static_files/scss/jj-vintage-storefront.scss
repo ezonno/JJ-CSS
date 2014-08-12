@@ -95,3 +95,11 @@ body {
     margin-bottom: 25px;
     padding-bottom: 10px;
 }
+
+
+
+// HOTFIX!
+#branded .content .storefront-categories .gridify .box:nth-child(3n+2) {
+    margin: auto 20px;
+}
+// HOTFIX!

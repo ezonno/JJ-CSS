@@ -93,3 +93,10 @@
     padding-bottom: 73px;
     background: white url("../img/originals/footer-wavy-bg.jpg") center bottom no-repeat !important;
 }
+
+
+// HOTFIX!
+#branded .content .storefront-categories .gridify .box:nth-child(3n+2) {
+    margin: auto 20px;
+}
+// HOTFIX!
