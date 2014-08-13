@@ -2,101 +2,490 @@
 @import 'vars';
 @import 'mixins';
 
+a {
+    color : #2a2a2a;
+
+    &:hover {
+        color : inherit;
+    }
+}
+
 #branded {
-    background-image: none !important;
-    background-color: white;
+    .area {
+        width : 100%;
+
+        .wide_wrapper {
+            padding-bottom : 1px;
+        }
+
+        .content * {
+            font-family : $regular;
+        }
+    }
+
+    #content .wide_wrapper {
+        width : 100% !important;
+    }
+
+    .headerfix {
+        width : 100%;
+    }
 
     .wrapper {
-        background: none !important;
+        background : #fff;
+        width      : 100%;
+        padding    : 0;
     }
 }
 
-.grid_8 {
-    width: 367px;
-    float: right;
-}
+/* Frontpage */
+#branded {
+    .content {
+        *,
+        *:after,
+        *:before {
+            color : #2a2a2a;
+            @include box-sizing(border-box);
+        }
+        /* Grid */
+        .grid {
+            width : 100%;
 
-#pdpMain .grid_8 {
-    float:left;
-}
+            [class*='col-'] {
+                float   : left;
+                padding : 0 10px
+            }
 
-.container_24 .grid_24 {
-    width: 1007px !important;
-    padding: 0px !important;
-}
+            /* One column */
+            .col-1-1 {
+                width : 100%;
+            }
 
-/* Loop */
-%grid {
-    margin: 0 !important;
-}
+            /* Two columns */
+            .col-1-2 {
+                width : 50%;
+            }
 
-@for $i from 1 through 24 {
-    .grid_#{$i} {
-        @extend %grid;
+            /* Three columns */
+            .col-1-3 {
+                width : 33.33%;
+            }
+
+            .col-2-3 {
+                width : 66.66%;
+            }
+
+            /* Four columns */
+            .col-1-4 {
+                width : 25%;
+            }
+
+            .col-2-4 {
+                width : 50%;
+            }
+
+            .col-3-4 {
+                width : 75%;
+            }
+        }
+        
+        // Setting default shared stuff, making DMW my bitch
+
+        .storefront-brands {
+            display : none;
+        }
+
+        .storefront-categories {
+            width  : 1090px;
+            margin : 0 auto;
+        }
+
+        // Storefront callout
+        .storefront-promos {
+            width    : 1090px;
+            margin   : 30px auto 0;
+
+            .storefront-callout {
+                border     : 1px solid #ebebeb;
+                width      : 100%;
+                text-align : center;
+                position   : relative;
+                overflow   : hidden;
+
+                span, a {
+                    display : block;
+                }
+
+                span {
+                    font-size      : 15px;
+                    text-transform : uppercase;
+                    font-family    : $regular;
+                    letter-spacing : 1px;
+                    margin         : 24px auto 13px
+                }
+
+                a {
+                    font-size       : 12px;
+                    font-family     : $bold;
+                    text-transform  : uppercase;
+                    text-decoration : underline;
+                    margin-bottom   : 24px;
+
+                    &:hover {
+                        text-decoration : none;
+                    }
+                }
+
+                button {
+                    width    : 26px;
+                    height   : 26px;
+                    border   : none;
+                    position : absolute;
+                    top      : 50%;
+                    padding  : 0;
+                    right    : 30px;
+                    @include transform(translateY(-50%));
+                    @include backface-visibility(hidden);
+                    @include transition(opacity 0.3s ease);
+                    @include opacity(0.2);
+                    background : transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMjgwMTE3NDA3MjA2ODExODA4M0Q0QTk2NTcyRDNFRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBRUNFRjczMTFFNEIxMUU0QTYwMkY1MEQ4RUM2NURFRSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBRUNFRjczMDFFNEIxMUU0QTYwMkY1MEQ4RUM2NURFRSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDY4M0NGN0MxNzIwNjgxMTgyMkFDMDdGRDlEODQxRDMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDI4MDExNzQwNzIwNjgxMTgwODNENEE5NjU3MkQzRUQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6xDfJTAAAAWklEQVR42mJgYGDYAcR2DMQBe6h6MOM1ERph6uzRBeyI1UBII04NuDQS1ICusYRYDTAA0vAfShMF7KA2lBIZqnANdkSGKoYGgtFhR2Q82RGrAatGktMeQIABAFiNIdHpHJVwAAAAAElFTkSuQmCC) no-repeat center;
+
+                    &:hover {
+                        @include opacity(1)
+                    }
+                }
+            }
+        }
+
+        // Storefront logo
+        .storefront-logo {
+            width      : 183px;
+            height     : 44px;
+            margin     : 37px auto 0;
+            background : transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALcAAAAsCAYAAAAnzykfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMjgwMTE3NDA3MjA2ODExODA4M0Q0QTk2NTcyRDNFRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFMjREQUEzNTFFNUIxMUU0QUNBRjlFNjEyMDhBMzQ3QSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFMjREQUEzNDFFNUIxMUU0QUNBRjlFNjEyMDhBMzQ3QSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDY4M0NGN0MxNzIwNjgxMTgyMkFDMDdGRDlEODQxRDMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDI4MDExNzQwNzIwNjgxMTgwODNENEE5NjU3MkQzRUQiLz4gPC9yZGY6RGVzY3Jp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) center no-repeat;
+        }
+
+        // Hero
+        .storefront-hero {
+            width   : 1090px;
+            margin  : 41px auto 0;
+            padding : 20px;
+            border  : 1px solid #ebebeb;
+
+            .hero {
+                margin   : 0 auto;
+                position : relative;
+
+                img {
+                    width  : 100%;
+                }
+
+                .swiper-prev,
+                .swiper-next {
+                    position   : absolute;
+                    z-index    : 10;
+                    width      : 60px;
+                    height     : 100%;
+                    top        : 0;
+                    cursor     : pointer;
+                    background : url(../img/sprite_hero_controls.png) no-repeat;
+                    display    : none;
+                }
+
+                .swiper-prev {
+                    background-position : left center;
+                    left                : 10px;
+                }
+
+                .swiper-next {
+                    background-position : right center;
+                    right               : 10px;
+                }
+
+                .swiper-pagination-container {
+                    position : absolute;
+                    left     : 50%;
+                    bottom   : 15px;
+
+                    .swiper-pagination {
+                        text-align : center;
+                        position   : relative;
+                        left       : -50%;
+
+                        span {
+                            display    : inline-block;
+                            width      : 10px;
+                            height     : 10px;
+                            background : rgba(255, 255, 255, .25);
+                            margin     : 0 4px;
+                            cursor     : pointer;
+                            @include border-radius(10px);
+
+                            &.swiper-active-switch {
+                                background : rgba(255, 255, 255, .85);
+                            }
+                        }
+                    }
+                }
+
+                &.swiper-container .swiper-slide {
+                    display : none;
+
+                    &.first-slide {
+                        display : block;
+                    }
+                }
+            }
+        }
+
+        /* Misc */
+        .storefront-misc {
+            text-align     : center;
+            padding-bottom : 15px;
+            width          : 1090px;
+            position       : relative;
+            margin         : 43px auto 0;
+
+            h1 {
+                text-transform : uppercase;
+                font-size      : 12px;
+                font-family    : $regular;
+                font-weight    : normal;
+                letter-spacing : 1px;
+                color          : #2a2a2a;
+                line-height    : normal;
+                display        : inline-block;
+                background     : #fff;
+                position       : relative;
+                z-index        : 1;
+                margin         : 0 auto;
+                padding        : 0 25px;
+            }
+
+            .stroke {
+                width      : 100%;
+                height     : 1px;
+                background : #ebebeb;
+                margin     : 0 auto;
+                bottom     : 22px;
+                position   : absolute;
+                z-index    : 0;
+            }
+        }
+
+        /* Categories */
+        .storefront-categories {
+            width : 100%;
+
+            .gridify {
+                width  : 1090px;
+                margin : 0 auto;
+
+                .box {
+                    margin-bottom : 20px;
+                    float         : left;
+                    width         : 350px;
+                    height        : 550px;
+                    
+                    // Production
+                    &:nth-child(3n+2) {
+                        margin : auto 20px;
+                    }
+
+                    // Staging + sandbox
+                    /*
+                    &:nth-child(3n+3) {
+                        margin : auto 20px;
+                    }
+                    */
+
+                    .content {
+                        width    : 100%;
+                        height   : 100%;
+                        border   : 1px solid #ebebeb;
+                        position : relative;
+                        @include background-size(cover);
+
+                        span {
+                            text-align     : center;
+                            display        : block;
+
+                            &.title {
+                                letter-spacing : 1px;
+                                font-family    : $regular;
+                                font-size      : 26px;
+                                margin-top     : 32px;
+                                text-transform : uppercase;
+                            }
+
+                            &.price {
+                                font-size  : 14px;
+                                margin-top : 8px;
+
+                                b {
+                                    font-family : $medium;
+                                    font-weight : normal;
+                                }
+                            }
+                        }
+
+                        .text {
+                            position     : absolute;
+                            width        : 100%;
+                            bottom       : 0;
+                            z-index      : 2;
+
+                            .slidein {
+                                text-align     : center;
+                                padding-bottom : 29px;
+
+                                a {
+                                    display         : block;
+                                    font-family     : $regular;
+                                    text-transform  : uppercase;
+                                    font-size       : 12px;
+                                    line-height     : 22px;
+                                    text-decoration : underline;
+
+                                    &:hover {
+                                        text-decoration : none;
+                                    }
+                                }
+                            }
+                        }
+
+                        .overlay {
+                            width      : 100%;
+                            height     : 100%;
+                            background : rgba(252, 252, 252, 0.15);
+                            position   : absolute;
+                            top        : 0;
+                            @include opacity(0);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
-/* End loop */
 
-/* Footer */
+// Breakpoints
 
-#branded .grid_24 .grid_6 {
-    width: 251px;
-    text-align: center;
-    padding-bottom: 20px;
-    padding-top: 18px;
-
-    .col_1 {
-        line-height: 20px;
-
-        ul {
-            margin-top: 24px;
-
-            li {
-                list-style: none;
-                margin-top: 3px;
+// 1200 - 1400 px
+@media only screen 
+and (max-width : 1400px) {
+    #branded {
+        .content {
+            .grid {
+                [class*='col-'] {
+                    padding : 0 10px
+                }
             }
-        }
-
-        a {
-            font-family:$originalsFontMedium;
-            font-weight: normal;
-            font-size: 14px;
-            color: black !important;
-            text-decoration: none;
-            color: black !important;
-            @include transition(all .3s);
-
-            &:hover {
-                color: #666 !important;
-                @include transition(all .3s);
+        
+            .storefront-promos,
+            .storefront-hero {
+                width : 880px;
             }
-        }
 
-        .main_category {
-            margin-top: 13px;
-            margin-bottom: 7px;
-            text-transform: uppercase;
+            .storefront-misc {
+                margin-top  : 43px;
+                width       : 880px;
+            }
 
-            a {
-                background: url("../img/originals/wavy-small-bg.jpg") center bottom no-repeat !important;
-                padding-bottom: 11px;
+            .storefront-categories {
+                .gridify {
+                    width : 880px;
+
+                    .box {
+                        width  : 280px;
+                        height : 440px;
+
+                        .content {
+                            span {
+                                &.title {
+                                    margin-top : 35px;
+                                }
+                            }
+
+                            .bar {
+                                margin-top : 20px;
+                            }
+
+                            .text .slidein {
+                                padding-bottom : 20px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 }
 
-#contentwrapper {
-    margin-bottom: 70px;
-}
+// < 1200px
+@media only screen 
+and (max-width : 1200px) {
+    #branded {
+        .content {
+            .grid {
+                [class*='col-'] {
+                    padding : 0 5px;
+                }
+            }
 
-#content {
-    padding-bottom: 73px;
-    background: white url("../img/originals/footer-wavy-bg.jpg") center bottom no-repeat !important;
-}
+            .storefront-promos {
+                width : 720px;
+            }
+
+            .storefront-hero {
+                width   : 720px;
+                padding : 10px;
+            }
+
+            .storefront-misc {
+                margin-top  : 30px;
+                width       : 720px;
+            }
+
+            .storefront-categories {
+                .gridify {
+                    width : 720px;
+
+                    .box {
+                        width         : 234px;
+                        height        : 378px;
+                        margin-bottom : 9px;
 
 
-// HOTFIX!
-#branded .content .storefront-categories .gridify .box:nth-child(3n+2) {
-    margin: auto 20px;
+                        &:nth-child(3n+2) {
+                            margin : auto 9px;
+                        }
+
+                        .content {
+                            span {
+                                &.title {
+                                    margin-top : 20px;
+                                    font-size  : 20px;
+                                }
+
+                                &.price {
+                                    margin-top : 5px;
+                                    font-size  : 12px;
+                                }
+                            }
+
+                            .text .slidein {
+                                padding-bottom : 15px;
+
+                                a {
+                                    font-size   : 10px;
+                                    line-height : 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
-// HOTFIX!
