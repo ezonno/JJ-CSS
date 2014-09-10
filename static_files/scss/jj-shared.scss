@@ -814,3 +814,68 @@
     height         : 26px;
     text-transform : inherit;
 }
+
+// Show product names on jeans
+#branded {
+    &.cat2_jj-shop-bottoms-jeans,
+    &.cat2_jj-j-shop-bottoms-jeans,
+    &.cat2_jj-c-shop-bottoms-jeans,
+    &.cat2_jj-o-shop-bottoms-jeans,
+    &.cat2_jj-p-shop-bottoms-jeans,
+    &.cat2_jj-v-shop-bottoms-jeans,
+    &.cat2_jj-t-shop-bottoms-jeans,
+    &.cat3_jj-shop-bottoms-jeans-skinny-fit,
+    &.cat3_jj-j-shop-bottoms-jeans-skinny-fit,
+    &.cat3_jj-c-shop-bottoms-jeans-skinny-fit,
+    &.cat3_jj-o-shop-bottoms-jeans-skinny-fit,
+    &.cat3_jj-p-shop-bottoms-jeans-skinny-fit,
+    &.cat3_jj-v-shop-bottoms-jeans-skinny-fit,
+    &.cat3_jj-t-shop-bottoms-jeans-skinny-fit,
+    &.cat3_jj-shop-bottoms-jeans-slim-fit,
+    &.cat3_jj-j-shop-bottoms-jeans-slim-fit,
+    &.cat3_jj-c-shop-bottoms-jeans-slim-fit,
+    &.cat3_jj-o-shop-bottoms-jeans-slim-fit,
+    &.cat3_jj-p-shop-bottoms-jeans-slim-fit,
+    &.cat3_jj-v-shop-bottoms-jeans-slim-fit,
+    &.cat3_jj-t-shop-bottoms-jeans-slim-fit,
+    &.cat3_jj-shop-bottoms-jeans-regular-fit,
+    &.cat3_jj-j-shop-bottoms-jeans-regular-fit,
+    &.cat3_jj-c-shop-bottoms-jeans-regular-fit,
+    &.cat3_jj-o-shop-bottoms-jeans-regular-fit,
+    &.cat3_jj-p-shop-bottoms-jeans-regular-fit,
+    &.cat3_jj-v-shop-bottoms-jeans-regular-fit,
+    &.cat3_jj-t-shop-bottoms-jeans-regular-fit,
+    &.cat3_jj-shop-bottoms-jeans-comfort-fit,
+    &.cat3_jj-j-shop-bottoms-jeans-comfort-fit,
+    &.cat3_jj-c-shop-bottoms-jeans-comfort-fit,
+    &.cat3_jj-o-shop-bottoms-jeans-comfort-fit,
+    &.cat3_jj-p-shop-bottoms-jeans-comfort-fit,
+    &.cat3_jj-v-shop-bottoms-jeans-comfort-fit,
+    &.cat3_jj-t-shop-bottoms-jeans-comfort-fit,
+    &.cat3_jj-shop-bottoms-jeans-loose-fit,
+    &.cat3_jj-j-shop-bottoms-jeans-loose-fit,
+    &.cat3_jj-c-shop-bottoms-jeans-loose-fit,
+    &.cat3_jj-o-shop-bottoms-jeans-loose-fit,
+    &.cat3_jj-p-shop-bottoms-jeans-loose-fit,
+    &.cat3_jj-v-shop-bottoms-jeans-loose-fit,
+    &.cat3_jj-t-shop-bottoms-jeans-loose-fit,
+    &.cat3_jj-shop-bottoms-jeans-anti-fit,
+    &.cat3_jj-j-shop-bottoms-jeans-anti-fit,
+    &.cat3_jj-c-shop-bottoms-jeans-anti-fit,
+    &.cat3_jj-o-shop-bottoms-jeans-anti-fit,
+    &.cat3_jj-p-shop-bottoms-jeans-anti-fit,
+    &.cat3_jj-v-shop-bottoms-jeans-anti-fit,
+    &.cat3_jj-t-shop-bottoms-jeans-anti-fit,
+    &.cat3_jj-shop-bottoms-jeans-coloured,
+    &.cat3_jj-j-shop-bottoms-jeans-coloured,
+    &.cat3_jj-c-shop-bottoms-jeans-coloured,
+    &.cat3_jj-o-shop-bottoms-jeans-coloured,
+    &.cat3_jj-p-shop-bottoms-jeans-coloured,
+    &.cat3_jj-v-shop-bottoms-jeans-coloured,
+    &.cat3_jj-t-shop-bottoms-jeans-coloured {
+        .producttile .name {
+            height: auto;
+            color: pink;
+        }
+    }
+}

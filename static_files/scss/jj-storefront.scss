@@ -38,18 +38,6 @@ a {
     }
 }
 
-// Temp style for brand teaser testing
-body {
-    &.countrySE,
-    &.countryDK,
-    &.countryNO,
-    &.countryFI {
-        #branded .content .storefront-misc {
-            padding-top : 30px;
-        }
-    }
-}
-
 /* Frontpage */
 #branded {
     .content {
