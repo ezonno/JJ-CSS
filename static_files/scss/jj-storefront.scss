@@ -218,9 +218,13 @@ a {
                     .buttons {
                         position       : absolute;
                         z-index        : 10;
-                        top            : 150px;
+                        //top            : 150px;
                         pointer-events : none;
                         @include opacity(0);
+
+                        // Temp for only one button on brand images
+                        width          : 100%;
+                        top            : 165px;
 
                         a {
                             width           : auto;
@@ -239,9 +243,12 @@ a {
                             pointer-events  : auto;
                             max-width       : 80%;
                             
+                            // Temp for only one button on brand images
+                            /*
                             &:first-child {
                                 margin-bottom : 20px;
                             }
+                            */
 
                             &:hover {
                                 background : #fff;
@@ -584,7 +591,10 @@ and (max-width : 1400px) {
                         height : 317px;
 
                         .buttons {
-                            top : 110px;
+                            //top : 110px;
+
+                            // Temp for only one button on brand boxes
+                            top : 135px;
 
                             a {
                                 font-size : 11px;
@@ -691,7 +701,10 @@ and (max-width : 1200px) {
                         margin : 10px auto 0;
 
                         .buttons {
-                            top : 90px;
+                            //top : 90px;
+
+                            // Temp for only one button on brand boxes
+                            top : 115px;
 
                             a {
                                 font-size : 10px;
