@@ -214,13 +214,13 @@
                   line-height: 21px;
                   color: #999999;
                   letter-spacing: 0;
-                  background: url("../img/arrow_sprite.png") no-repeat 0 11px;
+                  background: url("../img/arrow_sprite.png") no-repeat 0 10px;
                   padding-left: 25px;
                   margin-left: 42px;
                   &:hover {
                     color: #ffffff;
                     text-decoration: none;
-                    background-position: 0 -15px;
+                    background-position: 0 -16px;
                     background-color: #2c2d2f;
                   }
                 }
