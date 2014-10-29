@@ -259,7 +259,6 @@
               dd {
                 &.selected ul.active > a {
                   text-decoration: none;
-                  margin-bottom: -12px;
                 }
                 ul.active > a {
                   text-decoration: none;
@@ -299,7 +298,13 @@
 .lhn-subcategories .background .category .ul_wrapper {
   margin-bottom: 10px;
 }
-
+#branded .side-menu .lhn-subcategories .category .ul_wrapper img {
+	margin-left: 40px;
+	margin-top: 2px;
+	margin-right: 10px;
+	float: left;
+	vertical-align: initial;
+}
 #branded .side-menu .side-menu-categories .category_menu ul.categories li.level0item.active ul.active li.level2item {
   &:first-child {
     margin-top: 18px;
