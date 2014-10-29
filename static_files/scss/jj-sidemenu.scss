@@ -315,3 +315,81 @@
     border-left: none;
   }
 }
+
+/* Scrollbar styles */
+
+.ps-container .ps-scrollbar-x-rail,
+.ps-container .ps-scrollbar-y-rail {
+  position: absolute;
+  /* please don't change 'position' */
+}
+
+.ps-container .ps-scrollbar-x-rail {
+  bottom: 0px;
+  height: 2px;
+}
+
+.ps-container .ps-scrollbar-y-rail {
+  right: 0px;
+  width: 2px;
+}
+
+.ps-container.hover .ps-scrollbar-x-rail,
+.ps-container.hover .ps-scrollbar-y-rail, .ps-container:hover .ps-scrollbar-x-rail,
+.ps-container:hover .ps-scrollbar-y-rail {
+  width: 2px;
+}
+
+.ps-container.hover .ps-scrollbar-x,
+.ps-container.hover .ps-scrollbar-y, .ps-container:hover .ps-scrollbar-x,
+.ps-container:hover .ps-scrollbar-y {
+  width: 8px;
+  margin-right: 4px;
+  background-color: #9b9c9d;
+  z-index: 10;
+}
+
+.ps-container .ps-scrollbar-x,
+.ps-container .ps-scrollbar-y {
+  position: absolute;
+  /* please don't change 'position' */
+  background-color: #4c4c4c;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 10px;
+  -moz-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.ps-container .ps-scrollbar-x {
+  bottom: 0;
+  height: 2px;
+}
+
+.ps-container .ps-scrollbar-y {
+  right: 0;
+  margin-right: 4px;
+  width: 3px;
+  z-index: 10;
+  border-radius: 10px; 
+  background-color: #9b9c9d;
+}
+
+.ps-container.ie6 .ps-scrollbar-x,
+.ps-container.ie6 .ps-scrollbar-y {
+  font-size: 0;
+  /* fixed scrollbar height in xp sp3 ie6 */
+}
+
+.ps-container.ie .ps-scrollbar-x,
+.ps-container.ie .ps-scrollbar-y {
+  visibility: hidden;
+}
+
+.ps-container.ie:hover .ps-scrollbar-x,
+.ps-container.ie:hover .ps-scrollbar-y, .ps-container.ie.hover .ps-scrollbar-x,
+.ps-container.ie.hover .ps-scrollbar-y {
+  visibility: visible;
+}
