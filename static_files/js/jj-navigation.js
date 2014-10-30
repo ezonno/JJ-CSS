@@ -21,7 +21,8 @@ var jjNavigation = (function (jQuery) {
 			
 			tabletscroll : function () {
 				if( jQuery('html').hasClass("touch") ) {
-					jQuery("#branded .side-menu-categories").perfectScrollbar('destroy');
+					// looks like the following is breaking iPad
+					//jQuery("#branded .side-menu-categories").perfectScrollbar('destroy');
 					jQuery("#branded .side-menu-categories").css("overflowY", "auto");
 					jQuery("#branded .side-menu-categories").css("position", "fixed", "important");
 					jQuery("#branded .side-menu .jj-j-shop-highlights").css("padding-top", "25px");
