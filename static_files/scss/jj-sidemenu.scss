@@ -29,7 +29,7 @@
 	}
 	
 	.simple_search.flash {
-		border-color : #fff!important;
+		border-color : #fff !important;
 		//@include transition(border .25s ease-in !important);
 		@include transition(border .25s ease-out !important);
 	}

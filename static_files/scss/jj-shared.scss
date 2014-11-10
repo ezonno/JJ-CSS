@@ -727,8 +727,12 @@
     @include filter(grayscale(1));
 }
 
-#servicebar .brand {
-    background-color : transparent;
+#servicebar {
+    @include backface-visibility(hidden);
+
+    .brand {
+        background-color : transparent;
+    }
 }
 
 /* category banner heading text */
