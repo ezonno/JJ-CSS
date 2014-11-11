@@ -10,7 +10,7 @@ Not really. It's just a bunch of JS and CSS.
 
 ### Current version: 6.0
 
-### Major releases, history:
+#### Major releases, history:
 
 | Version | Codename | Date | Notes |
 |:-------:|:--------:|:----:|:------|
