@@ -95,3 +95,8 @@
 .tap-to-win {
   display : none !important;
 }
+
+// PLP refinements bar fix
+#branded.pt_category .container_24 .grid_24.refinement-line {
+    @include backface-visibility(hidden);
+}
