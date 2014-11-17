@@ -39,17 +39,6 @@ a {
 	}
 }
 
-// Temp style for brand teaser testing
-body {
-	&.countrySE,
-	&.countryDK,
-	&.countryNO,
-	&.countryFI {
-		#branded .content .storefront-misc {
-		}
-	}
-}
-
 /* Frontpage */
 #branded {
 	.content {
@@ -115,7 +104,7 @@ body {
 			background-color : #fafafa;
 			margin-top       : 24px;
 			border-top       : 1px solid #f7f7f7;
-			font-family      : DINNextLTPro-Medium;
+			font-family      : $nextMedium;
 			text-rendering   : geometricPrecision;
 			font-weight      : normal;
 			letter-spacing   : normal;
@@ -126,17 +115,16 @@ body {
 			text-transform   : uppercase;
 
 			.promos-container {
-				display      : table;
-				width        : 1050px;
-				margin-left  : auto;
-				margin-right : auto;
+				display : table;
+				width   : 1050px;
+				margin  : 0 auto;
 
 
 				ul {
-					display: table-row;
+					display : table-row;
 
 					li {
-						display: table-cell;
+						display : table-cell;
 					}
 
 				}
@@ -148,7 +136,7 @@ body {
 			height         : 24px;
 			margin         : 9px auto 0;
 			margin-bottom  : -25px;
-			background     : #fff url(../img/storefront_logo.jpg) center no-repeat;
+			background     : #fff url('../img/storefront_logo.jpg') center no-repeat;
 			padding-left   : 100%;
 			padding-bottom : 75px;
 		}
@@ -159,22 +147,22 @@ body {
 			overflow   : hidden;
 			position   : relative;
 			text-align : center;
-			width      :100%;
+			width      : 100%;
 
 			.swiper-prev,
 			.swiper-next {
-				height             : 122px;
-				margin-top         : -61px;
-				opacity            : 0.7;
-				position           : absolute;
-				top                : 50%;
-				width              : 60px;
-				z-index            : 99;
-				-webkit-transition : 0.2s ease-out;
-				transition         : 0.2s ease-out;
+				height     : 122px;
+				margin-top : -61px;
+				opacity    : 0.7;
+				position   : absolute;
+				top        : 50%;
+				width      : 60px;
+				z-index    : 99;
+				@include transition(all 0.2s ease-out);
 			}
+
 			.swiper-prev {
-				background : url(../img/swiperArrowLeft.png) no-repeat center top;
+				background : url('../img/swiperArrowLeft.png') no-repeat center top;
 				cursor     : pointer;
 				left       : 2%;
 
@@ -182,14 +170,14 @@ body {
 					left    : 1.8%;
 					opacity : 1;
 				}
+
 				&.background--light {
-					background-image: url(../img/swiperArrowLeft-black.png);
-
-
+					background-image: url('../img/swiperArrowLeft-black.png');
 				}
 			}
+
 			.swiper-next {
-				background : url(../img/swiperArrowRight.png) no-repeat center bottom;
+				background : url('../img/swiperArrowRight.png') no-repeat center bottom;
 				cursor     : pointer;
 				right      : 2%;
 
@@ -197,10 +185,12 @@ body {
 					opacity : 1;
 					right   : 1.8%;
 				}
+
 				&.background--light {
-					background-image: url(../img/swiperArrowRight-black.png);
+					background-image: url('../img/swiperArrowRight-black.png');
 				}
 			}
+
 			.swiper-pagination {
 				bottom     : 0;
 				left       : 0;
@@ -220,22 +210,22 @@ body {
 				margin        : 0 5px;
 				opacity       : 0.3;
 				width         : 9px;
-				transition    : 0.2s ease-out;
+				@include transition(all 0.2s ease-out);
 
 				&:hover {
-					opacity : 0.8;
-
-
-
+					@include opacity(0.8);
 				}
 			}
+
 			.swiper-active-switch,
 			.swiper-active-switch:hover {
-				opacity : 1;
+				@include opacity(1);
 			}
+
 			.background--light .swiper-pagination-switch {
 				background-color : black;
 			}
+
 			.swiper-slide {
 				img {
 					border   : 0;
@@ -244,7 +234,7 @@ body {
 					width    : 100%;
 				}
 				a {
-					display: block;
+					display : block;
 				}
 			}
 		}
@@ -258,7 +248,6 @@ body {
 				font-size  : 0;
 			}
 
-
 			.brand {
 				background-color : #fff;
 				width            : auto;
@@ -267,11 +256,10 @@ body {
 				text-align       : center;
 				padding          : 10px 10px 14px;
 				margin           : 0 18px 22px 0;
-
 				@include box-sizing(border-box);
 
 				&:last-child {
-					margin-right: 0;
+					margin-right : 0;
 				}
 
 				.image {
@@ -344,7 +332,7 @@ body {
 					height     : 26px;
 					width      : 100px;
 					margin     : 15px auto 0;
-					background : url(../img/logo_sprite-JJboost.png) no-repeat center;
+					background : url('../img/logo_sprite-JJboost.png') no-repeat center;
 				}
 
 				&.core {
@@ -376,122 +364,17 @@ body {
 						background-position : center -104px;
 					}
 				}
-
-				&.sellingpoints {
-					border : none;
-
-					.one,
-					.two {
-						border : 1px solid #ebebeb;
-					}
-
-					.one {
-						height : 335px;
-
-						.content {
-							position : relative;
-
-							span {
-								font-size      : 12px;
-								line-height    : 20px;
-								margin         : 0 auto;
-								width          : 215px;
-								text-transform : none;
-								font-family    : $regular;
-
-								&.heading {
-									font-family    : $medium;
-									text-transform : uppercase;
-								}
-							}
-
-							.icon {
-								width      : 33px;
-								height     : 32px;
-								margin     : 0 auto 17px;
-								background : transparent url(../img/sprite_callout_icons.png) center top no-repeat;
-
-								&.last {
-									margin-top : 45px;
-								}
-
-								&.shipping {
-									background-position : center top;
-								}
-
-								&.returns {
-									background-position : center 100%;
-								}
-							}
-						}
-					}
-
-					.two {
-						height     : 147px;
-						margin-top : 20px;
-
-						span.customerclub {
-							width      : 100%;
-							margin-top : 33px;
-						}
-
-						form fieldset label {
-							display : none;
-						}
-
-						#footer-newsletter-signup {
-							margin-top : 0;
-
-							fieldset {
-								padding : 0;
-
-								input {
-									line-height    : 38px;
-									padding        : 0;
-									height         : 40px;
-									border         : 1px solid #e5e5e5;
-									border-right   : 0;
-									font-family    : $regular;
-									font-weight    : normal;
-									font-size      : 10px;
-									width          : 200px;
-									padding-left   : 15px;
-									color          : #252525;
-									float          : left;
-									text-transform : uppercase;
-								}
-
-								button {
-									height      : 40px;
-									width       : 30px;
-									border      : 1px solid #e5e5e5;
-									border-left : 0;
-									background  : transparent url(../img/footer_newsletter_arrow.png) center no-repeat;
-									float       : right;
-									text-indent : -9999px;
-								}
-							}
-
-							.fields {
-								width  : 230px;
-								margin : 0 auto;
-							}
-						}
-
-					}
-				}
 			}
 		}
 
 		.storefront-shipping-line {
-			width        : 1080px;
-			margin-right : auto;
-			margin-left  : auto;
-			margin-top   : 20px;
-			clear        : both;
-			background   : #3f3f3f;
-			height       : 40px;
-			color        : #fff;
+			width      : 1080px;
+			margin     : 20px auto 0;
+			clear      : both;
+			background : #3f3f3f;
+			height     : 40px;
+			color      : #fff;
+			
 			ul {
 				text-align  : center;
 				line-height : 40px;
@@ -508,7 +391,6 @@ body {
 		/* Misc */
 		.storefront-categories-callout,
 		.storefront-brands-callout {
-
 			text-align     : center;
 			padding-top    : 43px;
 			padding-bottom : 12px;
@@ -530,7 +412,7 @@ body {
 				z-index        : 1;
 				margin         : 0 auto;
 				padding        : 0 25px;
-				text-shadow    : 0 1px 1px #FFF;
+				@include text-shadow(0 1px 1px #FFF);
 			}
 
 			.stroke {
@@ -540,7 +422,7 @@ body {
 				bottom     : 20px;
 				position   : absolute;
 				z-index    : 0;
-				box-shadow : 0 1px 1px (255,255,255,0.3);
+				@include box-shadow(0 1px 1px (255, 255, 255, 0.3));
 				@include filter-gradient(#fafafa, #fafafa, horizontal);
 				@include background-image(linear-gradient(left, rgba(250,250,250,0) 0%, rgba(237,237,237,1) 7%, rgba(237,237,237,1) 93%, rgba(250,250,250,0) 100%));
 			}
@@ -663,51 +545,18 @@ and (max-width : 1366px) {
 							}
 						}
 					}
+
 					.logo {
 						margin : 12px auto 0;
-					}
-
-					&.sellingpoints {
-						.one {
-							height : 268px;
-
-							.icon {
-								margin : 0 auto 15px !important;
-
-								&.last {
-									margin-top : 30px !important;
-								}
-							}
-						}
-
-						.two {
-							height : 124px;
-
-							span.customerclub {
-								margin-top    : 21px;
-								margin-bottom : 15px;
-							}
-						}
 					}
 				}
 			}
 
 			.storefront-shipping-line {
-				width        : 990px;
-				margin-right : auto;
-				margin-left  : auto;
-				clear        : both;
-				background   : #3f3f3f;
-				height       : 40px;
-				color        : #fff;
-				ul {
-					text-align  : center;
-					line-height : 40px;
+				width : 990px;
 
+				ul {
 					li {
-						display   : inline-block;
-						color     : #fff;
-						font-size : 12px;
 						width     : 312px;
 					}
 				}
@@ -721,9 +570,8 @@ and (max-width : 1366px) {
 
 			.storefront-categories-callout,
 			.storefront-brands-callout {
-				width     		 : 990px;
-				padding-top		 : 37px;
-				padding-bottom : 13px;
+				width   : 990px;
+				padding : 37px 0 13px;
 
 				h1 {
 					font-size : 14px;
@@ -800,44 +648,9 @@ and (max-width : 1280px) {
 							}
 						}
 					}
+
 					.logo {
 						margin : 9px auto 0;
-					}
-
-					&.sellingpoints {
-						.one {
-							height : 220px;
-
-							.icon {
-								margin : 0 auto 10px !important;
-
-								&.last {
-									margin-top : 20px !important;
-								}
-							}
-						}
-
-						.two {
-							height     : 124px;
-							margin-top : 10px;
-
-							span.customerclub {
-								margin-top    : 21px;
-								margin-bottom : 15px;
-							}
-
-							#footer-newsletter-signup {
-								fieldset {
-									input {
-										width : 160px;
-									}
-								}
-
-								.fields {
-									width : 190px;
-								}
-							}
-						}
 					}
 				}
 			}
@@ -848,7 +661,7 @@ and (max-width : 1280px) {
 				height           : 20px;
 				margin-top       : 27px;
 				border-top       : 1px solid #f7f7f7;
-				font-family      : DINNextLTPro-Medium;
+				font-family      : $nextMedium;
 				text-rendering   : geometricPrecision;
 				font-weight      : normal;
 				letter-spacing   : normal;
@@ -877,17 +690,9 @@ and (max-width : 1280px) {
 
 
 			.storefront-shipping-line {
-				width        : 774px;
-				margin-right : auto;
-				margin-left  : auto;
-				clear        : both;
-				background   : #3f3f3f;
-				height       : 40px;
-				color        : #fff;
-				ul {
-					text-align  : center;
-					line-height : 40px;
+				width : 774px;
 
+				ul {
 					li {
 						display   : inline-block;
 						color     : #fff;
@@ -980,9 +785,9 @@ and (max-width : 1023px) {
 						}
 					}
 					.logo {
+						margin           : 9px auto 0;
+						height           : 23px;
 						background-image : url(../img/logo_sprite-JJboost-small.png);
-						margin 					 : 9px auto 0;
-						height  				 : 23px;
 					}
 					&.core {
 						.logo {
@@ -1058,7 +863,7 @@ and (max-width : 1023px) {
 				height           : 20px;
 				margin-top       : 27px;
 				border-top       : 1px solid #f7f7f7;
-				font-family      : DINNextLTPro-Medium;
+				font-family      : $nextMedium;
 				text-rendering   : geometricPrecision;
 				font-weight      : normal;
 				letter-spacing   : normal;
@@ -1077,22 +882,11 @@ and (max-width : 1023px) {
 				}
 			}
 
-
 			.storefront-shipping-line {
 				width        : 450px;
-				margin-right : auto;
-				margin-left  : auto;
-				clear        : both;
-				background   : #3f3f3f;
-				height       : 40px;
-				color        : #fff;
-				ul {
-					text-align  : center;
-					line-height : 40px;
 
+				ul {
 					li {
-						display   : inline-block;
-						color     : #fff;
 						font-size : 9px;
 						width     : 130px;
 					}
@@ -1182,7 +976,7 @@ and (max-width : 892px) {
 				height           : 38px;
 				margin-top       : 27px;
 				border-top       : 1px solid #f7f7f7;
-				font-family      : DINNextLTPro-Medium;
+				font-family      : $nextMedium;
 				text-rendering   : geometricPrecision;
 				font-weight      : normal;
 				letter-spacing   : normal;
@@ -1231,42 +1025,6 @@ and (max-width : 768px) {
 					.logo {
 						margin-top : 9px auto 0;
 					}
-
-					&.sellingpoints {
-						.one {
-							height : 220px;
-
-							.icon {
-								margin : 0 auto 10px !important;
-
-								&.last {
-									margin-top : 20px !important;
-								}
-							}
-						}
-
-						.two {
-							height     : 124px;
-							margin-top : 10px;
-
-							span.customerclub {
-								margin-top    : 21px;
-								margin-bottom : 15px;
-							}
-
-							#footer-newsletter-signup {
-								fieldset {
-									input {
-										width : 160px;
-									}
-								}
-
-								.fields {
-									width : 190px;
-								}
-							}
-						}
-					}
 				}
 			}
 
@@ -1276,7 +1034,7 @@ and (max-width : 768px) {
 				height           : 36px;
 				margin-top       : 27px;
 				border-top       : 1px solid #f7f7f7;
-				font-family      : DINNextLTPro-Medium;
+				font-family      : $nextMedium;
 				text-rendering   : geometricPrecision;
 				font-weight      : normal;
 				letter-spacing   : normal;
