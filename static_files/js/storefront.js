@@ -115,15 +115,15 @@ var jjStorefront = (function (jQuery) {
                         newWidth = width + 10,
                         newHeight = height + 10;
 
-                        $(this).find('.image').css('background-size', newWidth + 'px ' + newHeight + 'px');
+                        $(this).find('.image').css('background-size', newWidth + 'px auto');
 
                         $(this).hover(function(){
                             TweenMax.to($(this).find('.overlay'), 0.4, {opacity: 1});
-                            TweenMax.to($(this).find('.image'), 0.4, {backgroundSize:  width + 'px ' + height + 'px'});
+                            TweenMax.to($(this).find('.image'), 0.4, {backgroundSize:  width + 'px auto'});
                             TweenMax.to($(this).find('.buttons'), 0.4, {delay: 0.2, opacity: 1});
                         }, function(){
                             TweenMax.to($(this).find('.overlay'), 0.3, {opacity: 0});
-                            TweenMax.to($(this).find('.image'), 0.3, {backgroundSize: newWidth + 'px ' + newHeight + 'px'});
+                            TweenMax.to($(this).find('.image'), 0.3, {backgroundSize: newWidth + 'px auto'});
                             TweenMax.to($(this).find('.buttons'), 0.3, {opacity: 0, overwrite: true});
                         });
                 });
