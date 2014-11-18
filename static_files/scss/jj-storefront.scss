@@ -330,18 +330,22 @@ a {
 			margin     : 20px auto 0;
 			clear      : both;
 			background : #3f3f3f;
-			height     : 40px;
 			color      : #fff;
+			padding    : 10px 0;
 			
 			ul {
-				text-align  : center;
-				line-height : 40px;
+				text-align   : center;
+				line-height  : 1.6;
+				display      : table;
+				table-layout : fixed;
+				width        : 100%;
 
 				li {
-					display   : inline-block;
-					color     : #fff;
-					font-size : 12px;
-					width     : 340px;
+					display        : table-cell;
+					color          : #fff;
+					font-size      : 12px;
+					text-transform : uppercase;
+					vertical-align : middle;
 				}
 			}
 		}
@@ -506,12 +510,6 @@ and (max-width : 1366px) {
 
 			.storefront-shipping-line {
 				width : 990px;
-
-				ul {
-					li {
-						width     : 312px;
-					}
-				}
 			}
 
 			.storefront-misc {
@@ -628,10 +626,7 @@ and (max-width : 1280px) {
 
 				ul {
 					li {
-						display   : inline-block;
-						color     : #fff;
 						font-size : 12px;
-						width     : 238px;
 					}
 				}
 			}
@@ -773,7 +768,6 @@ and (max-width : 1023px) {
 				ul {
 					li {
 						font-size : 9px;
-						width     : 130px;
 					}
 				}
 			}
