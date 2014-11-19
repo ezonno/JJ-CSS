@@ -100,3 +100,11 @@
 #branded.pt_category .container_24 .grid_24.refinement-line {
     @include backface-visibility(hidden);
 }
+
+// Footer overlapping nav fix
+#branded {
+    &.pt_category,
+    &.pt_productsearchresult {
+        overflow : visible;
+    }
+}
