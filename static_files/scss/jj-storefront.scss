@@ -2,6 +2,8 @@
 @import 'vars';
 @import 'mixins';
 
+// DMW overwrites, fixes
+
 a {
 	color : #2a2a2a;
 
@@ -10,10 +12,15 @@ a {
 	}
 }
 
+#footer_global {
+	margin-top : 0;
+}
+
 #branded {
 	.area {
-		width      : 100%;
-		background : #fafafa;
+		width          : 100%;
+		background     : #fafafa;
+		padding-bottom : 50px;
 
 		.wide_wrapper {
 			padding-bottom : 1px;

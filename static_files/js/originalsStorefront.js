@@ -62,6 +62,7 @@ var jjOriginalsStorefront = (function (jQuery) {
                         createPagination: true,
                         paginationClickable: true,
                         pagination: '.swiper-pagination',
+                        keyboardControl: true,
                         onSwiperCreated: function(){
                             $('#branded .content .hero .swiper-prev, #branded .content .hero .swiper-next').css('display' , 'block');
                             jjOriginalsStorefront.displayHero();
