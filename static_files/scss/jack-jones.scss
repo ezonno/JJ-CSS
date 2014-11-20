@@ -108,3 +108,9 @@
         overflow : visible;
     }
 }
+
+// Add to wishlist buttons on quickview and PDP
+#QuickViewDialog .unselectable a,
+#branded .product_detail .addtowishlist.unselectable a {
+    text-decoration : none;
+}
