@@ -467,3 +467,27 @@
 .ps-container.ie.hover .ps-scrollbar-y {
 	visibility : visible;
 }
+
+// Disable hover state for ipad
+html.touch {
+	#branded .side-menu .side-menu-categories .category_menu ul.categories li.level0item ul.items.active.selected:hover, 
+	#branded .side-menu .side-menu-categories .category_menu ul.categories li.level0item ul.items:hover,
+	#branded .side-menu .side-menu-categories .category_menu ul.categories li.level0item {
+		ul.items.active.selected,
+		ul.items,
+		&.active ul.active li.level2item {
+			&:hover {
+				background : none;
+			}
+		}
+
+		ul.items li a:hover {
+			background-color : transparent;
+		}
+
+		&.active dd ul.active>a:hover {
+			background : none;
+			@include box-shadow(none);
+		}
+	}
+}
