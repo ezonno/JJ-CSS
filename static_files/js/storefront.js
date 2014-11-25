@@ -18,9 +18,9 @@ var jjStorefront = (function (jQuery) {
 
             responsiveHero : function () {
                 $('#branded .content .hero.swiper-container .swiper-slide img').dataImg({
-                    sml: 1260,
-                    med: 1420,
-                    lrg: 1660,
+                    sml: 1023,
+                    med: 1440,
+                    lrg: 1441,
                     resize: false
                 });
             },
