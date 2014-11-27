@@ -111,18 +111,29 @@
 		}
 	}
 
+	&:after {
+		content    : '';
+		position   : absolute;
+		width      : 3px;
+		height     : 100%;
+		background : rgba(0, 0, 0, 0.15);
+		z-index    : 15;
+		top        : 0;
+		left       : 230px;
+	}
+
 	.side-menu-categories {
 		position                      : absolute;
 		left                          : -48px;
 		top                           : 0px;
 		width                         : 276px;
-		height                        : 100%!important;
-		border-right                  : 1px solid #f0f0f0;
+		height                        : 100% !important;
 		background-color              : #222426;
 		z-index                       : 1;
 		overflow                      : hidden;
 		padding-left                  : 2px;
 		/* -webkit-overflow-scrolling : touch;*/
+
 		
 		.category_menu {
 			width          : 100%;
