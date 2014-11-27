@@ -192,6 +192,12 @@ a {
 			}
 
 			.swiper-slide {
+				display : none;
+
+				&.first-slide {
+					display : block;
+				}
+
 				img {
 					border   : 0;
 					padding  : 0;
