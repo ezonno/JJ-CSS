@@ -362,6 +362,34 @@
 			}
 		}
 	}
+
+	.jj-sidebar-logo {
+		position               : absolute;
+		top                    : 89px;
+		margin-left            : 82px;
+		font-family            : $nextMedium;
+		font-weight            : normal;
+		font-size              : 13px;
+		line-height            : 19px;
+		color                  : #999999;
+		margin-top             : 18px;
+		text-rendering         : geometricPrecision;
+		-webkit-font-smoothing : antialiased;
+	}
+	
+	.now-shopping {
+		padding-top : 15px;
+		line-height : 21px;
+	}
+
+	.back-to-all-products {
+		padding-top : 11px;
+
+		a {
+			color           : #fff;
+			text-decoration : none;
+		}
+	}
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
