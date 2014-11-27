@@ -362,6 +362,34 @@
 			}
 		}
 	}
+
+	.jj-sidebar-logo {
+		position               : absolute;
+		top                    : 89px;
+		margin-left            : 82px;
+		font-family            : $nextMedium;
+		font-weight            : normal;
+		font-size              : 13px;
+		line-height            : 19px;
+		color                  : #999999;
+		margin-top             : 18px;
+		text-rendering         : geometricPrecision;
+		-webkit-font-smoothing : antialiased;
+	}
+	
+	.now-shopping {
+		padding-top : 15px;
+		line-height : 21px;
+	}
+
+	.back-to-all-products {
+		padding-top : 11px;
+
+		a {
+			color           : #fff;
+			text-decoration : none;
+		}
+	}
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -373,6 +401,7 @@
 .lhn-subcategories .background .category .ul_wrapper {
 	margin-bottom : 10px;
 }
+
 #branded .side-menu .lhn-subcategories .category .ul_wrapper img {
 	margin-left    : 40px;
 	margin-top     : 2px;
@@ -380,6 +409,7 @@
 	float          : left;
 	vertical-align : initial;
 }
+
 #branded .side-menu .side-menu-categories .category_menu ul.categories li.level0item.active ul.active li.level2item {
 	&:first-child {
 		margin-top : 18px;
