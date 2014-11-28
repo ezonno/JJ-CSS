@@ -196,15 +196,15 @@
     a {
         font-family    : $regular !important;
         font-size      : 11px !important;
-        padding        : 5px 22px;
+        padding        : 0 22px;
         border         : 1px solid #f0f0f0;
-        border-bottom  : 0;
+        border-bottom  : none;
         text-transform : uppercase;
         letter-spacing : 1px;
         font-weight    : normal;
         display        : block;
         color          : #222;
-        line-height    : normal !important;
+        line-height    : 39px !important;
         text-align     : center;
 
         &:hover {
