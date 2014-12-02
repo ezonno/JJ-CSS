@@ -152,8 +152,6 @@ var jjStorefront = (function (jQuery) {
 
                 // Scroll tracking disabled while brand teaser testing is going on
                 //jjStorefront.trackingScroll();
-                
-                jjStorefront.trackingNavigation();
             },
 
             trackingHighlights : function () {
@@ -268,33 +266,6 @@ var jjStorefront = (function (jQuery) {
                         _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'scroll', 'Footer reached']);
                         jjStorefront.footerReached = true;
                     }
-                });
-            },
-
-            trackingNavigation : function () {
-                // Home button
-                $('#branded .tabsplaceholder .tabscontainer .home a').click(function(){
-                    _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'navigation', 'Home toggled']);
-                });
-
-                // Toggle menu
-                $(document).on('hideSideMenuComplete', function(){
-                    _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'navigation', 'Menu hidden']);
-                });
-
-                $(document).on('showSideMenuComplete', function(){
-                    _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'navigation', 'Menu shown']);
-                });
-
-                // Subbrands
-                $('#branded .tabsplaceholder .tabscontainer .tabs .tab a').click(function(){
-                    var brandID = $(this).parent().data('brand');
-                    _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'tabs', brandID]);
-                });
-
-                // Scrollbar
-                $('#branded .side-menu .ps-container .ps-scrollbar-y').mousedown(function(e){
-                    _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'navigation', 'Scrollbar clicked']);
                 });
             }
 
