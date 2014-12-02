@@ -160,7 +160,6 @@ var jjStorefront = (function (jQuery) {
                     var highlightNo = $(this).index() + 1;
                     var link = $(this).find('a').attr('href');
                     
-                    console.log(highlightNo + ' - ' + link);
                     _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'highlights', 'Highlight no: ' + highlightNo + ', link: ' + link]);
                 });
             },
@@ -229,55 +228,25 @@ var jjStorefront = (function (jQuery) {
 
                     _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'hero', 'Slide: ' + staticHumanIndex + ', week: ' + staticWeek + ', image: ' + staticImage + ', url: ' + staticUrl + ', type: ' + type]);
                 }
-
-                
             },
 
             trackingScroll : function () {
-                console.log('Tracking scroll')
-
-                var offsetBrands = $('#branded .content .storefront-brands').offset().top,
-                offsetCategories = $('#branded .content .storefront-categories').offset().top,
-                offsetFooter = $('#footer_global').offset().top;
-
-                console.log('offsetBrands: ' + offsetBrands);
-                console.log('offsetCategories: ' + offsetCategories);
-                console.log('offsetFooter: ' + offsetFooter);
-
                 $(window).scroll(function() {
                     if ($('#branded .content .storefront-brands').isInViewport() && !jjStorefront.brandsReached) {
-                        console.log('Brands in view');
+                        _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'scroll', 'Brands in viewport']);
                         jjStorefront.brandsReached = true;
                     };
 
                     if ($('#branded .content .storefront-categories').isInViewport() && !jjStorefront.categoriesReached) {
-                        console.log('Categories in view');
+                        _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'scroll', 'Categories in viewport']);
                         jjStorefront.categoriesReached = true;
                     };
 
                     if ($('#footer_global').isInViewport() && !jjStorefront.footerReached) {
-                        console.log('Footer in view');
+                        _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'scroll', 'Footer in viewport']);
                         jjStorefront.footerReached = true;
                     };
                 });
-
-                /*
-                $(window).scroll(function(){
-                    if ($(window).scrollTop() >= offsetBrands && !jjStorefront.brandsReached) {
-                        _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'scroll', 'Brand boxes reached']);
-                        jjStorefront.brandsReached = true;
-                        console.log('Brands reached');
-                    } else if ($(window).scrollTop() >= offsetCategories && !jjStorefront.categoriesReached) {
-                        _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'scroll', 'Category boxes reached']);
-                        jjStorefront.categoriesReached = true;
-                        console.log('Categories reached');
-                    } else if ($(window).scrollTop() >= offsetFooter && !jjStorefront.footerReached) {
-                        _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'scroll', 'Footer reached']);
-                        jjStorefront.footerReached = true;
-                        console.log('Footer reached');
-                    }
-                });
-                */
             }
 
         // end custom functions
