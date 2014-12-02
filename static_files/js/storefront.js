@@ -93,17 +93,9 @@ var jjStorefront = (function (jQuery) {
             },
 
             resizeHero : function () {
-                jjStorefront.jjSwiper.resizeFix();
+                //jjStorefront.jjSwiper.resizeFix();
                 var heroHeight = $('.swiper-slide a img').height();
                 TweenMax.set($('#branded .content .hero.swiper-container'), {height: heroHeight});
-            },
-
-            centerCallouts : function () {
-                var containerHeight = $('#branded .content .storefront-brands .brand.sellingpoints .one').height();
-                var contentHeight = $('#branded .content .storefront-brands .brand.sellingpoints .one .content').height();
-                var offset = (containerHeight - contentHeight) / 2;
-
-                $('#branded .content .storefront-brands .brand.sellingpoints .content').css('top', offset);
             },
 
             brandHover : function () {
@@ -133,7 +125,6 @@ var jjStorefront = (function (jQuery) {
             detectGrid : function () {
                 jjStorefront.brandHover();
                 jjStorefront.resizeHero();
-                jjStorefront.centerCallouts();
 
                 if (jjStorefront.pageIsLoaded) {
                     jjStorefront.viewportHero();
@@ -155,6 +146,7 @@ var jjStorefront = (function (jQuery) {
             },
 
             trackingInit : function () {
+                jjStorefront.trackingHighlights();
                 jjStorefront.trackingBrands();
                 jjStorefront.trackingCategories();
 
@@ -164,24 +156,37 @@ var jjStorefront = (function (jQuery) {
                 jjStorefront.trackingNavigation();
             },
 
+            trackingHighlights : function () {
+                $('#branded .content .storefront-promos ul li').click(function(e){
+                    // For testing only. Do no include preventDefault() in production code
+                    e.preventDefault();
+                    
+                    var highlightNo = $(this).index() + 1;
+                    var link = $(this).find('a').attr('href');
+                    
+                    console.log(highlightNo + ' - ' + link);
+                    _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'highlights', 'Highlight no: ' + highlightNo + ', link: ' + link]);
+                });
+            },
+
             trackingBrands : function () {
                 $('#branded .content .storefront-brands .brand').not('.sellingpoints').each(function(){
                     var brandID = $(this).data('brand');
 
                     $(this).find('.buttons a').click(function(){
                         if ($(this).is(':first-child')) {
-                            _gaq.push(['_trackEvent','jj-frontpage-test', 'brand boxes', brandID + ', button - shopping']);
+                            _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'brand boxes', brandID + ', button - shopping']);
                         } else {
-                            _gaq.push(['_trackEvent','jj-frontpage-test', 'brand boxes', brandID + ', button - brand site']);
+                            _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'brand boxes', brandID + ', button - brand site']);
                         }
                     });
 
                     $(this).find('.overlay').parent('a').click(function(){
-                        _gaq.push(['_trackEvent','jj-frontpage-test', 'brand boxes', brandID + ', overlay - brand site']);
+                        _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'brand boxes', brandID + ', overlay - brand site']);
                     });
 
                     $(this).find('a.logo').click(function(){
-                        _gaq.push(['_trackEvent','jj-frontpage-test', 'brand boxes', brandID + ', logo - brand site']);
+                        _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'brand boxes', brandID + ', logo - brand site']);
                     });
                 });
             },
@@ -196,11 +201,11 @@ var jjStorefront = (function (jQuery) {
 
                     $(this).find('a').click(function(){
                         if ($(this).hasClass('one')) {
-                            _gaq.push(['_trackEvent','jj-frontpage-test', 'category boxes', 'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, product: ' + product]);
+                            _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'category boxes', 'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, product: ' + product]);
                         } else if ($(this).hasClass('two')) {
-                            _gaq.push(['_trackEvent','jj-frontpage-test', 'category boxes', 'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, category: ' + category]);
+                            _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'category boxes', 'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, category: ' + category]);
                         } else {
-                            _gaq.push(['_trackEvent','jj-frontpage-test', 'category boxes', 'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: image, category: ' + category]);
+                            _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'category boxes', 'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: image, category: ' + category]);
                         }
                     });
                 });
@@ -232,7 +237,7 @@ var jjStorefront = (function (jQuery) {
                     slideImage      = activeSlide.data('image'),
                     slideUrl        = activeSlide.data('url');
 
-                    _gaq.push(['_trackEvent','jj-frontpage-test', 'hero', 'Slide: ' + slideHumanIndex + ', week: ' + slideWeek + ', image: ' + slideImage + ', url: ' + slideUrl + ', type: ' + type]);
+                    _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'hero', 'Slide: ' + slideHumanIndex + ', week: ' + slideWeek + ', image: ' + slideImage + ', url: ' + slideUrl + ', type: ' + type]);
                 } else {
                     var staticIndex = 0,
                     staticHumanIndex     = staticIndex + 1,
@@ -241,7 +246,7 @@ var jjStorefront = (function (jQuery) {
                     staticImage          = staticActiveSlide.data('image'),
                     staticUrl            = staticActiveSlide.data('url');
 
-                    _gaq.push(['_trackEvent','jj-frontpage-test', 'hero', 'Slide: ' + staticHumanIndex + ', week: ' + staticWeek + ', image: ' + staticImage + ', url: ' + staticUrl + ', type: ' + type]);
+                    _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'hero', 'Slide: ' + staticHumanIndex + ', week: ' + staticWeek + ', image: ' + staticImage + ', url: ' + staticUrl + ', type: ' + type]);
                 }
 
                 
@@ -254,13 +259,13 @@ var jjStorefront = (function (jQuery) {
 
                 $(window).scroll(function(){
                     if ($(window).scrollTop() >= offsetBrands && !jjStorefront.brandsReached) {
-                        _gaq.push(['_trackEvent','jj-frontpage-test', 'scroll', 'Brand boxes reached']);
+                        _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'scroll', 'Brand boxes reached']);
                         jjStorefront.brandsReached = true;
                     } else if ($(window).scrollTop() >= offsetCategories && !jjStorefront.categoriesReached) {
-                        _gaq.push(['_trackEvent','jj-frontpage-test', 'scroll', 'Category boxes reached']);
+                        _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'scroll', 'Category boxes reached']);
                         jjStorefront.categoriesReached = true;
                     } else if ($(window).scrollTop() >= offsetFooter && !jjStorefront.footerReached) {
-                        _gaq.push(['_trackEvent','jj-frontpage-test', 'scroll', 'Footer reached']);
+                        _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'scroll', 'Footer reached']);
                         jjStorefront.footerReached = true;
                     }
                 });
@@ -269,27 +274,27 @@ var jjStorefront = (function (jQuery) {
             trackingNavigation : function () {
                 // Home button
                 $('#branded .tabsplaceholder .tabscontainer .home a').click(function(){
-                    _gaq.push(['_trackEvent','jj-frontpage-test', 'navigation', 'Home toggled']);
+                    _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'navigation', 'Home toggled']);
                 });
 
                 // Toggle menu
                 $(document).on('hideSideMenuComplete', function(){
-                    _gaq.push(['_trackEvent','jj-frontpage-test', 'navigation', 'Menu hidden']);
+                    _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'navigation', 'Menu hidden']);
                 });
 
                 $(document).on('showSideMenuComplete', function(){
-                    _gaq.push(['_trackEvent','jj-frontpage-test', 'navigation', 'Menu shown']);
+                    _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'navigation', 'Menu shown']);
                 });
 
                 // Subbrands
                 $('#branded .tabsplaceholder .tabscontainer .tabs .tab a').click(function(){
                     var brandID = $(this).parent().data('brand');
-                    _gaq.push(['_trackEvent','jj-frontpage-test', 'tabs', brandID]);
+                    _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'tabs', brandID]);
                 });
 
                 // Scrollbar
                 $('#branded .side-menu .ps-container .ps-scrollbar-y').mousedown(function(e){
-                    _gaq.push(['_trackEvent','jj-frontpage-test', 'navigation', 'Scrollbar clicked']);
+                    _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'navigation', 'Scrollbar clicked']);
                 });
             }
 
@@ -301,7 +306,6 @@ jQuery(document).ready(function () {
     jjStorefront.assignGlobalVars();
     jjStorefront.responsiveHero();
     jjStorefront.brandHover();
-    jjStorefront.centerCallouts();
     jjStorefront.initQuickview();
     jjStorefront.trackingInit();
 });
