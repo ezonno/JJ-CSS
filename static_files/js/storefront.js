@@ -157,7 +157,7 @@ var jjStorefront = (function (jQuery) {
             trackingHighlights : function () {
                 $('#branded .content .storefront-promos ul li').click(function(e){
                     // For testing only. Do no include preventDefault() in production code
-                    e.preventDefault();
+                    // e.preventDefault();
                     
                     var highlightNo = $(this).index() + 1;
                     var link = $(this).find('a').attr('href');
@@ -168,24 +168,9 @@ var jjStorefront = (function (jQuery) {
             },
 
             trackingBrands : function () {
-                $('#branded .content .storefront-brands .brand').not('.sellingpoints').each(function(){
+                $('#branded .content .storefront-brands .brand').click(function(){
                     var brandID = $(this).data('brand');
-
-                    $(this).find('.buttons a').click(function(){
-                        if ($(this).is(':first-child')) {
-                            _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'brand boxes', brandID + ', button - shopping']);
-                        } else {
-                            _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'brand boxes', brandID + ', button - brand site']);
-                        }
-                    });
-
-                    $(this).find('.overlay').parent('a').click(function(){
-                        _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'brand boxes', brandID + ', overlay - brand site']);
-                    });
-
-                    $(this).find('a.logo').click(function(){
-                        _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'brand boxes', brandID + ', logo - brand site']);
-                    });
+                    _gaq.push(['_trackEvent','jj-topSecretTestingArea', 'brand boxes', brandID + ' clicked']);
                 });
             },
 
