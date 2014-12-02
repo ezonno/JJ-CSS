@@ -123,8 +123,6 @@ var jjTechStorefront = (function (jQuery) {
                 jjTechStorefront.trackingCategories();
 
                 jjTechStorefront.trackingScroll();
-                
-                jjTechStorefront.trackingNavigation();
             },
 
             trackingCategories : function () {
@@ -200,33 +198,6 @@ var jjTechStorefront = (function (jQuery) {
                         _gaq.push(['_trackEvent','jj-tech-storefront', 'scroll', 'Footer reached']);
                         jjTechStorefront.footerReached = true;
                     }
-                });
-            },
-
-            trackingNavigation : function () {
-                // Home button
-                $('#branded .tabsplaceholder .tabscontainer .home a').click(function(){
-                    _gaq.push(['_trackEvent','jj-tech-storefront', 'navigation', 'Home toggled']);
-                });
-
-                // Toggle menu
-                $(document).on('hideSideMenuComplete', function(){
-                    _gaq.push(['_trackEvent','jj-tech-storefront', 'navigation', 'Menu hidden']);
-                });
-
-                $(document).on('showSideMenuComplete', function(){
-                    _gaq.push(['_trackEvent','jj-tech-storefront', 'navigation', 'Menu shown']);
-                });
-
-                // Subbrands
-                $('#branded .tabsplaceholder .tabscontainer .tabs .tab a').click(function(){
-                    var brandID = $(this).parent().data('brand');
-                    _gaq.push(['_trackEvent','jj-tech-storefront', 'tabs', brandID]);
-                });
-
-                // Scrollbar
-                $('#branded .side-menu .ps-container .ps-scrollbar-y').mousedown(function(e){
-                    _gaq.push(['_trackEvent','jj-tech-storefront', 'navigation', 'Scrollbar clicked']);
                 });
             },
 
