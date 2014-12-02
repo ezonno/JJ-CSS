@@ -882,3 +882,22 @@
         }
     }
 }
+
+// Offers box on PDP
+.product_detail .promotion.active {
+    background  : none;
+    padding     : 5px 0;
+    font-style  : normal;
+    font-family : $medium;
+    margin-top  : 10px;
+    @include box-shadow(none);
+
+    .find_out_more a {
+        color          : inherit;
+        background     : none;
+        padding-right  : 0;
+        text-transform : uppercase;
+        font-family    : $bold;
+        font-weight    : normal;
+    }
+}
