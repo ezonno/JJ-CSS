@@ -91,7 +91,7 @@ var jjStorefront = (function (jQuery) {
                     $(this).show();
                 });
 
-                if ($('.swiper-slide').find('video')) {
+                if ($('.swiper-slide video').length) {
                     jjStorefront.resizeHero();
                 };
             },
