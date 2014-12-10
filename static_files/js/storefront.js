@@ -70,7 +70,7 @@ var jjStorefront = (function (jQuery) {
                         },
                         onSlideChangeEnd: function(){
                             if (jjStorefront.heroInView) {
-                                jjStorefront.trackingHero('Viewed');
+                                jjStorefront.trackingHero('viewed');
                             }
                         }
                     });
