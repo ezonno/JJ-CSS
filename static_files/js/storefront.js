@@ -90,6 +90,10 @@ var jjStorefront = (function (jQuery) {
                 $('#branded .content .storefront-hero .swiper-container .swiper-slide').each(function(){
                     $(this).show();
                 });
+
+                if ($('.swiper-slide').find('video')) {
+                    jjStorefront.resizeHero();
+                };
             },
 
             resizeHero : function () {
