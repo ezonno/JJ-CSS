@@ -70,7 +70,7 @@ var jjStorefront = (function (jQuery) {
                         },
                         onSlideChangeEnd: function(){
                             if (jjStorefront.heroInView) {
-                                jjStorefront.trackingHero('viewed');
+                                jjStorefront.trackingHero('View');
                             }
                         }
                     });
@@ -164,14 +164,14 @@ var jjStorefront = (function (jQuery) {
                     var highlightNo = $(this).index() + 1;
                     var link = $(this).find('a').attr('href');
                     
-                    _gaq.push(['_trackEvent','jj-storefront-tracking', 'highlights', 'Highlight no: ' + highlightNo + ', link: ' + link]);
+                    _gaq.push(['_trackEvent','jj-storefront-highlights', 'Click', 'Highlight no: ' + highlightNo + ', link: ' + link]);
                 });
             },
 
             trackingBrands : function () {
                 $('#branded .content .storefront-brands .brand').click(function(){
                     var brandID = $(this).data('brand');
-                    _gaq.push(['_trackEvent','jj-storefront-tracking', 'brand boxes', brandID + ' clicked']);
+                    _gaq.push(['_trackEvent','jj-storefront-brandboxes', 'Click', brandID]);
                 });
             },
 
@@ -185,11 +185,11 @@ var jjStorefront = (function (jQuery) {
 
                     $(this).find('a').click(function(){
                         if ($(this).hasClass('one')) {
-                            _gaq.push(['_trackEvent','jj-storefront-tracking', 'category boxes', 'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, product: ' + product]);
+                            _gaq.push(['_trackEvent','jj-storefront-categoryboxes', 'Click', 'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, product: ' + product]);
                         } else if ($(this).hasClass('two')) {
-                            _gaq.push(['_trackEvent','jj-storefront-tracking', 'category boxes', 'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, category: ' + category]);
+                            _gaq.push(['_trackEvent','jj-storefront-categoryboxes', 'Click', 'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, category: ' + category]);
                         } else {
-                            _gaq.push(['_trackEvent','jj-storefront-tracking', 'category boxes', 'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: image, category: ' + category]);
+                            _gaq.push(['_trackEvent','jj-storefront-categoryboxes', 'Click', 'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: image, category: ' + category]);
                         }
                     });
                 });
@@ -200,7 +200,7 @@ var jjStorefront = (function (jQuery) {
 
                 if (!jjStorefront.heroInView && heroViewportCheck) {
                     jjStorefront.heroInView = true;
-                    jjStorefront.trackingHero('viewed');
+                    jjStorefront.trackingHero('View');
                 } else if (!heroViewportCheck) {
                     jjStorefront.heroInView = false;
                 }
@@ -208,7 +208,7 @@ var jjStorefront = (function (jQuery) {
 
             clickHero : function () {
                 $('#branded .content .hero .swiper-slide a').click(function(){
-                    jjStorefront.trackingHero('clicked');
+                    jjStorefront.trackingHero('Click');
                 });
             },
 
@@ -221,7 +221,7 @@ var jjStorefront = (function (jQuery) {
                     slideImage      = activeSlide.data('image'),
                     slideUrl        = activeSlide.data('url');
 
-                    _gaq.push(['_trackEvent','jj-storefront-tracking', 'hero', 'Slide: ' + slideHumanIndex + ', week: ' + slideWeek + ', image: ' + slideImage + ', url: ' + slideUrl + ', type: ' + type]);
+                    _gaq.push(['_trackEvent','jj-storefront-hero', type, 'Slide: ' + slideHumanIndex + ', week: ' + slideWeek + ', image: ' + slideImage + ', url: ' + slideUrl]);
                 } else {
                     var staticIndex = 0,
                     staticHumanIndex     = staticIndex + 1,
@@ -230,24 +230,24 @@ var jjStorefront = (function (jQuery) {
                     staticImage          = staticActiveSlide.data('image'),
                     staticUrl            = staticActiveSlide.data('url');
 
-                    _gaq.push(['_trackEvent','jj-storefront-tracking', 'hero', 'Slide: ' + staticHumanIndex + ', week: ' + staticWeek + ', image: ' + staticImage + ', url: ' + staticUrl + ', type: ' + type]);
+                    _gaq.push(['_trackEvent','jj-storefront-hero', type, 'Slide: ' + staticHumanIndex + ', week: ' + staticWeek + ', image: ' + staticImage + ', url: ' + staticUrl]);
                 }
             },
 
             trackingScroll : function () {
                 $(window).scroll(function() {
                     if ($('#branded .content .storefront-brands').isInViewport() && !jjStorefront.brandsReached) {
-                        _gaq.push(['_trackEvent','jj-storefront-tracking', 'scroll', 'Brands in viewport']);
+                        _gaq.push(['_trackEvent','jj-storefront-scroll', 'Scroll', 'Brands in viewport']);
                         jjStorefront.brandsReached = true;
                     };
 
                     if ($('#branded .content .storefront-categories').isInViewport() && !jjStorefront.categoriesReached) {
-                        _gaq.push(['_trackEvent','jj-storefront-tracking', 'scroll', 'Categories in viewport']);
+                        _gaq.push(['_trackEvent','jj-storefront-scroll', 'Scroll', 'Categories in viewport']);
                         jjStorefront.categoriesReached = true;
                     };
 
                     if ($('#footer_global').isInViewport() && !jjStorefront.footerReached) {
-                        _gaq.push(['_trackEvent','jj-storefront-tracking', 'scroll', 'Footer in viewport']);
+                        _gaq.push(['_trackEvent','jj-storefront-scroll', 'Scroll', 'Footer in viewport']);
                         jjStorefront.footerReached = true;
                     };
                 });
