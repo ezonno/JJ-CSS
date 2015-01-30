@@ -104,6 +104,11 @@
 		&.refinement-wrapper-size {
 			margin : 0;
 		}
+		&.refinement-wrapper-price {
+			h3 {
+				margin-right: 25px;
+			}
+		}
 
 		h3 {
 			position       : relative;
@@ -223,6 +228,6 @@
 	display : none;
 }
 
-#branded .navgroup .refineattributes .swatches li a {
+#branded .navgroup .refineattributes li a {
 	background: transparent url(../img/sprite_refinement_background.png) 0 0 no-repeat;
 }
