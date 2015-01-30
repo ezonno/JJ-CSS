@@ -123,17 +123,28 @@
 				width : 490px;
 			}
 
-			h3 {
-				font-family    : $bold;
-				font-size      : 26px;
-				color          : #fff;
-				letter-spacing : 1px;
-				line-height    : normal;
-				font-weight    : normal;
-				position       : absolute;
-				width          : 100%;
-				top            : 50%;
+			.cta {
+				position : absolute;
+				width    : 100%;
+				top      : 50%;
 				@include transform(translateY(-50%));
+
+				h3 {
+					font-family    : $bold;
+					font-size      : 26px;
+					color          : #fff;
+					letter-spacing : 1px;
+					line-height    : normal;
+					font-weight    : normal;
+				}
+
+				span {
+					color           : #fff;
+					font-size       : 12px;
+					margin-top      : 15px;
+					text-decoration : underline;
+					display         : block;
+				}
 			}
 		}
 	}
