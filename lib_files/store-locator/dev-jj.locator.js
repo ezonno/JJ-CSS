@@ -133,6 +133,7 @@ function createMap() {
     var options = {
         zoom: 5,
         panControl: false,
+        scrollwheel: false,
         zoomControl: true,
         zoomControlOptions: {
             style: google.maps.ZoomControlStyle.LARGE,
