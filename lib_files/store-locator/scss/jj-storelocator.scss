@@ -59,6 +59,57 @@
 		margin     : -35px auto 0 !important;
 		z-index    : 1;
 		@include box-shadow(0px 1px 3px 0px rgba(0, 0, 0, 0.2));
+
+		// Country fixes
+		.countryAT &,
+		.countryCH &,
+		.countryDE & {
+			width : 668px !important;
+
+			div.city {
+				width : 308px !important;
+			}
+		}
+
+		.countryFI & {
+			width : 699px !important;
+
+			div.city {
+				width : 339px !important;
+			}
+		}
+
+		.countryES & {
+			width : 707px !important;
+
+			div.city {
+				width : 347px !important;
+			}
+		}
+
+		.countryFR & {
+			width : 662px !important;
+
+			div.city {
+				width : 302px !important;
+			}
+		}
+
+		.countryNO & {
+			width : 659px !important;
+
+			div.city {
+				width : 299px !important;
+			}
+		}
+
+		.countryNL & {
+			width : 677px !important;
+
+			div.city {
+				width : 317px !important;
+			}
+		}
 	}
 
 	#map.storelocator {
