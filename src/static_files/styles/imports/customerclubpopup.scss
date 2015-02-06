@@ -1,0 +1,226 @@
+// Customer Club Signup popup
+.customerclub-popup {
+    width      : 306px;
+    background : #fff;
+    border     : 1px solid #f0f0f0;
+    position   : fixed;
+    bottom     : 60px;
+    right      : 25px;
+    z-index    : 100;
+    display    : none;
+
+    .closebar {
+        border-bottom : 1px solid #f0f0f0;
+        margin-bottom : 15px;
+
+        a {
+            &.close {
+                display    : block;
+                float      : right;
+                width      : 20px;
+                height     : 20px;
+                margin     : 10px 10px 10px 0;
+                background : transparent url(../img/ccpopup_close.png) center no-repeat;
+            }
+
+            &.existingmember {
+                float          : left;
+                line-height    : 20px !important;
+                margin         : 10px 0 10px 10px;
+                font-size      : 10px !important;
+                font-family    : $light !important;
+                text-transform : none !important;
+
+                &:hover {
+                    color : #222 !important;
+                }
+
+            }
+        }
+    }
+
+    .content {
+        width      : 80%;
+        margin     : 0 auto;
+        text-align : center;
+
+        div.angle {
+            width       : 16px;
+            height      : 16px;
+            border-top  : 1px solid #9b9b9b;
+            border-left : 1px solid #9b9b9b;
+            float       : left;
+        }
+
+        .callout {
+            span {
+                font-size   : 13px;
+                line-height : 20px;
+                font-family : $regular;
+                font-weight : normal;
+                display     : block;
+                width       : 92%;
+                margin      : 0 auto;
+
+                &:first-child {
+                    padding-top : 9px;
+                }
+
+                &:nth-child(2) {
+                    font-size      : 40px;
+                    line-height    : 0.8;
+                    text-transform : uppercase;
+                    font-family    : $bold;
+                }
+            }
+        }
+
+        form {
+            margin-top : 15px;
+
+            div {
+                margin-bottom : 7px;
+
+                &.clear {
+                    margin-bottom : 0;
+                }
+
+                &.lastnameContainer  {
+                    width : 48%;
+                    float : right;
+                }
+
+                &.firstnameContainer {
+                    width : 48%;
+                    float : left;
+                }
+
+                label {
+                    text-align  : left;
+                    width       : auto;
+                    margin      : 0 0 3px;
+                    display     : block;
+                    float       : none;
+                    font-family : $light;
+                }
+
+                input[type=text] {
+                    width       : 100%;
+                    line-height : 33px;
+                    height      : 33px;
+                    padding     : 0;
+                    text-align  : center;
+                    font-family : $light;
+                    font-weight : normal;
+                    border      : 1px solid #9b9b9b;
+
+                    &.fillOutThisShit {
+                        background : #cd0000;
+                        color      : #fff;
+                    }
+                }
+
+                &.tcs {
+                    height      : 100px;
+                    overflow-y  : scroll;
+                    overflow-x  : hidden;
+                    border      : 1px solid #9b9b9b;
+                    font-family : $light;
+                    padding     : 7px;
+
+                    div.contentasset div {
+                        margin-left: 0 !important;
+                    }
+                }
+
+                &.accept {
+                    text-align: left;
+
+                    span {
+                        display     : inline;
+                        font-size   : 10px;
+                        line-height : normal;
+                        margin-left : 5px;
+                        padding-top : 0;
+                        font-family : $light;
+
+                        &.checkThisShit {
+                            background : #cd0000;
+                            color      : #fff;
+                        }
+                    }
+                }
+
+            }
+
+            button {
+                width          : 100%;
+                background     : #222;
+                text-transform : uppercase;
+                padding        : 0;
+                line-height    : 33px;
+                font-size      : 12px;
+                font-family    : $light;
+                font-weight    : normal;
+                margin         : 15px auto 26px;
+                border         : 0;
+            }
+        }
+    }
+
+    .signup-content,
+    .thankyou-content {
+        overflow : hidden;
+    }
+
+    .thankyou-content {
+        height : 0;
+
+        span {
+            font-size   : 13px;
+            font-family : $light;
+            margin-top  : 10px;
+            display     : inline-block;
+            width       : 93%;
+        }
+    }
+}
+
+.customerclub-trigger {
+    position   : fixed;
+    bottom     : 0;
+    right      : 82px;
+    z-index    : 100;
+    background : #fff;
+
+    a {
+        font-family    : $regular !important;
+        font-size      : 11px !important;
+        padding        : 0 22px;
+        border         : 1px solid #f0f0f0;
+        border-bottom  : none;
+        text-transform : uppercase;
+        letter-spacing : 1px;
+        font-weight    : normal;
+        display        : block;
+        color          : #222;
+        line-height    : 39px !important;
+        text-align     : center;
+
+        &:hover {
+            color           : inherit !important;
+            text-decoration : none !important;
+        }
+    }
+}
+
+.vader {
+    background : transparent url(../img/vader.png) center no-repeat;
+    width      : 143px;
+    height     : 236px;
+    position   : fixed;
+    bottom     : 200px;
+    right      : 283px;
+    z-index    : 101;
+    display    : none;
+}

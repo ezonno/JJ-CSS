@@ -1,0 +1,106 @@
+@import 'compass';
+@import 'vars';
+@import 'mixins';
+
+@import url("../../css/jack-jones.css");
+
+/* Import from jj-shared */
+
+@import 'jj-shared';
+
+/* End import from jj-shared */
+
+#branded .header {
+    border-bottom : 1px solid #f1f1f1;
+}
+
+#highlights_features_hotfix h2{
+    font-family : $regular, "UniversLTW01-57Condense 723821", Arial;
+}
+
+/* CONTENT */
+#branded.pt_category .container_24 .grid_24 {
+    margin-top : 95px;
+}
+
+#branded.pt_productdetails #content.container_24 {
+    margin-top : 0px;
+    width      : 860px;
+}
+
+/* Outfit PLP */
+#branded.pt_category .productlisting .product_set {
+    .quickviewbutton,
+    .pricing,
+    .swatches,
+    .name,
+    .subbrand {
+        display : none !important;
+    }
+
+    .producttile {
+            margin-bottom : 5px;
+        @media (min-width: 1281px) {
+            margin-bottom : 20px;
+        }
+        @media (min-width: 1441px) {
+            margin-bottom : 25px;
+        }
+        @media (min-width: 1681px)  {
+            margin-bottom : 50px;
+        }
+        @media (min-width: 1920px) {
+            margin-bottom : 60px;
+        }
+    }
+}
+
+/* Outfit PDP */
+#branded.pt_productdetails .product_set {
+    .grid_16,
+    .productsetdetail {
+        background : none;
+    }
+
+        
+
+    div.productsetdetail {
+        .grid_10 {
+            width            : 258px;
+            background-image : none;
+        }
+    }
+
+}
+
+#branded.pt_productdetails .productset {
+    #subProduct2Div, 
+    #subProduct4Div, 
+    #subProduct6Div, 
+    #subProduct8Div, 
+    #subProduct10Div {
+        div.productsetdetail {
+            background : none;
+        }
+    }
+}
+
+// PLP refinements bar fix
+#branded.pt_category .container_24 .grid_24.refinement-line {
+    @include backface-visibility(hidden);
+}
+
+// Footer overlapping nav fix
+#branded {
+    &.pt_category,
+    &.pt_productsearchresult {
+        overflow : visible;
+    }
+}
+
+// Add to wishlist buttons on quickview and PDP
+#QuickViewDialog .unselectable a,
+#branded .product_detail .addtowishlist.unselectable a {
+    text-decoration : none;
+    cursor: context-menu;
+}

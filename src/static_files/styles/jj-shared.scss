@@ -1,0 +1,903 @@
+@import 'compass';
+@import 'vars';
+@import 'mixins';
+
+@import 'jj-sidemenu';
+@import 'jj-searchrefine';
+
+// Customerclub popup
+@import 'imports/customerclubpopup';
+
+/* GENERAL */
+#branded .area {
+    width  : auto !important;
+    margin : 0 0 0 230px;
+}
+#branded.pt_category .area #content.container_24 {
+    margin : 0;
+    width  : 100%;
+}
+.searchresultsheader {
+    height : auto;
+}
+.brand_slides .brand_disclaimer {
+    padding    : 0 !important;
+    background : none !important;
+    overflow   : auto !important;
+
+    div {
+        display : block;
+        padding : 15px 0 12px;
+    }
+    img {
+        margin : -14px 12px -4px 0;
+    }
+}
+#branded .wrapper {
+    background : white !important;
+}
+#branded.pt_productdetails, 
+#branded.pt_productdetails .wrapper {
+    background : white;
+}
+#branded{
+    &.pt_category, &.pt_productsearchresult {
+        .container_24 {
+            .grid_24 {
+               margin-top : 156px;
+            }
+
+            .grid_20 {
+                width : 800px;
+            }
+
+            .grid_4 {
+                margin-top : 0;
+            }
+        }
+
+        .cat_description {
+            background-color : white;
+            font             : 11px $regular, Verdana, Geneva, sans-serif!important;
+            color            : #7a7a7a!important;
+            padding          : 2px 22px 0;
+            line-height      : 16px !important;
+            text-align       : center;
+            width            : 610px;
+        }
+
+        .breadcrumbs {
+            width            : 985px;
+            margin-left      : 0;
+            background-color : white;
+            padding-left     : 23px;
+        }
+
+        .sorthitscontainer {
+            background-color : white;        
+
+            .sortby {
+                position : absolute;
+                top      : -34px;
+                right    : 0;
+
+                form {
+                    text-align : right;
+                }
+            }
+
+            select {
+                text-transform : uppercase;
+            }
+        }
+        #refinement-colorFamily .refineattributes .swatches li a {
+           background-image : url(../img/refinement_color.png);
+        }
+    }
+
+    &.pt_productdetails {
+        .breadcrumbs {
+            background : white;
+        }
+    }
+}
+
+.countryDE .sorthitscontainer .tuv_price_shipping_wrapper {
+    text-transform : none;
+    font           : 10px Verdana, Geneva, sans-serif !important;
+    color          : #7a7a7a !important;
+}
+
+#branded.pt_productdetails {
+    .product_info, 
+    .product_detail .product_tabs, 
+    .product_images .image_border,
+    .product_images .thumbnail_carousel, 
+    .social_widget, 
+    .maywerecommend { 
+       background : white;
+    }
+
+    .maywerecommend .recommendations_maylike {
+        background : none !important;
+        height     : auto;
+
+        &:after {
+            content : '';
+            clear   : both;
+            display : block;
+        }
+    }
+}
+
+.jj .to_top {
+    background : none;
+    right      : 25px;
+
+    a {
+        width         : 45px;
+        height        : 39px;
+        background    : #fff url(../img/totop.jpg) no-repeat center;
+        border        : 1px solid #f0f0f0;
+        border-bottom : none;
+    }
+}
+
+/* SLIDESHOW */
+#branded .slideshow {
+    width    : 100%;
+    overflow : hidden;
+    position : relative;
+
+    .container {
+        width    : 99999px;
+        overflow : auto;
+
+        img {
+            float : left;
+        }
+    }
+
+    .controls {
+        text-align : center;
+        margin-top : 7px;
+    }
+
+    .bubble {
+        display : inline-block;
+
+        &.active {
+            .active {
+                background-position : 0 0;
+            }
+        }
+    }
+
+    .prev-btn, 
+    .next-btn {
+        background-position : 0 0;
+        cursor              : pointer;
+        position            : absolute;
+
+        &:hover {
+            @include opacity(.8);
+        }
+    }
+
+    .next-btn {
+        right : 0px;
+    }
+
+    .prev-btn {
+        left : 0px;
+    }
+
+    map {
+        display : block;
+    }
+
+    .imgMapperHotFix {
+        width    : 100%;
+        height   : 100%;
+        position : absolute;
+        top      : 0;
+        left     : 0;
+    }
+
+    .popup {
+        position   : absolute;
+        text-align : center;
+        color      : black;
+        display    : none;
+        background : white;
+        max-width  : 165px;
+
+        h1 {
+            text-transform : uppercase;
+            font-size      : 12px !important;
+            margin-top     : 8px;
+            padding        : 0 8px;
+            font-family    : $originalsFontMedium !important;
+            line-height    : 15px;
+        }
+
+        p {
+            margin      : 0 0 6px !important;
+            padding     : 0 !important;
+            font-weight : normal;
+            font-size   : 12px !important;
+            @include column-count(1 !important);
+        }
+    }
+}
+
+/* FOOTER */
+
+#footer_global {
+    background  : #fff !important;
+    margin-left : 230px;
+    border-top  : 1px solid #f7f7f7;
+    color       : #252525;
+    margin-top  : 50px;
+
+    * {
+        @include box-sizing(border-box);
+    }
+
+    .connect {
+        height        : 147px;
+        border-bottom : 1px solid #f7f7f7;
+
+        .social,
+        .newsletter {
+            width : 50%;
+            height: 100%;
+            float : left;
+        }
+
+        .social {
+            border-right : 1px solid #f7f7f7;
+            text-align   : center;
+            padding-top  : 57px;
+
+            span {
+                font-size      : 12px;
+                font-family    : $bold;
+                line-height    : 28px;
+                vertical-align : top;
+                margin-right   : 10px;
+            }
+
+            a {
+                width      : 29px;
+                height     : 28px;
+                background : transparent url(../img/sprite_footer_social.png);
+                display    : inline-block;
+                margin     : 0 6px;
+
+                &.facebook {
+                    background-position : 0px 0px;
+
+                    &:hover {
+                        background-position : 0px 28px;
+                    }
+                }
+
+                &.twitter {
+                    background-position : -29px 0px;
+
+                    &:hover {
+                        background-position : -29px 28px;
+                    }
+                }
+
+                &.instagram {
+                    background-position : -58px 0px;
+
+                    &:hover {
+                        background-position : -58px 28px;
+                    }
+                }
+
+                &.pinterest {
+                    background-position : -87px 0px;
+
+                    &:hover {
+                        background-position : -87px 28px;
+                    }
+                }
+
+                &.googleplus {
+                    background-position : -116px 0px;
+
+                    &:hover {
+                        background-position : -116px 28px;
+                    }
+                }
+
+                &.youtube {
+                    background-position : -145px 0px;
+
+                    &:hover {
+                        background-position : -145px 28px;
+                    }
+                }
+            }
+        }
+
+        .newsletter {
+            text-align  : center;
+            padding-top : 53px;
+
+            span {
+                font-size      : 12px;
+                font-family    : $bold;
+                line-height    : 40px;
+                vertical-align : top;
+                margin-right   : 10px;
+            }
+
+            .contentasset {
+                display : inline-block;
+
+                #footer-newsletter-signup {
+                    margin-top : 0;
+
+                    fieldset {
+                        padding : 0;
+
+                        input {
+                            line-height  : 38px;
+                            padding      : 0;
+                            height       : 40px;
+                            border       : 1px solid #e5e5e5;
+                            border-right : 0;
+                            font-family  : $regular;
+                            font-weight  : normal;
+                            font-size    : 10px;
+                            width        : 200px;
+                            padding-left : 15px;
+                            color        : #252525;
+                        }
+
+                        button {
+                            height      : 40px;
+                            width       : 30px;
+                            border      : 1px solid #e5e5e5;
+                            border-left : 0;
+                            background  : transparent url(../img/footer_newsletter_arrow.png) center no-repeat;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .links {
+        display : table;
+        width   : 100%;
+
+        .col {
+            width      : 33%;
+            text-align : center;
+            display    : table-cell;
+
+            &.center {
+                border-left  : 1px solid #f7f7f7;
+                border-right : 1px solid #f7f7f7;
+            }
+        }
+
+        h3 {
+            font-family    : $medium;
+            font-size      : 13px;
+            text-transform : uppercase;
+            font-weight    : normal;
+            line-height    : 27px;
+        }
+
+        a {
+            text-transform : none;
+            font-size      : 12px;
+            line-height    : 27px;
+            color          : #252525;
+
+            &:hover {
+                text-decoration : underline;
+                color           : inherit;
+            }
+        }
+    }
+
+    .logo {
+        height: 140px;
+        background: transparent url(../img/logo_footer.png) center no-repeat;
+        border-top    : 1px solid #f7f7f7;
+        border-bottom : 1px solid #f7f7f7;
+    }
+
+    .lower {
+
+        * {
+            @include filter(grayscale(100%));
+            @include opacity(1, isImportant);
+        }
+
+        &.container_24 {
+            padding    : 20px 0;
+            width      : 100%;
+            text-align : center;
+            max-width  : 999px;
+
+            > div {
+                display : inline-block !important;
+                float : none !important;
+            }
+        }
+    }
+
+    .tuv_price_shipping_wrapper {
+        text-align : center;
+        position   : relative;
+    }
+}
+
+/* Switzerland */
+.jj.countryCH #footer_global {
+    .lower {
+        .grid_7,
+        .grid_8,
+        .grid_9 {
+            width  : 33%;
+            margin : 0;
+        }
+
+        .grid_7 {
+            line-height : 46px;
+
+            img {
+                vertical-align : middle;
+            }
+        }
+
+        .grid_8 {
+            text-align : center;
+
+            .contentasset {
+                display : inline-block;
+
+                #trustpilot {
+                    margin-left : 0;
+                }
+            }
+        }
+
+        .grid_9 {
+            line-height : 46px;
+
+            img {
+                vertical-align : middle;
+            }
+        }
+    }
+
+    .tuv_price_shipping_wrapper {
+        width  : 33%;
+        margin : 0 auto;
+        top    : -30px;
+    }
+}
+
+/* Germany */
+.jj.countryDE #footer_global {
+    .lower.container_24 {
+        padding : 20px 0;
+
+        .grid_9 {
+            display : none !important;
+        }
+
+        .grid_7 {
+            line-height : 46px;
+
+            img {
+                vertical-align : middle;
+            }
+        }
+    }
+
+    .tuv_price_shipping_wrapper {
+        width  : 33%;
+        margin : 0 auto;
+        top    : -30px;
+    }
+
+    @media (max-width: 1025) {
+        .lower.container_24 {
+            > div {
+                margin: 0;
+            }
+
+            .grid_3:last-child {
+                margin-left : 45px;
+                float       : none;
+            }
+
+            .grid_7 {
+                float : right !important;
+                width : auto;
+            }
+        }
+
+        .tuv_price_shipping_wrapper {
+            width  : 100%;
+            margin : 20px auto 0;
+        }
+    }
+}
+
+/* Denmark, Netherlands, Norway, Sweden */
+.jj.countryDK #footer_global,
+.jj.countryNL #footer_global,
+.jj.countryNO #footer_global,
+.jj.countrySE #footer_global {
+    .lower {
+        .grid_7,
+        .grid_8,
+        .grid_9 {
+            width  : 33%;
+            margin : 0;
+        }
+
+        .grid_7 {
+            line-height : 46px;
+
+            img {
+                vertical-align : middle;
+            }
+        }
+
+        .grid_8 {
+            text-align : center;
+
+            .contentasset {
+                display : inline-block;
+
+                #trustpilot {
+                    margin-left : 0;
+                }
+            }
+        }
+
+        .grid_9 {
+            line-height : 46px;
+
+            img {
+                vertical-align : middle;
+            }
+        }
+    }
+}
+
+/* ROE */
+.jj.countryBE #footer_global,
+.jj.countryES #footer_global,
+.jj.countryIE #footer_global,
+.jj.countryIT #footer_global,
+.jj.countryGB #footer_global {
+    .lower.container_24 {
+        padding : 20px 0;
+
+        .grid_9 {
+            width : 33% !important;
+
+            span {
+                margin-top : 13px;
+            }
+        }
+
+        .grid_7 {
+            width : 33%;
+        }
+
+        .grid_8 {
+            display: none;
+        }
+    }
+}
+
+/* Austria, Finland */
+.jj.countryAT #footer_global,
+.jj.countryFI #footer_global {
+    .lower.container_24 {
+        padding : 20px 0;
+
+        .grid_9 {
+            width : 33% !important;
+
+            span {
+                margin-top : 13px;
+            }
+        }
+
+        .grid_7 {
+            width : 33%;
+        }
+    }
+
+    .tuv_price_shipping_wrapper {
+        width  : 33%;
+        margin : 0 auto;
+        top    : -30px;
+    }
+}
+
+/* France */
+.jj.countryFR #footer_global {
+    .lower {
+        .grid_7,
+        .grid_8,
+        .grid_9 {
+            width  : 33%;
+            margin : 0;
+        }
+
+        .grid_7 {
+            line-height : 46px;
+
+            img {
+                vertical-align : middle;
+            }
+        }
+
+        .grid_8 {
+            text-align : center;
+
+            .contentasset {
+                display : inline-block;
+
+                #trustpilot {
+                    margin-left : 0;
+                }
+            }
+        }
+
+        .grid_9 {
+
+            span {
+                margin-top : 13px;
+            }
+        }
+    }
+}
+
+/* NO RESULTS */
+
+#branded .content .no-results-slot {
+    display       : inline-block;
+    height        : 183px;
+    width         : 246px;
+    margin-right  : 8px;
+    margin-bottom : 8px;
+
+    &:hover {
+        text-decoration : none;
+    }
+
+    &.col1 {
+        // margin-left : 21px;
+    }
+
+    &.col3 {
+        margin-right : 0;
+    }
+
+    &.large {
+        width         : 758px;
+        height        : 113px;
+        margin-bottom : 19px;
+
+        h2 {
+            padding-top : 35px;
+            color       : black;
+        }
+    }
+
+    h2 {
+        padding-top    : 114px;
+        text-align     : center;
+        color          : white;
+        text-transform : uppercase;
+        font-size      : 16px;
+    }
+
+    h3 {
+        padding-top    : 0px;
+        margin-top     : 0;
+        text-align     : center;
+        color          : white;
+        text-transform : uppercase;
+        font-size      : 14px;
+        font-weight    : normal;
+    }
+}
+
+/* Bestseller header */
+#header_global .header_top .customer_info #spanGigyaHeaderLogin {
+    @include filter(grayscale(1));
+}
+
+#servicebar {
+    @include backface-visibility(hidden);
+
+    .brand {
+        background-color : transparent;
+    }
+}
+
+/* category banner heading text */
+.cat-banner-wrapper h1.catHeading {
+    display        : block !important;
+    position       : absolute;
+    top            : 126px;
+    width          : 100%;
+    color          : white;
+    text-align     : center;
+    font-weight    : normal;
+    font-size      : 70px;
+    font-family    : $regular, 'Univers_lt_cn', Helvetica, Arial, Verdana, sans-serif;
+    text-transform : uppercase;
+}
+
+/* img based category banner text */
+#branded.pt_category .cat-banner-wrapper {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: -1px;
+    z-index: 0;
+
+    a {
+        display: block;
+    }
+
+}
+
+
+.cat-banner-top-wrapper {
+    text-align : center;
+    margin     : 20px auto;
+
+    h1 {
+        font-family    : $regular, 'Univers_lt_cn', Helvetica, Arial, Verdana, sans-serif;
+        color          : #000;
+        text-align     : center;
+        font-weight    : normal;
+        font-size      : 24px;
+        line-height    : 1.1em;
+        text-transform : uppercase;
+        display        : block !important;
+        margin         : 0.5em 0;
+    }
+
+    p {
+        font-family : $regular;
+        font-size   : 12px;
+        font-weight : normal;
+        color       : #666;
+        margin      : 0.5em 0;
+    }
+
+    a {
+        font-family    : $regular;
+        font-size      : 12px;
+        line-height    : 18px;
+        font-weight    : normal;
+        text-transform : uppercase;
+        color          : #000;
+        display        : block;
+        margin         : 1em 0;
+    }
+}
+.category-text-wrapper {
+    width  : 970px;
+    margin : 20px auto;
+}
+
+#branded.pt_productdetails #content.container_24 {
+    margin-top : 0px;
+}
+
+/* Quickview buttons */
+#branded .productresultarea .product .image .quickviewbutton a {
+    font-family    : $light;
+    font-size      : 14px;
+    padding-top    : 16px;
+    height         : 26px;
+    text-transform : inherit;
+}
+
+// Show product names on jeans
+#branded {
+    &.cat2_jj-shop-bottoms-jeans,
+    &.cat2_jj-j-shop-bottoms-jeans,
+    &.cat2_jj-c-shop-bottoms-jeans,
+    &.cat2_jj-o-shop-bottoms-jeans,
+    &.cat2_jj-p-shop-bottoms-jeans,
+    &.cat2_jj-v-shop-bottoms-jeans,
+    &.cat2_jj-t-shop-bottoms-jeans,
+    &.cat3_jj-shop-bottoms-jeans-skinny-fit,
+    &.cat3_jj-j-shop-bottoms-jeans-skinny-fit,
+    &.cat3_jj-c-shop-bottoms-jeans-skinny-fit,
+    &.cat3_jj-o-shop-bottoms-jeans-skinny-fit,
+    &.cat3_jj-p-shop-bottoms-jeans-skinny-fit,
+    &.cat3_jj-v-shop-bottoms-jeans-skinny-fit,
+    &.cat3_jj-t-shop-bottoms-jeans-skinny-fit,
+    &.cat3_jj-shop-bottoms-jeans-slim-fit,
+    &.cat3_jj-j-shop-bottoms-jeans-slim-fit,
+    &.cat3_jj-c-shop-bottoms-jeans-slim-fit,
+    &.cat3_jj-o-shop-bottoms-jeans-slim-fit,
+    &.cat3_jj-p-shop-bottoms-jeans-slim-fit,
+    &.cat3_jj-v-shop-bottoms-jeans-slim-fit,
+    &.cat3_jj-t-shop-bottoms-jeans-slim-fit,
+    &.cat3_jj-shop-bottoms-jeans-regular-fit,
+    &.cat3_jj-j-shop-bottoms-jeans-regular-fit,
+    &.cat3_jj-c-shop-bottoms-jeans-regular-fit,
+    &.cat3_jj-o-shop-bottoms-jeans-regular-fit,
+    &.cat3_jj-p-shop-bottoms-jeans-regular-fit,
+    &.cat3_jj-v-shop-bottoms-jeans-regular-fit,
+    &.cat3_jj-t-shop-bottoms-jeans-regular-fit,
+    &.cat3_jj-shop-bottoms-jeans-comfort-fit,
+    &.cat3_jj-j-shop-bottoms-jeans-comfort-fit,
+    &.cat3_jj-c-shop-bottoms-jeans-comfort-fit,
+    &.cat3_jj-o-shop-bottoms-jeans-comfort-fit,
+    &.cat3_jj-p-shop-bottoms-jeans-comfort-fit,
+    &.cat3_jj-v-shop-bottoms-jeans-comfort-fit,
+    &.cat3_jj-t-shop-bottoms-jeans-comfort-fit,
+    &.cat3_jj-shop-bottoms-jeans-loose-fit,
+    &.cat3_jj-j-shop-bottoms-jeans-loose-fit,
+    &.cat3_jj-c-shop-bottoms-jeans-loose-fit,
+    &.cat3_jj-o-shop-bottoms-jeans-loose-fit,
+    &.cat3_jj-p-shop-bottoms-jeans-loose-fit,
+    &.cat3_jj-v-shop-bottoms-jeans-loose-fit,
+    &.cat3_jj-t-shop-bottoms-jeans-loose-fit,
+    &.cat3_jj-shop-bottoms-jeans-anti-fit,
+    &.cat3_jj-j-shop-bottoms-jeans-anti-fit,
+    &.cat3_jj-c-shop-bottoms-jeans-anti-fit,
+    &.cat3_jj-o-shop-bottoms-jeans-anti-fit,
+    &.cat3_jj-p-shop-bottoms-jeans-anti-fit,
+    &.cat3_jj-v-shop-bottoms-jeans-anti-fit,
+    &.cat3_jj-t-shop-bottoms-jeans-anti-fit,
+    &.cat3_jj-shop-bottoms-jeans-coloured,
+    &.cat3_jj-j-shop-bottoms-jeans-coloured,
+    &.cat3_jj-c-shop-bottoms-jeans-coloured,
+    &.cat3_jj-o-shop-bottoms-jeans-coloured,
+    &.cat3_jj-p-shop-bottoms-jeans-coloured,
+    &.cat3_jj-v-shop-bottoms-jeans-coloured,
+    &.cat3_jj-t-shop-bottoms-jeans-coloured {
+        .producttile .name {
+            height: auto;
+        }
+    }
+}
+
+// Offers box on PDP
+.product_detail .promotion.active {
+    background  : none;
+    padding     : 5px 0;
+    font-style  : normal;
+    font-family : $medium;
+    margin-top  : 10px;
+    @include box-shadow(none);
+
+    .find_out_more a {
+        color          : inherit;
+        background     : none;
+        padding-right  : 0;
+        text-transform : uppercase;
+        font-family    : $bold;
+        font-weight    : normal;
+    }
+}
