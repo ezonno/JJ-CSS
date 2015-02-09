@@ -1,2 +1,2 @@
 alert = ->
-	alert 'Hello world'
+	alert 'Hello world 2'
