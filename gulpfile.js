@@ -76,7 +76,9 @@ gulp.task('styles-static', function(target){
 		.pipe(stylus({
 			use: [autoprefixer({ browser: 'last 3 versions' })]
 		}))
-		.pipe(minifycss())
+		.pipe(minifycss({
+			processImport: false
+		}))
 		.pipe(gulp.dest('build/static/css'));
 });
 
@@ -86,7 +88,9 @@ gulp.task('styles-lib', function(target){
 		.pipe(stylus({
 			use: [autoprefixer({ browser: 'last 3 versions' })]
 		}))
-		.pipe(minifycss())
+		.pipe(minifycss({
+			processImport: false
+		}))
 		.pipe(gulp.dest('build/lib/'));
 });
 
