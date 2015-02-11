@@ -7,6 +7,7 @@ var del = require('del');
 var minifycss = require('gulp-minify-css');
 var gutil = require('gulp-util');
 var plumber = require('gulp-plumber');
+var autoprefixer = require('autoprefixer-stylus');
 
 var paths = {
 	scriptsStatic: 'src/static_files/scripts/**/*.coffee',
@@ -65,7 +66,9 @@ gulp.task('scripts-lib', function() {
 gulp.task('styles-static', function(target){
 	return gulp.src(paths.stylesStatic)
 		.pipe(plumber())
-		.pipe(stylus())
+		.pipe(stylus({
+			use: [autoprefixer({ browser: 'last 3 versions' })]
+		}))
 		.pipe(minifycss())
 		.pipe(gulp.dest('build/static/css'));
 });
@@ -73,7 +76,9 @@ gulp.task('styles-static', function(target){
 gulp.task('styles-lib', function(target){
 	return gulp.src(paths.stylesLib)
 		.pipe(plumber())
-		.pipe(stylus())
+		.pipe(stylus({
+			use: [autoprefixer({ browser: 'last 3 versions' })]
+		}))
 		.pipe(minifycss())
 		.pipe(gulp.dest('build/lib/'));
 });
