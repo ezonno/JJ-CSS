@@ -1,45 +1,44 @@
-@require '../modules/vars'
-
-_productlisting ($imagewidth, $spacing)
-	$listwidth = ($imagewidth * 3) + ($spacing * 2)
-	
-	.productlisting
-		margin 0 auto
-		width $listwidth
+productlisting ($imagewidth, $spacing)
+	if $imagewidth > 0 and $spacing > 0
+		$listwidth = ($imagewidth * 3) + ($spacing * 2)
 		
-		.grid_5
-			width $imagewidth
-			margin $spacing
-			height auto
-			overflow hidden
+		.productlisting
+			margin 0 auto
+			width $listwidth
 			
-			&.alpha
-			&.omega
-				margin 0
-				
-			.producttile
-				background-color transparant
+			.grid_5
+				width $imagewidth
+				margin $spacing
 				height auto
+				overflow hidden
 				
-				.image
-					border 0 none
+				&.alpha
+				&.omega
 					margin 0
 					
-					.thumbnail
-						width 100%
-						height auto
-						
-						.badeimage
-							&.promobadge
-							&.oosbadge
-								margin -30px auto 0
-								position relative
-								
-					img.product_thumbnail
+				.producttile
+					background-color transparant
+					height auto
+					
+					.image
 						border 0 none
-						width $imagewidth
-						height auto
+						margin 0
 						
-					.quickviewbutton
-					.quickviewbutton a
-						box-sizing content-box
+						.thumbnail
+							width 100%
+							height auto
+							
+							.badeimage
+								&.promobadge
+								&.oosbadge
+									margin -30px auto 0
+									position relative
+									
+						img.product_thumbnail
+							border 0 none
+							width $imagewidth
+							height auto
+							
+						.quickviewbutton
+						.quickviewbutton a
+							box-sizing content-box
