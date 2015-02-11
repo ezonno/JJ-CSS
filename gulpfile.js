@@ -13,8 +13,15 @@ var paths = {
 	scriptsStatic: 'src/static_files/scripts/**/*.coffee',
 	scriptsLib: 'src/lib_files/**/scripts/**/*.coffee',
 
-	stylesStatic: 'src/static_files/styles/**/*.styl',
-	stylesLib: 'src/lib_files/**/styles/**/*.styl',
+	stylesStatic: [
+		'src/static_files/styles/**/*.styl',
+		'!src/static_files/styles/modules/**/*.styl'
+	],
+
+	stylesLib: [
+		'src/lib_files/**/styles/**/*.styl',
+		'!src/lib_files/**/styles/modules/**/*.styl'
+	],
 
 	imagesStatic: 'src/static_files/img/**/*',
 	imagesLib: 'src/lib_files/**/img/**/*',
