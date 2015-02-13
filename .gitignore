@@ -221,7 +221,7 @@ pip-log.txt
 local/index.html
 local/
 
-css/
-min/
+build/
 /prepros.cfg
 /README.html
+node_modules
