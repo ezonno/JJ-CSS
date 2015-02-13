@@ -8,12 +8,13 @@ When closing an issue, a gif must be attached. That is all.
 ### Copyright
 Not really. It's just a bunch of JS and CSS.
 
-### Current version: 6.1
+### Current version: 7.0
 
 #### Major releases, history:
 
 | Version | Codename | Date | Notes |
 |:-------:|:--------:|:----:|:------|
+| 7.0 | Seraphim | Feb. 2015 | Gulp. Refactored to coffeescript and stylus |
 | 6.0 | Phoenix | Nov. 2014 | New navigation. Prep for new storefront. First Central E-com contribution. |
 | 5.0 | Brontosaurus | Aug. 2014 | Subbrand pages updated, old styling wiped from the face of the earth |
 | 4.0 | Marius (The Giraffe) | Mar. 2014 | Complete redesign. Potential shitstorm |
