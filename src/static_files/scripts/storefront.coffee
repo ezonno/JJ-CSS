@@ -39,7 +39,7 @@ jjStorefront = do ($) ->
 			paginationClickable: true
 			keyboardControl: true
 			
-			# Resetting E-coms overwrites... Idiots...
+			# Resetting E-coms overwrites... Boneheads...
 			slideClass: 'swiper-slide'
 			slideActiveClass: 'swiper-slide-active'
 			slideVisibleClass: 'swiper-slide-visible'
@@ -58,6 +58,14 @@ jjStorefront = do ($) ->
 			onSlideChangeEnd: ->
 				if jjStorefront.heroInView
 					jjStorefront.trackingHero('View')
+
+		$('#branded .content .hero .swiper-prev').on 'click', (e) ->
+			e.preventDefault()
+			jjStorefront.jjSwiper.swipePrev()
+
+		$('#branded .content .hero .swiper-next').on 'click', (e) ->
+			e.preventDefault()
+			jjStorefront.jjSwiper.swipeNext()
 
 	displayHero: ->
 		$('#branded .content .storefront-hero .swiper-container .swiper-slide').each ->
