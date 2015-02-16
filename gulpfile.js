@@ -21,7 +21,7 @@ var paths = {
 
 	stylesLib: [
 		'src/lib_files/**/styles/**/*.styl',
-		'!src/lib_files/**/styles/modules/**/*.styl'
+		'!src/lib_files/**/styles/modules/*.styl'
 	],
 
 	imagesStatic: 'src/static_files/img/**/*',
