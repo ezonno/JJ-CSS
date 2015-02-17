@@ -78,9 +78,11 @@ gulp.task('styles-static', function(target){
 			use: [autoprefixer({ browser: 'last 3 versions' })],
 			use: [nib()]
 		}))
+		/*
 		.pipe(minifycss({
 			processImport: false
 		}))
+		*/
 		.pipe(gulp.dest('build/static/css'));
 });
 
