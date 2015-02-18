@@ -1,4 +1,5 @@
 @import '../../../static_files/styles/modules/vars'
+@import '../../../static_files/styles/modules/easings'
 
 // Overwrites
 .jj #branded.pt_brandstorefront 
@@ -31,6 +32,10 @@
 		position absolute
 		left 30px
 		top 328px
+		transition transform 0.3s easeOutCubic
+
+		&:hover
+			transform rotate(30deg)
 		
 	.text
 		margin 0 75px 0 275px
