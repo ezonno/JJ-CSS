@@ -37,8 +37,8 @@ var paths = {
 	copyLib: [
 		'src/lib_files/**/*',
 		'!src/lib_files/**/{scripts,scripts/**}',
-		'!src/lib_files/**/{styles,styles/**}',
-		'!src/lib_files/**/{img,img/**}'
+		'!src/lib_files/**/{styles,styles/**}'
+		//'!src/lib_files/**/{img,img/**}'
 	]
 };
 
@@ -78,11 +78,9 @@ gulp.task('styles-static', function(target){
 			use: [autoprefixer({ browser: 'last 3 versions' })],
 			use: [nib()]
 		}))
-		/*
 		.pipe(minifycss({
 			processImport: false
 		}))
-		*/
 		.pipe(gulp.dest('build/static/css'));
 });
 
