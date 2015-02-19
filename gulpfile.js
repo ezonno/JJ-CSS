@@ -131,7 +131,7 @@ gulp.task('watch-static', function() {
 gulp.task('watch-lib', function() {
 	gulp.watch(paths.scriptsLib, ['scripts-lib']);
 	gulp.watch(paths.stylesLib, ['styles-lib']);
-	gulp.watch(paths.imagesLib, ['images-lib']);
+	//gulp.watch(paths.imagesLib, ['images-lib']);
 });
 
 // Chains
@@ -140,7 +140,8 @@ gulp.task('deploy-static', function(){
 });
 
 gulp.task('deploy-lib', function(){
-	return gulp.start('scripts-lib', 'styles-lib', 'images-lib', 'copy-lib');
+	return gulp.start('scripts-lib', 'styles-lib', 'copy-lib');
+	// return gulp.start('scripts-lib', 'styles-lib', 'images-lib', 'copy-lib');
 });
 
 gulp.task('deploy', function(){
@@ -153,6 +154,7 @@ gulp.task('scripts', function(){
 
 gulp.task('images', function(){
 	return gulp.start('images-static', 'images-lib');
+	// return gulp.start('images-static'/*, 'images-lib'*/);
 });
 
 gulp.task('styles', function(){
