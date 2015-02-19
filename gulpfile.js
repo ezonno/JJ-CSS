@@ -55,7 +55,9 @@ gulp.task('scripts-static', function() {
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 			.pipe(coffee())
-			.pipe(uglify())
+			.pipe(uglify({
+				mangle: false
+			}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('build/static/js'));
 });
@@ -65,7 +67,9 @@ gulp.task('scripts-lib', function() {
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 			.pipe(coffee())
-			.pipe(uglify())
+			.pipe(uglify({
+				mangle: false
+			}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('build/lib/'));
 });
