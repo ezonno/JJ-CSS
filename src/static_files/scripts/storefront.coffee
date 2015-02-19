@@ -1,4 +1,4 @@
-jjStorefront = do ($) ->
+jjStorefront = ((jQuery) ->
 	
 	# Custom functions here
 	assignGlobalVars: ->
@@ -76,7 +76,10 @@ jjStorefront = do ($) ->
 
 	resizeHero: ->
 		# jjStorefront.jjSwiper.resizeFix()
-		heroHeight = $('.swiper-slide a img').height()
+		# :last-child is a temp fix while custom banner is running
+		# Need to fix that for future deployments
+		heroHeight = $('.swiper-slide a:last-child img').height()
+
 		TweenMax.set $('#branded .content .hero.swiper-container'),
 			height: heroHeight
 
@@ -270,6 +273,7 @@ jjStorefront = do ($) ->
 				jjStorefront.footerReached = true;
 
 	# End custom functions
+)(jQuery)
 
 $(document).ready ->
 	jjStorefront.assignGlobalVars()
