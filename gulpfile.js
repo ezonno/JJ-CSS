@@ -83,7 +83,8 @@ gulp.task('styles-static', function(target){
 			use: [nib()]
 		}))
 		.pipe(minifycss({
-			processImport: false
+			processImport: false,
+			advanced: false
 		}))
 		.pipe(gulp.dest('build/static/css'));
 });
@@ -96,7 +97,8 @@ gulp.task('styles-lib', function(target){
 			use: [nib()]
 		}))
 		.pipe(minifycss({
-			processImport: false
+			processImport: false,
+			advanced: false
 		}))
 		.pipe(gulp.dest('build/lib/'));
 });
