@@ -143,8 +143,6 @@
 						text-align left
 						margin-bottom 0px
 		
-						a! {}
-		
 						> a
 							font-family $medium
 							font-size 11px
@@ -153,7 +151,7 @@
 							letter-spacing 0.1em
 							color #595b5c
 							padding 14px 0 16px
-							margin-left 41px
+							margin-left 39px
 		
 						img.categorythumbnail
 							margin 12px 0 0 0
@@ -161,44 +159,7 @@
 		
 						ul.items
 							line-height 20px
-							padding 4px 0 4px 2.5px
-
-							.icon-container
-								float left
-								margin-right 5px
-		
-								img
-									margin 0
-		
-							&.active.selected:hover
-							&:hover
-								background url('../img/jj-nav-hover-bg.png') 5px
-
-							&.active
-								background url('../img/jj-nav-active-bg.png') 5px
-
-					&.level1item ul.items .active .selected
-						background url('../img/jj-nav-active-bg.png') 5px
-					
-					&.level0item#category_3 ul.items.active
-					&.level1item ul.items .active .selected
-						background url('../img/jj-nav-active-bg.png') 5px
-						margin-bottom 12px
-
-					&.level0item
-						&#category_2 ul.items
-							padding-bottom 1px
-					
-						&#category_3 ul.items
-							padding-bottom 4px
-					
-						&#category_22 ul.items
-							padding-bottom 1px
-					
-						ul.items
-							&:last-child
-								margin-bottom 23px
-					
+							
 							a
 								font-family $nextMedium
 								font-size 14px
@@ -207,14 +168,22 @@
 								font-weight normal
 								letter-spacing normal
 								line-height 20px
-								margin-left 39px
+								padding 4px 0 4px 39px
 
 								&:hover
 									text-decoration none
+							
+							&:last-child
+								margin-bottom 23px
 
 							.icon-container
+								float left
+								margin-right 5px
 								margin-left 39px
-							
+		
+								img
+									margin 0
+								
 							li
 								a
 									font-family $nextMedium
@@ -226,7 +195,7 @@
 									color #999999
 									letter-spacing 0
 									background url("../img/arrow_sprite.png") no-repeat 0 10px
-									padding-left 25px
+									padding 0 0 0 25px
 									margin-left 42px
 
 									&:hover
@@ -240,7 +209,52 @@
 								
 									&:last-child
 										margin-bottom 4px
+										
+							&.active.selected:hover
+							&:hover
+								background url('../img/jj-nav-hover-bg.png') 5px
 
+							&.active
+								z-index 1
+								background url('../img/jj-nav-active-bg.png') 5px
+
+						&#category_2 ul.items 
+							a
+								padding 2px 0 3px 39px
+							
+							li a
+								padding 0 0 0 25px
+					
+						&#category_22 ul.items
+							padding-bottom 1px
+
+						&.active
+							.lhn-subcategories
+								padding 0 0 1px 0
+						
+							ul.active li.level2item:nth-of-type(1)
+								margin-top 3px
+
+							dd
+								&.selected ul.active > a
+									text-decoration none
+							
+								ul.active > a
+									text-decoration none
+									margin-bottom initial
+							
+									&:hover
+										background url('../img/jj-nav-hover-bg.png') 5px
+							
+							ul.active li.level2item
+								display block
+								text-transform uppercase
+							
+								&:hover
+									display block
+									text-transform uppercase
+									background url('../img/jj-nav-hover-bg.png') 5px
+									
 						// Oh, the horror!!
 						&.jj-c-home
 						&.jj-o-home
@@ -284,35 +298,13 @@
 						&.jj-t-miscellaneous .items a
 							font-family $nextMedium
 
-						&.active
-							.lhn-subcategories
-								padding 0 0 1px 0
-						
-							ul.active li.level2item:nth-of-type(1)
-								margin-top 7px
-
-							dd
-								&.selected ul.active > a
-									text-decoration none
-							
-								ul.active > a
-									text-decoration none
-									margin-bottom initial
-							
-									&:hover
-										text-decoration none
-										margin-bottom initial
-										background #2b2d2f
-										box-shadow #2b2d2f -34px 0px 0px 0px
-							
-							ul.active li.level2item
-								display block
-								text-transform uppercase
-							
-								&:hover
-									display block
-									text-transform uppercase
-									background url('../img/jj-nav-hover-bg.png') 2px
+					&.level1item ul.items .active .selected
+						background url('../img/jj-nav-active-bg.png') 5px
+					
+					&.level0item#category_3 ul.items.active
+					&.level1item ul.items .active .selected
+						background url('../img/jj-nav-active-bg.png') 5px
+						margin-bottom 12px
 
 	.jj-sidebar-logo
 		position absolute
@@ -346,11 +338,10 @@
 	margin-bottom 10px
 
 #branded .side-menu .lhn-subcategories .category .ul_wrapper img
-	margin-left 40px
-	margin-top 2px
-	margin-right 10px
+	margin 6px 10px 0 40px
 	float left
 	vertical-align initial
+	pointer-events none
 
 #branded .side-menu .side-menu-categories .category_menu ul.categories li.level0item.active ul.active li.level2item
 	&:first-child
