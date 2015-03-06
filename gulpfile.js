@@ -7,7 +7,7 @@ var del = require('del');
 var minifycss = require('gulp-minify-css');
 var gutil = require('gulp-util');
 var plumber = require('gulp-plumber');
-var autoprefixer = require('autoprefixer-stylus');
+var autoprefixer = require('gulp-autoprefixer');
 var nib = require('nib');
 
 var paths = {
@@ -78,10 +78,8 @@ gulp.task('scripts-lib', function() {
 gulp.task('styles-static', function(target){
 	return gulp.src(paths.stylesStatic)
 		.pipe(plumber())
-		.pipe(stylus({
-			use: [autoprefixer({ browser: 'last 3 versions' })],
-			use: [nib()]
-		}))
+		.pipe(stylus())
+		.pipe(autoprefixer({ browser: 'Last 3 versions' }))
 		.pipe(minifycss({
 			processImport: false,
 			advanced: false
@@ -92,10 +90,8 @@ gulp.task('styles-static', function(target){
 gulp.task('styles-lib', function(target){
 	return gulp.src(paths.stylesLib)
 		.pipe(plumber())
-		.pipe(stylus({
-			use: [autoprefixer({ browser: 'last 3 versions' })],
-			use: [nib()]
-		}))
+		.pipe(stylus())
+		.pipe(autoprefixer({ browser: 'Last 5 versions' }))
 		.pipe(minifycss({
 			processImport: false,
 			advanced: false
