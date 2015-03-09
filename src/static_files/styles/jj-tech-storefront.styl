@@ -103,16 +103,25 @@
 		position relative
 		z-index 1
 		
-		/*
+	.brandsite-full-width-content-box
+		width 100%
+		
 		a
-			&:nth-child(2n+1)
-				&:after
-					content ''
-					display block
+			// Woah. What's going on here?
+			// We're using : selectors as conditionals, that's what!
+				
+			// if only one <a> exists do something
+			&:only-of-type .content-box
+				width 100%
+		
+			// if there are more, do something else
+			.content-box
+				width 50%
+				float left
+				
+				img
 					width 100%
-					height 500px
-					background #262729
 					
-			&:first-child:after
-				background linear-gradient(top, white, black)
-		*/
+	.brandsite-footer-logo
+		height 150px
+		background #fff url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJMAAAAbCAMAAABP2E2SAAACQFBMVEUAAAAdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRuZgssBAAAAv3RSTlMAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhscHR4gISMkJSYoKywtLi8wMTIzNDU2ODk6Ozw9Pj9AQUJDREZHSktNUFFSU1RVWltcXV9gYWJjZGZnaGlrbG9wcXJ0dXd4eXp7fH1+gIKDhIaHiImKi4yNjpCRkpOVlpeZmpucnaChoqWmqKmqq6yur7CxsrO0tre6u77AwcLFysvMzs/Q0tPV1tna29zd3t/g4eLk5ufo6+zu7/Dx8vP29/n6+/z9/kw5WV0AAAMRSURBVHgB7dJ7UxtVGMfxX9pYUCtdiyg0qLWA0FRaW3ErIhirlmq91BYUq7QEY4wXi2mVakPKBSMsgqIREUWIomTFS4SooKDPW3Ofs4FczJ6ZMDrDWD5/ZOaZOTnPN9nFxlLmOdl2ACbffgj36+yzRpiOfhI1xpfATteCVfmQ9Pj49MgupHm0CcKdI9/q+nTHDgjNX+mG2a4tYHeP6WzqrA2sdJi3dMDw6ml/+yswaS4INoVVzFWYN03fU2iMV4EFj4O5e5EUrUJfE9J4/GDOWGORotzS9alZEatQDIXRMrAf6hVWMlULNvLiztUt7outb53JaKp0CR+Z+2dqICSbCk/9vA9JH4S21zmzNr3dCrZlzjweV8AmK8EIpo+PmE1e/uX5MJxozHM9l97U+XlQiJhNcUdq02I8Hl+hJ5B0NvxmpPwdJVvT4HEIY2q2pkkhOnoNmGPIeMx6rNsOoOrJg0hvWlIgdJo3fuHK/J/yjsYOASnfqtOXSrI1nesAu3bhtixNy7sd7Hqkyps5jASnajj85X1mhFdlD8xVgzX81FJrjI7U9+n5fqw5H7ij2vtXqABCmcoG28GKv7vQoKrHJgLI0vR+gK9V9yBhW40xHYvfjITLGnthK9iucwM8XW6A6fbzg8Z4CuyRfeZmN9bc0H4p+Nqtzx6C4NPYGwqEorY+TQs8bIPg2wbWWgR23ZmQZvAioZjHrhps2vRfuPqgKlMOQ6kqsT8fzFauSuzlE4+17YSlEs8RrBonuRbg3j9JJlYHoHiSpF4GHiIKwFKYiMOFeZLrBE6Q3MJ24EOS6weeIdJgSSdyIcH5uj9FhIje86dw7wDsTX6J34kqgQWiHskhz405NGUIEpGKnMRFk/iUucKaDvRoGZZzaPpRs7S4/qZv6B9yaJJZf9OlDdiEmxwZfs2hadRh6fv/wTtuVyR+WW26S7GW/2837Z0nuVJxpczKU+tvukBE1cjwNMm9C+AkyQ0DzUQDsPQ1UT2y2h1Z7t6KDAUXwxJDzXYY6nvDEqE9gGP2twdhqeWPiQKY/gYyhdx9BCkyygAAAABJRU5ErkJggg==') no-repeat center
