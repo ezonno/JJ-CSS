@@ -3,15 +3,14 @@ jjTechStorefront = do ($) ->
 	# Custom functions here
 	assignGlobalVars: ->
 		# Vars for scrolling track - False should only be set once on load
-		jjTechStorefront.brandsReached = false
-		jjTechStorefront.categoriesReached = false
-		jjTechStorefront.footerReached = false
+		jjTechStorefront.contentBoxesReached = false
+		jjTechStorefront.fullwidthBoxReached = false
 
 	responsiveHero: ->
 		$('#branded .content .hero.swiper-container .swiper-slide img').dataImg
-			sml: 1260
-			med: 1420
-			lrg: 1660
+			sml: 1023
+			med: 1440
+			lrg: 1441
 			resize: false
 
 	checkHero: ->
@@ -75,7 +74,6 @@ jjTechStorefront = do ($) ->
 			height: heroHeight
 
 	detectGrid: ->
-		jjTechStorefront.brandHover()
 		jjTechStorefront.resizeHero()
 
 		if jjTechStorefront.pageIsLoaded
@@ -84,51 +82,8 @@ jjTechStorefront = do ($) ->
 		if !jjTechStorefront.footerReached
 			jjTechStorefront.trackingScroll()
 
-	initQuickview: ->
-		quickViewOptions =
-			buttonSelector: null
-			imageSelector: null
-			buttonLinkSelector: '.quickview'
-		
-		app.quickView.bindEvents(quickViewOptions)
-
 	trackingInit: ->
-		jjTechStorefront.trackingCategories()
 		jjTechStorefront.trackingScroll()
-
-	trackingCategories: ->
-		$('#branded .content .storefront-categories .gridify .box').each ->
-			box = $(@).data('pos-grid')
-			week = $(@).data('week')
-			product = $(@).data('product')
-			category = $(@).data('category')
-			image = $(@).data('image')
-
-			$(@).find('a').click ->
-
-				if $(@).hasClass('one')
-					_gaq.push [
-						'_trackEvent'
-						'jj-tech-storefront'
-						'category boxes'
-						'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, product: ' + product
-					]
-
-				else if $(@).hasClass('two')
-					_gaq.push [
-						'_trackEvent'
-						'jj-tech-storefront'
-						'category boxes'
-						'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, category: ' + category
-					]
-
-				else
-					_gaq.push [
-						'_trackEvent'
-						'jj-tech-storefront'
-						'category boxes'
-						'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: image, category: ' + category
-					]
 
 	viewportHero: ->
 		heroViewportCheck = $('#branded .content .hero').isInViewport 
@@ -155,9 +110,9 @@ jjTechStorefront = do ($) ->
 
 			_gaq.push [
 				'_trackEvent'
-				'jj-tech-storefront'
-				'hero'
-				'Slide: ' + slideHumanIndex + ', week: ' + slideWeek + ', image: ' + slideImage + ', url: ' + slideUrl + ', type: ' + type
+				'jj-tech-hero'
+				type
+				'Slide: ' + slideHumanIndex + ', week: ' + slideWeek + ', image: ' + slideImage + ', url: ' + slideUrl
 			]
 
 		else
@@ -170,58 +125,74 @@ jjTechStorefront = do ($) ->
 
 			_gaq.push [
 				'_trackEvent'
-				'jj-tech-storefront'
-				'hero'
-				'Slide: ' + staticHumanIndex + ', week: ' + staticWeek + ', image: ' + staticImage + ', url: ' + staticUrl + ', type: ' + type
+				'jj-tech-hero'
+				type
+				'Slide: ' + staticHumanIndex + ', week: ' + staticWeek + ', image: ' + staticImage + ', url: ' + staticUrl
 			]
 
 	trackingScroll: ->
 		$(window).scroll ->
-			offsetCategories = $('#branded .content .storefront-categories').offset().top
-			offsetFooter = $('#footer_global').offset().top
+			offsetWindow = $(window).height() * 0.50
+			offsetContent = $('#branded .content .brandsite-content-boxes').offset().top - offsetWindow
+			offsetFullwidth = $('#branded .content .brandsite-full-width-content-box').offset().top - offsetWindow
 
 			$(window).scroll ->
-				if $(window).scrollTop() >= offsetCategories and !jjTechStorefront.categoriesReached
+				if $(window).scrollTop() >= offsetContent and !jjTechStorefront.contentBoxesReached
 					_gaq.push [
 						'_trackEvent'
-						'jj-tech-storefront'
-						'scroll'
-						'Category boxes reached'
+						'jj-tech-scroll'
+						'Scroll'
+						'Content boxes in viewport'
 					]
 
-					jjTechStorefront.categoriesReached = true
+					jjTechStorefront.contentBoxesReached = true
 				
-				else if $(window).scrollTop() >= offsetFooter and !jjTechStorefront.footerReached
+				else if $(window).scrollTop() >= offsetFullwidth and !jjTechStorefront.fullwidthBoxReached
 					_gaq.push [
 						'_trackEvent'
-						'jj-tech-storefront'
-						'scroll'
-						'Footer reached'
+						'jj-tech-scroll'
+						'Scroll'
+						'Full-width box in viewport'
 					]
 
-					jjTechStorefront.footerReached = true
+					jjTechStorefront.fullwidthBoxReached = true
 
-	closeCallout: ->
-		 $('#branded .content .storefront-promos .storefront-callout button').click (e) ->
-			callout = $('#branded .content .storefront-promos .storefront-callout')
+	trackingClicks: ->
+		contents = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box')
 
-			TweenLite.to callout, 0.4, 
-				height: 0
-				borderWidth: 0
-				ease: 'easeOutCubic'
+		contents.find('a').click ->
+			id = $(@).data('track-id') ? 'Error - Please panic'
 
-			TweenLite.to callout.parent(), 0.4, 
-				marginTop: 0
-				ease: 'easeOutCubic'
+			_gaq.push [
+				'_trackEvent'
+				'jj-tech-content'
+				'Click'
+				id
+			]
+
+	switchImages: ->
+		# Whoever you are, you should look away now
+		# Raping bandwidth and http requests here
+		v = $(window).width()
+		images = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box').find('img')
+
+		if (v <= 1205)
+			images.each ->
+				newSrc = $(@).attr('src').replace('medium', 'small')
+				$(@).attr('src', newSrc)
+		else if (v >= 1440)
+			images.each ->
+				newSrc = $(@).attr('src').replace('medium', 'large')
+				$(@).attr('src', newSrc)
 
 	# End custom functions
 
 $(document).ready ->
 	jjTechStorefront.assignGlobalVars()
 	jjTechStorefront.responsiveHero()
-	jjTechStorefront.initQuickview()
 	jjTechStorefront.trackingInit()
-	jjTechStorefront.closeCallout()
+	jjTechStorefront.trackingClicks()
+	jjTechStorefront.switchImages()
 
 $(window).load ->
 	jjTechStorefront.checkHero()
