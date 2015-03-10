@@ -92,7 +92,7 @@ jjPremiumStorefront = do ($) ->
 		jjPremiumStorefront.trackingScroll()
 
 	viewportHero: ->
-		heroViewportCheck = $('#branded .content .hero').isInViewport 
+		heroViewportCheck = $('#branded .content .hero').isInViewport
 			'tolerance' : jjPremiumStorefront.tolerance
 
 		if !jjPremiumStorefront.heroInView and heroViewportCheck
