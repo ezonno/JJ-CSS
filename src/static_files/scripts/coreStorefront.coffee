@@ -3,15 +3,14 @@ jjCoreStorefront = do ($) ->
 	# Custom functions here
 	assignGlobalVars: ->
 		# Vars for scrolling track - False should only be set once on load
-		jjCoreStorefront.brandsReached = false
-		jjCoreStorefront.categoriesReached = false
-		jjCoreStorefront.footerReached = false
+		jjCoreStorefront.contentBoxesReached = false
+		jjCoreStorefront.fullwidthBoxReached = false
 
 	responsiveHero: ->
 		$('#branded .content .hero.swiper-container .swiper-slide img').dataImg
-			sml: 1260
-			med: 1420
-			lrg: 1660
+			sml: 1023
+			med: 1440
+			lrg: 1441
 			resize: false
 
 	checkHero: ->
@@ -81,7 +80,6 @@ jjCoreStorefront = do ($) ->
 			height: heroHeight
 
 	detectGrid: ->
-		jjCoreStorefront.brandHover()
 		jjCoreStorefront.resizeHero()
 
 		if jjCoreStorefront.pageIsLoaded
@@ -90,51 +88,8 @@ jjCoreStorefront = do ($) ->
 		if !jjCoreStorefront.footerReached
 			jjCoreStorefront.trackingScroll()
 
-	initQuickview: ->
-		quickViewOptions =
-			buttonSelector: null
-			imageSelector: null
-			buttonLinkSelector: '.quickview'
-		
-		app.quickView.bindEvents(quickViewOptions)
-
 	trackingInit: ->
-		jjCoreStorefront.trackingCategories()
 		jjCoreStorefront.trackingScroll()
-
-	trackingCategories: ->
-		$('#branded .content .storefront-categories .gridify .box').each ->
-			box = $(@).data('pos-grid')
-			week = $(@).data('week')
-			product = $(@).data('product')
-			category = $(@).data('category')
-			image = $(@).data('image')
-
-			$(@).find('a').click ->
-
-				if $(@).hasClass('one')
-					_gaq.push [
-						'_trackEvent'
-						'jj-core-storefront'
-						'category boxes'
-						'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, product: ' + product
-					]
-
-				else if $(@).hasClass('two')
-					_gaq.push [
-						'_trackEvent'
-						'jj-core-storefront'
-						'category boxes'
-						'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, category: ' + category
-					]
-
-				else
-					_gaq.push [
-						'_trackEvent'
-						'jj-core-storefront'
-						'category boxes'
-						'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: image, category: ' + category
-					]
 
 	viewportHero: ->
 		heroViewportCheck = $('#branded .content .hero').isInViewport 
@@ -161,9 +116,9 @@ jjCoreStorefront = do ($) ->
 
 			_gaq.push [
 				'_trackEvent'
-				'jj-core-storefront'
-				'hero'
-				'Slide: ' + slideHumanIndex + ', week: ' + slideWeek + ', image: ' + slideImage + ', url: ' + slideUrl + ', type: ' + type
+				'jj-core-hero'
+				type
+				'Slide: ' + slideHumanIndex + ', week: ' + slideWeek + ', image: ' + slideImage + ', url: ' + slideUrl
 			]
 
 		else
@@ -176,58 +131,74 @@ jjCoreStorefront = do ($) ->
 
 			_gaq.push [
 				'_trackEvent'
-				'jj-core-storefront'
-				'hero'
-				'Slide: ' + staticHumanIndex + ', week: ' + staticWeek + ', image: ' + staticImage + ', url: ' + staticUrl + ', type: ' + type
+				'jj-core-hero'
+				type
+				'Slide: ' + staticHumanIndex + ', week: ' + staticWeek + ', image: ' + staticImage + ', url: ' + staticUrl
 			]
 
 	trackingScroll: ->
 		$(window).scroll ->
-			offsetCategories = $('#branded .content .storefront-categories').offset().top
-			offsetFooter = $('#footer_global').offset().top
+			offsetWindow = $(window).height() * 0.50
+			offsetContent = $('#branded .content .brandsite-content-boxes').offset().top - offsetWindow
+			offsetFullwidth = $('#branded .content .brandsite-full-width-content-box').offset().top - offsetWindow
 
 			$(window).scroll ->
-				if $(window).scrollTop() >= offsetCategories and !jjCoreStorefront.categoriesReached
+				if $(window).scrollTop() >= offsetContent and !jjCoreStorefront.contentBoxesReached
 					_gaq.push [
 						'_trackEvent'
-						'jj-core-storefront'
-						'scroll'
-						'Category boxes reached'
+						'jj-core-scroll'
+						'Scroll'
+						'Content boxes in viewport'
 					]
 
-					jjCoreStorefront.categoriesReached = true
+					jjPremiumStorefront.contentBoxesReached = true
 				
-				else if $(window).scrollTop() >= offsetFooter and !jjCoreStorefront.footerReached
+				else if $(window).scrollTop() >= offsetFullwidth and !jjCoreStorefront.fullwidthBoxReached
 					_gaq.push [
 						'_trackEvent'
-						'jj-core-storefront'
-						'scroll'
-						'Footer reached'
+						'jj-core-scroll'
+						'Scroll'
+						'Full-width box in viewport'
 					]
 
-					jjCoreStorefront.footerReached = true
+					jjPremiumStorefront.fullwidthBoxReached = true
 
-	closeCallout: ->
-		 $('#branded .content .storefront-promos .storefront-callout button').click (e) ->
-			callout = $('#branded .content .storefront-promos .storefront-callout')
+	trackingClicks: ->
+		contents = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box, #branded .content .brandsite-small-content-boxes')
 
-			TweenLite.to callout, 0.4, 
-				height: 0
-				borderWidth: 0
-				ease: 'easeOutCubic'
+		contents.find('a').click ->
+			id = $(@).data('track-id') ? 'Error - Please panic'
 
-			TweenLite.to callout.parent(), 0.4, 
-				marginTop: 0
-				ease: 'easeOutCubic'
+			_gaq.push [
+				'_trackEvent'
+				'jj-core-content'
+				'Click'
+				id
+			]
+
+	switchImages: ->
+		# Whoever you are, you should look away now
+		# Raping bandwidth and http requests here
+		v = $(window).width()
+		images = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box, #branded .content .brandsite-small-content-boxes').find('img')
+
+		if (v <= 1205)
+			images.each ->
+				newSrc = $(@).attr('src').replace('medium', 'small')
+				$(@).attr('src', newSrc)
+		else if (v >= 1440)
+			images.each ->
+				newSrc = $(@).attr('src').replace('medium', 'large')
+				$(@).attr('src', newSrc)
 
 	# End custom functions
 
 $(document).ready ->
 	jjCoreStorefront.assignGlobalVars()
 	jjCoreStorefront.responsiveHero()
-	jjCoreStorefront.initQuickview()
 	jjCoreStorefront.trackingInit()
-	jjCoreStorefront.closeCallout()
+	jjCoreStorefront.trackingClicks()
+	jjCoreStorefront.switchImages()
 
 $(window).load ->
 	jjCoreStorefront.checkHero()
