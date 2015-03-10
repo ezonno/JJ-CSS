@@ -3,15 +3,14 @@ jjOriginalsStorefront = do ($) ->
 	# Custom functions here
 	assignGlobalVars: ->
 		# Vars for scrolling track - False should only be set once on load
-		jjOriginalsStorefront.brandsReached = false
-		jjOriginalsStorefront.categoriesReached = false
-		jjOriginalsStorefront.footerReached = false
+		jjOriginalsStorefront.contentBoxesReached = false
+		jjOriginalsStorefront.fullwidthBoxReached = false
 
 	responsiveHero: ->
 		$('#branded .content .hero.swiper-container .swiper-slide img').dataImg
-			sml: 1260
-			med: 1420
-			lrg: 1660
+			sml: 1023
+			med: 1440
+			lrg: 1441
 			resize: false
 
 	checkHero: ->
@@ -81,7 +80,6 @@ jjOriginalsStorefront = do ($) ->
 			height: heroHeight
 
 	detectGrid: ->
-		jjOriginalsStorefront.brandHover()
 		jjOriginalsStorefront.resizeHero()
 
 		if jjOriginalsStorefront.pageIsLoaded
@@ -90,51 +88,8 @@ jjOriginalsStorefront = do ($) ->
 		if !jjOriginalsStorefront.footerReached
 			jjOriginalsStorefront.trackingScroll()
 
-	initQuickview: ->
-		quickViewOptions =
-			buttonSelector: null
-			imageSelector: null
-			buttonLinkSelector: '.quickview'
-		
-		app.quickView.bindEvents(quickViewOptions)
-
 	trackingInit: ->
-		jjOriginalsStorefront.trackingCategories()
 		jjOriginalsStorefront.trackingScroll()
-
-	trackingCategories: ->
-		$('#branded .content .storefront-categories .gridify .box').each ->
-			box = $(@).data('pos-grid')
-			week = $(@).data('week')
-			product = $(@).data('product')
-			category = $(@).data('category')
-			image = $(@).data('image')
-
-			$(@).find('a').click ->
-
-				if $(@).hasClass('one')
-					_gaq.push [
-						'_trackEvent'
-						'jj-originals-storefront'
-						'category boxes'
-						'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, product: ' + product
-					]
-
-				else if $(@).hasClass('two')
-					_gaq.push [
-						'_trackEvent'
-						'jj-originals-storefront'
-						'category boxes'
-						'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, category: ' + category
-					]
-
-				else
-					_gaq.push [
-						'_trackEvent'
-						'jj-originals-storefront'
-						'category boxes'
-						'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: image, category: ' + category
-					]
 
 	viewportHero: ->
 		heroViewportCheck = $('#branded .content .hero').isInViewport 
@@ -161,9 +116,9 @@ jjOriginalsStorefront = do ($) ->
 
 			_gaq.push [
 				'_trackEvent'
-				'jj-originals-storefront'
-				'hero'
-				'Slide: ' + slideHumanIndex + ', week: ' + slideWeek + ', image: ' + slideImage + ', url: ' + slideUrl + ', type: ' + type
+				'jj-originals-hero'
+				type
+				'Slide: ' + slideHumanIndex + ', week: ' + slideWeek + ', image: ' + slideImage + ', url: ' + slideUrl
 			]
 
 		else
@@ -176,58 +131,74 @@ jjOriginalsStorefront = do ($) ->
 
 			_gaq.push [
 				'_trackEvent'
-				'jj-originals-storefront'
-				'hero'
-				'Slide: ' + staticHumanIndex + ', week: ' + staticWeek + ', image: ' + staticImage + ', url: ' + staticUrl + ', type: ' + type
+				'jj-originals-hero'
+				type
+				'Slide: ' + staticHumanIndex + ', week: ' + staticWeek + ', image: ' + staticImage + ', url: ' + staticUrl
 			]
 
 	trackingScroll: ->
 		$(window).scroll ->
-			offsetCategories = $('#branded .content .storefront-categories').offset().top
-			offsetFooter = $('#footer_global').offset().top
+			offsetWindow = $(window).height() * 0.50
+			offsetContent = $('#branded .content .brandsite-content-boxes').offset().top - offsetWindow
+			offsetFullwidth = $('#branded .content .brandsite-full-width-content-box').offset().top - offsetWindow
 
 			$(window).scroll ->
-				if $(window).scrollTop() >= offsetCategories and !jjOriginalsStorefront.categoriesReached
+				if $(window).scrollTop() >= offsetContent and !jjOriginalsStorefront.contentBoxesReached
 					_gaq.push [
 						'_trackEvent'
-						'jj-originals-storefront'
-						'scroll'
-						'Category boxes reached'
+						'jj-originals-scroll'
+						'Scroll'
+						'Content boxes in viewport'
 					]
 
-					jjOriginalsStorefront.categoriesReached = true
+					jjOriginalsStorefront.contentBoxesReached = true
 				
-				else if $(window).scrollTop() >= offsetFooter and !jjOriginalsStorefront.footerReached
+				else if $(window).scrollTop() >= offsetFullwidth and !jjOriginalsStorefront.fullwidthBoxReached
 					_gaq.push [
 						'_trackEvent'
-						'jj-originals-storefront'
-						'scroll'
-						'Footer reached'
+						'jj-originals-scroll'
+						'Scroll'
+						'Full-width box in viewport'
 					]
 
-					jjOriginalsStorefront.footerReached = true
+					jjOriginalsStorefront.fullwidthBoxReached = true
 
-	closeCallout: ->
-		 $('#branded .content .storefront-promos .storefront-callout button').click (e) ->
-			callout = $('#branded .content .storefront-promos .storefront-callout')
+	trackingClicks: ->
+		contents = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box, #branded .content .brandsite-small-content-boxes')
 
-			TweenLite.to callout, 0.4, 
-				height: 0
-				borderWidth: 0
-				ease: 'easeOutCubic'
+		contents.find('a').click ->
+			id = $(@).data('track-id') ? 'Error - Please panic'
 
-			TweenLite.to callout.parent(), 0.4, 
-				marginTop: 0
-				ease: 'easeOutCubic'
+			_gaq.push [
+				'_trackEvent'
+				'jj-originals-content'
+				'Click'
+				id
+			]
+
+	switchImages: ->
+		# Whoever you are, you should look away now
+		# Raping bandwidth and http requests here
+		v = $(window).width()
+		images = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box, #branded .content .brandsite-small-content-boxes').find('img')
+
+		if (v <= 1205)
+			images.each ->
+				newSrc = $(@).attr('src').replace('medium', 'small')
+				$(@).attr('src', newSrc)
+		else if (v >= 1440)
+			images.each ->
+				newSrc = $(@).attr('src').replace('medium', 'large')
+				$(@).attr('src', newSrc)
 
 	# End custom functions
 
 $(document).ready ->
 	jjOriginalsStorefront.assignGlobalVars()
 	jjOriginalsStorefront.responsiveHero()
-	jjOriginalsStorefront.initQuickview()
 	jjOriginalsStorefront.trackingInit()
-	jjOriginalsStorefront.closeCallout()
+	jjOriginalsStorefront.trackingClicks()
+	jjOriginalsStorefront.switchImages()
 
 $(window).load ->
 	jjOriginalsStorefront.checkHero()
