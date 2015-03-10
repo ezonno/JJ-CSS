@@ -137,7 +137,7 @@ jjStorefront = ((jQuery) ->
 	trackingInit: ->
 		jjStorefront.trackingHighlights()
 		jjStorefront.trackingBrands()
-		jjStorefront.trackingCategories()
+		#jjStorefront.trackingCategories()
 		jjStorefront.trackingScroll()
 
 	trackingHighlights: ->
