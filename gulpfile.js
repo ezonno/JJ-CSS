@@ -10,6 +10,7 @@ var plumber = require('gulp-plumber');
 var autoprefixer = require('gulp-autoprefixer');
 var nib = require('nib');
 var changed = require('gulp-changed');
+var coffeelint = require('gulp-coffeelint');
 
 var paths = {
 	scriptsStatic: 'src/static_files/scripts/**/*.coffee',
@@ -56,10 +57,16 @@ gulp.task('scripts-static', function() {
 		.pipe(plumber())
 		.pipe(changed('build/static/js', {extension: '.js'}))
 		.pipe(sourcemaps.init())
-			.pipe(coffee())
-			.pipe(uglify({
-				mangle: false
-			}))
+		.pipe(coffeelint({
+			no_tabs: { level: "ignore" },
+			indentation: { value: 1 },
+			max_line_length: { level: "ignore" }
+		}))
+		.pipe(coffeelint.reporter())
+		.pipe(coffee())
+		.pipe(uglify({
+			mangle: false
+		}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('build/static/js'));
 });
@@ -68,10 +75,16 @@ gulp.task('scripts-lib', function() {
 	return gulp.src(paths.scriptsLib)
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
-			.pipe(coffee())
-			.pipe(uglify({
-				mangle: false
-			}))
+		.pipe(coffeelint({
+			no_tabs: { level: "ignore" },
+			indentation: { value: 1 },
+			max_line_length: { level: "ignore" }
+		}))
+		.pipe(coffeelint.reporter())
+		.pipe(coffee())
+		.pipe(uglify({
+			mangle: false
+		}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('build/lib/'));
 });
