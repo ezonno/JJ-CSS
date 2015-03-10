@@ -151,7 +151,7 @@ jjCoreStorefront = do ($) ->
 						'Content boxes in viewport'
 					]
 
-					jjPremiumStorefront.contentBoxesReached = true
+					jjCoreStorefront.contentBoxesReached = true
 				
 				else if $(window).scrollTop() >= offsetFullwidth and !jjCoreStorefront.fullwidthBoxReached
 					_gaq.push [
@@ -161,7 +161,7 @@ jjCoreStorefront = do ($) ->
 						'Full-width box in viewport'
 					]
 
-					jjPremiumStorefront.fullwidthBoxReached = true
+					jjCoreStorefront.fullwidthBoxReached = true
 
 	trackingClicks: ->
 		contents = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box, #branded .content .brandsite-small-content-boxes')
