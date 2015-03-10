@@ -9,6 +9,7 @@ var gutil = require('gulp-util');
 var plumber = require('gulp-plumber');
 var autoprefixer = require('gulp-autoprefixer');
 var nib = require('nib');
+var changed = require('gulp-changed');
 
 var paths = {
 	scriptsStatic: 'src/static_files/scripts/**/*.coffee',
@@ -53,6 +54,7 @@ gulp.task('clean', function(cb) {
 gulp.task('scripts-static', function() {
 	return gulp.src(paths.scriptsStatic)
 		.pipe(plumber())
+		.pipe(changed('build/static/js', {extension: '.js'}))
 		.pipe(sourcemaps.init())
 			.pipe(coffee())
 			.pipe(uglify({
@@ -78,6 +80,7 @@ gulp.task('scripts-lib', function() {
 gulp.task('styles-static', function(target){
 	return gulp.src(paths.stylesStatic)
 		.pipe(plumber())
+		.pipe(changed('build/static/css', {extension: '.css'}))
 		.pipe(stylus())
 		.pipe(autoprefixer({ browser: 'Last 3 versions' }))
 		.pipe(minifycss({
@@ -103,6 +106,7 @@ gulp.task('styles-lib', function(target){
 gulp.task('images-static', function() {
 	return gulp.src(paths.imagesStatic)
 		.pipe(plumber())
+		.pipe(changed('build/static/img'))
 		.pipe(gulp.dest('build/static/img'));
 });
 
