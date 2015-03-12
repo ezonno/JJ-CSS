@@ -7,8 +7,9 @@
 	// Logo
 	.storefront-logo
 		height 70px
-		background #fff url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHEAAAAVCAMAAABGxfGuAAAB3VBMVEUAAAAdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRvMzA2bAAAAnnRSTlMAAQIDBAUGBwgJCgsMDQ4QEhQVFhcYGRobHB0eHyAhJCUnKCorLS4vMDI1Nzg5Ojs9P0BCQ0dJSkxNTlJUVldZW19gYWJjZGVnaWpucHR1dnd5f4GChI2PkJGSlJeYmpucnZ6goaKjpKWmp6ipqquur7Cxs7S2t7m6vL2/wMHCw8TIycrLzM3Oz9DR0tTV19jc4eLk7u/w8vT1+/z9/on16IEAAAJUSURBVHgB7dH9VwxvGMfxT7vtt76lIj3bOxUSKiQR5SFEGaJCD5GaqCU0UVGjpUirUshz7r/VdU2ze8buvWftOZzjB6+f5lx73fO+5ywsKWCbhBC5WPc/PSdZDyBuBCXm8CAkHZZcke+CJZvO5SeEXuf9D8xVIMRmAPuam+rAvP1gl3RdvzPu5o0ek573AijtBemtgO155+wOhBQ8ACmbG9Jvz9eAnJ2icyNXQVrHdTJXCMAzPaTrbQDO3Js9BSZ0sDxBhncBONIHWxn/VL6UGvzEJe+JPQgRBsjTYgAb34B0VAHIsKYzYC31fLFnLlgaq/drjuLwYAeZ5zNaY6j4zjBmvtfAdrHPX9seXlwAex1WXDHJ5JNMkAtTpjndBbgO16WBFVrFl2A3ywBUPUx0fuPORd5jA8WpAyuesOJoNYBtgbCiPx0/C9iDUbrJ7GmQtknDMMbuW60WP435RSUdINfLse7oI99Y9w0wH21PNYPkj0wY4xPbQVp3A9jQD3LQb5AsWHoN43E3/vlz3FuEitcDIEuoJIMlCZVsAEWVUKkswroFqfY2Be1S6dutRCT0fJVK15D8RVYj0gH5OQmWRan2PgVXZBTHUCOj6ESGlA2I1CBlBiwerwj6JGWpCOIL5QgVKTU08KpCHmIXHT7yMDa7qF79TcXjk6ZD7OKyGWk5ruK0dIpdVIunuPW85hC76NMi+f7O/zHznKZiFy9rCk3ZcRU/SJkGh0EZRQVK16TaKBdP/mqxa+0unGpnAioTdQAOjQVUXtTDHVgtRqSS1VdusB8MyXmIh88OMQAAAABJRU5ErkJggg==') center no-repeat
-
+		background #fff url('../img/storefront_logo_tech.png') no-repeat center
+		background-size 113px 21px
+		
 	// Hero
 	.hero
 		overflow hidden
@@ -107,18 +108,24 @@
 		
 		.content-box
 			float left
+			
+			img
+				width 100%
 		
 		a
 			// if we have two <a>, do this:
 			&:nth-last-child(2):first-child .content-box
+				width 435px
 				margin-right 10px
 			
 			// if we have three <a>, do this:
 			&:nth-last-child(3)
 				&:first-child ~ a .content-box
+					width 286px
 					margin-left 11px
 
 				&:first-child .content-box
+					width 286px
 					margin-left 0px
 			
 	.brandsite-content-boxes
@@ -151,4 +158,67 @@
 					
 	.brandsite-footer-logo
 		height 150px
-		background #fff url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJMAAAAbCAMAAABP2E2SAAACQFBMVEUAAAAdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRsdHRuZgssBAAAAv3RSTlMAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhscHR4gISMkJSYoKywtLi8wMTIzNDU2ODk6Ozw9Pj9AQUJDREZHSktNUFFSU1RVWltcXV9gYWJjZGZnaGlrbG9wcXJ0dXd4eXp7fH1+gIKDhIaHiImKi4yNjpCRkpOVlpeZmpucnaChoqWmqKmqq6yur7CxsrO0tre6u77AwcLFysvMzs/Q0tPV1tna29zd3t/g4eLk5ufo6+zu7/Dx8vP29/n6+/z9/kw5WV0AAAMRSURBVHgB7dJ7UxtVGMfxX9pYUCtdiyg0qLWA0FRaW3ErIhirlmq91BYUq7QEY4wXi2mVakPKBSMsgqIREUWIomTFS4SooKDPW3Ofs4FczJ6ZMDrDWD5/ZOaZOTnPN9nFxlLmOdl2ACbffgj36+yzRpiOfhI1xpfATteCVfmQ9Pj49MgupHm0CcKdI9/q+nTHDgjNX+mG2a4tYHeP6WzqrA2sdJi3dMDw6ml/+yswaS4INoVVzFWYN03fU2iMV4EFj4O5e5EUrUJfE9J4/GDOWGORotzS9alZEatQDIXRMrAf6hVWMlULNvLiztUt7outb53JaKp0CR+Z+2dqICSbCk/9vA9JH4S21zmzNr3dCrZlzjweV8AmK8EIpo+PmE1e/uX5MJxozHM9l97U+XlQiJhNcUdq02I8Hl+hJ5B0NvxmpPwdJVvT4HEIY2q2pkkhOnoNmGPIeMx6rNsOoOrJg0hvWlIgdJo3fuHK/J/yjsYOASnfqtOXSrI1nesAu3bhtixNy7sd7Hqkyps5jASnajj85X1mhFdlD8xVgzX81FJrjI7U9+n5fqw5H7ij2vtXqABCmcoG28GKv7vQoKrHJgLI0vR+gK9V9yBhW40xHYvfjITLGnthK9iucwM8XW6A6fbzg8Z4CuyRfeZmN9bc0H4p+Nqtzx6C4NPYGwqEorY+TQs8bIPg2wbWWgR23ZmQZvAioZjHrhps2vRfuPqgKlMOQ6kqsT8fzFauSuzlE4+17YSlEs8RrBonuRbg3j9JJlYHoHiSpF4GHiIKwFKYiMOFeZLrBE6Q3MJ24EOS6weeIdJgSSdyIcH5uj9FhIje86dw7wDsTX6J34kqgQWiHskhz405NGUIEpGKnMRFk/iUucKaDvRoGZZzaPpRs7S4/qZv6B9yaJJZf9OlDdiEmxwZfs2hadRh6fv/wTtuVyR+WW26S7GW/2837Z0nuVJxpczKU+tvukBE1cjwNMm9C+AkyQ0DzUQDsPQ1UT2y2h1Z7t6KDAUXwxJDzXYY6nvDEqE9gGP2twdhqeWPiQKY/gYyhdx9BCkyygAAAABJRU5ErkJggg==') no-repeat center
+		background #fff url('../img/storefront_logo_tech.png') no-repeat center
+		background-size 147px 27px
+		
+@media only screen and (max-width: 1024px)
+	#branded .content
+		.storefront-logo
+			height 48px
+			background-size 93px 17px
+			
+		.brandsite-small-content-boxes
+		.brandsite-content-boxes
+			width 722px
+
+		.brandsite-small-content-boxes
+			a
+				// if we have two <a>, do this:
+				&:nth-last-child(2):first-child .content-box
+					width 356px
+					margin-right 10px
+				
+				// if we have three <a>, do this:
+				&:nth-last-child(3)
+					&:first-child ~ a .content-box
+						width 234px
+						margin-left 10px
+
+					&:first-child .content-box
+						width 234px
+						margin-left 0px
+
+		.brandsite-content-boxes
+			margin-top 20px
+
+		.brandsite-footer-logo
+			height 123px
+			background-size 121px 22px
+		
+@media only screen and (min-width: 1440px)
+	#branded .content
+		.storefront-logo
+			height 80px
+			background-size 132px 25px
+			
+		.brandsite-small-content-boxes
+		.brandsite-content-boxes
+			width 1030px
+			
+
+		.brandsite-small-content-boxes
+			
+			a
+				// if we have two <a>, do this:
+				&:nth-last-child(2):first-child .content-box
+					width 435px
+				
+				// if we have three <a>, do this:
+				&:nth-last-child(3)
+					&:first-child ~ a .content-box
+					&:first-child .content-box
+						width 336px
+
+		.brandsite-footer-logo
+			height 176px
+			background-size 172px 32px

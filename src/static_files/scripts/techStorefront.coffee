@@ -174,7 +174,7 @@ jjTechStorefront = do ($) ->
 		# Whoever you are, you should look away now
 		# Raping bandwidth and http requests here
 		v = $(window).width()
-		images = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box').find('img')
+		images = $('#branded .content .brandsite-small-content-boxes, #branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box').find('img')
 
 		if (v <= 1205)
 			images.each ->
