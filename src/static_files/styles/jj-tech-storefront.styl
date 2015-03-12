@@ -97,9 +97,33 @@
 			a
 				display block
 
-	.brandsite-content-boxes
+	.storefront-categories
+		position relative
+		z-index 1
+
+	.brandsite-small-content-boxes
 		width 880px
 		margin -60px auto 0
+		
+		.content-box
+			float left
+		
+		a
+			// if we have two <a>, do this:
+			&:nth-last-child(2):first-child .content-box
+				margin-right 10px
+			
+			// if we have three <a>, do this:
+			&:nth-last-child(3)
+				&:first-child ~ a .content-box
+					margin-left 11px
+
+				&:first-child .content-box
+					margin-left 0px
+			
+	.brandsite-content-boxes
+		width 880px
+		margin 36px auto 0
 		position relative
 		z-index 1
 		
