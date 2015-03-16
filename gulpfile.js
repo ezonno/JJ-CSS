@@ -107,7 +107,7 @@ gulp.task('styles-lib', function(target){
 	return gulp.src(paths.stylesLib)
 		.pipe(plumber())
 		.pipe(stylus())
-		.pipe(autoprefixer({ browser: 'Last 5 versions' }))
+		.pipe(autoprefixer({ browser: 'Last 3 versions' }))
 		.pipe(minifycss({
 			processImport: false,
 			advanced: false
