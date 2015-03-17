@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="storefront-shipping-line" context="category" context-id="jj-premium" configuration-id="jj-premium-callout" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;div class="brandsite-callout"&gt;
+                    &lt;img src="/jack-jones/5-lines/img/placeholders/premium/ca-medium.jpg?$staticlink$" alt=""&gt;
+                    &lt;/div&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-1" context="category" context-id="jj-premium" configuration-id="jj-premium-content-boxes-start" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;!-- Content boxes start --&gt;
+                    &lt;div class="brandsite-content-boxes"&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-2" context="category" context-id="jj-premium" configuration-id="jj-premium-content-box" default="true" assigned-to-site="false">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;a href="#box" data-track-id="content-box-XX" &gt;
+                        &lt;div class="content-box"&gt;
+                            &lt;img src="/jack-jones/5-lines/img/placeholders/premium/box-medium.jpg?$staticlink$" alt=""&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-3" context="category" context-id="jj-premium" configuration-id="jj-premium-content-box" default="true" assigned-to-site="false">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;a href="#box" data-track-id="content-box-XX" &gt;
+                        &lt;div class="content-box"&gt;
+                            &lt;img src="/jack-jones/5-lines/img/placeholders/premium/box-medium.jpg?$staticlink$" alt=""&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-4" context="category" context-id="jj-premium" configuration-id="jj-premium-content-box" default="true" assigned-to-site="false">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;a href="#box" data-track-id="content-box-XX" &gt;
+                        &lt;div class="content-box"&gt;
+                            &lt;img src="/jack-jones/5-lines/img/placeholders/premium/box-medium.jpg?$staticlink$" alt=""&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-5" context="category" context-id="jj-premium" configuration-id="jj-premium-content-box" default="true" assigned-to-site="false">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;a href="#box" data-track-id="content-box-XX" &gt;
+                        &lt;div class="content-box"&gt;
+                            &lt;img src="/jack-jones/5-lines/img/placeholders/premium/box-medium.jpg?$staticlink$" alt=""&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-6" context="category" context-id="jj-premium" configuration-id="jj-premium-content-box" default="true" assigned-to-site="false">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;a href="#box" data-track-id="content-box-XX" &gt;
+                        &lt;div class="content-box"&gt;
+                            &lt;img src="/jack-jones/5-lines/img/placeholders/premium/box-medium.jpg?$staticlink$" alt=""&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-7" context="category" context-id="jj-premium" configuration-id="jj-premium-content-box" default="true" assigned-to-site="false">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;a href="#box" data-track-id="content-box-XX" &gt;
+                        &lt;div class="content-box"&gt;
+                            &lt;img src="/jack-jones/5-lines/img/placeholders/premium/box-medium.jpg?$staticlink$" alt=""&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-8" context="category" context-id="jj-premium" configuration-id="jj-premium-content-box" default="true" assigned-to-site="false">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;a href="#box" data-track-id="content-box-XX" &gt;
+                        &lt;div class="content-box"&gt;
+                            &lt;img src="/jack-jones/5-lines/img/placeholders/premium/box-medium.jpg?$staticlink$" alt=""&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-9" context="category" context-id="jj-premium" configuration-id="jj-premium-content-box" default="true" assigned-to-site="false">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;a href="#box" data-track-id="content-box-XX" &gt;
+                        &lt;div class="content-box"&gt;
+                            &lt;img src="/jack-jones/5-lines/img/placeholders/premium/box-medium.jpg?$staticlink$" alt=""&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-10" context="category" context-id="jj-premium" configuration-id="jj-premium-content-box" default="true" assigned-to-site="false">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;a href="#box" data-track-id="content-box-XX" &gt;
+                        &lt;div class="content-box"&gt;
+                            &lt;img src="/jack-jones/5-lines/img/placeholders/premium/box-medium.jpg?$staticlink$" alt=""&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-11" context="category" context-id="jj-premium" configuration-id="jj-premium-content-box" default="true" assigned-to-site="false">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;a href="#box" data-track-id="content-box-XX" &gt;
+                        &lt;div class="content-box"&gt;
+                            &lt;img src="/jack-jones/5-lines/img/placeholders/premium/box-medium.jpg?$staticlink$" alt=""&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-12" context="category" context-id="jj-premium" configuration-id="jj-premium-content-box" default="true" assigned-to-site="false">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;a href="#box" data-track-id="content-box-XX" &gt;
+                        &lt;div class="content-box"&gt;
+                            &lt;img src="/jack-jones/5-lines/img/placeholders/premium/box-medium.jpg?$staticlink$" alt=""&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-13" context="category" context-id="jj-premium" configuration-id="jj-premium-content-box" default="true" assigned-to-site="false">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;a href="#box" data-track-id="content-box-XX" &gt;
+                        &lt;div class="content-box"&gt;
+                            &lt;img src="/jack-jones/5-lines/img/placeholders/premium/box-medium.jpg?$staticlink$" alt=""&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-14" context="category" context-id="jj-premium" configuration-id="jj-storefront-content-boxes-end" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;/div&gt;
+                    &lt;!-- Content boxes end --&gt;
+                    &lt;div class="clear"&gt;&lt;/div&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-15" context="category" context-id="jj-premium" configuration-id="jj-premium-full-width-box" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;!-- Full-width box start --&gt;
+                    &lt;div class="brandsite-full-width-content-box"&gt;
+                        &lt;a href="#fullwidth"&gt;
+                            &lt;div class="content-box"&gt;
+                                &lt;img class="floater" src="/jack-jones/5-lines/img/placeholders/premium/fw-floater-medium.jpg?$staticlink$" alt=""&gt;
+                                &lt;img class="background" src="/jack-jones/5-lines/img/placeholders/premium/fw-medium.jpg?$staticlink$" alt=""&gt;
+                            &lt;/div&gt;
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;!-- Full-with box end --&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-16" context="category" context-id="jj-premium" configuration-id="jj-premium-small-boxes-start" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;!-- Small boxes start --&gt;
+                    &lt;div class="brandsite-small-content-boxes"&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-17" context="category" context-id="jj-premium" configuration-id="jj-premium-small-box" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;a href="#small-box"&gt;
+                        &lt;div class="content-box"&gt;
+                            &lt;img src="/jack-jones/5-lines/img/placeholders/premium/double-medium.jpg?$staticlink$" alt=""&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-18" context="category" context-id="jj-premium" configuration-id="jj-premium-small-box" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;a href="#small-box"&gt;
+                        &lt;div class="content-box"&gt;
+                            &lt;img src="/jack-jones/5-lines/img/placeholders/premium/double-medium.jpg?$staticlink$" alt=""&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-19" context="category" context-id="jj-premium" configuration-id="jj-premium-small-boxes-end" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;div class="clear"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;!-- Small boxes end --&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-20" context="category" context-id="jj-premium" configuration-id="jj-premium-footer-logo" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;!-- Footer logo start --&gt;
+                        &lt;div class="brandsite-footer-logo"&gt;
+                        &lt;/div&gt;
+                    &lt;!-- Footer logo end --&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+</slot-configurations>
