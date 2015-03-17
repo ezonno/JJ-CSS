@@ -1,0 +1,147 @@
+  /$$$$$$   /$$$$$$  /$$$$$$$  /$$$$$$$$
+ /$$__  $$ /$$__  $$| $$__  $$| $$_____/
+| $$  \__/| $$  \ $$| $$  \ $$| $$      
+| $$      | $$  | $$| $$$$$$$/| $$$$$   
+| $$      | $$  | $$| $$__  $$| $$__/   
+| $$    $$| $$  | $$| $$  \ $$| $$      
+|  $$$$$$/|  $$$$$$/| $$  | $$| $$$$$$$$
+ \______/  \______/ |__/  |__/|________/
+
+
+
+storefront-logo                (x)
+storefront-promo-[1..6]:        x
+storefront-hero-start           brandsite-hero-start
+storefront-hero-slide-[1..5]    brandsite-hero-slides
+storefront-hero-end             brandsite-hero-end
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+  /$$$$$$  /$$$$$$$  /$$$$$$  /$$$$$$  /$$$$$$ /$$   /$$  /$$$$$$  /$$        /$$$$$$ 
+ /$$__  $$| $$__  $$|_  $$_/ /$$__  $$|_  $$_/| $$$ | $$ /$$__  $$| $$       /$$__  $$
+| $$  \ $$| $$  \ $$  | $$  | $$  \__/  | $$  | $$$$| $$| $$  \ $$| $$      | $$  \__/
+| $$  | $$| $$$$$$$/  | $$  | $$ /$$$$  | $$  | $$ $$ $$| $$$$$$$$| $$      |  $$$$$$ 
+| $$  | $$| $$__  $$  | $$  | $$|_  $$  | $$  | $$  $$$$| $$__  $$| $$       \____  $$
+| $$  | $$| $$  \ $$  | $$  | $$  \ $$  | $$  | $$\  $$$| $$  | $$| $$       /$$  \ $$
+|  $$$$$$/| $$  | $$ /$$$$$$|  $$$$$$/ /$$$$$$| $$ \  $$| $$  | $$| $$$$$$$$|  $$$$$$/
+ \______/ |__/  |__/|______/ \______/ |______/|__/  \__/|__/  |__/|________/ \______/ 
+
+
+
+storefront-logo                (x)
+storefront-promo-[1..6]:        x
+storefront-hero-start           brandsite-hero-start
+storefront-hero-slide-[1..5]    brandsite-hero-slides
+storefront-hero-end             brandsite-hero-end
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+ /$$$$$$$  /$$$$$$$  /$$$$$$$$ /$$      /$$ /$$$$$$ /$$   /$$ /$$      /$$
+| $$__  $$| $$__  $$| $$_____/| $$$    /$$$|_  $$_/| $$  | $$| $$$    /$$$
+| $$  \ $$| $$  \ $$| $$      | $$$$  /$$$$  | $$  | $$  | $$| $$$$  /$$$$
+| $$$$$$$/| $$$$$$$/| $$$$$   | $$ $$/$$ $$  | $$  | $$  | $$| $$ $$/$$ $$
+| $$____/ | $$__  $$| $$__/   | $$  $$$| $$  | $$  | $$  | $$| $$  $$$| $$
+| $$      | $$  \ $$| $$      | $$\  $ | $$  | $$  | $$  | $$| $$\  $ | $$
+| $$      | $$  | $$| $$$$$$$$| $$ \/  | $$ /$$$$$$|  $$$$$$/| $$ \/  | $$
+|__/      |__/  |__/|________/|__/     |__/|______/ \______/ |__/     |__/
+
+
+
+storefront-logo                (x)
+storefront-promo-[1..6]:        x
+storefront-hero-start           brandsite-hero-start
+storefront-hero-slide-[1..5]    brandsite-hero-slides
+storefront-hero-end             brandsite-hero-end
+storefront-brands-callout       x
+storefront-brands-[1..7]        x
+storefront-shipping-line        brandsite-callout
+storefront-sellingpoints        x
+storefront-categories-callout   x
+storefront-category-1           brandsite-content-boxes-start
+storefront-category-[2..13]     brandsite-content-boxes
+storefront-category-14          brandsite-content-boxes-end
+storefront-category-15          brandsite-full-width-content-box
+storefront-category-16          brandsite-small-content-boxes-start
+storefront-category-[17..18]    brandsite-small-content-boxes
+storefront-category-19          brandsite-small-content-boxes-end
+storefront-category-20          brandsite-footer-logo
+storefront-category-[21..35]    x
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+ /$$    /$$ /$$$$$$ /$$   /$$ /$$$$$$$$ /$$$$$$   /$$$$$$  /$$$$$$$$
+| $$   | $$|_  $$_/| $$$ | $$|__  $$__//$$__  $$ /$$__  $$| $$_____/
+| $$   | $$  | $$  | $$$$| $$   | $$  | $$  \ $$| $$  \__/| $$      
+|  $$ / $$/  | $$  | $$ $$ $$   | $$  | $$$$$$$$| $$ /$$$$| $$$$$   
+ \  $$ $$/   | $$  | $$  $$$$   | $$  | $$__  $$| $$|_  $$| $$__/   
+  \  $$$/    | $$  | $$\  $$$   | $$  | $$  | $$| $$  \ $$| $$      
+   \  $/    /$$$$$$| $$ \  $$   | $$  | $$  | $$|  $$$$$$/| $$$$$$$$
+    \_/    |______/|__/  \__/   |__/  |__/  |__/ \______/ |________/
+
+
+
+storefront-logo                (x)
+storefront-promo-[1..6]:        x
+storefront-hero-start           brandsite-hero-start
+storefront-hero-slide-[1..5]    brandsite-hero-slides
+storefront-hero-end             brandsite-hero-end
+storefront-brands-callout       x
+storefront-brands-[1..7]        x
+storefront-shipping-line        x
+storefront-categories-callout   x
+storefront-category-1           brandsite-content-boxes-start
+storefront-category-[2..10]     brandsite-content-boxes
+storefront-category-11          brandsite-content-boxes-end
+storefront-category-12          brandsite-full-width-content-box
+storefront-category-13          brandsite-small-content-boxes-start
+storefront-category-[14..15]    brandsite-small-content-boxes
+storefront-category-16          brandsite-small-content-boxes-end
+storefront-category-17          brandsite-footer-logo
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+ /$$$$$$$$ /$$$$$$$$  /$$$$$$  /$$   /$$
+|__  $$__/| $$_____/ /$$__  $$| $$  | $$
+   | $$   | $$      | $$  \__/| $$  | $$
+   | $$   | $$$$$   | $$      | $$$$$$$$
+   | $$   | $$__/   | $$      | $$__  $$
+   | $$   | $$      | $$    $$| $$  | $$
+   | $$   | $$$$$$$$|  $$$$$$/| $$  | $$
+   |__/   |________/ \______/ |__/  |__/
+
+
+
+storefront-logo                (x)
+storefront-promo-[1..6]:        x
+storefront-hero-start           brandsite-hero-start
+storefront-hero-slide-[1..5]    brandsite-hero-slides
+storefront-hero-end             brandsite-hero-end
+storefront-brands-callout       x
+storefront-brands-[1..7]        x
+storefront-shipping-line        x
+storefront-categories-callout   x
+storefront-category-1           brandsite-small-content-boxes-start
+storefront-category-[2..4]      brandsite-small-content-boxes
+storefront-category-5           brandsite-small-content-boxes-end
+storefront-category-6           brandsite-content-boxes-start
+storefront-category-[7..14]     brandsite-content-boxes
+storefront-category-15          brandsite-content-boxes-end
+storefront-category-16          brandsite-full-width-content-box
+storefront-category-17          brandsite-footer-logo
+storefront-category-[18-35]     x
