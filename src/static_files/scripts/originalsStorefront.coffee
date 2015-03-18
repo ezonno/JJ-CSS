@@ -34,7 +34,6 @@ jjOriginalsStorefront = do ($) ->
 			autoplay: 8000
 			speed: 1000
 			calculateHeight: true
-			createPagination: true
 			paginationClickable: true
 			keyboardControl: true
 			
@@ -44,10 +43,6 @@ jjOriginalsStorefront = do ($) ->
 			slideVisibleClass: 'swiper-slide-visible'
 			slideDuplicateClass: 'swiper-slide-duplicate'
 			wrapperClass: 'swiper-wrapper'
-			paginationElementClass: 'swiper-pagination-switch'
-			paginationActiveClass: 'swiper-active-switch'
-			paginationVisibleClass: 'swiper-visible-switch'
-			pagination: '.swiper-pagination'
 
 			# Callback functions
 			onSwiperCreated: ->
