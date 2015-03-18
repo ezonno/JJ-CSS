@@ -4,7 +4,6 @@ jjOriginalsStorefront = do ($) ->
 	assignGlobalVars: ->
 		# Vars for scrolling track - False should only be set once on load
 		jjOriginalsStorefront.contentBoxesReached = false
-		jjOriginalsStorefront.fullwidthBoxReached = false
 
 	responsiveHero: ->
 		$('#branded .content .hero.swiper-container .swiper-slide img').dataImg
@@ -135,7 +134,6 @@ jjOriginalsStorefront = do ($) ->
 		$(window).scroll ->
 			offsetWindow = $(window).height() * 0.50
 			offsetContent = $('#branded .content .brandsite-content-boxes').offset().top - offsetWindow
-			offsetFullwidth = $('#branded .content .brandsite-full-width-content-box').offset().top - offsetWindow
 
 			$(window).scroll ->
 				if $(window).scrollTop() >= offsetContent and !jjOriginalsStorefront.contentBoxesReached
@@ -147,16 +145,6 @@ jjOriginalsStorefront = do ($) ->
 					]
 
 					jjOriginalsStorefront.contentBoxesReached = true
-				
-				else if $(window).scrollTop() >= offsetFullwidth and !jjOriginalsStorefront.fullwidthBoxReached
-					_gaq.push [
-						'_trackEvent'
-						'jj-originals-scroll'
-						'Scroll'
-						'Full-width box in viewport'
-					]
-
-					jjOriginalsStorefront.fullwidthBoxReached = true
 
 	trackingClicks: ->
 		contents = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box, #branded .content .brandsite-small-content-boxes')
@@ -175,7 +163,7 @@ jjOriginalsStorefront = do ($) ->
 		# Whoever you are, you should look away now
 		# Raping bandwidth and http requests here
 		v = $(window).width()
-		images = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box, #branded .content .brandsite-small-content-boxes').find('img')
+		images = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-small-content-boxes').find('img')
 
 		if (v <= 1205)
 			images.each ->
