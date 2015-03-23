@@ -17,46 +17,38 @@
 			transform rotate(180deg)
 
 	// Hero
-	.hero
-		overflow hidden
+	.storefront-hero
+		width 1020px
+		margin 0 auto
 		position relative
-		text-align center
-		width 950px
 
 		.swiper-prev
 		.swiper-next
 			height 122px
 			margin-top -61px
-			opacity 0.7
 			position absolute
 			top 50%
-			width 60px
+			width 35px
 			z-index 99
-			transition all 0.2s ease-out
+			display none
+			
+			&:hover
+				cursor pointer
 
 		.swiper-prev
-			background url('../img/swiperArrowLeft.png') no-repeat center top
-			cursor pointer
-			left 2%
-
-			&:hover
-				left 1.8%
-				opacity 1
-
-			&.background--light
-				background-image url('../img/swiperArrowLeft-black.png')
+			background url('../img/core-swiper-prev.png') no-repeat center
+			left 0
 
 		.swiper-next
-			background url('../img/swiperArrowRight.png') no-repeat center bottom
-			cursor pointer
-			right 2%
+			background url('../img/core-swiper-next.png') no-repeat center
+			right 0
 
-			&:hover
-				opacity 1
-				right 1.8%
-
-			&.background--light
-				background-image url('../img/swiperArrowRight-black.png')
+	.hero
+		overflow hidden
+		position relative
+		text-align center
+		width 950px
+		margin 0 auto
 
 		.swiper-pagination
 			bottom 10px

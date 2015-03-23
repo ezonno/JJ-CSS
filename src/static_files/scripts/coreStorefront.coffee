@@ -51,18 +51,18 @@ jjCoreStorefront = do ($) ->
 
 			# Callback functions
 			onSwiperCreated: ->
-				$('#branded .content .hero .swiper-prev, #branded .content .hero .swiper-next').css('display' , 'block')
+				$('#branded .content .storefront-hero .swiper-prev, #branded .content .storefront-hero .swiper-next').css('display' , 'block')
 				jjCoreStorefront.displayHero()
 			
 			onSlideChangeEnd: ->
 				if jjCoreStorefront.heroInView
 					jjCoreStorefront.trackingHero('View')
 
-		$('#branded .content .hero .swiper-prev').on 'click', (e) ->
+		$('#branded .content .storefront-hero .swiper-prev').on 'click', (e) ->
 			e.preventDefault()
 			jjCoreStorefront.jjSwiper.swipePrev()
 
-		$('#branded .content .hero .swiper-next').on 'click', (e) ->
+		$('#branded .content .storefront-hero .swiper-next').on 'click', (e) ->
 			e.preventDefault()
 			jjCoreStorefront.jjSwiper.swipeNext()
 
@@ -137,31 +137,19 @@ jjCoreStorefront = do ($) ->
 			]
 
 	trackingScroll: ->
+		offsetWindow = $(window).height() * 0.50
+		offsetContent = $('#branded .content .brandsite-content-boxes').offset().top - offsetWindow
+		
 		$(window).scroll ->
-			offsetWindow = $(window).height() * 0.50
-			offsetContent = $('#branded .content .brandsite-content-boxes').offset().top - offsetWindow
-			offsetFullwidth = $('#branded .content .brandsite-full-width-content-box').offset().top - offsetWindow
+			if $(window).scrollTop() >= offsetContent and !jjCoreStorefront.contentBoxesReached
+				_gaq.push [
+					'_trackEvent'
+					'jj-core-scroll'
+					'Scroll'
+					'Content boxes in viewport'
+				]
 
-			$(window).scroll ->
-				if $(window).scrollTop() >= offsetContent and !jjCoreStorefront.contentBoxesReached
-					_gaq.push [
-						'_trackEvent'
-						'jj-core-scroll'
-						'Scroll'
-						'Content boxes in viewport'
-					]
-
-					jjCoreStorefront.contentBoxesReached = true
-				
-				else if $(window).scrollTop() >= offsetFullwidth and !jjCoreStorefront.fullwidthBoxReached
-					_gaq.push [
-						'_trackEvent'
-						'jj-core-scroll'
-						'Scroll'
-						'Full-width box in viewport'
-					]
-
-					jjCoreStorefront.fullwidthBoxReached = true
+				jjCoreStorefront.contentBoxesReached = true
 
 	trackingClicks: ->
 		contents = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box, #branded .content .brandsite-small-content-boxes')
