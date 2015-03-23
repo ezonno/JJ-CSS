@@ -9,11 +9,21 @@
 
 
 
-storefront-logo                (x)
+storefront-logo                 brandsite-logo
 storefront-promo-[1..6]:        x
 storefront-hero-start           brandsite-hero-start
 storefront-hero-slide-[1..5]    brandsite-hero-slides
 storefront-hero-end             brandsite-hero-end
+storefront-brands-callout       x
+storefront-brands-[1..7]        x
+storefront-shipping-line        x
+storefront-sellingpoints        x
+storefront-categories-callout   x
+storefront-category-1           brandsite-content-boxes-start
+storefront-category-[2..13]     brandsite-content-boxes
+storefront-category-14          brandsite-content-boxes-end
+storefront-category-15          brandsite-footer-logo
+storefront-category-[16.35]     x
 
 
 
