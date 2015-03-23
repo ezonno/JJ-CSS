@@ -9,7 +9,7 @@
 		
 		.brandsite-logo
 			width 44px
-			height 122px
+			height 123px
 			background url('../img/storefront_logo_core.png') center / 100% no-repeat
 			position absolute
 			right 31px
@@ -43,52 +43,52 @@
 			background url('../img/core-swiper-next.png') no-repeat center
 			right 0
 
-	.hero
-		overflow hidden
-		position relative
-		text-align center
-		width 950px
-		margin 0 auto
+		.hero
+			overflow hidden
+			position relative
+			text-align center
+			width 950px
+			margin 0 auto
 
-		.swiper-pagination
-			bottom 10px
-			left 10px
-			position absolute
-			z-index 900
+			.swiper-pagination
+				bottom 10px
+				left 10px
+				position absolute
+				z-index 900
 
-		.swiper-pagination-switch
-			border 1px solid #fff
-			cursor pointer
-			display inline-block
-			height 8px
-			margin 0 5px 0 0
-			width 8px
-			transition all 0.2s ease-out
+			.swiper-pagination-switch
+				border 1px solid #fff
+				cursor pointer
+				display inline-block
+				height 8px
+				margin 0 5px 0 0
+				width 8px
+				transition all 0.2s ease-out
 
-			&:hover
-				background rgba(255, 255, 255, 0.5)
+				&:hover
+					background rgba(255, 255, 255, 0.5)
 
-		.swiper-active-switch
-		.swiper-active-switch:hover
-			background #fff
+			.swiper-active-switch
+			.swiper-active-switch:hover
+				background #fff
 
-		.background--light .swiper-pagination-switch
-			background-color black
+			.background--light .swiper-pagination-switch
+				background-color black
 
-		.swiper-slide
-			display none
+			.swiper-slide
+				display none
 
-			&.first-slide
-				display block
+				&.first-slide
+					display block
 
-			img
-				border 0
-				padding 0
-				position relative
-				width 100%
+				img
+					border 0
+					padding 0
+					position relative
+					width 100%
 
-			a
-				display block
+				a
+					display block
 				
 	.brandsite-content-boxes
 		.content-box
@@ -116,3 +116,63 @@
 			position absolute
 			left 81px
 			bottom 73px
+
+@media only screen and (max-width: 1024px)
+	#branded .content
+		.storefront-logo
+			width 724px
+			height 46px
+			
+			.brandsite-logo
+				width 33px
+				height 93px
+				right 26px
+				top 24px
+				
+		.storefront-hero
+			width 764px
+			
+			.swiper-prev
+			.swiper-next
+				width 20px
+
+			.hero
+				width 724px
+				
+		.brandsite-content-boxes
+			.content-box
+				width 724px
+				
+		.brandsite-footer-logo
+			.brandsite-logo
+				width 60px
+				height 168px
+				left 60px
+			
+@media only screen and (min-width: 1440px)
+	#branded .content
+		.storefront-logo
+			width 1028px
+			height 80px
+
+			.brandsite-logo
+				width 48px
+				height 134px
+				right 35px
+				top 48px
+				
+		.storefront-hero
+			width 1098px
+			
+			.hero
+				width 1028px
+				
+		.brandsite-content-boxes
+			.content-box
+				width 1028px
+				
+		.brandsite-footer-logo
+			.brandsite-logo
+				width 85px
+				height 239px
+				left 90px
