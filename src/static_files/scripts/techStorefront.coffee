@@ -131,31 +131,30 @@ jjTechStorefront = do ($) ->
 			]
 
 	trackingScroll: ->
+		offsetWindow = $(window).height() * 0.50
+		offsetContent = $('#branded .content .brandsite-content-boxes').offset().top - offsetWindow
+		offsetFullwidth = $('#branded .content .brandsite-full-width-content-box').offset().top - offsetWindow
+
 		$(window).scroll ->
-			offsetWindow = $(window).height() * 0.50
-			offsetContent = $('#branded .content .brandsite-content-boxes').offset().top - offsetWindow
-			offsetFullwidth = $('#branded .content .brandsite-full-width-content-box').offset().top - offsetWindow
+			if $(window).scrollTop() >= offsetContent and !jjTechStorefront.contentBoxesReached
+				_gaq.push [
+					'_trackEvent'
+					'jj-tech-scroll'
+					'Scroll'
+					'Content boxes in viewport'
+				]
 
-			$(window).scroll ->
-				if $(window).scrollTop() >= offsetContent and !jjTechStorefront.contentBoxesReached
-					_gaq.push [
-						'_trackEvent'
-						'jj-tech-scroll'
-						'Scroll'
-						'Content boxes in viewport'
-					]
+				jjTechStorefront.contentBoxesReached = true
+			
+			else if $(window).scrollTop() >= offsetFullwidth and !jjTechStorefront.fullwidthBoxReached
+				_gaq.push [
+					'_trackEvent'
+					'jj-tech-scroll'
+					'Scroll'
+					'Full-width box in viewport'
+				]
 
-					jjTechStorefront.contentBoxesReached = true
-				
-				else if $(window).scrollTop() >= offsetFullwidth and !jjTechStorefront.fullwidthBoxReached
-					_gaq.push [
-						'_trackEvent'
-						'jj-tech-scroll'
-						'Scroll'
-						'Full-width box in viewport'
-					]
-
-					jjTechStorefront.fullwidthBoxReached = true
+				jjTechStorefront.fullwidthBoxReached = true
 
 	trackingClicks: ->
 		contents = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box')

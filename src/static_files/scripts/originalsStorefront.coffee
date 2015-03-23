@@ -131,20 +131,19 @@ jjOriginalsStorefront = do ($) ->
 			]
 
 	trackingScroll: ->
+		offsetWindow = $(window).height() * 0.50
+		offsetContent = $('#branded .content .brandsite-content-boxes').offset().top - offsetWindow
+
 		$(window).scroll ->
-			offsetWindow = $(window).height() * 0.50
-			offsetContent = $('#branded .content .brandsite-content-boxes').offset().top - offsetWindow
+			if $(window).scrollTop() >= offsetContent and !jjOriginalsStorefront.contentBoxesReached
+				_gaq.push [
+					'_trackEvent'
+					'jj-originals-scroll'
+					'Scroll'
+					'Content boxes in viewport'
+				]
 
-			$(window).scroll ->
-				if $(window).scrollTop() >= offsetContent and !jjOriginalsStorefront.contentBoxesReached
-					_gaq.push [
-						'_trackEvent'
-						'jj-originals-scroll'
-						'Scroll'
-						'Content boxes in viewport'
-					]
-
-					jjOriginalsStorefront.contentBoxesReached = true
+				jjOriginalsStorefront.contentBoxesReached = true
 
 	trackingClicks: ->
 		contents = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box, #branded .content .brandsite-small-content-boxes')

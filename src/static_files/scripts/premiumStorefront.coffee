@@ -137,31 +137,30 @@ jjPremiumStorefront = do ($) ->
 			]
 
 	trackingScroll: ->
+		offsetWindow = $(window).height() * 0.50
+		offsetContent = $('#branded .content .brandsite-content-boxes').offset().top - offsetWindow
+		offsetFullwidth = $('#branded .content .brandsite-full-width-content-box').offset().top - offsetWindow
+
 		$(window).scroll ->
-			offsetWindow = $(window).height() * 0.50
-			offsetContent = $('#branded .content .brandsite-content-boxes').offset().top - offsetWindow
-			offsetFullwidth = $('#branded .content .brandsite-full-width-content-box').offset().top - offsetWindow
+			if $(window).scrollTop() >= offsetContent and !jjPremiumStorefront.contentBoxesReached
+				_gaq.push [
+					'_trackEvent'
+					'jj-premium-scroll'
+					'Scroll'
+					'Content boxes in viewport'
+				]
 
-			$(window).scroll ->
-				if $(window).scrollTop() >= offsetContent and !jjPremiumStorefront.contentBoxesReached
-					_gaq.push [
-						'_trackEvent'
-						'jj-premium-scroll'
-						'Scroll'
-						'Content boxes in viewport'
-					]
+				jjPremiumStorefront.contentBoxesReached = true
+			
+			else if $(window).scrollTop() >= offsetFullwidth and !jjPremiumStorefront.fullwidthBoxReached
+				_gaq.push [
+					'_trackEvent'
+					'jj-premium-scroll'
+					'Scroll'
+					'Full-width box in viewport'
+				]
 
-					jjPremiumStorefront.contentBoxesReached = true
-				
-				else if $(window).scrollTop() >= offsetFullwidth and !jjPremiumStorefront.fullwidthBoxReached
-					_gaq.push [
-						'_trackEvent'
-						'jj-premium-scroll'
-						'Scroll'
-						'Full-width box in viewport'
-					]
-
-					jjPremiumStorefront.fullwidthBoxReached = true
+				jjPremiumStorefront.fullwidthBoxReached = true
 
 	trackingClicks: ->
 		contents = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box, #branded .content .brandsite-small-content-boxes')
