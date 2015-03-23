@@ -4,7 +4,6 @@ jjCoreStorefront = do ($) ->
 	assignGlobalVars: ->
 		# Vars for scrolling track - False should only be set once on load
 		jjCoreStorefront.contentBoxesReached = false
-		jjCoreStorefront.fullwidthBoxReached = false
 
 	responsiveHero: ->
 		$('#branded .content .hero.swiper-container .swiper-slide img').dataImg
@@ -152,7 +151,7 @@ jjCoreStorefront = do ($) ->
 				jjCoreStorefront.contentBoxesReached = true
 
 	trackingClicks: ->
-		contents = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box, #branded .content .brandsite-small-content-boxes')
+		contents = $('#branded .content .brandsite-content-boxes')
 
 		contents.find('a').click ->
 			id = $(@).data('track-id') ? 'Error - Please panic'
@@ -168,7 +167,7 @@ jjCoreStorefront = do ($) ->
 		# Whoever you are, you should look away now
 		# Raping bandwidth and http requests here
 		v = $(window).width()
-		images = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box, #branded .content .brandsite-small-content-boxes').find('img')
+		images = $('#branded .content .brandsite-content-boxes').find('img')
 
 		if (v <= 1205)
 			images.each ->
