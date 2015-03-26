@@ -21,7 +21,7 @@
         <content>
             <html>
                 <body xml:lang="x-default">
-                    &lt;a href="#box" data-track-id="content-box-XX" &gt;
+                    &lt;a href="#box" class="video-trigger" data-video-id="44878206" data-track-id="content-box-XX" &gt;
                         &lt;div class="content-box"&gt;
                             &lt;img src="/jack-jones/5-lines/img/placeholders/core/content-medium.jpg?$staticlink$" alt=""&gt;
                         &lt;/div&gt;
