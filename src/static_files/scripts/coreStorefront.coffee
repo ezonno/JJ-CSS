@@ -166,7 +166,7 @@ jjCoreStorefront = do ($) ->
 	switchImages: ->
 		# Whoever you are, you should look away now
 		# Raping bandwidth and http requests here
-		v = $(window).width()
+		v = window.innerWidth
 		images = $('#branded .content .brandsite-content-boxes').find('img')
 
 		if (v <= 1205)
