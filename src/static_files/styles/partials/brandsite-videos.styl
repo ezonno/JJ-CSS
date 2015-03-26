@@ -1,0 +1,47 @@
+@import '../modules/vars'
+@import '../modules/mixins'
+@import '../modules/easings'
+
+// Brandsite video modules
+// ONLY for use on brandsites
+.brandsite-video-container
+	position fixed
+	width 100%
+	height 100%
+	top 0
+	left 0
+	padding-left 230px
+	z-index 999
+	background rgba(0, 0, 0, 0.8)
+	opacity 0
+	display none
+	
+	.brandsite-video-player
+		position absolute
+		left 50%
+		top 50%
+		transform translateX(-50%) translateY(-50%)
+		
+		button
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAMAAADX9CSSAAAAMFBMVEX///////////////////////////////////////////////////////////////9Or7hAAAAAD3RSTlMAenx9fn+AgYKLkru+v8jk70QgAAAAcElEQVR42nWSUQ6AIAxDqw4QBXr/2xqjcUHo+yChGWV0oGSM5IKDYZADj3uxn2xPaehP+D4ydHLES+T2yZvL7x3u7SSuuFmZPs2t3MTZuWDhjgHjScOExgbIeukv+5H9y/fKfGSeMn81LznfOv0P9QK/YARo/ud0WAAAAABJRU5ErkJggg==') no-repeat center
+			border 0
+			width 40px
+			height 40px
+			position absolute
+			right 0
+			top -45px
+			border-radius 35px
+			opacity 0.5
+			transition all 0.3s easeOutCubic 
+			
+			&:hover
+				opacity 1
+				
+		#vimeoplayer
+			@media only screen and (max-width: 1024px)
+				width 750px
+				height 422px
+
+			@media only screen and (min-width: 1440px)
+				width 1148px
+				height 646px

@@ -180,6 +180,69 @@ jjCoreStorefront = do ($) ->
 
 	# End custom functions
 
+# Video module start
+window.jjBrandsiteVideo = do ($) ->
+	bindClicks: ->
+		$('#branded .content a.video-trigger').click (e) ->
+			# Stop links from triggering navigation
+			e.preventDefault()
+
+			# Vimeo ID to pass to player
+			videoID = $(@).data('video-id')
+
+			# Load the video
+			jjBrandsiteVideo.loadVideo(videoID)
+
+		$('#branded .content .brandsite-video-container').click ->
+			jjBrandsiteVideo.hideVideo()
+
+	loadVideo: (videoID) ->
+		videoPlayer = $('#branded .content .brandsite-video-container #vimeoplayer')
+		
+		# Templates for the URL needed in the iframe
+		# Down the line this should be changed
+		# Possibly oembed or HTML video
+		urlTemplate = '//player.vimeo.com/video/'
+		queryTemplate = '?api=1&player_id=vimeoplayer&portrait=0&title=0&badge=0&byline=0'
+
+		src = urlTemplate + videoID + queryTemplate
+
+		videoPlayer.attr('src', src)
+
+		jjBrandsiteVideo.showVideo()
+
+	showVideo: ->
+		# We'll wait for the iframe to load so the user doesn't see the frame refresh
+		$('#branded .content .brandsite-video-container #vimeoplayer').load (e) ->
+
+			jjBrandsiteVideo.videoContainer = $('#branded .content .brandsite-video-container')
+			
+			# Using [0] to get the actualt iframe object
+			jjBrandsiteVideo.videoFrame = $('#branded .content .brandsite-video-container #vimeoplayer')[0]
+			
+			# $f is a vimeo froogaloop.min.js function
+			jjBrandsiteVideo.video = $f(jjBrandsiteVideo.videoFrame)
+
+			TweenMax.set jjBrandsiteVideo.videoContainer,
+				display: 'block'
+
+			TweenMax.to jjBrandsiteVideo.videoContainer, 0.3,
+				opacity: 1
+				ease: 'easeOutCubic'
+
+			jjBrandsiteVideo.video.api('play')
+
+	hideVideo: ->
+		TweenMax.to jjBrandsiteVideo.videoContainer, 0.3,
+			opacity: 0
+			ease: 'easeOutCubic'
+			onComplete: ->
+				jjBrandsiteVideo.video.api('pause')
+				TweenMax.set jjBrandsiteVideo.videoContainer,
+					display: 'none'
+
+
+# Callstack, doc.ready
 $(document).ready ->
 	jjCoreStorefront.assignGlobalVars()
 	jjCoreStorefront.responsiveHero()
@@ -187,18 +250,23 @@ $(document).ready ->
 	jjCoreStorefront.trackingClicks()
 	jjCoreStorefront.switchImages()
 
+	jjBrandsiteVideo.bindClicks()
+
+# Callstack, window.load
 $(window).load ->
 	jjCoreStorefront.checkHero()
 	jjCoreStorefront.viewportHero()
 	jjCoreStorefront.clickHero()
 	jjCoreStorefront.pageIsLoaded = true
 
+# Callstack, window.resize
+# Timeout added to avoid mem overload when resizing
 $(window).resize ->
-	# Timeout added to avoid mem overload when resizing
 	clearTimeout @id
 	@id = setTimeout(jjCoreStorefront.detectGrid, 500)
 
+# Callstack, window.close
+# Timeout added to avoid mem overload when scrolling
 $(window).scroll ->
-	# Timeout added to avoid mem overload when resizing
 	clearTimeout @id
 	@id = setTimeout(jjCoreStorefront.viewportHero, 500)
