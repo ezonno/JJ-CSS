@@ -79,15 +79,25 @@
 		.content-box-container
 
 			&.full-width
-				background #fff
-			
+				.content-box
+					border-color #fff
+					padding 25px 0
+
+					img
+						width 100%
+					
 			.content-box
-				padding 25px 0
-				width 1000px
-				margin 0 auto
+				border-left 25px solid #f2f2f2
+				border-right @border-left
+				width 100%
+				margin 25px auto 0
+				text-align center
+				background #fff
+				box-sizing border-box
 				
 				img
-					width 100%
+					width 1000px
+					height auto
 				
 	.brandsite-small-content-boxes
 		width 1000px
@@ -115,16 +125,23 @@
 
 		.brandsite-content-boxes
 			.content-box-container
+				&.full-width
+					.content-box
+						padding 15px 0
+
 				.content-box
-					padding 10px 0
-					width 755px
+					border-width 15px
+					margin-top 15px
+
+					img
+						width 745px
 					
 		.brandsite-small-content-boxes
-			width 755px
-			padding 10px 0
+			width 745px
+			padding 15px 0
 			
 			a:first-child .content-box
-				margin-right 11px
+				margin-right 15px
 				
 		.brandsite-footer-logo
 			height 70px
@@ -137,9 +154,16 @@
 
 		.brandsite-content-boxes
 			.content-box-container
+				&.full-width
+					.content-box
+						padding 30px 0
+						
 				.content-box
-					padding 30px 0
-					width 1150px
+					border-width 30px
+					margin-top 30px
+					
+					img
+						width 1150px
 					
 		.brandsite-small-content-boxes
 			width 1150px
