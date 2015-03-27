@@ -229,6 +229,7 @@
                 <body xml:lang="x-default">
                     &lt;!-- Footer logo start --&gt;
                         &lt;div class="brandsite-footer-logo"&gt;
+                            &lt;div class="brandsite-logo"&gt;&lt;/div&gt;
                         &lt;/div&gt;
                     &lt;!-- Footer logo end --&gt;
                 </body>
