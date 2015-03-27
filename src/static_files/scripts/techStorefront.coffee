@@ -172,10 +172,10 @@ jjTechStorefront = do ($) ->
 	switchImages: ->
 		# Whoever you are, you should look away now
 		# Raping bandwidth and http requests here
-		v = $(window).width()
+		v = window.innerWidth
 		images = $('#branded .content .brandsite-small-content-boxes, #branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box').find('img')
 
-		if (v <= 1205)
+		if (v <= 1280)
 			images.each ->
 				newSrc = $(@).attr('src').replace('medium', 'small')
 				$(@).attr('src', newSrc)

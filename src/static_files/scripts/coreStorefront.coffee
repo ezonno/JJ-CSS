@@ -169,7 +169,7 @@ jjCoreStorefront = do ($) ->
 		v = window.innerWidth
 		images = $('#branded .content .brandsite-content-boxes').find('img')
 
-		if (v <= 1205)
+		if (v <= 1280)
 			images.each ->
 				newSrc = $(@).attr('src').replace('medium', 'small')
 				$(@).attr('src', newSrc)
