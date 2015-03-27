@@ -178,10 +178,10 @@ jjCoreStorefront = do ($) ->
 				newSrc = $(@).attr('src').replace('medium', 'large')
 				$(@).attr('src', newSrc)
 
-	# End custom functions
+# End custom functions
 
 # Video module start
-window.jjBrandsiteVideo = do ($) ->
+jjBrandsiteVideo = do ($) ->
 	bindClicks: ->
 		$('#branded .content a.video-trigger').click (e) ->
 			# Stop links from triggering navigation
