@@ -124,8 +124,11 @@
 		a
 			// if we have two <a>, do this:
 			&:nth-last-child(2):first-child .content-box
-				width 435px
 				margin-right 10px
+				width 435px
+				
+			&:nth-last-child(2):first-child ~ a .content-box
+				width 435px
 			
 			// if we have three <a>, do this:
 			&:nth-last-child(3)
@@ -186,8 +189,11 @@
 			a
 				// if we have two <a>, do this:
 				&:nth-last-child(2):first-child .content-box
-					width 356px
 					margin-right 10px
+					width 356px
+
+				&:nth-last-child(2):first-child ~ a .content-box
+					width 356px
 				
 				// if we have three <a>, do this:
 				&:nth-last-child(3)
@@ -222,7 +228,8 @@
 			a
 				// if we have two <a>, do this:
 				&:nth-last-child(2):first-child .content-box
-					width 435px
+				&:nth-last-child(2):first-child ~ a .content-box
+					width 510px
 				
 				// if we have three <a>, do this:
 				&:nth-last-child(3)
