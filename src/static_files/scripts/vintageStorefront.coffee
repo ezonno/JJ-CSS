@@ -139,13 +139,13 @@ jjVintageStorefront = do ($) ->
 
 	trackingScroll: ->
 		contentBoxes = $('#branded .content .brandsite-content-boxes')
-		fullwidthBoxes = $('#branded .content .brandsite-full-width-content-box')
-		smallBoxes = $('#branded .content .brandsite-small-content-boxes')
+		fullwidthContentBoxes = $('#branded .content .brandsite-full-width-content-box')
+		smallContentBoxes = $('#branded .content .brandsite-small-content-boxes')
 
 		offsetWindow = $(window).height() * 0.50
 		offsetContent = if contentBoxes.length then contentBoxes.offset().top - offsetWindow else false
-		offsetFullwidth = if fullwidthBoxes.length then fullwidthBoxes.offset().top - offsetWindow else false
-		offsetSmall = if smallBoxes.length then smallBoxes.offset().top - offsetWindow else false
+		offsetFullwidth = if fullwidthContentBoxes.length then fullwidthContentBoxes.offset().top - offsetWindow else false
+		offsetSmall = if smallContentBoxes.length then smallContentBoxes.offset().top - offsetWindow else false
 
 		$(window).scroll ->
 			if offsetContent and $(window).scrollTop() >= offsetContent and !jjVintageStorefront.contentBoxesReached
