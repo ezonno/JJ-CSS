@@ -3,8 +3,9 @@ jjTechStorefront = do ($) ->
 	# Custom functions here
 	assignGlobalVars: ->
 		# Vars for scrolling track - False should only be set once on load
+		jjTechStorefront.smallContentBoxesReached = false
 		jjTechStorefront.contentBoxesReached = false
-		jjTechStorefront.fullwidthBoxReached = false
+		jjTechStorefront.fullwidthContentBoxReached = false
 
 	responsiveHero: ->
 		$('#branded .content .hero.swiper-container .swiper-slide img').dataImg
@@ -131,12 +132,27 @@ jjTechStorefront = do ($) ->
 			]
 
 	trackingScroll: ->
+		smallContentBoxes = $('#branded .content .brandsite-small-content-boxes')
+		contentBoxes = $('#branded .content .brandsite-content-boxes')
+		fullwidthContentBoxes = $('#branded .content .brandsite-full-width-content-box')
+
 		offsetWindow = $(window).height() * 0.50
-		offsetContent = $('#branded .content .brandsite-content-boxes').offset().top - offsetWindow
-		offsetFullwidth = $('#branded .content .brandsite-full-width-content-box').offset().top - offsetWindow
+		offsetSmall = if smallContentBoxes.length then smallContentBoxes.offset().top - offsetWindow else false
+		offsetContent = if contentBoxes.length then contentBoxes.offset().top - offsetWindow else false
+		offsetFullwidth = if fullwidthContentBoxes.length then fullwidthContentBoxes.offset().top - offsetWindow else false
 
 		$(window).scroll ->
-			if $(window).scrollTop() >= offsetContent and !jjTechStorefront.contentBoxesReached
+			if offsetSmall and $(window).scrollTop() >= offsetSmall and !jjTechStorefront.smallContentBoxesReached
+				_gaq.push [
+					'_trackEvent'
+					'jj-tech-scroll'
+					'Scroll'
+					'Small content boxes in viewport'
+				]
+
+				jjTechStorefront.smallContentBoxesReached = true
+
+			else if offsetContent and $(window).scrollTop() >= offsetContent and !jjTechStorefront.contentBoxesReached
 				_gaq.push [
 					'_trackEvent'
 					'jj-tech-scroll'
@@ -146,15 +162,15 @@ jjTechStorefront = do ($) ->
 
 				jjTechStorefront.contentBoxesReached = true
 			
-			else if $(window).scrollTop() >= offsetFullwidth and !jjTechStorefront.fullwidthBoxReached
+			else if offsetFullwidth and $(window).scrollTop() >= offsetFullwidth and !jjTechStorefront.fullwidthBoxesReached
 				_gaq.push [
 					'_trackEvent'
 					'jj-tech-scroll'
 					'Scroll'
-					'Full-width box in viewport'
+					'Full width box in viewport'
 				]
 
-				jjTechStorefront.fullwidthBoxReached = true
+				jjTechStorefront.fullwidthContentBoxesReached = true
 
 	trackingClicks: ->
 		contents = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box')
