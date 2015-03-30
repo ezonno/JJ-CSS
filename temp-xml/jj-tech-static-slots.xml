@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
 
-    <slot-configuration slot-id="storefront-category-1" context="category" context-id="jj-tech" configuration-id="jj-tech-small-content-boxes-start" assigned-to-site="false">
+    <slot-configuration slot-id="storefront-hero-start" context="category" context-id="jj-tech" configuration-id="jj-storefront-hero-start" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;div class="hero swiper-container"&gt;
+                        &lt;div class="swiper-prev"&gt;&lt;/div&gt;
+                        &lt;div class="swiper-next"&gt;&lt;/div&gt;
+                        &lt;div class="swiper-wrapper"&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-hero-end" context="category" context-id="jj-tech" configuration-id="jj-storefront-hero-end" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                        &lt;/div&gt;
+                        &lt;div class="swiper-pagination-container"&gt;
+                            &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-1" context="category" context-id="jj-tech" configuration-id="jj-tech-small-content-boxes-start" assigned-to-site="true">
         <template>slots/html/htmlslotraw.isml</template>
         <enabled-flag>true</enabled-flag>
         <content>
@@ -13,7 +44,7 @@
         </content>
     </slot-configuration>
 
-    <slot-configuration slot-id="storefront-category-6" context="category" context-id="jj-tech" configuration-id="jj-tech-small-content-boxes-end" assigned-to-site="false">
+    <slot-configuration slot-id="storefront-category-6" context="category" context-id="jj-tech" configuration-id="jj-tech-small-content-boxes-end" assigned-to-site="true">
         <template>slots/html/htmlslotraw.isml</template>
         <enabled-flag>true</enabled-flag>
         <content>
@@ -26,7 +57,7 @@
         </content>
     </slot-configuration>
 
-    <slot-configuration slot-id="storefront-category-7" context="category" context-id="jj-tech" configuration-id="jj-tech-content-boxes-start" assigned-to-site="false">
+    <slot-configuration slot-id="storefront-category-7" context="category" context-id="jj-tech" configuration-id="jj-tech-content-boxes-start" assigned-to-site="true">
         <template>slots/html/htmlslotraw.isml</template>
         <enabled-flag>true</enabled-flag>
         <content>
@@ -38,7 +69,7 @@
         </content>
     </slot-configuration>
 
-    <slot-configuration slot-id="storefront-category-30" context="category" context-id="jj-tech" configuration-id="jj-tech-content-boxes-end" assigned-to-site="false">
+    <slot-configuration slot-id="storefront-category-30" context="category" context-id="jj-tech" configuration-id="jj-tech-content-boxes-end" assigned-to-site="true">
         <template>slots/html/htmlslotraw.isml</template>
         <enabled-flag>true</enabled-flag>
         <content>
@@ -50,12 +81,13 @@
         </content>
     </slot-configuration>
 
-    <slot-configuration slot-id="storefront-category-34" context="category" context-id="jj-tech" configuration-id="jj-tech-footer-logo" assigned-to-site="false">
+    <slot-configuration slot-id="storefront-category-34" context="category" context-id="jj-tech" configuration-id="jj-tech-footer-logo" assigned-to-site="true">
         <template>slots/html/htmlslotraw.isml</template>
         <enabled-flag>true</enabled-flag>
         <content>
             <html>
                 <body xml:lang="x-default">
+                    &lt;div class="clear"&gt;&lt;/div&gt;
                     &lt;div class="brandsite-footer-logo"&gt;
                     &lt;/div&gt;
                 </body>
