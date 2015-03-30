@@ -65,7 +65,8 @@ gulp.task('scripts-static', function() {
 		.pipe(coffeelint.reporter())
 		.pipe(coffee())
 		.pipe(uglify({
-			mangle: false
+			mangle: false,
+			beautify: false
 		}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('build/static/js'));
@@ -83,7 +84,8 @@ gulp.task('scripts-lib', function() {
 		.pipe(coffeelint.reporter())
 		.pipe(coffee())
 		.pipe(uglify({
-			mangle: false
+			mangle: false,
+			beautify: false
 		}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('build/lib/'));
