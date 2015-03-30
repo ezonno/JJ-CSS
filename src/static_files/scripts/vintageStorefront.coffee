@@ -4,7 +4,7 @@ jjVintageStorefront = do ($) ->
 	assignGlobalVars: ->
 		# Vars for scrolling track - False should only be set once on load
 		jjVintageStorefront.contentBoxesReached = false
-		jjVintageStorefront.fullwidthBoxReached = false
+		jjVintageStorefront.smallContentBoxesReached = false
 
 	responsiveHero: ->
 		$('#branded .content .hero.swiper-container .swiper-slide img').dataImg
@@ -139,7 +139,7 @@ jjVintageStorefront = do ($) ->
 	trackingScroll: ->
 		offsetWindow = $(window).height() * 0.50
 		offsetContent = $('#branded .content .brandsite-content-boxes').offset().top - offsetWindow
-		offsetFullwidth = $('#branded .content .brandsite-full-width-content-box').offset().top - offsetWindow
+		offsetSmall = $('#branded .content .brandsite-small-content-boxes').offset().top - offsetWindow
 
 		$(window).scroll ->
 			if $(window).scrollTop() >= offsetContent and !jjVintageStorefront.contentBoxesReached
@@ -152,15 +152,15 @@ jjVintageStorefront = do ($) ->
 
 				jjVintageStorefront.contentBoxesReached = true
 			
-			else if $(window).scrollTop() >= offsetFullwidth and !jjVintageStorefront.fullwidthBoxReached
+			else if $(window).scrollTop() >= offsetSmall and !jjVintageStorefront.smallContentBoxesReached
 				_gaq.push [
 					'_trackEvent'
 					'jj-vintage-scroll'
 					'Scroll'
-					'Full-width box in viewport'
+					'Small content boxes in viewport'
 				]
 
-				jjVintageStorefront.fullwidthBoxReached = true
+				jjVintageStorefront.smallContentBoxesReached = true
 
 	trackingClicks: ->
 		contents = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box, #branded .content .brandsite-small-content-boxes')
