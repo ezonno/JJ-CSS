@@ -136,11 +136,13 @@ jjCoreStorefront = do ($) ->
 			]
 
 	trackingScroll: ->
+		contentBoxes = $('#branded .content .brandsite-content-boxes')
+
 		offsetWindow = $(window).height() * 0.50
-		offsetContent = $('#branded .content .brandsite-content-boxes').offset().top - offsetWindow
+		offsetContent = if contentBoxes.length then contentBoxes.offset().top - offsetWindow else false
 		
 		$(window).scroll ->
-			if $(window).scrollTop() >= offsetContent and !jjCoreStorefront.contentBoxesReached
+			if offsetContent and $(window).scrollTop() >= offsetContent and !jjCoreStorefront.contentBoxesReached
 				_gaq.push [
 					'_trackEvent'
 					'jj-core-scroll'
