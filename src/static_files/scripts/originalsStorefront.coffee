@@ -140,7 +140,7 @@ jjOriginalsStorefront = do ($) ->
 		offsetSmallContent = if smallContentBoxes.length then smallContentBoxes.offset().top - offsetWindow else false
 
 		$(window).scroll ->
-			if contentBoxes.length and $(window).scrollTop() >= offsetContent and !jjOriginalsStorefront.contentBoxesReached
+			if offsetContent and $(window).scrollTop() >= offsetContent and !jjOriginalsStorefront.contentBoxesReached
 				_gaq.push [
 					'_trackEvent'
 					'jj-originals-scroll'
@@ -150,7 +150,7 @@ jjOriginalsStorefront = do ($) ->
 
 				jjOriginalsStorefront.contentBoxesReached = true
 
-			else if smallContentBoxes.length and $(window).scrollTop() >= offsetSmallContent and !jjOriginalsStorefront.smallContentBoxesReached
+			else if offsetSmallContent and $(window).scrollTop() >= offsetSmallContent and !jjOriginalsStorefront.smallContentBoxesReached
 				_gaq.push [
 					'_trackEvent'
 					'jj-originals-scroll'
