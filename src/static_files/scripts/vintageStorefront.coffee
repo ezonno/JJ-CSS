@@ -4,6 +4,7 @@ jjVintageStorefront = do ($) ->
 	assignGlobalVars: ->
 		# Vars for scrolling track - False should only be set once on load
 		jjVintageStorefront.contentBoxesReached = false
+		jjVintageStorefront.fullwidthContentBoxesReached = false
 		jjVintageStorefront.smallContentBoxesReached = false
 
 	responsiveHero: ->
@@ -137,12 +138,17 @@ jjVintageStorefront = do ($) ->
 			]
 
 	trackingScroll: ->
+		contentBoxes = $('#branded .content .brandsite-content-boxes')
+		fullwidthBoxes = $('#branded .content .brandsite-full-width-content-box')
+		smallBoxes = $('#branded .content .brandsite-small-content-boxes')
+
 		offsetWindow = $(window).height() * 0.50
-		offsetContent = $('#branded .content .brandsite-content-boxes').offset().top - offsetWindow
-		offsetSmall = $('#branded .content .brandsite-small-content-boxes').offset().top - offsetWindow
+		offsetContent = if contentBoxes.length then contentBoxes.offset().top - offsetWindow else false
+		offsetFullwidth = if fullwidthBoxes.length then fullwidthBoxes.offset().top - offsetWindow else false
+		offsetSmall = if smallBoxes.length then smallBoxes.offset().top - offsetWindow else false
 
 		$(window).scroll ->
-			if $(window).scrollTop() >= offsetContent and !jjVintageStorefront.contentBoxesReached
+			if offsetContent and $(window).scrollTop() >= offsetContent and !jjVintageStorefront.contentBoxesReached
 				_gaq.push [
 					'_trackEvent'
 					'jj-vintage-scroll'
@@ -152,7 +158,17 @@ jjVintageStorefront = do ($) ->
 
 				jjVintageStorefront.contentBoxesReached = true
 			
-			else if $(window).scrollTop() >= offsetSmall and !jjVintageStorefront.smallContentBoxesReached
+			else if offsetFullwidth and $(window).scrollTop() >= offsetFullwidth and !jjVintageStorefront.fullwidthContentBoxesReached
+				_gaq.push [
+					'_trackEvent'
+					'jj-vintage-scroll'
+					'Scroll'
+					'Full width content boxes in viewport'
+				]
+
+				jjVintageStorefront.fullwidthContentBoxesReached = true
+
+			else if offsetSmall and $(window).scrollTop() >= offsetSmall and !jjVintageStorefront.smallContentBoxesReached
 				_gaq.push [
 					'_trackEvent'
 					'jj-vintage-scroll'
