@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+
+    <slot-configuration slot-id="storefront-category-1" context="category" context-id="jj-originals" configuration-id="jj-originals-content-boxes-start" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;!-- Content boxes start --&gt;
+                    &lt;div class="brandsite-content-boxes"&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-27" context="category" context-id="jj-originals" configuration-id="jj-storefront-content-boxes-end" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;/div&gt;
+                    &lt;!-- Content boxes end --&gt;
+                    &lt;div class="clear"&gt;&lt;/div&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-28" context="category" context-id="jj-originals" configuration-id="jj-originals-small-boxes-start" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;!-- Small boxes start --&gt;
+                    &lt;div class="brandsite-small-content-boxes"&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-33" context="category" context-id="jj-originals" configuration-id="jj-originals-small-boxes-end" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;div class="clear"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;!-- Small boxes end --&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-34" context="category" context-id="jj-originals" configuration-id="jj-originals-footer-logo" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;!-- Footer logo start --&gt;
+                        &lt;div class="brandsite-footer-logo"&gt;
+                        &lt;/div&gt;
+                    &lt;!-- Footer logo end --&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-35" context="category" context-id="jj-originals" configuration-id="jj-originals-video" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;div class="brandsite-video-container"&gt;
+                        &lt;div class="brandsite-video-player"&gt;
+                            &lt;button class="close"&gt;&lt;/button&gt;
+                            &lt;iframe id="vimeoplayer" src="//player.vimeo.com/video/000000000?api=1&amp;player_id=vimeoplayer&amp;portrait=0&amp;title=0&amp;badge=0&amp;byline=0" width="996" height="556" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+</slot-configurations>
