@@ -4,6 +4,7 @@ jjOriginalsStorefront = do ($) ->
 	assignGlobalVars: ->
 		# Vars for scrolling track - False should only be set once on load
 		jjOriginalsStorefront.contentBoxesReached = false
+		jjOriginalsStorefront.smallContentBoxesReached = false
 
 	responsiveHero: ->
 		$('#branded .content .hero.swiper-container .swiper-slide img').dataImg
@@ -133,6 +134,7 @@ jjOriginalsStorefront = do ($) ->
 	trackingScroll: ->
 		offsetWindow = $(window).height() * 0.50
 		offsetContent = $('#branded .content .brandsite-content-boxes').offset().top - offsetWindow
+		offsetSmallContent = $('#branded .content .brandsite-small-content-boxes').offset().top - offsetWindow
 
 		$(window).scroll ->
 			if $(window).scrollTop() >= offsetContent and !jjOriginalsStorefront.contentBoxesReached
@@ -144,6 +146,15 @@ jjOriginalsStorefront = do ($) ->
 				]
 
 				jjOriginalsStorefront.contentBoxesReached = true
+			else if $(window).scrollTop() >= offsetSmallContent and !jjOriginalsStorefront.smallContentBoxesReached
+				_gaq.push [
+					'_trackEvent'
+					'jj-originals-scroll'
+					'Scroll'
+					'Small content boxes in viewport'
+				]
+
+				jjOriginalsStorefront.smallContentBoxesReached = true
 
 	trackingClicks: ->
 		contents = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box, #branded .content .brandsite-small-content-boxes')
