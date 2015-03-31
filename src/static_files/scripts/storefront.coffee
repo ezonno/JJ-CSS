@@ -4,7 +4,6 @@ jjStorefront = ((jQuery) ->
 	assignGlobalVars: ->
 		# Vars for scrolling track - False should only be set once on load
 		jjStorefront.brandsReached = false
-		jjStorefront.categoriesReached = false
 		jjStorefront.footerReached = false
 
 	responsiveHero: ->
@@ -83,48 +82,11 @@ jjStorefront = ((jQuery) ->
 		TweenMax.set $('#branded .content .hero.swiper-container'),
 			height: heroHeight
 
-	brandHover: ->
-		$('#branded .content .storefront-brands .brand').each ->
-			# Avoid multiple instances of the hover event
-			$(@).off('hover')
-
-			width = $(@).find('.image').width()
-			height = $(@).find('.image').height()
-			newWidth = width + 10
-			newHeight = height + 10
-
-			$(@).find('.image').css('background-size', newWidth + 'px ' + newHeight + 'px')
-
-			$(@).hover ->
-				TweenMax.to $(@).find('.overlay'), 0.4,
-					opacity: 1
-				
-				TweenMax.to $(@).find('.image'), 0.4,
-					backgroundSize:  width + 'px ' + height + 'px'
-
-				TweenMax.to $(@).find('.buttons'), 0.4,
-					delay: 0.2
-					opacity: 1
-			, ->
-				TweenMax.to $(@).find('.overlay'), 0.3,
-					opacity: 0
-				
-				TweenMax.to $(@).find('.image'), 0.3,
-					backgroundSize: newWidth + 'px ' + newHeight + 'px'
-				
-				TweenMax.to $(@).find('.buttons'), 0.3,
-					opacity: 0
-					overwrite: true
-
 	detectGrid: ->
-		jjStorefront.brandHover()
 		jjStorefront.resizeHero()
 
 		if jjStorefront.pageIsLoaded
 			jjStorefront.viewportHero()
-
-		if !jjStorefront.footerReached
-			jjStorefront.trackingScroll()
 
 	initQuickview: ->
 		quickViewOptions =
@@ -135,66 +97,8 @@ jjStorefront = ((jQuery) ->
 		app.quickView.bindEvents(quickViewOptions)
 
 	trackingInit: ->
-		jjStorefront.trackingHighlights()
-		jjStorefront.trackingBrands()
-		#jjStorefront.trackingCategories()
 		jjStorefront.trackingScroll()
 
-	trackingHighlights: ->
-		$('#branded .content .storefront-promos ul li').click (e) ->
-			# For testing only. Do no include preventDefault() in production code
-			# e.preventDefault()
-			
-			highlightNo = $(@).index() + 1
-			link = $(@).find('a').attr('href')
-			
-			_gaq.push [
-				'_trackEvent'
-				'jj-storefront-highlights'
-				'Click', 'Highlight no: ' + highlightNo + ', link: ' + link
-			]
-
-	trackingBrands: ->
-		$('#branded .content .storefront-brands .brand').click ->
-			brandID = $(@).data('brand')
-			_gaq.push [
-				'_trackEvent'
-				'jj-storefront-brandboxes'
-				'Click'
-				brandID
-			]
-
-	trackingCategories: ->
-		$('#branded .content .storefront-categories .gridify .box').each ->
-			box = $(@).data('pos-grid')
-			week = $(@).data('week')
-			product = $(@).data('product')
-			category = $(@).data('category')
-			image = $(@).data('image')
-
-			$(@).find('a').click ->
-
-				if $(@).hasClass('one')
-					_gaq.push [
-						'_trackEvent'
-						'jj-storefront-categoryboxes'
-						'Click'
-						'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, product: ' + product
-					]
-
-				else if $(@).hasClass('two')
-					_gaq.push [
-						'_trackEvent'
-						'jj-storefront-categoryboxes'
-						'Click', 'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, category: ' + category
-					]
-
-				else
-					_gaq.push [
-						'_trackEvent'
-						'jj-storefront-categoryboxes'
-						'Click', 'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: image, category: ' + category
-					]
 
 	viewportHero: ->
 		heroViewportCheck = $('#branded .content .hero').isInViewport
@@ -240,51 +144,19 @@ jjStorefront = ((jQuery) ->
 				'Slide: ' + staticHumanIndex + ', week: ' + staticWeek + ', image: ' + staticImage + ', url: ' + staticUrl
 			]
 
-	trackingScroll: ->
-		$(window).scroll ->
-			if $('#branded .content .storefront-brands').isInViewport() and !jjStorefront.brandsReached
-				_gaq.push [
-					'_trackEvent'
-					'jj-storefront-scroll'
-					'Scroll'
-					'Brands in viewport'
-				]
-				
-				jjStorefront.brandsReached = true
-
-			if $('#branded .content .storefront-categories').isInViewport() and !jjStorefront.categoriesReached
-				_gaq.push [
-					'_trackEvent'
-					'jj-storefront-scroll'
-					'Scroll'
-					'Categories in viewport'
-				]
-				
-				jjStorefront.categoriesReached = true
-
-			if $('#footer_global').isInViewport() and !jjStorefront.footerReached
-				_gaq.push [
-					'_trackEvent'
-					'jj-storefront-scroll'
-					'Scroll'
-					'Footer in viewport'
-				]
-				
-				jjStorefront.footerReached = true
-
 	# End custom functions
 )(jQuery)
 
 $(document).ready ->
 	jjStorefront.assignGlobalVars()
 	jjStorefront.responsiveHero()
-	jjStorefront.brandHover()
-	jjStorefront.initQuickview()
-	jjStorefront.trackingInit()
+	#jjStorefront.brandHover()
+	#jjStorefront.initQuickview()
+	#jjStorefront.trackingInit()
 
 $(window).load ->
 	jjStorefront.checkHero()
-	jjStorefront.viewportHero()
+	#jjStorefront.viewportHero()
 	jjStorefront.clickHero()
 	jjStorefront.pageIsLoaded = true
 
