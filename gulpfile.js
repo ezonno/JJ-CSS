@@ -7,8 +7,10 @@ var del = require('del');
 var minifycss = require('gulp-minify-css');
 var gutil = require('gulp-util');
 var plumber = require('gulp-plumber');
-var autoprefixer = require('autoprefixer-stylus');
+var autoprefixer = require('gulp-autoprefixer');
 var nib = require('nib');
+var changed = require('gulp-changed');
+var coffeelint = require('gulp-coffeelint');
 
 var paths = {
 	scriptsStatic: 'src/static_files/scripts/**/*.coffee',
@@ -53,11 +55,19 @@ gulp.task('clean', function(cb) {
 gulp.task('scripts-static', function() {
 	return gulp.src(paths.scriptsStatic)
 		.pipe(plumber())
+		.pipe(changed('build/static/js', {extension: '.js'}))
 		.pipe(sourcemaps.init())
-			.pipe(coffee())
-			.pipe(uglify({
-				mangle: false
-			}))
+		.pipe(coffeelint({
+			no_tabs: { level: "ignore" },
+			indentation: { value: 1 },
+			max_line_length: { level: "ignore" }
+		}))
+		.pipe(coffeelint.reporter())
+		.pipe(coffee())
+		.pipe(uglify({
+			mangle: false,
+			beautify: false
+		}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('build/static/js'));
 });
@@ -66,10 +76,17 @@ gulp.task('scripts-lib', function() {
 	return gulp.src(paths.scriptsLib)
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
-			.pipe(coffee())
-			.pipe(uglify({
-				mangle: false
-			}))
+		.pipe(coffeelint({
+			no_tabs: { level: "ignore" },
+			indentation: { value: 1 },
+			max_line_length: { level: "ignore" }
+		}))
+		.pipe(coffeelint.reporter())
+		.pipe(coffee())
+		.pipe(uglify({
+			mangle: false,
+			beautify: false
+		}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('build/lib/'));
 });
@@ -78,10 +95,9 @@ gulp.task('scripts-lib', function() {
 gulp.task('styles-static', function(target){
 	return gulp.src(paths.stylesStatic)
 		.pipe(plumber())
-		.pipe(stylus({
-			use: [autoprefixer({ browser: 'last 3 versions' })],
-			use: [nib()]
-		}))
+		.pipe(changed('build/static/css', {extension: '.css'}))
+		.pipe(stylus())
+		.pipe(autoprefixer({ browser: 'Last 3 versions' }))
 		.pipe(minifycss({
 			processImport: false,
 			advanced: false
@@ -92,10 +108,8 @@ gulp.task('styles-static', function(target){
 gulp.task('styles-lib', function(target){
 	return gulp.src(paths.stylesLib)
 		.pipe(plumber())
-		.pipe(stylus({
-			use: [autoprefixer({ browser: 'last 3 versions' })],
-			use: [nib()]
-		}))
+		.pipe(stylus())
+		.pipe(autoprefixer({ browser: 'Last 3 versions' }))
 		.pipe(minifycss({
 			processImport: false,
 			advanced: false
@@ -107,6 +121,7 @@ gulp.task('styles-lib', function(target){
 gulp.task('images-static', function() {
 	return gulp.src(paths.imagesStatic)
 		.pipe(plumber())
+		.pipe(changed('build/static/img'))
 		.pipe(gulp.dest('build/static/img'));
 });
 

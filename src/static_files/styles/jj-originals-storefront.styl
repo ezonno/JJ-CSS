@@ -1,1 +1,188 @@
-@import 'partials/generic-storefront'
+// Overwrites
+#footer_global
+	margin-top 0
+
+// Brandsite styling
+#branded .content
+	background #f2f2f2
+
+	.storefront-logo
+		height 70px
+		background #fff url('../img/storefront_logo_originals.png') center / 132px 32px no-repeat
+		opacity 0.90
+
+	// Hero
+	.hero
+		overflow hidden
+		position relative
+		text-align center
+		width 100%
+
+		.swiper-prev
+		.swiper-next
+			height 122px
+			margin-top -61px
+			opacity 0.7
+			position absolute
+			top 50%
+			width 60px
+			z-index 99
+			transition all 0.2s ease-out
+			display none
+
+		.swiper-prev
+			background url('../img/swiperArrowLeft.png') no-repeat center top
+			cursor pointer
+			left 2%
+
+			&:hover
+				left 1.8%
+				opacity 1
+
+			&.background--light
+				background-image url('../img/swiperArrowLeft-black.png')
+
+		.swiper-next
+			background url('../img/swiperArrowRight.png') no-repeat center bottom
+			cursor pointer
+			right 2%
+
+			&:hover
+				opacity 1
+				right 1.8%
+
+			&.background--light
+				background-image url('../img/swiperArrowRight-black.png')
+
+		.swiper-active-switch
+		.swiper-active-switch:hover
+			opacity 1
+
+		.background--light .swiper-pagination-switch
+			background-color black
+
+		.swiper-slide
+			display none
+
+			&.first-slide
+				display block
+
+			img
+				border 0
+				padding 0
+				position relative
+				width 100%
+
+			a
+				display block
+				
+	.brandsite-content-boxes
+		.content-box-container
+
+			&.full-width
+				.content-box
+					border-color #fff
+					padding 25px 0
+
+					img
+						width 100%
+					
+			.content-box
+				border-left 25px solid #f2f2f2
+				border-right @border-left
+				width 100%
+				margin 25px auto 0
+				text-align center
+				background #fff
+				box-sizing border-box
+				
+				img
+					width 1000px
+					height auto
+				
+	.brandsite-small-content-boxes
+		width 1000px
+		margin 0 auto
+		padding 25px 0
+		
+		.content-box
+			float left
+			width 487px
+			
+			img
+				width 100%
+			
+		a:first-child .content-box
+			margin-right 26px
+			
+	.brandsite-footer-logo
+		height 95px
+		background #fff url('../img/storefront_logo_originals.png') center / 115px 28px no-repeat
+		opacity 0.90
+		
+	@import 'partials/brandsite-videos'
+				
+@media only screen and (max-width: 1280px)
+	#branded .content
+		.storefront-logo
+			height 50px
+			background-size 81px 20px
+
+		.brandsite-content-boxes
+			.content-box-container
+				&.full-width
+					.content-box
+						padding 15px 0
+
+				.content-box
+					border-width 15px
+					margin-top 15px
+
+					img
+						width 745px
+					
+		.brandsite-small-content-boxes
+			width 745px
+			padding 15px 0
+			
+			.content-box
+				width 365px
+			
+			a:first-child .content-box
+				margin-right 15px
+				
+		.brandsite-footer-logo
+			height 70px
+			background-size 86px 21px
+		
+@media only screen and (min-width: 1440px)
+	#branded .content
+		.storefront-logo
+			height 80px
+
+		.brandsite-content-boxes
+			.content-box-container
+				&.full-width
+					.content-box
+						padding 30px 0
+						
+				.content-box
+					border-width 30px
+					margin-top 30px
+					
+					img
+						width 1150px
+					
+		.brandsite-small-content-boxes
+			width 1150px
+			padding 30px 0
+			
+			.content-box
+				width 560px
+			
+			a:first-child .content-box
+				margin-right 30px
+				
+		.brandsite-footer-logo
+			height 160px
+			background-size 132px 32px

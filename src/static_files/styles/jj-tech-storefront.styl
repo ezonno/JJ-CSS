@@ -1,1 +1,243 @@
-@import 'partials/generic-storefront'
+#footer_global
+	margin-top 0
+
+#branded .content
+	background #fafafa
+
+	// Hiding, just as a precaution
+	.storefront-promos
+	.storefront-brands-callout
+	.storefront-brands
+	.storefront-shipping-line
+	.storefront-sellingpoints
+	.storefront-categories-callout
+		display none
+	
+	// Logo
+	.storefront-logo
+		height 70px
+		background #fff url('../img/storefront_logo_tech.png') no-repeat center
+		background-size 113px 21px
+		
+	// Hero
+	.hero
+		overflow hidden
+		position relative
+		text-align center
+		width 100%
+
+		.swiper-prev
+		.swiper-next
+			height 122px
+			margin-top -61px
+			opacity 0.7
+			position absolute
+			top 50%
+			width 60px
+			z-index 99
+			transition all 0.2s ease-out
+			display none
+
+		.swiper-prev
+			background url('../img/swiperArrowLeft.png') no-repeat center top
+			cursor pointer
+			left 2%
+
+			&:hover
+				left 1.8%
+				opacity 1
+
+			&.background--light
+				background-image url('../img/swiperArrowLeft-black.png')
+
+		.swiper-next
+			background url('../img/swiperArrowRight.png') no-repeat center bottom
+			cursor pointer
+			right 2%
+
+			&:hover
+				opacity 1
+				right 1.8%
+
+			&.background--light
+				background-image url('../img/swiperArrowRight-black.png')
+
+		.swiper-pagination
+			bottom 0
+			left 0
+			padding 15px 0
+			position absolute
+			text-align center
+			width 100%
+			z-index 900
+
+		.swiper-pagination-switch
+			background #FFF
+			border-radius 10px
+			box-shadow 0px 1px 1px #666
+			cursor pointer
+			display inline-block
+			height 9px
+			margin 0 5px
+			opacity 0.3
+			width 9px
+			transition all 0.2s ease-out
+
+			&:hover
+				opacity 0.8
+
+		.swiper-active-switch
+		.swiper-active-switch:hover
+			opacity 1
+
+		.background--light .swiper-pagination-switch
+			background-color black
+
+		.swiper-slide
+			display none
+
+			&.first-slide
+				display block
+
+			img
+				border 0
+				padding 0
+				position relative
+				width 100%
+
+			a
+				display block
+
+	.storefront-categories
+		position relative
+		z-index 1
+
+	.brandsite-small-content-boxes
+		width 880px
+		margin -60px auto 0
+		
+		.content-box
+			float left
+			
+			img
+				width 100%
+		
+		a
+			// if we have two <a>, do this:
+			&:nth-last-child(2):first-child .content-box
+				margin-right 10px
+				width 435px
+				
+			&:nth-last-child(2):first-child ~ a .content-box
+				width 435px
+			
+			// if we have three <a>, do this:
+			&:nth-last-child(3)
+				&:first-child ~ a .content-box
+					width 286px
+					margin-left 11px
+
+				&:first-child .content-box
+					width 286px
+					margin-left 0px
+			
+	.brandsite-content-boxes
+		width 880px
+		margin 36px auto 0
+		position relative
+		z-index 1
+		
+		img
+			width 100%
+		
+	.brandsite-full-width-content-box
+		width 100%
+		
+		a
+			// Woah. What's going on here?
+			// We're using : selectors as conditionals, that's what!
+				
+			// if only one <a> exists do something
+			&:only-of-type .content-box
+				width 100%
+		
+			// if there are more, do something else
+			.content-box
+				width 50%
+				float left
+				
+				img
+					width 100%
+					
+	.brandsite-footer-logo
+		height 150px
+		background #fff url('../img/storefront_logo_tech.png') no-repeat center
+		background-size 147px 27px
+		
+	@import 'partials/brandsite-videos'
+		
+@media only screen and (max-width: 1280px)
+	#branded .content
+		.storefront-logo
+			height 48px
+			background-size 93px 17px
+			
+		.brandsite-small-content-boxes
+		.brandsite-content-boxes
+			width 722px
+
+		.brandsite-small-content-boxes
+			a
+				// if we have two <a>, do this:
+				&:nth-last-child(2):first-child .content-box
+					margin-right 10px
+					width 356px
+
+				&:nth-last-child(2):first-child ~ a .content-box
+					width 356px
+				
+				// if we have three <a>, do this:
+				&:nth-last-child(3)
+					&:first-child ~ a .content-box
+						width 234px
+						margin-left 10px
+
+					&:first-child .content-box
+						width 234px
+						margin-left 0px
+
+		.brandsite-content-boxes
+			margin-top 20px
+
+		.brandsite-footer-logo
+			height 123px
+			background-size 121px 22px
+		
+@media only screen and (min-width: 1440px)
+	#branded .content
+		.storefront-logo
+			height 80px
+			background-size 132px 25px
+			
+		.brandsite-small-content-boxes
+		.brandsite-content-boxes
+			width 1030px
+			
+
+		.brandsite-small-content-boxes
+			
+			a
+				// if we have two <a>, do this:
+				&:nth-last-child(2):first-child .content-box
+				&:nth-last-child(2):first-child ~ a .content-box
+					width 510px
+				
+				// if we have three <a>, do this:
+				&:nth-last-child(3)
+					&:first-child ~ a .content-box
+					&:first-child .content-box
+						width 336px
+
+		.brandsite-footer-logo
+			height 176px
+			background-size 172px 32px

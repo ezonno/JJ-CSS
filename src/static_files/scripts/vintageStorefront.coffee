@@ -3,15 +3,15 @@ jjVintageStorefront = do ($) ->
 	# Custom functions here
 	assignGlobalVars: ->
 		# Vars for scrolling track - False should only be set once on load
-		jjVintageStorefront.brandsReached = false
-		jjVintageStorefront.categoriesReached = false
-		jjVintageStorefront.footerReached = false
+		jjVintageStorefront.contentBoxesReached = false
+		jjVintageStorefront.fullwidthContentBoxesReached = false
+		jjVintageStorefront.smallContentBoxesReached = false
 
 	responsiveHero: ->
 		$('#branded .content .hero.swiper-container .swiper-slide img').dataImg
-			sml: 1260
-			med: 1420
-			lrg: 1660
+			sml: 1023
+			med: 1440
+			lrg: 1441
 			resize: false
 
 	checkHero: ->
@@ -81,7 +81,6 @@ jjVintageStorefront = do ($) ->
 			height: heroHeight
 
 	detectGrid: ->
-		jjVintageStorefront.brandHover()
 		jjVintageStorefront.resizeHero()
 
 		if jjVintageStorefront.pageIsLoaded
@@ -90,54 +89,11 @@ jjVintageStorefront = do ($) ->
 		if !jjVintageStorefront.footerReached
 			jjVintageStorefront.trackingScroll()
 
-	initQuickview: ->
-		quickViewOptions =
-			buttonSelector: null
-			imageSelector: null
-			buttonLinkSelector: '.quickview'
-		
-		app.quickView.bindEvents(quickViewOptions)
-
 	trackingInit: ->
-		jjVintageStorefront.trackingCategories()
 		jjVintageStorefront.trackingScroll()
 
-	trackingCategories: ->
-		$('#branded .content .storefront-categories .gridify .box').each ->
-			box = $(@).data('pos-grid')
-			week = $(@).data('week')
-			product = $(@).data('product')
-			category = $(@).data('category')
-			image = $(@).data('image')
-
-			$(@).find('a').click ->
-
-				if $(@).hasClass('one')
-					_gaq.push [
-						'_trackEvent'
-						'jj-vintage-storefront'
-						'category boxes'
-						'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, product: ' + product
-					]
-
-				else if $(@).hasClass('two')
-					_gaq.push [
-						'_trackEvent'
-						'jj-vintage-storefront'
-						'category boxes'
-						'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: text, category: ' + category
-					]
-
-				else
-					_gaq.push [
-						'_trackEvent'
-						'jj-vintage-storefront'
-						'category boxes'
-						'Box: ' + box + ', week: ' + week + ', image: ' + image + ', clicked: image, category: ' + category
-					]
-
 	viewportHero: ->
-		heroViewportCheck = $('#branded .content .hero').isInViewport 
+		heroViewportCheck = $('#branded .content .hero').isInViewport
 			'tolerance' : jjVintageStorefront.tolerance
 
 		if !jjVintageStorefront.heroInView and heroViewportCheck
@@ -161,9 +117,9 @@ jjVintageStorefront = do ($) ->
 
 			_gaq.push [
 				'_trackEvent'
-				'jj-vintage-storefront'
-				'hero'
-				'Slide: ' + slideHumanIndex + ', week: ' + slideWeek + ', image: ' + slideImage + ', url: ' + slideUrl + ', type: ' + type
+				'jj-vintage-hero'
+				type
+				'Slide: ' + slideHumanIndex + ', week: ' + slideWeek + ', image: ' + slideImage + ', url: ' + slideUrl
 			]
 
 		else
@@ -176,58 +132,151 @@ jjVintageStorefront = do ($) ->
 
 			_gaq.push [
 				'_trackEvent'
-				'jj-vintage-storefront'
-				'hero'
-				'Slide: ' + staticHumanIndex + ', week: ' + staticWeek + ', image: ' + staticImage + ', url: ' + staticUrl + ', type: ' + type
+				'jj-vintage-hero'
+				type
+				'Slide: ' + staticHumanIndex + ', week: ' + staticWeek + ', image: ' + staticImage + ', url: ' + staticUrl
 			]
 
 	trackingScroll: ->
+		contentBoxes = $('#branded .content .brandsite-content-boxes')
+		fullwidthContentBoxes = $('#branded .content .brandsite-full-width-content-box')
+		smallContentBoxes = $('#branded .content .brandsite-small-content-boxes')
+
+		offsetWindow = $(window).height() * 0.50
+		offsetContent = if contentBoxes.length then contentBoxes.offset().top - offsetWindow else false
+		offsetFullwidth = if fullwidthContentBoxes.length then fullwidthContentBoxes.offset().top - offsetWindow else false
+		offsetSmall = if smallContentBoxes.length then smallContentBoxes.offset().top - offsetWindow else false
+
 		$(window).scroll ->
-			offsetCategories = $('#branded .content .storefront-categories').offset().top
-			offsetFooter = $('#footer_global').offset().top
+			if offsetContent and $(window).scrollTop() >= offsetContent and !jjVintageStorefront.contentBoxesReached
+				_gaq.push [
+					'_trackEvent'
+					'jj-vintage-scroll'
+					'Scroll'
+					'Content boxes in viewport'
+				]
 
-			$(window).scroll ->
-				if $(window).scrollTop() >= offsetCategories and !jjVintageStorefront.categoriesReached
-					_gaq.push [
-						'_trackEvent'
-						'jj-vintage-storefront'
-						'scroll'
-						'Category boxes reached'
-					]
+				jjVintageStorefront.contentBoxesReached = true
+			
+			else if offsetFullwidth and $(window).scrollTop() >= offsetFullwidth and !jjVintageStorefront.fullwidthContentBoxesReached
+				_gaq.push [
+					'_trackEvent'
+					'jj-vintage-scroll'
+					'Scroll'
+					'Full width content boxes in viewport'
+				]
 
-					jjVintageStorefront.categoriesReached = true
-				
-				else if $(window).scrollTop() >= offsetFooter and !jjVintageStorefront.footerReached
-					_gaq.push [
-						'_trackEvent'
-						'jj-vintage-storefront'
-						'scroll'
-						'Footer reached'
-					]
+				jjVintageStorefront.fullwidthContentBoxesReached = true
 
-					jjVintageStorefront.footerReached = true
+			else if offsetSmall and $(window).scrollTop() >= offsetSmall and !jjVintageStorefront.smallContentBoxesReached
+				_gaq.push [
+					'_trackEvent'
+					'jj-vintage-scroll'
+					'Scroll'
+					'Small content boxes in viewport'
+				]
 
-	closeCallout: ->
-		 $('#branded .content .storefront-promos .storefront-callout button').click (e) ->
-			callout = $('#branded .content .storefront-promos .storefront-callout')
+				jjVintageStorefront.smallContentBoxesReached = true
 
-			TweenLite.to callout, 0.4, 
-				height: 0
-				borderWidth: 0
+	trackingClicks: ->
+		contents = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box, #branded .content .brandsite-small-content-boxes')
+
+		contents.find('a').click ->
+			id = $(@).data('track-id') ? 'Error - Please panic'
+
+			_gaq.push [
+				'_trackEvent'
+				'jj-vintage-content'
+				'Click'
+				id
+			]
+
+	switchImages: ->
+		# Whoever you are, you should look away now
+		# Raping bandwidth and http requests here
+		v = window.innerWidth
+		images = $('#branded .content .brandsite-content-boxes, #branded .content .brandsite-full-width-content-box, #branded .content .brandsite-small-content-boxes').find('img')
+
+		if (v <= 1280)
+			images.each ->
+				newSrc = $(@).attr('src').replace('medium', 'small')
+				$(@).attr('src', newSrc)
+		else if (v >= 1440)
+			images.each ->
+				newSrc = $(@).attr('src').replace('medium', 'large')
+				$(@).attr('src', newSrc)
+
+# End custom functions
+
+# Video module start
+jjBrandsiteVideo = do ($) ->
+	bindClicks: ->
+		$('#branded .content a.video-trigger').click (e) ->
+			# Stop links from triggering navigation
+			e.preventDefault()
+
+			# Vimeo ID to pass to player
+			videoID = $(@).data('video-id')
+
+			# Load the video
+			jjBrandsiteVideo.loadVideo(videoID)
+
+		$('#branded .content .brandsite-video-container').click ->
+			jjBrandsiteVideo.hideVideo()
+
+	loadVideo: (videoID) ->
+		videoPlayer = $('#branded .content .brandsite-video-container #vimeoplayer')
+		
+		# Templates for the URL needed in the iframe
+		# Down the line this should be changed
+		# Possibly oembed or HTML video
+		urlTemplate = '//player.vimeo.com/video/'
+		queryTemplate = '?api=1&player_id=vimeoplayer&portrait=0&title=0&badge=0&byline=0'
+
+		src = urlTemplate + videoID + queryTemplate
+
+		videoPlayer.attr('src', src)
+
+		jjBrandsiteVideo.showVideo()
+
+	showVideo: ->
+		# We'll wait for the iframe to load so the user doesn't see the frame refresh
+		$('#branded .content .brandsite-video-container #vimeoplayer').load (e) ->
+
+			jjBrandsiteVideo.videoContainer = $('#branded .content .brandsite-video-container')
+			
+			# Using [0] to get the actualt iframe object
+			jjBrandsiteVideo.videoFrame = $('#branded .content .brandsite-video-container #vimeoplayer')[0]
+			
+			# $f is a vimeo froogaloop.min.js function
+			jjBrandsiteVideo.video = $f(jjBrandsiteVideo.videoFrame)
+
+			TweenMax.set jjBrandsiteVideo.videoContainer,
+				display: 'block'
+
+			TweenMax.to jjBrandsiteVideo.videoContainer, 0.3,
+				opacity: 1
 				ease: 'easeOutCubic'
 
-			TweenLite.to callout.parent(), 0.4, 
-				marginTop: 0
-				ease: 'easeOutCubic'
+			jjBrandsiteVideo.video.api('play')
 
-	# End custom functions
+	hideVideo: ->
+		TweenMax.to jjBrandsiteVideo.videoContainer, 0.3,
+			opacity: 0
+			ease: 'easeOutCubic'
+			onComplete: ->
+				jjBrandsiteVideo.video.api('pause')
+				TweenMax.set jjBrandsiteVideo.videoContainer,
+					display: 'none'
 
 $(document).ready ->
 	jjVintageStorefront.assignGlobalVars()
 	jjVintageStorefront.responsiveHero()
-	jjVintageStorefront.initQuickview()
 	jjVintageStorefront.trackingInit()
-	jjVintageStorefront.closeCallout()
+	jjVintageStorefront.trackingClicks()
+	jjVintageStorefront.switchImages()
+
+	jjBrandsiteVideo.bindClicks()
 
 $(window).load ->
 	jjVintageStorefront.checkHero()

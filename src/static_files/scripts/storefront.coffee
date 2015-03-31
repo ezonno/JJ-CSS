@@ -102,14 +102,14 @@ jjStorefront = ((jQuery) ->
 				TweenMax.to $(@).find('.image'), 0.4,
 					backgroundSize:  width + 'px ' + height + 'px'
 
-				TweenMax.to $(@).find('.buttons'), 0.4, 
+				TweenMax.to $(@).find('.buttons'), 0.4,
 					delay: 0.2
 					opacity: 1
 			, ->
 				TweenMax.to $(@).find('.overlay'), 0.3,
 					opacity: 0
 				
-				TweenMax.to $(@).find('.image'), 0.3, 
+				TweenMax.to $(@).find('.image'), 0.3,
 					backgroundSize: newWidth + 'px ' + newHeight + 'px'
 				
 				TweenMax.to $(@).find('.buttons'), 0.3,
@@ -197,7 +197,7 @@ jjStorefront = ((jQuery) ->
 					]
 
 	viewportHero: ->
-		heroViewportCheck = $('#branded .content .hero').isInViewport 
+		heroViewportCheck = $('#branded .content .hero').isInViewport
 			'tolerance' : jjStorefront.tolerance
 
 		if !jjStorefront.heroInView and heroViewportCheck
@@ -270,7 +270,7 @@ jjStorefront = ((jQuery) ->
 					'Footer in viewport'
 				]
 				
-				jjStorefront.footerReached = true;
+				jjStorefront.footerReached = true
 
 	# End custom functions
 )(jQuery)
