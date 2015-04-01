@@ -4,6 +4,7 @@ jjStorefront = ((jQuery) ->
 	assignGlobalVars: ->
 		# Vars for scrolling track - False should only be set once on load
 		jjStorefront.brandsReached = false
+		jjStorefront.sellingpointsReached = false
 		jjStorefront.footerReached = false
 
 	responsiveHero: ->
@@ -102,22 +103,14 @@ jjStorefront = ((jQuery) ->
 		), ->
 			$(@).removeClass('anim-in').addClass('anim-out')
 
-	initQuickview: ->
-		quickViewOptions =
-			buttonSelector: null
-			imageSelector: null
-			buttonLinkSelector: '.quickview'
-		
-		app.quickView.bindEvents(quickViewOptions)
-
 	detectGrid: ->
 		jjStorefront.resizeHero()
 
 		if jjStorefront.pageIsLoaded
 			jjStorefront.viewportHero()
 
-	trackingInit: ->
-		jjStorefront.trackingScroll()
+		if !jjStorefront.footerReached
+			jjStorefront.trackingScroll()
 
 	trackingHero: (type) ->
 		if jjStorefront.heroIsSlider
@@ -149,6 +142,78 @@ jjStorefront = ((jQuery) ->
 				'Slide: ' + staticHumanIndex + ', week: ' + staticWeek + ', image: ' + staticImage + ', url: ' + staticUrl
 			]
 
+	trackingBrands: ->
+		brands = $('#branded .content .storefront-brands')
+
+		brands.find('a').click ->
+			id = $(@).data('track-id') ? 'Error - Please panic'
+
+			_gaq.push [
+				'_trackEvent'
+				'jj-storefront-brands'
+				'Click'
+				id
+			]
+
+	trackingHighlights: ->
+		highlights = $('#branded .content .storefront-highlights')
+
+		highlights.find('a').click ->
+			# For testing only. Do no include preventDefault() in production code
+			# e.preventDefault()
+			
+			highlightNo = $(@).index() + 1
+			link = $(@).attr('href')
+			
+			_gaq.push [
+				'_trackEvent'
+				'jj-storefront-highlights'
+				'Click'
+				'Highlight no: ' + highlightNo + ', link: ' + link
+			]
+
+	trackingScroll: ->
+		brands = $('#branded .content .storefront-brands')
+		sellingpoints = $('#branded .content .storefront-sellingpoints')
+		footer = $('#footer_global')
+
+		offsetWindow = $(window).height() * 0.50
+
+		offsetBrands = if brands.length then brands.offset().top - offsetWindow else false
+		offsetSellingpoints = if sellingpoints.length then sellingpoints.offset().top - offsetWindow else false
+		offsetFooter = if footer.length then footer.offset().top - offsetWindow else false
+
+		$(window).scroll ->
+			if offsetBrands and $(window).scrollTop() >= offsetBrands and !jjStorefront.brandsReached
+				_gaq.push [
+					'_trackEvent'
+					'jj-storefront-scroll'
+					'Scroll'
+					'Brands in viewport'
+				]
+
+				jjStorefront.brandsReached = true
+
+			else if offsetSellingpoints and $(window).scrollTop() >= offsetSellingpoints and !jjStorefront.sellingpointsReached
+				_gaq.push [
+					'_trackEvent'
+					'jj-storefront-scroll'
+					'Scroll'
+					'Sellingpoints in viewport'
+				]
+
+				jjStorefront.sellingpointsReached = true
+
+			else if offsetFooter and $(window).scrollTop() >= offsetFooter and !jjStorefront.footerReached
+				_gaq.push [
+					'_trackEvent'
+					'jj-storefront-scroll'
+					'Scroll'
+					'Footer in viewport'
+				]
+
+				jjStorefront.footerReached = true
+
 	# End custom functions
 )(jQuery)
 
@@ -156,22 +221,18 @@ $(document).ready ->
 	jjStorefront.assignGlobalVars()
 	jjStorefront.responsiveHero()
 	jjStorefront.hoverBrands()
-	#jjStorefront.brandHover()
-	#jjStorefront.initQuickview()
-	#jjStorefront.trackingInit()
+	
+	jjStorefront.trackingHighlights()
+	jjStorefront.trackingBrands()
 
 $(window).load ->
 	jjStorefront.checkHero()
-	#jjStorefront.viewportHero()
+	jjStorefront.viewportHero()
 	jjStorefront.clickHero()
+	jjStorefront.trackingScroll()
 	jjStorefront.pageIsLoaded = true
 
 $(window).resize ->
-	# Timeout added to avoid mem overload when resizing
-	clearTimeout @id
-	@id = setTimeout(jjStorefront.detectGrid, 500)
-
-$(window).scroll ->
 	# Timeout added to avoid mem overload when resizing
 	clearTimeout @id
 	@id = setTimeout(jjStorefront.detectGrid, 500)
