@@ -45,7 +45,7 @@ a
 		
 		// Logo
 		.storefront-logo
-			height 62px
+			height 60px
 			background #fff url('../img/storefront/logo-jackjones.jpg') no-repeat center
 
 		// Highlights
@@ -57,6 +57,7 @@ a
 			
 			.storefront-highlights-content
 				width 85%
+				max-width 1280px
 				margin 0 auto
 				display table
 				table-layout fixed
@@ -184,8 +185,7 @@ a
 					font-size 17px
 					color #fff
 					top 50%
-					left 50%
-					transform translateX(-50%) translateY(-50%) translateZ(0) scale(1.0, 1.0)
+					transform translateY(-50%)
 					transition top $animationTiming easeOutCubic
 					backface-visibility hidden // Fixes content going blurry when animating
 					width 100%
@@ -330,3 +330,68 @@ a
 						
 						&:hover
 							text-decoration none
+							
+@media only screen and (max-width: 1280px)
+	//
+		
+@media only screen and (min-width: 1440px)
+	#branded .content
+		.storefront-highlights
+			margin-bottom -44px
+
+			.storefront-highlights-content
+				padding 12px 0
+
+		.hero .swiper-pagination
+			bottom 55px			
+
+		.storefront-brands
+			width 980px
+			margin-top -55px
+			
+			> div
+				margin-bottom 15px
+
+				// Setting heights so transforms won't blur the content
+				// Remeber to use even numbers
+				&.core .brand-content
+					height 68px
+					
+					img.brand-logo
+						width 188px
+				
+				&.originals .brand-content
+					height 46px
+					
+					img.brand-logo
+						width 168px
+					
+				&.premium .brand-content
+					height 40px
+					
+					img.brand-logo
+						width 187px
+					
+				&.vintage .brand-content
+					height 50px
+					
+					img.brand-logo
+						width 196px
+					
+				&.tech .brand-content
+					height 38px
+					
+					img.brand-logo
+						width 178px
+					
+				&.jeans .brand-content
+					height 66px
+					
+					img.brand-logo
+						width 259px
+						
+		.storefront-sellingpoints
+			margin-top 50px
+			
+	#branded .area
+		padding-bottom 50px
