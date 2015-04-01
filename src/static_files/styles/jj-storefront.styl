@@ -58,6 +58,7 @@ a
 			.storefront-highlights-content
 				width 85%
 				max-width 1280px
+				min-width 730px
 				margin 0 auto
 				display table
 				table-layout fixed
@@ -332,8 +333,87 @@ a
 							text-decoration none
 							
 @media only screen and (max-width: 1280px)
-	//
-		
+	#branded .content
+		.storefront-highlights
+			margin-bottom -36px
+
+			.storefront-highlights-content
+				padding 8px 0
+
+				a
+					font-size 11px
+					
+		.hero .swiper-pagination
+			bottom 25px			
+
+		.storefront-brands
+			width 730px
+			margin-top -25px
+
+			> div
+				margin-bottom 8px
+				
+				.brand-content span
+					font-size 14px
+					
+					&:after
+						margin-top 1px
+
+				// Setting heights so transforms won't blur the content
+				// Remeber to use even numbers
+				&.core .brand-content
+					height 50px
+					
+					img.brand-logo
+						width 139px
+				
+				&.originals .brand-content
+					height 34px
+					
+					img.brand-logo
+						width 129px
+					
+				&.premium .brand-content
+					height 30px
+					
+					img.brand-logo
+						width 141px
+					
+				&.vintage .brand-content
+					height 40px
+					
+					img.brand-logo
+						width 154px
+					
+				&.tech .brand-content
+					height 28px
+					
+					img.brand-logo
+						width 138px
+					
+				&.jeans .brand-content
+					height 50px
+					
+					img.brand-logo
+						width 201px
+
+		.storefront-sellingpoints
+			padding 20px 0
+			margin-top 32px
+
+			.sellingpoint
+				width 243px
+				
+				span
+					font-size 10px
+					
+					&.momma
+						font-size 12px
+						margin-bottom 0
+						
+	#branded .area
+		padding-bottom 32px
+
 @media only screen and (min-width: 1440px)
 	#branded .content
 		.storefront-highlights
