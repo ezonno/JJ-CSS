@@ -2,6 +2,9 @@
 @import 'modules/mixins'
 @import 'modules/easings'
 
+// Frontpage specific vars
+animationTiming = 0.3s
+
 // DMW overwrites, fixes
 
 a
@@ -151,12 +154,17 @@ a
 					color #fff
 					top 50%
 					left 50%
-					transform translateX(-50%) translateY(-50%)
+					transform translateX(-50%) translateY(-50%) translateZ(0) scale(1.0, 1.0)
+					transition top animationTiming easeOutCubic
+					backface-visibility hidden
+					width 100%
 					
 					span
 						display inline-block
 						margin-top 20px
 						overflow hidden
+						opacity 0
+						transition opacity animationTiming easeOutCubic
 						
 						&:after
 							content ''
@@ -165,19 +173,65 @@ a
 							height 2px
 							background #fff
 							margin-top 2px
-							margin-left -100%
-							transition margin 0.3s easeOutCubic
-							
-
-				&:hover 
-					.brand-content span:after
+				
+				@keyframes anim-in
+					0%
+						margin-left -100%
+						
+					100%
 						margin-left 0
+						
+				@keyframes anim-out
+					0%
+						margin-left 0
+						
+					100%
+						margin-left 100%
+					
+
+				&.anim-in 
+					.brand-content
+						top 45%
+
+						span
+							opacity 1
+
+							&:after
+								animation anim-in animationTiming easeOutCubic
 						
 					.brand-overlay
 						opacity 0
 						
+				&.anim-out 
+					.brand-content
+						top 50%
+
+						span
+							opacity 0
+
+							&:after
+								animation anim-out animationTiming easeOutCubic
+						
+					.brand-overlay
+						opacity 1
+						
 				&.core .brand-content
 					height 60px
+				
+				&.originals .brand-content
+					height 40px
+					
+				&.premium .brand-content
+					height 36px
+					
+				&.vintage .brand-content
+					height 46px
+					
+				&.tech .brand-content
+					height 34px
+					
+				&.jeans .brand-content
+					height 58px
 
 				.brand-overlay
 					top 0
@@ -186,4 +240,4 @@ a
 					height 100%
 					opacity 1
 					background rgba(27, 29, 33, 0.3)
-					transition opacity 0.3s easeOutCubic
+					transition opacity animationTiming easeOutCubic

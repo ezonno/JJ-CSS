@@ -82,24 +82,6 @@ jjStorefront = ((jQuery) ->
 		TweenMax.set $('#branded .content .hero.swiper-container'),
 			height: heroHeight
 
-	detectGrid: ->
-		jjStorefront.resizeHero()
-
-		if jjStorefront.pageIsLoaded
-			jjStorefront.viewportHero()
-
-	initQuickview: ->
-		quickViewOptions =
-			buttonSelector: null
-			imageSelector: null
-			buttonLinkSelector: '.quickview'
-		
-		app.quickView.bindEvents(quickViewOptions)
-
-	trackingInit: ->
-		jjStorefront.trackingScroll()
-
-
 	viewportHero: ->
 		heroViewportCheck = $('#branded .content .hero').isInViewport
 			'tolerance' : jjStorefront.tolerance
@@ -113,6 +95,29 @@ jjStorefront = ((jQuery) ->
 	clickHero: ->
 		$('#branded .content .hero .swiper-slide a').click ->
 			jjStorefront.trackingHero('Click')
+
+	hoverBrands: ->
+		$('#branded .content .storefront-brands > div').hover (->
+			$(@).removeClass('anim-out').addClass('anim-in')
+		), ->
+			$(@).removeClass('anim-in').addClass('anim-out')
+
+	initQuickview: ->
+		quickViewOptions =
+			buttonSelector: null
+			imageSelector: null
+			buttonLinkSelector: '.quickview'
+		
+		app.quickView.bindEvents(quickViewOptions)
+
+	detectGrid: ->
+		jjStorefront.resizeHero()
+
+		if jjStorefront.pageIsLoaded
+			jjStorefront.viewportHero()
+
+	trackingInit: ->
+		jjStorefront.trackingScroll()
 
 	trackingHero: (type) ->
 		if jjStorefront.heroIsSlider
@@ -150,6 +155,7 @@ jjStorefront = ((jQuery) ->
 $(document).ready ->
 	jjStorefront.assignGlobalVars()
 	jjStorefront.responsiveHero()
+	jjStorefront.hoverBrands()
 	#jjStorefront.brandHover()
 	#jjStorefront.initQuickview()
 	#jjStorefront.trackingInit()
