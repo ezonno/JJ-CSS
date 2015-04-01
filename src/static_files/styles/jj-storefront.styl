@@ -3,7 +3,7 @@
 @import 'modules/easings'
 
 // Frontpage specific vars
-animationTiming = 0.3s
+$animationTiming = 0.35s
 
 // DMW overwrites, fixes
 
@@ -20,7 +20,7 @@ a
 	.area
 		width 100%
 		background #fafafa
-		padding-bottom 50px
+		padding-bottom 40px
 
 		.wide_wrapper
 			padding-bottom 1px
@@ -42,10 +42,41 @@ a
 // Frontpage
 #branded
 	.content
+		
+		// Logo
+		.storefront-logo
+			height 62px
+			background #fff url('../img/storefront/logo-jackjones.jpg') no-repeat center
+
+		// Highlights
+		.storefront-highlights
+			background rgba(14, 14, 15, 0.6)
+			margin-bottom -40px
+			position relative
+			z-index 2
+			
+			.storefront-highlights-content
+				width 85%
+				margin 0 auto
+				display table
+				table-layout fixed
+				padding 10px 0
+				
+				a
+					color #fff
+					font-size 13px
+					line-height 20px
+					font-family $regular
+					text-transform uppercase
+					display table-cell
+					text-align center
+					border-left 1px dotted #9f9f9f
+					
+					&:first-child
+						border-left none
 
 		// Hero
 		.hero
-			margin-top 33px
 			overflow hidden
 			position relative
 			text-align center
@@ -87,13 +118,13 @@ a
 					background-image url('../img/swiperArrowRight-black.png')
 
 			.swiper-pagination
-				bottom 0
-				left 0
+				bottom 40px
+				left 50%
 				padding 15px 0
 				position absolute
 				text-align center
-				width 100%
 				z-index 900
+				transform translateX(-50%)
 
 			.swiper-pagination-switch
 				background #FFF
@@ -101,10 +132,10 @@ a
 				box-shadow 0px 1px 1px #666
 				cursor pointer
 				display inline-block
-				height 9px
+				height 10px
 				margin 0 5px
 				opacity 0.3
-				width 9px
+				width 10px
 				transition all 0.2s ease-out
 
 				&:hover
@@ -155,8 +186,8 @@ a
 					top 50%
 					left 50%
 					transform translateX(-50%) translateY(-50%) translateZ(0) scale(1.0, 1.0)
-					transition top animationTiming easeOutCubic
-					backface-visibility hidden
+					transition top $animationTiming easeOutCubic
+					backface-visibility hidden // Fixes content going blurry when animating
 					width 100%
 					
 					span
@@ -164,7 +195,9 @@ a
 						margin-top 20px
 						overflow hidden
 						opacity 0
-						transition opacity animationTiming easeOutCubic
+						transition opacity $animationTiming easeOutCubic
+						text-shadow 0px 1px 1px rgba(0, 0, 0, 0.2)
+						padding-bottom 2px
 						
 						&:after
 							content ''
@@ -173,7 +206,13 @@ a
 							height 2px
 							background #fff
 							margin-top 2px
+							box-shadow 0px 1px 1px 0px rgba(0, 0, 0, 0.1)
+							
+				img.background
+					width 100%
 				
+				// Animation for line below "Shop this brand"
+				// Triggered by JS adding and removing classes
 				@keyframes anim-in
 					0%
 						margin-left -100%
@@ -197,7 +236,7 @@ a
 							opacity 1
 
 							&:after
-								animation anim-in animationTiming easeOutCubic
+								animation anim-in $animationTiming easeOutCubic
 						
 					.brand-overlay
 						opacity 0
@@ -210,28 +249,48 @@ a
 							opacity 0
 
 							&:after
-								animation anim-out animationTiming easeOutCubic
+								animation anim-out $animationTiming easeOutCubic
 						
 					.brand-overlay
 						opacity 1
-						
+					
+				// Setting heights so transforms won't blur the content
+				// Remeber to use even numbers
 				&.core .brand-content
 					height 60px
+					
+					img.brand-logo
+						width 165px
 				
 				&.originals .brand-content
 					height 40px
 					
+					img.brand-logo
+						width 147px
+					
 				&.premium .brand-content
 					height 36px
+					
+					img.brand-logo
+						width 162px
 					
 				&.vintage .brand-content
 					height 46px
 					
+					img.brand-logo
+						width 173px
+					
 				&.tech .brand-content
 					height 34px
 					
+					img.brand-logo
+						width 153px
+					
 				&.jeans .brand-content
 					height 58px
+					
+					img.brand-logo
+						width 226px
 
 				.brand-overlay
 					top 0
@@ -240,4 +299,34 @@ a
 					height 100%
 					opacity 1
 					background rgba(27, 29, 33, 0.3)
-					transition opacity animationTiming easeOutCubic
+					transition opacity $animationTiming easeOutCubic
+					
+		// Sellingpoints
+		.storefront-sellingpoints
+			background #292c2e
+			width 100%
+			text-align center
+			padding 30px 0 25px
+			margin-top 40px
+			
+			.sellingpoint
+				width 300px
+				display inline-block
+				
+				span
+					color #6e7072
+					font-size 11px
+					display block
+					
+					&.momma
+						font-size 14px
+						color #fff
+						text-transform uppercase
+						margin-bottom 7px
+						
+					a
+						color inherit
+						text-decoration underline
+						
+						&:hover
+							text-decoration none
