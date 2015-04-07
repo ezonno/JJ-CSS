@@ -53,6 +53,7 @@ jjStorefront = ((jQuery) ->
 			# Callback functions
 			onSwiperCreated: ->
 				$('#branded .content .hero .swiper-prev, #branded .content .hero .swiper-next').css('display' , 'block')
+				# jjStorefront.resizeHero()
 				jjStorefront.displayHero()
 			
 			onSlideChangeEnd: ->
@@ -78,7 +79,7 @@ jjStorefront = ((jQuery) ->
 		# jjStorefront.jjSwiper.resizeFix()
 		# :last-child is a temp fix while custom banner is running
 		# Need to fix that for future deployments
-		heroHeight = $('.swiper-slide a:last-child img').height()
+		heroHeight = $('.swiper-slide a img').height()
 
 		TweenMax.set $('#branded .content .hero.swiper-container'),
 			height: heroHeight
