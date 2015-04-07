@@ -1,0 +1,292 @@
+@import 'modules/vars'
+@import 'modules/mixins'
+@import 'modules/easings'
+
+// Frontpage specific vars
+$animationTiming = 0.35s
+
+// DMW overwrites, fixes
+
+a
+	color #2a2a2a
+
+	&:hover
+		color inherit
+
+#footer_global
+	margin-top 0
+
+#branded
+	.area
+		width 100%
+		background #fafafa
+		padding-bottom 40px
+
+		.wide_wrapper
+			padding-bottom 1px
+
+		.content *
+			font-family $medium
+
+	#content .wide_wrapper
+		width 100% !important
+
+	.headerfix
+		width 100%
+
+	.wrapper
+		background #fff
+		width 100%
+		padding 0
+
+// Frontpage
+#branded
+	.content
+		
+		// Logo
+		.storefront-logo
+			height 60px
+			background #fff url('../img/storefront/logo-jackjones.jpg') no-repeat center
+
+		// Brands
+		.storefront-brands
+			width 900px
+			margin 10px auto 0
+			position relative
+			z-index 1
+			
+			> div
+				position relative
+				margin-bottom 10px
+				
+				.brand-content
+				.brand-overlay
+					position absolute
+					
+				.brand-content
+					z-index 1
+					text-align center
+					font-size 17px
+					color #fff
+					top 50%
+					transform translateY(-50%)
+					transition top $animationTiming easeOutCubic
+					backface-visibility hidden // Fixes content going blurry when animating
+					width 100%
+					
+					span
+						display inline-block
+						margin-top 20px
+						overflow hidden
+						opacity 0
+						transition opacity $animationTiming easeOutCubic
+						text-shadow 0px 1px 1px rgba(0, 0, 0, 0.2)
+						padding-bottom 2px
+						
+						&:after
+							content ''
+							display block
+							width 100%
+							height 2px
+							background #fff
+							margin-top 2px
+							box-shadow 0px 1px 1px 0px rgba(0, 0, 0, 0.1)
+							
+				img.background
+					width 100%
+				
+				// Animation for line below "Shop this brand"
+				// Triggered by JS adding and removing classes
+				@keyframes anim-in
+					0%
+						margin-left -100%
+						
+					100%
+						margin-left 0
+						
+				@keyframes anim-out
+					0%
+						margin-left 0
+						
+					100%
+						margin-left 100%
+					
+
+				&.anim-in 
+					.brand-content
+						top 45%
+
+						span
+							opacity 1
+
+							&:after
+								animation anim-in $animationTiming easeOutCubic
+						
+					.brand-overlay
+						opacity 0
+						
+				&.anim-out 
+					.brand-content
+						top 50%
+
+						span
+							opacity 0
+
+							&:after
+								animation anim-out $animationTiming easeOutCubic
+						
+					.brand-overlay
+						opacity 1
+					
+				// Setting heights so transforms won't blur the content
+				// Remeber to use even numbers
+				&.core .brand-content
+					height 60px
+					
+					img.brand-logo
+						width 165px
+				
+				&.originals .brand-content
+					height 40px
+					
+					img.brand-logo
+						width 147px
+					
+				&.premium .brand-content
+					height 36px
+					
+					img.brand-logo
+						width 162px
+					
+				&.vintage .brand-content
+					height 46px
+					
+					img.brand-logo
+						width 173px
+					
+				&.tech .brand-content
+					height 34px
+					
+					img.brand-logo
+						width 153px
+					
+				&.jeans .brand-content
+					height 58px
+					
+					img.brand-logo
+						width 226px
+
+				.brand-overlay
+					top 0
+					left 0
+					width 100%
+					height 100%
+					opacity 1
+					background rgba(27, 29, 33, 0.3)
+					transition opacity $animationTiming easeOutCubic
+							
+@media only screen and (max-width: 1280px)
+	#branded .content
+		.storefront-brands
+			width 730px
+			margin-top 8px
+
+			> div
+				margin-bottom 8px
+				
+				.brand-content span
+					font-size 14px
+					
+					&:after
+						margin-top 1px
+
+				// Setting heights so transforms won't blur the content
+				// Remeber to use even numbers
+				&.core .brand-content
+					height 50px
+					
+					img.brand-logo
+						width 139px
+				
+				&.originals .brand-content
+					height 34px
+					
+					img.brand-logo
+						width 129px
+					
+				&.premium .brand-content
+					height 30px
+					
+					img.brand-logo
+						width 141px
+					
+				&.vintage .brand-content
+					height 40px
+					
+					img.brand-logo
+						width 154px
+					
+				&.tech .brand-content
+					height 28px
+					
+					img.brand-logo
+						width 138px
+					
+				&.jeans .brand-content
+					height 50px
+					
+					img.brand-logo
+						width 201px
+
+	#branded .area
+		padding-bottom 32px
+
+@media only screen and (min-width: 1440px)
+	#branded .content
+		.storefront-brands
+			width 980px
+			margin-top 15px
+			
+			> div
+				margin-bottom 15px
+
+				// Setting heights so transforms won't blur the content
+				// Remeber to use even numbers
+				&.core .brand-content
+					height 68px
+					
+					img.brand-logo
+						width 188px
+				
+				&.originals .brand-content
+					height 46px
+					
+					img.brand-logo
+						width 168px
+					
+				&.premium .brand-content
+					height 40px
+					
+					img.brand-logo
+						width 187px
+					
+				&.vintage .brand-content
+					height 50px
+					
+					img.brand-logo
+						width 196px
+					
+				&.tech .brand-content
+					height 38px
+					
+					img.brand-logo
+						width 178px
+					
+				&.jeans .brand-content
+					height 66px
+					
+					img.brand-logo
+						width 259px
+			
+	#branded .area
+		padding-bottom 50px
