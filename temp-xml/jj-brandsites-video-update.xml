@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="storefront-category-35" context="category" context-id="jj-core" configuration-id="jj-core-video" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;div class="brandsite-video-container"&gt;
+                        &lt;div class="brandsite-video-player"&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-35" context="category" context-id="jj-originals" configuration-id="jj-originals-video" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;div class="brandsite-video-container"&gt;
+                        &lt;div class="brandsite-video-player"&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-35" context="category" context-id="jj-premium" configuration-id="jj-premium-video" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;div class="brandsite-video-container"&gt;
+                        &lt;div class="brandsite-video-player"&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-35" context="category" context-id="jj-tech" configuration-id="jj-tech-video" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;div class="brandsite-video-container"&gt;
+                        &lt;div class="brandsite-video-player"&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="storefront-category-35" context="category" context-id="jj-vintage" configuration-id="jj-vintage-video" assigned-to-site="true">
+        <template>slots/html/htmlslotraw.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">
+                    &lt;div class="brandsite-video-container"&gt;
+                        &lt;div class="brandsite-video-player"&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </body>
+            </html>
+        </content>
+    </slot-configuration>
+
+</slot-configurations>

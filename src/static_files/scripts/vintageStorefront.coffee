@@ -225,28 +225,51 @@ jjBrandsiteVideo = do ($) ->
 			jjBrandsiteVideo.hideVideo()
 
 	loadVideo: (videoID) ->
-		videoPlayer = $('#branded .content .brandsite-video-container #vimeoplayer')
-		
-		# Templates for the URL needed in the iframe
-		# Down the line this should be changed
-		# Possibly oembed or HTML video
-		urlTemplate = '//player.vimeo.com/video/'
-		queryTemplate = '?api=1&player_id=vimeoplayer&portrait=0&title=0&badge=0&byline=0'
+		# Pass full video url to the api for response
+		# ID alone is not enough
+		vimeoUrl = 'http://www.vimeo.com/' + videoID
 
-		src = urlTemplate + videoID + queryTemplate
+		# Vimeo oembed api
+		endpoint = 'http://www.vimeo.com/api/oembed.json'
 
-		videoPlayer.attr('src', src)
+		# Tell the api what we're looking to do
+		callback = 'embedVideo'
 
-		jjBrandsiteVideo.showVideo()
+		# Vimeo options as querys for the api call
+		params = '&api=true'
+		params += '&portrait=false'
+		params += '&title=false'
+		params += '&badge=false'
+		params += '&byline=false'
+		params += '&player_id=vimeoplayer'
+
+		# Assemble the url to get a jsonp response
+		embedurl = endpoint + '?url=' + encodeURIComponent(vimeoUrl) + '&callback=' + encodeURIComponent(callback) + params
+
+		# Using ajax, just because ajax sounds cool
+		# Could probably be a $.getJSON, but is essentially the same thing
+		$.ajax(
+			dataType: 'jsonp'
+			url: embedurl
+			crossDomain: true
+		).done (data) ->
+			# Assemble markup for the video player
+			videoMarkup = '<button class="close"></button>'
+			videoMarkup += data.html
+
+			# We need to use dynamic injection of the iframe to avoid it adding an entry to window.history
+			$('#branded .content .brandsite-video-container .brandsite-video-player').html(videoMarkup)
+
+			jjBrandsiteVideo.showVideo()
 
 	showVideo: ->
 		# We'll wait for the iframe to load so the user doesn't see the frame refresh
-		$('#branded .content .brandsite-video-container #vimeoplayer').load (e) ->
+		$('#branded .content .brandsite-video-container iframe').load (e) ->
 
 			jjBrandsiteVideo.videoContainer = $('#branded .content .brandsite-video-container')
 			
 			# Using [0] to get the actualt iframe object
-			jjBrandsiteVideo.videoFrame = $('#branded .content .brandsite-video-container #vimeoplayer')[0]
+			jjBrandsiteVideo.videoFrame = $('#branded .content .brandsite-video-container iframe')[0]
 			
 			# $f is a vimeo froogaloop.min.js function
 			jjBrandsiteVideo.video = $f(jjBrandsiteVideo.videoFrame)
