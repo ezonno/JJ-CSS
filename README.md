@@ -6,7 +6,10 @@ When closing an issue, a gif must be attached. That is all.
 #### Copyright
 Not really. It's just a bunch of JS and CSS.
 
+
 # Repo changelog
+
+[View the latest major release here.](https://github.com/jackjonesfashion/JJ-CSS/releases/latest)
 
 ### 8.0 (04/2015) - Basilisk
 
