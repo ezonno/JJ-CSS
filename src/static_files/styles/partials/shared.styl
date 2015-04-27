@@ -99,7 +99,10 @@
 	.product_images .thumbnail_carousel
 	.social_widget
 	.maywerecommend 
-	 background white
+		background white
+		
+	.product_info .availability
+		color orange
 
 	.maywerecommend .recommendations_maylike
 		background none !important
@@ -116,12 +119,23 @@
 		height auto
 		font-size 13px
 		padding 0
+		background none !important
+		margin-bottom 20px
 		
 		h1
 			margin-bottom 5px
-		
-		.pricing
-			margin-top 20px
+			
+	// Notify me swatch fix
+	.product_detail .variationattributes .swatches.colorPattern li.notifyme
+		a
+			background url('../../images/swatch-overlay.png') no-repeat scroll 50% top transparent !important
+			height 25px
+			width 25px
+			left 0
+			top 0
+			
+		&.selected a
+			background-position 50% bottom !important
 
 .jj .to_top
 	background none
