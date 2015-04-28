@@ -43,20 +43,24 @@
 				text-transform uppercase
 		
 		.productresultarea
+			
+			// Non-changing attributes
+			static-productlisting()
 
-			productlisting(240px, 5px)
+			// Attributes calculated from arguments
+			dynamic-productlisting(240px, 5px)
 
 			@media (min-width: 1281px)
-				productlisting(280px, 20px)
+				dynamic-productlisting(280px, 20px)
 
 			@media (min-width: 1441px)
-				productlisting(320px, 25px)
+				dynamic-productlisting(320px, 25px)
 
 			@media (min-width: 1681px)
-				productlisting(350px, 50px)
+				dynamic-productlisting(350px, 50px)
 
 			@media (min-width: 1920px)
-				productlisting(370px, 60px)
+				dynamic-productlisting(370px, 60px)
 
 #branded .refinement-line .searchrefine
 	border-top 1px solid #ebebeb

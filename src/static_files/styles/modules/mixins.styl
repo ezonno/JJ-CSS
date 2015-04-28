@@ -1,13 +1,23 @@
-productlisting($imagewidth, $spacing)
+// Product listing pages
+// Split in two mixins to avoid the static attributes being included in each media query
+dynamic-productlisting($imagewidth, $spacing)
 	$listwidth = ($imagewidth * 3) + ($spacing * 2)
 	
 	.productlisting
-		margin 0 auto
 		width $listwidth
 		
 		.grid_5
 			width $imagewidth
 			margin 0 $spacing
+				
+			.producttile .image img.product_thumbnail
+				width $imagewidth
+						
+static-productlisting()
+	.productlisting
+		margin 0 auto
+		
+		.grid_5
 			height auto
 			overflow hidden
 			
@@ -33,9 +43,14 @@ productlisting($imagewidth, $spacing)
 								margin -30px auto 0
 								position relative
 								
+							&.productbadge
+								top initial
+								bottom 30%
+								width auto
+								height auto
+								
 					img.product_thumbnail
 						border 0 none
-						width $imagewidth
 						height auto
 						
 					.quickviewbutton
